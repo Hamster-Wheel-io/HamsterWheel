@@ -26,8 +26,9 @@ class MainMenuScene: SKScene {
         playButtonGame1.selectedHandler = { [unowned self] in
             if let view = self.view {
                 
+                // FIXME: change to drag and drop
                 // Load the SKScene from 'GameScene.sks'
-                if let scene = SKScene(fileNamed: "GameScene") {
+                if let scene = SKScene(fileNamed: "LevelOne") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
