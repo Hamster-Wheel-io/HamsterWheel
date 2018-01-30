@@ -1,6 +1,6 @@
 //
-//  LevelTwo.swift
-//  TestDragDrop
+//  Level3Ch1.swift
+//  DragDrop
 //
 //  Created by Phyllis Wong on 1/22/18.
 //  Copyright © 2018 Phyllis Wong. All rights reserved.
@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class Level2Ch1: SKScene {
+class DDLevelThree: SKScene {
     
     var audio: AVAudioPlayer?
     var player: SKSpriteNode!
@@ -27,7 +27,9 @@ class Level2Ch1: SKScene {
          5. transition to new scene
          */
     }
-   
+    
+
+    
     
     override func didMove(to view: SKView) {
         
@@ -58,7 +60,6 @@ class Level2Ch1: SKScene {
                         print(error.localizedDescription)
                     }
                 }
-                
             }
         }
     }
@@ -105,21 +106,19 @@ class Level2Ch1: SKScene {
                         print(error.localizedDescription)
                     }
                 }
-                
                 transitionToScene()
- 
+                
+                
             }
         }
     }
     
-    
     func transitionToScene() {
-        let levelThree = Level3Ch1(fileNamed: "Level3Ch1")
-        levelThree?.scaleMode = .aspectFill
-        self.view?.presentScene(levelThree!, transition: SKTransition.fade(withDuration: 0.5))
-        print("Success")
+//        let levelFour = Level1Ch1(
+//        levelFour?.scaleMode = .aspectFill
+//        self.view?.presentScene(levelFour!, transition: SKTransition.fade(withDuration: 0.5))
+//        print("Success")
     }
-    
     
     func movePlayerTo(location: CGPoint) {
         player.position = location
@@ -130,3 +129,4 @@ class Level2Ch1: SKScene {
     }
     
 }
+

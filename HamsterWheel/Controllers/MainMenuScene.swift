@@ -28,7 +28,8 @@ class MainMenuScene: SKScene {
                 
                 // FIXME: change to drag and drop
                 // Load the SKScene from 'GameScene.sks'
-                if let scene = SKScene(fileNamed: "LevelOne") {
+                
+                if let scene = SKScene(fileNamed: "DDLevelOne") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill

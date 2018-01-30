@@ -1,6 +1,6 @@
 //
-//  Level3Ch1.swift
-//  DragDrop
+//  LevelTwo.swift
+//  TestDragDrop
 //
 //  Created by Phyllis Wong on 1/22/18.
 //  Copyright © 2018 Phyllis Wong. All rights reserved.
@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class Level3Ch1: SKScene {
+class DDLevelTwo: SKScene {
     
     var audio: AVAudioPlayer?
     var player: SKSpriteNode!
@@ -27,9 +27,7 @@ class Level3Ch1: SKScene {
          5. transition to new scene
          */
     }
-    
-
-    
+   
     
     override func didMove(to view: SKView) {
         
@@ -60,6 +58,7 @@ class Level3Ch1: SKScene {
                         print(error.localizedDescription)
                     }
                 }
+                
             }
         }
     }
@@ -94,6 +93,7 @@ class Level3Ch1: SKScene {
                 
                 // Spin the player to show that the user solved the challenge
                 player.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5)))
+                
                 // Fetch the sound data set.
                 if let asset = NSDataAsset(name: "mr_clown_music") {
                     do {
@@ -106,19 +106,21 @@ class Level3Ch1: SKScene {
                         print(error.localizedDescription)
                     }
                 }
+                
                 transitionToScene()
-                
-                
+ 
             }
         }
     }
     
+    
     func transitionToScene() {
-//        let levelFour = Level1Ch1(
-//        levelFour?.scaleMode = .aspectFill
-//        self.view?.presentScene(levelFour!, transition: SKTransition.fade(withDuration: 0.5))
-//        print("Success")
+        let levelThree = SKScene(fileNamed: "DDLevelThree")
+        levelThree?.scaleMode = .aspectFill
+        self.view?.presentScene(levelThree!, transition: SKTransition.fade(withDuration: 0.5))
+        print("Success")
     }
+    
     
     func movePlayerTo(location: CGPoint) {
         player.position = location
@@ -129,4 +131,3 @@ class Level3Ch1: SKScene {
     }
     
 }
-
