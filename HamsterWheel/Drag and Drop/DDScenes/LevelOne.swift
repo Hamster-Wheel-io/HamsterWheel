@@ -4,7 +4,7 @@
 //
 //  Created by Phyllis Wong on 1/21/18.
 //  Copyright © 2018 Phyllis Wong. All rights reserved.
-//
+
 
 import SpriteKit
 import AVFoundation
@@ -15,7 +15,7 @@ class LevelOne: SKScene {
 //    private var spinnyNode : SKShapeNode?
     
     var audio: AVAudioPlayer?
-    var player = SKSpriteNode()
+    var player: SKSpriteNode!
     var matchShape: SKShapeNode!
     
     var isDragging = false
@@ -34,14 +34,9 @@ class LevelOne: SKScene {
     
     override func didMove(to view: SKView) {
 
+        player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKShapeNode
-        
-        player = SKSpriteNode(color: UIColor.cyan, size: CGSize(width: 90, height: 90))
-        player.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        player.position = CGPoint(x: 750, y: 350)
-        
-        addChild(player)
-        
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -113,10 +108,10 @@ class LevelOne: SKScene {
                     }
                 }
                 // FIXME: Should transition to a new scene here
-               // let levelTwo = LevelTwo(fileNamed: "LevelTwo")
-                //levelTwo?.scaleMode = .aspectFill
-               // self.view?.presentScene(levelTwo!)
-                print("Success")
+                // let levelTwo = LevelTwo(fileNamed: "LevelTwo")
+                // levelTwo?.scaleMode = .aspectFill
+                // self.view?.presentScene(levelTwo!)
+                // print("Success")
             }
         }
     }
