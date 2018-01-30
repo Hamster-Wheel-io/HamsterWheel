@@ -1,6 +1,6 @@
 //
-//  LevelTwo.swift
-//  TestDragDrop
+//  Level3Ch1.swift
+//  DragDrop
 //
 //  Created by Phyllis Wong on 1/22/18.
 //  Copyright © 2018 Phyllis Wong. All rights reserved.
@@ -9,11 +9,11 @@
 import SpriteKit
 import AVFoundation
 
-class LevelTwo: SKScene {
+class Level3Ch1: SKScene {
     
     var audio: AVAudioPlayer?
-    var player = SKSpriteNode()
-    var matchShape: SKShapeNode!
+    var player: SKSpriteNode!
+    var matchShape: SKSpriteNode!
     
     var isDragging = false
     
@@ -28,23 +28,13 @@ class LevelTwo: SKScene {
          */
     }
     
-    func transitionToScene() {
-        let levelTwo = LevelTwo(fileNamed: "LevelTwo")
-        levelTwo?.scaleMode = .aspectFill
-        self.view?.presentScene(levelTwo!, transition: SKTransition.fade(withDuration: 0.5))
-    }
+
     
     
     override func didMove(to view: SKView) {
         
-        
-        matchShape = childNode(withName: "matchShape") as! SKShapeNode
-        
-        player = SKSpriteNode(color: UIColor.cyan, size: CGSize(width: 90, height: 90))
-        player.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        player.position = CGPoint(x: 750, y: 350)
-        
-        addChild(player)
+        player = childNode(withName: "player") as! SKSpriteNode
+        matchShape = childNode(withName: "matchShape") as! SKSpriteNode
         
     }
     
@@ -55,7 +45,7 @@ class LevelTwo: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 100, height: 100)
+                player.size = CGSize(width: 250, height: 250)
                 isDragging = true
                 
                 // Fetch the sound data set.
@@ -86,7 +76,7 @@ class LevelTwo: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 90, height: 90)
+        player.size = CGSize(width: 230, height: 230)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -116,13 +106,19 @@ class LevelTwo: SKScene {
                         print(error.localizedDescription)
                     }
                 }
-                print("Success")
+                transitionToScene()
                 
-               
+                
             }
         }
     }
     
+    func transitionToScene() {
+//        let levelFour = Level1Ch1(
+//        levelFour?.scaleMode = .aspectFill
+//        self.view?.presentScene(levelFour!, transition: SKTransition.fade(withDuration: 0.5))
+//        print("Success")
+    }
     
     func movePlayerTo(location: CGPoint) {
         player.position = location
@@ -133,3 +129,4 @@ class LevelTwo: SKScene {
     }
     
 }
+

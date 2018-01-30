@@ -1,35 +1,39 @@
 //
-//  GameScene.swift
+//  LevelTwo.swift
 //  TestDragDrop
 //
-//  Created by Phyllis Wong on 1/21/18.
+//  Created by Phyllis Wong on 1/22/18.
 //  Copyright © 2018 Phyllis Wong. All rights reserved.
-
+//
 
 import SpriteKit
 import AVFoundation
 
-class LevelOne: SKScene {
-    
+class Level2Ch1: SKScene {
     
     var audio: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
     
-    
-    
-    
     var isDragging = false
     
+    // call this function when the user successfully completes the challenges
+    func onSuccessAction() {
+        /*
+         1. particles or other visual
+         2. music plays
+         3. player peice fades
+         4. scene expands to just the black inside the square
+         5. transition to new scene
+         */
+    }
    
-
-    
     
     override func didMove(to view: SKView) {
-
+        
         player = childNode(withName: "player") as! SKSpriteNode
-        matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
-
+        matchShape = childNode(withName: "matchShape") as! SKSpriteNode
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,7 +49,7 @@ class LevelOne: SKScene {
                 // Fetch the sound data set.
                 if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
                     do {
-                    // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                        // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
                         audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                         // Play the above sound file
                         audio?.play()
@@ -54,6 +58,7 @@ class LevelOne: SKScene {
                         print(error.localizedDescription)
                     }
                 }
+                
             }
         }
     }
@@ -67,21 +72,6 @@ class LevelOne: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
-        let musicAction = SKAction.playSoundFileNamed("mr_clown_music.mp3", waitForCompletion: false)
-        let fadeAction = SKAction.fadeOut(withDuration: 2)
-        let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
-        
-        let spinWithSound = SKAction.group([spinAction, musicAction])
-        
-        let zoomAction = SKAction.scale(by: 2, duration: 2)
-        let transitionAction = SKAction.run {
-            self.transitionToScene()
-        }
-        let wait = SKAction.wait(forDuration: 2)
-        let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
-        
         isDragging = false
         
         // reset the player size to the original size
@@ -96,35 +86,37 @@ class LevelOne: SKScene {
         let upperBoundy = matchShape.position.y + 30
         let lowerBoundx = matchShape.position.x - 30
         let lowerBoundy = matchShape.position.y - 30
-
+        
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-            
                 
-                player.run(spinWithSound)
-                self.run(zoomWithTransition)
+                // Spin the player to show that the user solved the challenge
+                player.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5)))
+                // Fetch the sound data set.
+                if let asset = NSDataAsset(name: "mr_clown_music") {
+                    do {
+                        // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                        audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
+                        // Play the above sound file
+                        audio?.play()
+                    } catch let error as NSError {
+                        // Should print...
+                        print(error.localizedDescription)
+                    }
+                }
                 
+                transitionToScene()
+ 
             }
         }
     }
     
-    // call this function when the user successfully completes the challenges
-    func onSuccessAction() {
-        /*
-         1. particles or other visual
-         2. music plays
-         3. player peice fades
-         4. scene expands to just the black inside the square
-         5. transition to new scene
-         */
-    }
-    
     
     func transitionToScene() {
-        let levelTwo = Level2Ch1(fileNamed: "Level2Ch1")
-        levelTwo?.scaleMode = .aspectFill
-        self.view?.presentScene(levelTwo!)
+        let levelThree = Level3Ch1(fileNamed: "Level3Ch1")
+        levelThree?.scaleMode = .aspectFill
+        self.view?.presentScene(levelThree!, transition: SKTransition.fade(withDuration: 0.5))
         print("Success")
     }
     
@@ -136,6 +128,5 @@ class LevelOne: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-    
     
 }
