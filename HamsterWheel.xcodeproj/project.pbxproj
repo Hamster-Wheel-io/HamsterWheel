@@ -140,6 +140,7 @@
 				C45944242021277000C3D18A /* cow_moo.wav */,
 			);
 			path = Sounds;
+        };
 		B946F5DA20212863006C7CA7 /* DDAudio */ = {
 			isa = PBXGroup;
 			children = (
