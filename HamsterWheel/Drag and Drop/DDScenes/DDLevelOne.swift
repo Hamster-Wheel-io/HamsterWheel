@@ -15,12 +15,15 @@ class DDLevelOne: SKScene {
     var audio: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
+    var successMusic: SKAudioNode!
+    var cameraNode: SKCameraNode!
 
     var isDragging = false
     
 
     override func didMove(to view: SKView) {
-
+        // let sceneSize = CGSize(width: 1334, height: 750)
+        cameraNode = self.childNode(withName: "cameraNode") as! SKCameraNode
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
 
@@ -52,18 +55,22 @@ class DDLevelOne: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
-        let musicAction = SKAction.run { self.playSuccessMusic()}
+        let spinAction1 = SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5)
+//        let spinAction = SKTEffects(
+        let musicAction = SKAction.run {
+            self.playSuccessMusic()
+        }
+
         let fadeAction = SKAction.fadeOut(withDuration: 2)
-        //let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
-        
-        let spinWithSound = SKAction.group([spinAction, musicAction])
+        let spinWithSound = SKAction.group([spinAction1, musicAction])
+        let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
+        let spinSoundFade = SKAction.sequence([spinWithSound, fadeWithDelay])
         
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
         }
-        let wait = SKAction.wait(forDuration: 1)
+        let wait = SKAction.wait(forDuration: 2)
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
         isDragging = false
@@ -84,17 +91,21 @@ class DDLevelOne: SKScene {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-
-                player.run(spinWithSound)
-                self.run(zoomWithTransition)
                 
+                player.run(musicAction)
+                player.run(spinAction1)
+                //player.run(spinSoundFade)
+                // cameraNode.run(zoomAction)
+                self.run(zoomWithTransition)
+             
             }
         }
     }
     
-    // MARK: call this func when the user touches the player
+    // FIXME: REFACTORED using SKAction
+    // (call this func when the user touches the player)
     func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
+        if let asset = NSDataAsset(name: "yahoo") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
@@ -109,8 +120,9 @@ class DDLevelOne: SKScene {
     
     // MARK: call this function when the user successfully completes the challenges
     func playSuccessMusic() {
+        
         // Fetch the sound data set.
-        if let asset = NSDataAsset(name: "mr_clown_music") {
+        if let asset = NSDataAsset(name: "clown_music") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
