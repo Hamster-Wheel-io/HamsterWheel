@@ -13,8 +13,11 @@
 		B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45422017E41B004BF2FB /* DDLevelOne.sks */; };
 		B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91C45442017E41B004BF2FB /* DDLevelOne.swift */; };
 		B91C454B2017E41B004BF2FB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45452017E41B004BF2FB /* Actions.sks */; };
-		B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelTwo.sks */; };
 		B946F5D920212319006C7CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946F5D820212318006C7CA7 /* Assets.xcassets */; };
+		C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C459441D20211BED00C3D18A /* AGlevel1.sks */; };
+		C459442020211C8400C3D18A /* AGlevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGlevel1.swift */; };
+		C45944252021277000C3D18A /* cow_moo.wav in Resources */ = {isa = PBXBuildFile; fileRef = C45944242021277000C3D18A /* cow_moo.wav */; };
+		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297B82016CDD1009FCA9F /* GameScene.sks */; };
 		C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297BA2016CDD1009FCA9F /* Actions.sks */; };
@@ -35,8 +38,11 @@
 		B91C45422017E41B004BF2FB /* DDLevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelOne.sks; sourceTree = "<group>"; };
 		B91C45442017E41B004BF2FB /* DDLevelOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLevelOne.swift; sourceTree = "<group>"; };
 		B91C45452017E41B004BF2FB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		B91C45462017E41B004BF2FB /* DDLevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelTwo.sks; sourceTree = "<group>"; };
 		B946F5D820212318006C7CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C459441D20211BED00C3D18A /* AGlevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel1.sks; sourceTree = "<group>"; };
+		C459441F20211C8400C3D18A /* AGlevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel1.swift; sourceTree = "<group>"; };
+		C45944242021277000C3D18A /* cow_moo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cow_moo.wav; sourceTree = "<group>"; };
+		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B297B82016CDD1009FCA9F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -74,6 +80,9 @@
 		B91C453D2017E2C6004BF2FB /* Audio Game */ = {
 			isa = PBXGroup;
 			children = (
+				C459442620212A0300C3D18A /* Sounds */,
+				C459441D20211BED00C3D18A /* AGlevel1.sks */,
+				C459441F20211C8400C3D18A /* AGlevel1.swift */,
 			);
 			path = "Audio Game";
 			sourceTree = "<group>";
@@ -101,11 +110,18 @@
 				B91C45442017E41B004BF2FB /* DDLevelOne.swift */,
 				B91C45422017E41B004BF2FB /* DDLevelOne.sks */,
 				B91C45412017E41B004BF2FB /* DDLevelTwo.swift */,
-				B91C45462017E41B004BF2FB /* DDLevelTwo.sks */,
 				B911CEB12021051700EC7CFF /* DDLevelThree.swift */,
 				B911CEAF202104B000EC7CFF /* DDLevelThree.sks */,
 			);
 			path = DDScenes;
+			sourceTree = "<group>";
+		};
+		C459442620212A0300C3D18A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C45944242021277000C3D18A /* cow_moo.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		C4B297AA2016CDD1009FCA9F = {
@@ -166,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B297D22016D123009FCA9F /* SKButton.swift */,
+				C459442720212C4300C3D18A /* SKButton2.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -233,11 +250,12 @@
 				B91C454B2017E41B004BF2FB /* Actions.sks in Resources */,
 				B946F5D920212319006C7CA7 /* Assets.xcassets in Resources */,
 				C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */,
+				C45944252021277000C3D18A /* cow_moo.wav in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
-				B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */,
 				B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
 				B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */,
+				C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
 				C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */,
 			);
@@ -254,6 +272,8 @@
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
+				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
+				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
@@ -395,11 +415,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HamsterWheel;
+				PRODUCT_BUNDLE_IDENTIFIER = "Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,11 +431,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HamsterWheel;
+				PRODUCT_BUNDLE_IDENTIFIER = "Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
