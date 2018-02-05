@@ -85,7 +85,8 @@ class DDLevelOne: SKScene {
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
 
-                player.run(spinWithSound)
+                player.run(spinAction)
+                player.run(musicAction)
                 self.run(zoomWithTransition)
                 
             }
@@ -139,6 +140,6 @@ class DDLevelOne: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-    
-    
 }
+
+
