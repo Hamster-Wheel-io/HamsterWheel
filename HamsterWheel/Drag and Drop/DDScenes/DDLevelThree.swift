@@ -14,6 +14,7 @@ class DDLevelThree: SKScene {
     
     
     var audio: AVAudioPlayer?
+    var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
     
@@ -34,7 +35,7 @@ class DDLevelThree: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 250, height: 250)
+                player.size = CGSize(width: 200, height: 200)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -70,7 +71,7 @@ class DDLevelThree: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 230, height: 230)
+        player.size = CGSize(width: 200, height: 200)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -96,11 +97,13 @@ class DDLevelThree: SKScene {
     
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
+        if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                soundEffect?.play()
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
@@ -112,11 +115,13 @@ class DDLevelThree: SKScene {
     // MARK: call this function when the user successfully completes the challenges
     func playSuccessMusic() {
         // Fetch the sound data set.
-        if let asset = NSDataAsset(name: "mr_clown_music") {
+        if let music = NSDataAsset(name: "clown_music") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
+                
+                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
@@ -125,12 +130,11 @@ class DDLevelThree: SKScene {
         }
     }
     
-    
     func transitionToScene() {
         // change to level4
-//        let levelThree = DDLevelThree(fileNamed: "DDLevelThree")
-//        levelThree?.scaleMode = .aspectFill
-//        self.view?.presentScene(levelThree!)
+        let levelFour = DDLevelThree(fileNamed: "DDLevelFour")
+        levelFour?.scaleMode = .aspectFill
+        self.view?.presentScene(levelFour!)
         print("Success")
     }
     

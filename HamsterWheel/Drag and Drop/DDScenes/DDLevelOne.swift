@@ -13,6 +13,7 @@ class DDLevelOne: SKScene {
     
     
     var audio: AVAudioPlayer?
+    var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
 
@@ -95,11 +96,13 @@ class DDLevelOne: SKScene {
     
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
+        if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                soundEffect?.play()
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
@@ -111,11 +114,13 @@ class DDLevelOne: SKScene {
     // MARK: call this function when the user successfully completes the challenges
     func playSuccessMusic() {
         // Fetch the sound data set.
-        if let asset = NSDataAsset(name: "mr_clown_music") {
+        if let music = NSDataAsset(name: "clown_music") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
+                
+                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
