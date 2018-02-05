@@ -15,18 +15,12 @@ class DDLevelOne: SKScene {
     var audio: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
-<<<<<<< Updated upstream:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
-    var successMusic: SKAudioNode!
-    var cameraNode: SKCameraNode!
-=======
->>>>>>> Stashed changes:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
 
     var isDragging = false
     
 
     override func didMove(to view: SKView) {
-        // let sceneSize = CGSize(width: 1334, height: 750)
-        cameraNode = self.childNode(withName: "cameraNode") as! SKCameraNode
+
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
 
@@ -58,19 +52,6 @@ class DDLevelOne: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-<<<<<<< Updated upstream:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
-        let spinAction1 = SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5)
-//        let spinAction = SKTEffects(
-        let musicAction = SKAction.run {
-            self.playSuccessMusic()
-        }
-
-        let fadeAction = SKAction.fadeOut(withDuration: 2)
-        let spinWithSound = SKAction.group([spinAction1, musicAction])
-        let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
-        let spinSoundFade = SKAction.sequence([spinWithSound, fadeWithDelay])
-        
-=======
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
         let fadeAction = SKAction.fadeOut(withDuration: 2)
@@ -78,7 +59,6 @@ class DDLevelOne: SKScene {
         
         let spinWithSound = SKAction.group([spinAction, musicAction])
         
->>>>>>> Stashed changes:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
@@ -104,32 +84,17 @@ class DDLevelOne: SKScene {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-<<<<<<< Updated upstream:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
-                
-                player.run(musicAction)
-                player.run(spinAction1)
-                //player.run(spinSoundFade)
-                // cameraNode.run(zoomAction)
-=======
 
                 player.run(spinWithSound)
->>>>>>> Stashed changes:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
                 self.run(zoomWithTransition)
-             
+                
             }
         }
     }
     
-<<<<<<< Updated upstream:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
-    // FIXME: REFACTORED using SKAction
-    // (call this func when the user touches the player)
-    func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "yahoo") {
-=======
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
         if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
->>>>>>> Stashed changes:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
@@ -144,14 +109,8 @@ class DDLevelOne: SKScene {
     
     // MARK: call this function when the user successfully completes the challenges
     func playSuccessMusic() {
-<<<<<<< Updated upstream:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
-        
-        // Fetch the sound data set.
-        if let asset = NSDataAsset(name: "clown_music") {
-=======
         // Fetch the sound data set.
         if let asset = NSDataAsset(name: "mr_clown_music") {
->>>>>>> Stashed changes:HamsterWheel/Drag and Drop/DDScenes/DDLevelOne.swift
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
