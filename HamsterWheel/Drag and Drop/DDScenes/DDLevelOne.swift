@@ -16,6 +16,8 @@ class DDLevelOne: SKScene {
     var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
+    
+    var homeButton: SKButton!
 
     var isDragging = false
     
@@ -24,6 +26,30 @@ class DDLevelOne: SKScene {
 
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
+        
+        /* Set UI connections */
+        homeButton = self.childNode(withName: "homeButton") as! SKButton
+        
+        /* Setup button selection handler */
+        homeButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                if let scene = SKScene(fileNamed: "MainMenuScene") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
 
     }
     
@@ -94,6 +120,8 @@ class DDLevelOne: SKScene {
         }
     }
     
+    
+    
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
         if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
@@ -127,6 +155,13 @@ class DDLevelOne: SKScene {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func navigateToHomeScreen() {
+        let home = MainMenuScene(fileNamed: "MainMenuScreen")
+        home?.scaleMode = .aspectFill
+        self.view?.presentScene(home!)
+        print("did navigate to home")
     }
     
     
