@@ -11,6 +11,10 @@ import AVFoundation
 
 class DDLevelOne: SKScene {
     
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
+    
     
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
@@ -24,6 +28,9 @@ class DDLevelOne: SKScene {
     
 
     override func didMove(to view: SKView) {
+        
+        // <<<<<<<<<< Start time in level
+        self.start = DispatchTime.now()
 
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
@@ -107,15 +114,16 @@ class DDLevelOne: SKScene {
         
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        let fadeAction = SKAction.fadeOut(withDuration: 2)
-        //let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
         
-        let spinWithSound = SKAction.group([spinAction, musicAction])
+        // let fadeAction = SKAction.fadeOut(withDuration: 2)
+        // let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
+        // let spinWithSound = SKAction.group([spinAction, musicAction])
         
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
         }
+        
         let wait = SKAction.wait(forDuration: 1)
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
@@ -137,7 +145,18 @@ class DDLevelOne: SKScene {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-
+                
+                // <<<<<<<<<<   end time when level is complete
+                self.end = DispatchTime.now()
+                print(self.end as Any)
+                
+                // <<<<< Difference in nano seconds (UInt64) converted to a Double
+                let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
+                let timeInterval = (nanoTime / 1000000000)
+                // print("timeInterval: \(timeInterval)")
+                self.totalTime = timeInterval
+                print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
+                
                 player.run(spinAction)
                 player.run(musicAction)
                 self.run(zoomWithTransition)
@@ -182,6 +201,13 @@ class DDLevelOne: SKScene {
             }
         }
     }
+    
+//    func calculateTimeInLevel(beginningTime: Date, endingTime: Date) -> DateInterval {
+//
+//        let timeInLevel = endingTime - beginningTime
+//
+//        return timeInLevel
+//    }
     
     func navigateToHomeScreen() {
         let home = MainMenuScene(fileNamed: "MainMenuScreen")
