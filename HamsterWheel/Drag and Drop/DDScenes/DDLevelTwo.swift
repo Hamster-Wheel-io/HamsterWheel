@@ -11,6 +11,11 @@ import AVFoundation
 
 class DDLevelTwo: SKScene {
     
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
+    
+    
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
@@ -21,9 +26,11 @@ class DDLevelTwo: SKScene {
     
     var isDragging = false
     
-    
-    
+
     override func didMove(to view: SKView) {
+        
+        // <<<<<<<<<< Start time in level
+        start = DispatchTime.now()
         
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
@@ -75,9 +82,6 @@ class DDLevelTwo: SKScene {
                 view.showsDrawCount = true
             }
         }
-        
-
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -108,15 +112,16 @@ class DDLevelTwo: SKScene {
         
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        let fadeAction = SKAction.fadeOut(withDuration: 2)
-        //let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
         
-        let spinWithSound = SKAction.group([spinAction, musicAction])
+        // let fadeAction = SKAction.fadeOut(withDuration: 2)
+        // let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
+        // let spinWithSound = SKAction.group([spinAction, musicAction])
         
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
         }
+        
         let wait = SKAction.wait(forDuration: 1)
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
@@ -138,6 +143,16 @@ class DDLevelTwo: SKScene {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
+                
+                // <<<<<<<<<<   end time when level is complete
+                end = DispatchTime.now()
+                print("end: \(String(describing: end!))")
+                
+            // <<<<< Difference in nano seconds (UInt64) converted to a Double
+            let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
+            let timeInterval = (nanoTime / 1000000000)
+            self.totalTime = timeInterval
+            print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
                 
                 player.run(spinAction)
                 player.run(musicAction)

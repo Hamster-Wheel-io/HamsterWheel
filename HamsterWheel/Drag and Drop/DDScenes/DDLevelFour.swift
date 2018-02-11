@@ -1,15 +1,16 @@
 //
-//  GameScene.swift
-//  TestDragDrop
+//  DDLevelFour.swift
+//  HamsterWheel
 //
-//  Created by Phyllis Wong on 1/21/18.
-//  Copyright © 2018 Phyllis Wong. All rights reserved.
+//  Created by Phyllis Wong on 2/11/18.
+//  Copyright © 2018 Bob De Kort. All rights reserved.
+//
 
 
 import SpriteKit
 import AVFoundation
 
-class DDLevelOne: SKScene {
+class DDLevelFour: SKScene {
     
     var start: DispatchTime?
     var end: DispatchTime?
@@ -22,15 +23,16 @@ class DDLevelOne: SKScene {
     var matchShape: SKSpriteNode!
     
     var homeButton: SKButton!
-
+    var backButton: SKButton!
+    
     var isDragging = false
     
-
+    
     override func didMove(to view: SKView) {
         
         // <<<<<<<<<< Start time in level
-        self.start = DispatchTime.now()
-
+        start = DispatchTime.now()
+        
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
         
@@ -57,6 +59,31 @@ class DDLevelOne: SKScene {
                 view.showsDrawCount = true
             }
         }
+        
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                if let scene = SKScene(fileNamed: "DDLevelThree") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,7 +93,7 @@ class DDLevelOne: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 250, height: 250)
+                player.size = CGSize(width: 200, height: 200)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -103,7 +130,7 @@ class DDLevelOne: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 230, height: 230)
+        player.size = CGSize(width: 175, height: 175)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -114,19 +141,18 @@ class DDLevelOne: SKScene {
         let upperBoundy = matchShape.position.y + 30
         let lowerBoundx = matchShape.position.x - 30
         let lowerBoundy = matchShape.position.y - 30
-
+        
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
                 
                 // <<<<<<<<<<   end time when level is complete
-                self.end = DispatchTime.now()
-                print(self.end as Any)
+                end = DispatchTime.now()
+                print("end: \(String(describing: end!))")
                 
                 // <<<<< Difference in nano seconds (UInt64) converted to a Double
-                let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
+                let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
                 let timeInterval = (nanoTime / 1000000000)
-                // print("timeInterval: \(timeInterval)")
                 self.totalTime = timeInterval
                 print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
                 
@@ -137,8 +163,6 @@ class DDLevelOne: SKScene {
             }
         }
     }
-    
-    
     
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
@@ -175,19 +199,11 @@ class DDLevelOne: SKScene {
         }
     }
     
-    
-    func navigateToHomeScreen() {
-        let home = MainMenuScene(fileNamed: "MainMenuScreen")
-        home?.scaleMode = .aspectFill
-        self.view?.presentScene(home!)
-        print("did navigate to home")
-    }
-    
-    
     func transitionToScene() {
-        let levelTwo = DDLevelTwo(fileNamed: "DDLevelTwo")
-        levelTwo?.scaleMode = .aspectFill
-        self.view?.presentScene(levelTwo!)
+        // change to level4
+        let levelFour = DDLevelThree(fileNamed: "DDLevelFive")
+        levelFour?.scaleMode = .aspectFill
+        self.view?.presentScene(levelFour!)
         print("Success")
     }
     
@@ -199,6 +215,7 @@ class DDLevelOne: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
+    
 }
-
 
