@@ -18,6 +18,7 @@ class DDLevelOne: SKScene {
     var matchShape: SKSpriteNode!
     
     var homeButton: SKButton!
+    var backButton: SKButton!
 
     var isDragging = false
     
@@ -30,7 +31,7 @@ class DDLevelOne: SKScene {
         /* Set UI connections */
         homeButton = self.childNode(withName: "homeButton") as! SKButton
         
-        /* Setup button selection handler */
+        /* Setup button selection handler for homescreen */
         homeButton.selectedHandler = { [unowned self] in
             if let view = self.view {
                 
@@ -50,6 +51,31 @@ class DDLevelOne: SKScene {
                 view.showsDrawCount = true
             }
         }
+//        
+//        /* Set UI connections */
+//        backButton = self.childNode(withName: "backButton") as! SKButton
+//        
+//        /* Setup button selection handler for homescreen */
+//        backButton.selectedHandler = { [unowned self] in
+//            if let view = self.view {
+//                
+//                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+//                if let scene = SKScene(fileNamed: "???") {
+//                    
+//                    // Set the scale mode to scale to fit the window
+//                    scene.scaleMode = .aspectFill
+//                    
+//                    // Present the scene
+//                    view.presentScene(scene)
+//                }
+//                
+//                // Debug helpers
+//                view.showsFPS = true
+//                view.showsPhysics = true
+//                view.showsDrawCount = true
+//            }
+//        }
+//        
 
     }
     

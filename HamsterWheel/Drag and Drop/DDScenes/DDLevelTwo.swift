@@ -16,6 +16,9 @@ class DDLevelTwo: SKScene {
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
     
+    var homeButton: SKButton!
+    var backButton: SKButton!
+    
     var isDragging = false
     
     
@@ -24,6 +27,56 @@ class DDLevelTwo: SKScene {
         
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
+        
+        /* Set UI connections */
+        homeButton = self.childNode(withName: "homeButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        homeButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                if let scene = SKScene(fileNamed: "MainMenuScene") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+        
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                if let scene = SKScene(fileNamed: "DDLevelOne") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+        
+
         
     }
     
