@@ -1,0 +1,6 @@
+framework module TTFortuneWheel {
+  umbrella header "TTFortuneWheel-umbrella.h"
+
+  export *
+  module * { export * }
+}
