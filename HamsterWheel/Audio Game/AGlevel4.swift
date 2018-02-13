@@ -22,15 +22,77 @@ class AGlevel4: SKScene {
     
     var wheel: TTFortuneWheel?
     var audio: AVAudioPlayer?
-    var homeButton: SKButton!
+    
+    var menuButton: SKButton!
+    var backButton: SKButton!
     
     override func didMove(to view: SKView) {
         // Adds the rotating wheel
-        addWheel(view: view, width: 336, height: 336)
+        addWheel(view: view, width: 350, height: 350)
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
         addSpinButton(view: view)
+        
+        setupHomeButton()
+        setupBackButton()
     }
+    
+    // MARK: UI setup
+    
+    func setupHomeButton() {
+        /* Set UI connections */
+        menuButton = self.childNode(withName: "menuButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        menuButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                if let scene = SKScene(fileNamed: "MainMenuScene") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+    }
+    
+    func setupBackButton() {
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                if let scene = SKScene(fileNamed: "AGlevel3") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+    }
+    
+    // MARK: Wheel
+    
+    // MARK: UI
     
     // Add both the wheel frame and spin button to the view
     func addWheelImages(view: SKView) {
@@ -75,12 +137,36 @@ class AGlevel4: SKScene {
         view.addSubview(fortuneWheel)
     }
     
-    func navigateToHomeScreen() {
-        let home = MainMenuScene(fileNamed: "MainMenuScreen")
-        home?.scaleMode = .aspectFill
-        self.view?.presentScene(home!)
-        print("did navigate to home")
+    // Adds the center Spin button to the view
+    func addSpinButton(view: SKView) {
+        let btn = UIButton()
+        btn.frame = CGRect(x: view.bounds.midX,
+                           y: view.bounds.midY + 10,
+                           width: 100,
+                           height: 100)
+        btn.center = CGPoint(x: view.bounds.midX,
+                             y: view.bounds.midY)
+        
+        
+        btn.setTitle("SPIN", for: .normal)
+        btn.setTitleColor(.yellow, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
+        btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
+        view.addSubview(btn)
     }
+    
+    // Adds an image to the view on the given location
+    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) {
+        let imageView = UIImageView(frame: CGRect(x: x,
+                                                  y: y,
+                                                  width: width,
+                                                  height: height))
+        imageView.center = CGPoint(x: x, y: y)
+        
+        imageView.image = image
+        view?.addSubview(imageView)
+    }
+    // MARK: Functionality
     
     // Start the wheel spinning
     @objc func spinWheel() {
@@ -126,36 +212,6 @@ class AGlevel4: SKScene {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    // Adds the center Spin button to the view
-    func addSpinButton(view: SKView) {
-        let btn = UIButton()
-        btn.frame = CGRect(x: view.bounds.midX,
-                           y: view.bounds.midY + 10,
-                           width: 100,
-                           height: 100)
-        btn.center = CGPoint(x: view.bounds.midX,
-                             y: view.bounds.midY)
-        
-        
-        btn.setTitle("SPIN", for: .normal)
-        btn.setTitleColor(.yellow, for: .normal)
-        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
-        btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
-        view.addSubview(btn)
-    }
-    
-    // Adds an image to the view on the given location
-    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) {
-        let imageView = UIImageView(frame: CGRect(x: x,
-                                                  y: y,
-                                                  width: width,
-                                                  height: height))
-        imageView.center = CGPoint(x: x, y: y)
-        
-        imageView.image = image
-        view?.addSubview(imageView)
     }
     
     // Generates a random index based on the length of the slices array

@@ -36,7 +36,7 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
     }
     
     public var offsetFromExterior:CGFloat {
-        return 10.0
+        return 20.0
     }
     
     public var font: UIFont {

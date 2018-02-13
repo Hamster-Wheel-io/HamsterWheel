@@ -187,6 +187,7 @@ class DDLevelOne: SKScene {
     func transitionToScene() {
         let levelTwo = DDLevelTwo(fileNamed: "DDLevelTwo")
         levelTwo?.scaleMode = .aspectFill
+        audio?.stop()
         self.view?.presentScene(levelTwo!)
         print("Success")
     }
