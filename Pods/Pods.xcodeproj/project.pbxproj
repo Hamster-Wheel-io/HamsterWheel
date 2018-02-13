@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,21 +53,21 @@
 		65A5614BDB7FC628C8F7596517392ABF /* Pods-HamsterWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HamsterWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6630F66EC3E0DEBCD1482C1AD3B36C9E /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = TTFortuneWheel/Utils.swift; sourceTree = "<group>"; };
-		667B7016DC3DDE14B1886483AF3BE596 /* TTFortuneWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TTFortuneWheel.modulemap; sourceTree = "<group>"; };
+		667B7016DC3DDE14B1886483AF3BE596 /* TTFortuneWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TTFortuneWheel.modulemap; sourceTree = "<group>"; };
 		72CBB62EBF90887188ECBAD8606AFECD /* SpinningWheelAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelAnimator.swift; path = TTFortuneWheel/SpinningWheelAnimator.swift; sourceTree = "<group>"; };
 		7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
 		86BE3E13D0C48D5773041E9CD6E2705C /* Pods-HamsterWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HamsterWheel-acknowledgements.plist"; sourceTree = "<group>"; };
 		88FA3B4E2DA8D745E294D2D576BE6855 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HamsterWheel.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HamsterWheel.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95B85473B836A49D5F0F6F293BB53904 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TTFortuneWheel/Resources/Assets.xcassets; sourceTree = "<group>"; };
 		A2B1604AFB6B7576303B10C125324F9D /* TTFortuneWheel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-prefix.pch"; sourceTree = "<group>"; };
 		A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HamsterWheel-umbrella.h"; sourceTree = "<group>"; };
 		A8DA3C1BACAC2E37DA60462F67501643 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC7AA58A88314B0A3CBA6D4E2DEB7EEB /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HamsterWheel.framework; path = "Pods-HamsterWheel.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D07C9010D3DAEEF31E115A6B18CD8F52 /* TTFortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTFortuneWheel.framework; path = TTFortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7AA58A88314B0A3CBA6D4E2DEB7EEB /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07C9010D3DAEEF31E115A6B18CD8F52 /* TTFortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTFortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A0BECAFA2887C89554E8486E9819C3 /* SpinningWheelSlice .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SpinningWheelSlice .swift"; path = "TTFortuneWheel/SpinningWheelSlice .swift"; sourceTree = "<group>"; };
-		EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TTFortuneWheel.bundle; path = TTFortuneWheel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTFortuneWheel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAB1BEB3AE0D65351425A67996F6391 /* ResourceBundle-TTFortuneWheel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TTFortuneWheel-Info.plist"; sourceTree = "<group>"; };
 		F657E9769F9E2A341D91358CB25F5EDA /* TTFortuneWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TTFortuneWheel.swift; path = TTFortuneWheel/TTFortuneWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +205,6 @@
 				2FF4A063AE07A37645091F99858E3863 /* Resources */,
 				63BC179F21A811C0E02E80A0BCA22150 /* Support Files */,
 			);
-			name = TTFortuneWheel;
 			path = TTFortuneWheel;
 			sourceTree = "<group>";
 		};
@@ -292,7 +291,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -431,6 +430,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

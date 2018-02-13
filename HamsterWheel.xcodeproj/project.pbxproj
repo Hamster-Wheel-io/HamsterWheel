@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */ = {isa = PBXBuildFile; fileRef = B90655D02028CAF2000874DF /* DDLevelFour.sks */; };
 		AB5EC6A8B1E8339A230D2611 /* Pods_HamsterWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */; };
+		B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */ = {isa = PBXBuildFile; fileRef = B90655D02028CAF2000874DF /* DDLevelFour.sks */; };
 		B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = B911CEAF202104B000EC7CFF /* DDLevelThree.sks */; };
 		B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911CEB12021051700EC7CFF /* DDLevelThree.swift */; };
 		B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91C45412017E41B004BF2FB /* DDLevelTwo.swift */; };
@@ -28,10 +28,7 @@
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */; };
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
-		C40A8EF22023B0D40085E22D /* AGlevel2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel2.sks */; };
-		C40A8EF42023B0F10085E22D /* AGlevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel2.swift */; };
 		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
-		C40A8EF42023B0F10085E22D /* AGlevel4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel4.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
 		C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420B20314ACB006EE3C5 /* AGlevel3.sks */; };
 		C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGlevel3.swift */; };
@@ -41,6 +38,7 @@
 		C459442020211C8400C3D18A /* AGlevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGlevel1.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
 		C474EF5120337B740042D942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C474EF5020337B740042D942 /* Assets.xcassets */; };
+		C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel4.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297B82016CDD1009FCA9F /* GameScene.sks */; };
 		C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297BA2016CDD1009FCA9F /* Actions.sks */; };
@@ -55,9 +53,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B90655D02028CAF2000874DF /* DDLevelFour.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFour.sks; sourceTree = "<group>"; };
 		2DABA7FC9EEAF45C85DF23B7 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
 		710ED6FAF80008B4A6841217 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
+		B90655D02028CAF2000874DF /* DDLevelFour.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFour.sks; sourceTree = "<group>"; };
 		B911CEAF202104B000EC7CFF /* DDLevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelThree.sks; sourceTree = "<group>"; };
 		B911CEB12021051700EC7CFF /* DDLevelThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelThree.swift; sourceTree = "<group>"; };
 		B91C45412017E41B004BF2FB /* DDLevelTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLevelTwo.swift; sourceTree = "<group>"; };
@@ -77,8 +75,6 @@
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFour.swift; sourceTree = "<group>"; };
 		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
-		C40A8EF12023B0D40085E22D /* AGlevel2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel2.sks; sourceTree = "<group>"; };
-		C40A8EF32023B0F10085E22D /* AGlevel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel2.swift; sourceTree = "<group>"; };
 		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
@@ -432,8 +428,7 @@
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
-				C40A8EF42023B0F10085E22D /* AGlevel2.swift in Sources */,
-				C40A8EF42023B0F10085E22D /* AGlevel4.swift in Sources */,
+				C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
 			);
