@@ -1,15 +1,15 @@
 //
-//  LevelTwo.swift
-//  TestDragDrop
+//  DDLevelFive.swift
+//  HamsterWheel
 //
-//  Created by Phyllis Wong on 1/22/18.
-//  Copyright © 2018 Phyllis Wong. All rights reserved.
+//  Created by Phyllis Wong on 2/13/18.
+//  Copyright © 2018 Bob De Kort. All rights reserved.
 //
 
 import SpriteKit
 import AVFoundation
 
-class DDLevelTwo: SKScene {
+class DDLevelFive: SKScene {
     
     var start: DispatchTime?
     var end: DispatchTime?
@@ -26,7 +26,7 @@ class DDLevelTwo: SKScene {
     
     var isDragging = false
     
-
+    
     override func didMove(to view: SKView) {
         
         // <<<<<<<<<< Start time in level
@@ -67,7 +67,7 @@ class DDLevelTwo: SKScene {
             if let view = self.view {
                 
                 // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                if let scene = SKScene(fileNamed: "DDLevelOne") {
+                if let scene = SKScene(fileNamed: "DDLevelThree") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
@@ -82,6 +82,7 @@ class DDLevelTwo: SKScene {
                 view.showsDrawCount = true
             }
         }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -91,7 +92,7 @@ class DDLevelTwo: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 170, height: 170)
+                player.size = CGSize(width: 250, height: 250)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -128,7 +129,7 @@ class DDLevelTwo: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 160, height: 160)
+        player.size = CGSize(width: 230, height: 230)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -148,11 +149,11 @@ class DDLevelTwo: SKScene {
                 end = DispatchTime.now()
                 print("end: \(String(describing: end!))")
                 
-            // <<<<< Difference in nano seconds (UInt64) converted to a Double
-            let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
-            let timeInterval = (nanoTime / 1000000000)
-            self.totalTime = timeInterval
-            print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
+                // <<<<< Difference in nano seconds (UInt64) converted to a Double
+                let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
+                let timeInterval = (nanoTime / 1000000000)
+                self.totalTime = timeInterval
+                print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
                 
                 player.run(spinAction)
                 player.run(musicAction)
@@ -197,11 +198,11 @@ class DDLevelTwo: SKScene {
         }
     }
     
-    
     func transitionToScene() {
-        let levelThree = DDLevelThree(fileNamed: "DDLevelThree")
-        levelThree?.scaleMode = .aspectFill
-        self.view?.presentScene(levelThree!)
+        // change to level5
+        let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
+        levelFive?.scaleMode = .aspectFill
+        self.view?.presentScene(levelFive!)
         print("Success")
     }
     
@@ -214,4 +215,6 @@ class DDLevelTwo: SKScene {
         // Called before each frame is rendered
     }
     
+    
 }
+

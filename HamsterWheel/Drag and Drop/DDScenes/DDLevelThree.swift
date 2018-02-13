@@ -92,7 +92,7 @@ class DDLevelThree: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 200, height: 200)
+                player.size = CGSize(width: 170, height: 170)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -129,7 +129,7 @@ class DDLevelThree: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 175, height: 175)
+        player.size = CGSize(width: 160, height: 160)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x

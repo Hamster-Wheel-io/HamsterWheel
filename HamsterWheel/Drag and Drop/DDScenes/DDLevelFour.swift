@@ -68,7 +68,7 @@ class DDLevelFour: SKScene {
             if let view = self.view {
                 
                 // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                if let scene = SKScene(fileNamed: "DDLevelThree") {
+                if let scene = SKScene(fileNamed: "DDLevelFour") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
@@ -93,7 +93,7 @@ class DDLevelFour: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 200, height: 200)
+                player.size = CGSize(width: 250, height: 250)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -130,7 +130,7 @@ class DDLevelFour: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 175, height: 175)
+        player.size = CGSize(width: 230, height: 230)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -199,11 +199,12 @@ class DDLevelFour: SKScene {
         }
     }
     
+    // FIXME: change to DDlevelSix
     func transitionToScene() {
-        // change to level4
-        let levelFour = DDLevelThree(fileNamed: "DDLevelFive")
-        levelFour?.scaleMode = .aspectFill
-        self.view?.presentScene(levelFour!)
+        // change to level5
+        let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
+        levelFive?.scaleMode = .aspectFill
+        self.view?.presentScene(levelFive!)
         print("Success")
     }
     

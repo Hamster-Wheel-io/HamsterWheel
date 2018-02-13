@@ -27,6 +27,7 @@
 		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */; };
+		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
 		C40A8EF22023B0D40085E22D /* AGlevel2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel2.sks */; };
 		C40A8EF42023B0F10085E22D /* AGlevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel2.swift */; };
 		C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C459441D20211BED00C3D18A /* AGlevel1.sks */; };
@@ -67,6 +68,7 @@
 		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFour.swift; sourceTree = "<group>"; };
+		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
 		C40A8EF12023B0D40085E22D /* AGlevel2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel2.sks; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGlevel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel2.swift; sourceTree = "<group>"; };
 		C459441D20211BED00C3D18A /* AGlevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel1.sks; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				B90655D02028CAF2000874DF /* DDLevelFour.sks */,
 				B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */,
 				B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */,
+				B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */,
 				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
 			);
@@ -339,6 +342,7 @@
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
 				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
+				B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
