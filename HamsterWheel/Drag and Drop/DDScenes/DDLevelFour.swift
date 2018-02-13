@@ -12,22 +12,18 @@ import AVFoundation
 
 class DDLevelFour: SKScene {
     
+    // MARK: Navigation and Time variables
     var start: DispatchTime?
     var end: DispatchTime?
     var totalTime: Double?
     
-    
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
-    var player: SKSpriteNode!
-    var matchShape: SKSpriteNode!
     
     var homeButton: SKButton!
     var backButton: SKButton!
     
-    var isDragging = false
-    
-    
+
     override func didMove(to view: SKView) {
         
         // <<<<<<<<<< Start time in level
@@ -43,7 +39,7 @@ class DDLevelFour: SKScene {
         homeButton.selectedHandler = { [unowned self] in
             if let view = self.view {
                 
-                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                // MARK: Load the SKScene from 'MainMenuScene.sks'
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     
                     // Set the scale mode to scale to fit the window
@@ -52,7 +48,6 @@ class DDLevelFour: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-                
                 // Debug helpers
                 view.showsFPS = true
                 view.showsPhysics = true
@@ -76,7 +71,6 @@ class DDLevelFour: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-                
                 // Debug helpers
                 view.showsFPS = true
                 view.showsPhysics = true
@@ -86,14 +80,24 @@ class DDLevelFour: SKScene {
         
     }
     
+    // MARK: Player and MatchShape variables
+    var player: SKSpriteNode!
+    var matchShape: SKSpriteNode!
+    var wrongMatch: SKSpriteNode!
+    let playerOriginalSize = CGSize(width: 230, height: 230)
+    
+    var isDragging = false
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         
         // only perform these actions if the user touches on the shape
         if let touch = touches.first {
             if player.contains(touch.location(in: self)) {
                 
-                // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 250, height: 250)
+                // increase the player size to que the user that they touched the piece
+                let newPlayerSize = CGSize(width: playerOriginalSize.width + 10, height: playerOriginalSize.height + 10)
+                player.size = newPlayerSize
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -130,7 +134,7 @@ class DDLevelFour: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 230, height: 230)
+        player.size = playerOriginalSize
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
