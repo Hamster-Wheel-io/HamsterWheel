@@ -11,19 +11,77 @@ import AVFoundation
 
 class DDLevelThree: SKScene {
     
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
     
     
     var audio: AVAudioPlayer?
+    var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
     var matchShape: SKSpriteNode!
+    
+    var homeButton: SKButton!
+    var backButton: SKButton!
     
     var isDragging = false
     
     
     override func didMove(to view: SKView) {
         
+        // <<<<<<<<<< Start time in level
+        start = DispatchTime.now()
+        
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
+        
+        /* Set UI connections */
+        homeButton = self.childNode(withName: "homeButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        homeButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                if let scene = SKScene(fileNamed: "MainMenuScene") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+        
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                if let scene = SKScene(fileNamed: "DDLevelTwo") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
         
     }
     
@@ -34,7 +92,7 @@ class DDLevelThree: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 250, height: 250)
+                player.size = CGSize(width: 170, height: 170)
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -55,22 +113,23 @@ class DDLevelThree: SKScene {
         
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        let fadeAction = SKAction.fadeOut(withDuration: 2)
-        //let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
         
-        let spinWithSound = SKAction.group([spinAction, musicAction])
+        // let fadeAction = SKAction.fadeOut(withDuration: 2)
+        // let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
+        // let spinWithSound = SKAction.group([spinAction, musicAction])
         
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
         }
+        
         let wait = SKAction.wait(forDuration: 1)
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 230, height: 230)
+        player.size = CGSize(width: 160, height: 160)
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -86,6 +145,16 @@ class DDLevelThree: SKScene {
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
                 
+                // <<<<<<<<<<   end time when level is complete
+                end = DispatchTime.now()
+                print("end: \(String(describing: end!))")
+                
+                // <<<<< Difference in nano seconds (UInt64) converted to a Double
+                let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
+                let timeInterval = (nanoTime / 1000000000)
+                self.totalTime = timeInterval
+                print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
+                
                 player.run(spinAction)
                 player.run(musicAction)
                 self.run(zoomWithTransition)
@@ -96,11 +165,13 @@ class DDLevelThree: SKScene {
     
     // MARK: call this func when the user touches the player
     func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "cartoon_voice_says_yahoo") {
+        if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                soundEffect?.play()
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
@@ -112,11 +183,13 @@ class DDLevelThree: SKScene {
     // MARK: call this function when the user successfully completes the challenges
     func playSuccessMusic() {
         // Fetch the sound data set.
-        if let asset = NSDataAsset(name: "mr_clown_music") {
+        if let music = NSDataAsset(name: "clown_music") {
             do {
                 // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
+                
+                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
                 // Play the above sound file
+                
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
@@ -125,12 +198,11 @@ class DDLevelThree: SKScene {
         }
     }
     
-    
     func transitionToScene() {
         // change to level4
-//        let levelThree = DDLevelThree(fileNamed: "DDLevelThree")
-//        levelThree?.scaleMode = .aspectFill
-//        self.view?.presentScene(levelThree!)
+        let levelFour = DDLevelThree(fileNamed: "DDLevelFour")
+        levelFour?.scaleMode = .aspectFill
+        self.view?.presentScene(levelFour!)
         print("Success")
     }
     
