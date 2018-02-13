@@ -68,7 +68,7 @@ class DDLevelFour: SKScene {
             if let view = self.view {
                 
                 // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                if let scene = SKScene(fileNamed: "DDLevelFour") {
+                if let scene = SKScene(fileNamed: "DDLevelThree") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
@@ -204,6 +204,7 @@ class DDLevelFour: SKScene {
         // change to level5
         let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
         levelFive?.scaleMode = .aspectFill
+        audio?.stop()
         self.view?.presentScene(levelFive!)
         print("Success")
     }
