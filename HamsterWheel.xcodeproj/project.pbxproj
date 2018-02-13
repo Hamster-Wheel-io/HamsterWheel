@@ -15,7 +15,6 @@
 		B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91C45442017E41B004BF2FB /* DDLevelOne.swift */; };
 		B91C454B2017E41B004BF2FB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45452017E41B004BF2FB /* Actions.sks */; };
 		B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelTwo.sks */; };
-		B946F5D920212319006C7CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946F5D820212318006C7CA7 /* Assets.xcassets */; };
 		B946F5E220212892006C7CA7 /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DB20212891006C7CA7 /* pop.mp3 */; };
 		B946F5E320212892006C7CA7 /* crazy_celebrate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DC20212891006C7CA7 /* crazy_celebrate.mp3 */; };
 		B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DD20212891006C7CA7 /* music_tension.mp3 */; };
@@ -33,6 +32,7 @@
 		C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C459441D20211BED00C3D18A /* AGlevel1.sks */; };
 		C459442020211C8400C3D18A /* AGlevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGlevel1.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
+		C474EF5120337B740042D942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C474EF5020337B740042D942 /* Assets.xcassets */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297B82016CDD1009FCA9F /* GameScene.sks */; };
 		C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297BA2016CDD1009FCA9F /* Actions.sks */; };
@@ -44,7 +44,6 @@
 		C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297DB2016D2DD009FCA9F /* MainMenuScene.sks */; };
 		C4B297DE2016D363009FCA9F /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4B297DD2016D363009FCA9F /* assets.atlas */; };
 		C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297DF2016D453009FCA9F /* MainMenuScene.swift */; };
-		C4D0153E2031349D006709AB /* cowMoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C4D0153D2031349D006709AB /* cowMoo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		B91C45442017E41B004BF2FB /* DDLevelOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLevelOne.swift; sourceTree = "<group>"; };
 		B91C45452017E41B004BF2FB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B91C45462017E41B004BF2FB /* DDLevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelTwo.sks; sourceTree = "<group>"; };
-		B946F5D820212318006C7CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B946F5DB20212891006C7CA7 /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		B946F5DC20212891006C7CA7 /* crazy_celebrate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crazy_celebrate.mp3; sourceTree = "<group>"; };
 		B946F5DD20212891006C7CA7 /* music_tension.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_tension.mp3; sourceTree = "<group>"; };
@@ -75,6 +73,7 @@
 		C459441D20211BED00C3D18A /* AGlevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel1.sks; sourceTree = "<group>"; };
 		C459441F20211C8400C3D18A /* AGlevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel1.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
+		C474EF5020337B740042D942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B297B82016CDD1009FCA9F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 		C4B297DB2016D2DD009FCA9F /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 		C4B297DD2016D363009FCA9F /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		C4B297DF2016D453009FCA9F /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
-		C4D0153D2031349D006709AB /* cowMoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cowMoo.mp3; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,16 +131,8 @@
 				C44E420C20314ACB006EE3C5 /* AGlevel3.swift */,
 				C40A8EF12023B0D40085E22D /* AGlevel4.sks */,
 				C40A8EF32023B0F10085E22D /* AGlevel4.swift */,
-				C459442620212A0300C3D18A /* Sounds */,
 			);
 			path = "Audio Game";
-			sourceTree = "<group>";
-		};
-		B91C453E2017E2E3004BF2FB /* Menus */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Menus;
 			sourceTree = "<group>";
 		};
 		B91C453F2017E309004BF2FB /* Storyboards */ = {
@@ -182,14 +172,6 @@
 			path = DDAudio;
 			sourceTree = "<group>";
 		};
-		C459442620212A0300C3D18A /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				C4D0153D2031349D006709AB /* cowMoo.mp3 */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
 		C4B297AA2016CDD1009FCA9F = {
 			isa = PBXGroup;
 			children = (
@@ -213,13 +195,12 @@
 			children = (
 				C4B297B62016CDD1009FCA9F /* AppDelegate.swift */,
 				B91C453F2017E309004BF2FB /* Storyboards */,
-				B91C453E2017E2E3004BF2FB /* Menus */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
 				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
-				B946F5D820212318006C7CA7 /* Assets.xcassets */,
+				C474EF5020337B740042D942 /* Assets.xcassets */,
 				C4B297DD2016D363009FCA9F /* assets.atlas */,
 				C4B297D62016D16D009FCA9F /* Additions */,
 				C4B297C82016CDD1009FCA9F /* Info.plist */,
@@ -328,15 +309,14 @@
 			files = (
 				B946F5E220212892006C7CA7 /* pop.mp3 in Resources */,
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
+				C474EF5120337B740042D942 /* Assets.xcassets in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				B91C454B2017E41B004BF2FB /* Actions.sks in Resources */,
-				B946F5D920212319006C7CA7 /* Assets.xcassets in Resources */,
 				C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */,
 				C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
-				C4D0153E2031349D006709AB /* cowMoo.mp3 in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */,
 				B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,

@@ -16,6 +16,8 @@ class AGlevel3: SKScene {
     var nextButton: SKButton2!
     var titleLabel: SKLabelNode!
     
+    var audio: AVAudioPlayer?
+    
     override func didMove(to view: SKView) {
         // Creating and adding audio button to view
         setupAudioButton()
@@ -42,9 +44,8 @@ class AGlevel3: SKScene {
     func setupAudioButton() {
         // Creates button to play audio
         audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
-            let moo = SKAction.playSoundFileNamed("cowMoo.mp3", waitForCompletion: true)
+            self.playAudio(soundName: "cowMoo", soundExtention: ".mp3")
             self.nextButton.isHidden = false
-            self.run(moo)
         })
         // Position in center of the screen
         audioButton.position = CGPoint(x: 0, y: 0)
@@ -61,6 +62,21 @@ class AGlevel3: SKScene {
     }
     
     // Functionality
+    
+    func playAudio(soundName: String, soundExtention: String) {
+        // Fetch the sound data set.
+        if let asset = NSDataAsset(name: soundName) {
+            do {
+                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: soundExtention)
+                // Play the above sound file
+                audio?.play()
+            } catch let error as NSError {
+                // Should print...
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     func transitionToNextScene() {
         let level4 = AGlevel4(fileNamed: "AGlevel4")

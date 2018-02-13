@@ -14,11 +14,11 @@ class AGlevel4: SKScene {
     
     let slices = [ HWheelSlice(title: "Cow"),
                    HWheelSlice(title: "Dog"),
-                   HWheelSlice(title: "Duck"),
-                   HWheelSlice(title: "Pig"),
                    HWheelSlice(title: "Cat"),
-                   HWheelSlice(title: "Chicken"),
-                   HWheelSlice(title: "Goat"),]
+                   HWheelSlice(title: "Duck"),
+                   HWheelSlice(title: "Sheep"),
+                   HWheelSlice(title: "Hamster"),
+                   HWheelSlice(title: "Horse")]
     
     var wheel: TTFortuneWheel?
     var audio: AVAudioPlayer?
@@ -26,7 +26,7 @@ class AGlevel4: SKScene {
     
     override func didMove(to view: SKView) {
         // Adds the rotating wheel
-        addWheel(view: view, width: 337, height: 337)
+        addWheel(view: view, width: 336, height: 336)
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
         addSpinButton(view: view)
@@ -89,14 +89,30 @@ class AGlevel4: SKScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 let index = self.randomIndex()
                 self.wheel?.startAnimating(fininshIndex: index) { (finished) in
-                    // TODO: Change sound
-                    self.playAudio(soundName: "cartoon_voice_says_yahoo", soundExtention: ".mp3")
+                    self.playSoundForIndex(index: index)
                 }
             }
         }
     }
     
     // Play sound
+    func playSoundForIndex(index: Int) {
+        var sound = String()
+        var extention = String()
+        print(index)
+        switch self.slices[index].title {
+        case "Dog":     sound = "dogBark";          extention = ".wav"
+        case "Cow":     sound = "cowMoo";           extention = ".mp3"
+        case "Cat":     sound = "catMeow";          extention = ".wav"
+        case "Duck":    sound = "duckQuacking";     extention = ".wav"
+        case "Sheep":   sound = "sheepBaa";         extention = ".wav"
+        case "Hamster": sound = "rooster";          extention = ".wav"
+        case "Horse":   sound = "horseWhinnying";   extention = ".wav"
+        default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
+        }
+        self.playAudio(soundName: sound, soundExtention: extention)
+    }
+    
     func playAudio(soundName: String, soundExtention: String) {
         // Fetch the sound data set.
         if let asset = NSDataAsset(name: soundName) {

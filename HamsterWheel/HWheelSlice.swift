@@ -66,20 +66,20 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
     public func drawAdditionalGraphics(in context:CGContext, circularSegmentHeight:CGFloat,radius:CGFloat,sliceDegree:CGFloat) {
         var image: UIImage?
         // TODO: Change images
-        switch title {
-        case "Cow":
-            image = UIImage(named: "cowHead")
-        case "Dog":
-            image = UIImage(named: "cowHead")
-        case "Duck":
-            image = UIImage(named: "cowHead")
-        case "Pig":
-            image = UIImage(named: "cowHead")
-        case "Cat":
-            image = UIImage(named: "cowHead")
-        default:
-            return
-        }
+//        switch title {
+//        case "Cow":
+//            image = UIImage(named: "cowHead")
+//        case "Dog":
+//            image = UIImage(named: "cowHead")
+//        case "Duck":
+//            image = UIImage(named: "cowHead")
+//        case "Pig":
+//            image = UIImage(named: "cowHead")
+//        case "Cat":
+//            image = UIImage(named: "cowHead")
+//        default:
+//            return
+//        }
         if let image = image {
             let centerOffset = CGPoint(x: -150, y: -20)
             let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: 75, height: 60)
