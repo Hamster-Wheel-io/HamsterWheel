@@ -1,5 +1,5 @@
 //
-//  AGlevel2.swift
+//  AGlevel3.swift
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 1/30/18.
@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class AGlevel2: SKScene {
+class AGlevel3: SKScene {
     
     var playingSound: Bool = false
     var audioButton: SKButton2!
@@ -29,7 +29,7 @@ class AGlevel2: SKScene {
     
     func setupTitleLabel() {
         // Create title label
-        titleLabel = SKLabelNode(text: "The pig 🐷🐖 says ...")
+        titleLabel = SKLabelNode(text: "The cow 🐮🐄 says ...")
         // Position on screen
         // TODO: do position based on view size
         titleLabel.position = CGPoint(x: 0, y: 170)
@@ -42,9 +42,9 @@ class AGlevel2: SKScene {
     func setupAudioButton() {
         // Creates button to play audio
         audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
-            let pig = SKAction.playSoundFileNamed("cowMoo.mp3", waitForCompletion: true)
+            let moo = SKAction.playSoundFileNamed("cowMoo.mp3", waitForCompletion: true)
             self.nextButton.isHidden = false
-            self.run(pig)
+            self.run(moo)
         })
         // Position in center of the screen
         audioButton.position = CGPoint(x: 0, y: 0)
@@ -63,7 +63,7 @@ class AGlevel2: SKScene {
     // Functionality
     
     func transitionToNextScene() {
-        let level3 = AGlevel3(fileNamed: "AGlevel3")
-        self.view?.presentScene(level3)
+        let level4 = AGlevel4(fileNamed: "AGlevel4")
+        self.view?.presentScene(level4)
     }
 }

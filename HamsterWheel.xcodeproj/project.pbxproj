@@ -23,9 +23,13 @@
 		B946F5E620212892006C7CA7 /* childish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DF20212891006C7CA7 /* childish.mp3 */; };
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
-		C40A8EF22023B0D40085E22D /* AGlevel2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel2.sks */; };
-		C40A8EF42023B0F10085E22D /* AGlevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel2.swift */; };
+		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
+		C40A8EF42023B0F10085E22D /* AGlevel4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel4.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
+		C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420B20314ACB006EE3C5 /* AGlevel3.sks */; };
+		C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGlevel3.swift */; };
+		C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420D20314ACB006EE3C5 /* AGlevel2.sks */; };
+		C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420E20314ACB006EE3C5 /* AGlevel2.swift */; };
 		C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C459441D20211BED00C3D18A /* AGlevel1.sks */; };
 		C459442020211C8400C3D18A /* AGlevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGlevel1.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
@@ -61,9 +65,13 @@
 		B946F5DF20212891006C7CA7 /* childish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = childish.mp3; sourceTree = "<group>"; };
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
-		C40A8EF12023B0D40085E22D /* AGlevel2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel2.sks; sourceTree = "<group>"; };
-		C40A8EF32023B0F10085E22D /* AGlevel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel2.swift; sourceTree = "<group>"; };
+		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
+		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
+		C44E420B20314ACB006EE3C5 /* AGlevel3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel3.sks; sourceTree = "<group>"; };
+		C44E420C20314ACB006EE3C5 /* AGlevel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel3.swift; sourceTree = "<group>"; };
+		C44E420D20314ACB006EE3C5 /* AGlevel2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel2.sks; sourceTree = "<group>"; };
+		C44E420E20314ACB006EE3C5 /* AGlevel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel2.swift; sourceTree = "<group>"; };
 		C459441D20211BED00C3D18A /* AGlevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel1.sks; sourceTree = "<group>"; };
 		C459441F20211C8400C3D18A /* AGlevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel1.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
@@ -117,12 +125,15 @@
 		B91C453D2017E2C6004BF2FB /* Audio Game */ = {
 			isa = PBXGroup;
 			children = (
-				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
-				C459442620212A0300C3D18A /* Sounds */,
 				C459441D20211BED00C3D18A /* AGlevel1.sks */,
 				C459441F20211C8400C3D18A /* AGlevel1.swift */,
-				C40A8EF12023B0D40085E22D /* AGlevel2.sks */,
-				C40A8EF32023B0F10085E22D /* AGlevel2.swift */,
+				C44E420D20314ACB006EE3C5 /* AGlevel2.sks */,
+				C44E420E20314ACB006EE3C5 /* AGlevel2.swift */,
+				C44E420B20314ACB006EE3C5 /* AGlevel3.sks */,
+				C44E420C20314ACB006EE3C5 /* AGlevel3.swift */,
+				C40A8EF12023B0D40085E22D /* AGlevel4.sks */,
+				C40A8EF32023B0F10085E22D /* AGlevel4.swift */,
+				C459442620212A0300C3D18A /* Sounds */,
 			);
 			path = "Audio Game";
 			sourceTree = "<group>";
@@ -204,6 +215,7 @@
 				B91C453F2017E309004BF2FB /* Storyboards */,
 				B91C453E2017E2E3004BF2FB /* Menus */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
+				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
@@ -322,16 +334,18 @@
 				B91C454B2017E41B004BF2FB /* Actions.sks in Resources */,
 				B946F5D920212319006C7CA7 /* Assets.xcassets in Resources */,
 				C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */,
+				C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				C4D0153E2031349D006709AB /* cowMoo.mp3 in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */,
 				B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
 				B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */,
-				C40A8EF22023B0D40085E22D /* AGlevel2.sks in Resources */,
+				C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */,
 				C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */,
 				B946F5E520212892006C7CA7 /* cartoon_voice_says_yahoo.mp3 in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
+				C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */,
 				C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */,
 				B946F5E320212892006C7CA7 /* crazy_celebrate.mp3 in Resources */,
 				B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */,
@@ -400,15 +414,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
+				C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
 				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
+				C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
-				C40A8EF42023B0F10085E22D /* AGlevel2.swift in Sources */,
+				C40A8EF42023B0F10085E22D /* AGlevel4.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
 			);
