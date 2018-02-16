@@ -12,32 +12,105 @@ import AVFoundation
 
 class AGlevel4: SKScene {
     
-    let slices = [ HWheelSlice(title: "Cow"),
-                   HWheelSlice(title: "Dog"),
-                   HWheelSlice(title: "Cat"),
-                   HWheelSlice(title: "Duck"),
-                   HWheelSlice(title: "Sheep"),
-                   HWheelSlice(title: "Hamster"),
-                   HWheelSlice(title: "Horse")]
+    let slices = [ HWheelSlice(title: "", animal: "Cow"),
+                   HWheelSlice(title: "", animal: "Dog"),
+                   HWheelSlice(title: "", animal: "Cat"),
+                   HWheelSlice(title: "", animal: "Duck"),
+                   HWheelSlice(title: "", animal: "Sheep"),
+                   HWheelSlice(title: "", animal: "Chicken"),
+                   HWheelSlice(title: "", animal: "Horse")]
     
     var wheel: TTFortuneWheel?
+    var frameImage: UIImageView?
+    var spinButtonImage: UIImageView?
+    var spinButton: UIButton?
+    
     var audio: AVAudioPlayer?
-    var homeButton: SKButton!
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
+    
+    var menuButton: SKButton!
+    var backButton: SKButton!
     
     override func didMove(to view: SKView) {
+        
+        // Start time in level
+        self.start = DispatchTime.now()
+        
         // Adds the rotating wheel
-        addWheel(view: view, width: 336, height: 336)
+        addWheel(view: view, width: 350, height: 350)
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
         addSpinButton(view: view)
+        
+        setupHomeButton()
+        setupBackButton()
     }
+    
+    // MARK: UI setup
+    
+    func setupHomeButton() {
+        /* Set UI connections */
+        menuButton = self.childNode(withName: "menuButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        menuButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                if let scene = SKScene(fileNamed: "MainMenuScene") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    self.removeWheel()
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+    }
+    
+    func setupBackButton() {
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                
+                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                if let scene = SKScene(fileNamed: "AGlevel3") {
+                    
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    self.removeWheel()
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+    }
+    
+    // MARK: Wheel
+    
+    // MARK: UI
     
     // Add both the wheel frame and spin button to the view
     func addWheelImages(view: SKView) {
         // Adds the wheel frame
-        addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 382, width: 365, image: #imageLiteral(resourceName: "wheelFrame"))
+        frameImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 382, width: 365, image: #imageLiteral(resourceName: "wheelFrame"))
         // adds the spin button image
-        addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 150, width: 150, image: #imageLiteral(resourceName: "spin"))
+        spinButtonImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 150, width: 150, image: #imageLiteral(resourceName: "spin"))
     }
     
     // Adds the rotating wheel to the view
@@ -75,57 +148,11 @@ class AGlevel4: SKScene {
         view.addSubview(fortuneWheel)
     }
     
-    func navigateToHomeScreen() {
-        let home = MainMenuScene(fileNamed: "MainMenuScreen")
-        home?.scaleMode = .aspectFill
-        self.view?.presentScene(home!)
-        print("did navigate to home")
-    }
-    
-    // Start the wheel spinning
-    @objc func spinWheel() {
-        if let wheel = wheel {
-            wheel.startAnimating()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                let index = self.randomIndex()
-                self.wheel?.startAnimating(fininshIndex: index) { (finished) in
-                    self.playSoundForIndex(index: index)
-                }
-            }
-        }
-    }
-    
-    // Play sound
-    func playSoundForIndex(index: Int) {
-        var sound = String()
-        var extention = String()
-        print(index)
-        switch self.slices[index].title {
-        case "Dog":     sound = "dogBark";          extention = ".wav"
-        case "Cow":     sound = "cowMoo";           extention = ".mp3"
-        case "Cat":     sound = "catMeow";          extention = ".wav"
-        case "Duck":    sound = "duckQuacking";     extention = ".wav"
-        case "Sheep":   sound = "sheepBaa";         extention = ".wav"
-        case "Hamster": sound = "rooster";          extention = ".wav"
-        case "Horse":   sound = "horseWhinnying";   extention = ".wav"
-        default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
-        }
-        self.playAudio(soundName: sound, soundExtention: extention)
-    }
-    
-    func playAudio(soundName: String, soundExtention: String) {
-        // Fetch the sound data set.
-        if let asset = NSDataAsset(name: soundName) {
-            do {
-                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: soundExtention)
-                // Play the above sound file
-                audio?.play()
-            } catch let error as NSError {
-                // Should print...
-                print(error.localizedDescription)
-            }
-        }
+    func removeWheel() {
+        wheel?.removeFromSuperview()
+        frameImage?.removeFromSuperview()
+        spinButtonImage?.removeFromSuperview()
+        spinButton?.removeFromSuperview()
     }
     
     // Adds the center Spin button to the view
@@ -143,11 +170,12 @@ class AGlevel4: SKScene {
         btn.setTitleColor(.yellow, for: .normal)
         btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
         btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
+        spinButton = btn
         view.addSubview(btn)
     }
     
     // Adds an image to the view on the given location
-    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) {
+    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) -> UIImageView{
         let imageView = UIImageView(frame: CGRect(x: x,
                                                   y: y,
                                                   width: width,
@@ -156,6 +184,71 @@ class AGlevel4: SKScene {
         
         imageView.image = image
         view?.addSubview(imageView)
+        return imageView
+    }
+    // MARK: Functionality
+    
+    // Start the wheel spinning
+    @objc func spinWheel() {
+        if let wheel = wheel {
+            wheel.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                let index = self.randomIndex()
+                self.wheel?.startAnimating(fininshIndex: index) { (finished) in
+                    self.playSoundForIndex(index: index)
+                }
+            }
+        }
+    }
+    
+    // Play sound
+    func playSoundForIndex(index: Int) {
+        var sound = String()
+        var extention = String()
+        print(index)
+        if let animal = self.slices[index].animal {
+            switch animal {
+            case "Dog":     sound = "dogBark";          extention = ".wav"
+            case "Cow":     sound = "cowMoo";           extention = ".mp3"
+            case "Cat":     sound = "catMeow";          extention = ".wav"
+            case "Duck":    sound = "duckQuacking";     extention = ".wav"
+            case "Sheep":   sound = "sheepBaa";         extention = ".wav"
+            case "Chicken": sound = "rooster";          extention = ".wav"
+            case "Horse":   sound = "horseWhinnying";   extention = ".wav"
+            default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
+            }
+            self.playAudio(soundName: sound, soundExtention: extention)
+        }
+    }
+    
+    func playAudio(soundName: String, soundExtention: String) {
+        // Fetch the sound data set.
+        if let asset = NSDataAsset(name: soundName) {
+            do {
+                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: soundExtention)
+                // Play the above sound file
+                audio?.play()
+            } catch let error as NSError {
+                // Should print...
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    // FIXME: Add function to end of level
+    // Sets the end time and calculates the time spent on the level using the start time
+    func setEndTimeAndCalculateDifference() {
+        // end time when level is complete
+        self.end = DispatchTime.now()
+        print(self.end as Any)
+        
+        // Difference in nano seconds (UInt64) converted to a Double
+        let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
+        let timeInterval = (nanoTime / 1000000000)
+        
+        self.totalTime = timeInterval
+        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     // Generates a random index based on the length of the slices array

@@ -204,6 +204,7 @@ class DDLevelFour: SKScene {
         // change to level5
         let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
         levelFive?.scaleMode = .aspectFill
+        audio?.stop()
         self.view?.presentScene(levelFive!)
         print("Success")
     }
