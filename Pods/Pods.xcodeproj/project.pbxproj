@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EB6190B2DDA842F91DEFF2B033382B9 /* SpinningWheelSliceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DCFD58CF9C038B0FD0AFC69AD176A9 /* SpinningWheelSliceImpl.swift */; };
+		1654F08923FC68B661BACB3F1667049B /* Pods-HamsterWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */; };
+		2B4A931C8ACF7C767D9F2BE17DF049C0 /* FortuneWheelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE131E79656293F37691C4F70F27BD8 /* FortuneWheelLayer.swift */; };
+		2B51169D7C5CD950EA8A14E1AC0A9769 /* TTFortuneWheel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */; };
+		382E31DAC19490351185AEE52139DA7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		44B3874B9356CF2879EDE16C7698E38B /* TTFortuneWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA6ED7921B1360DD5C57BB00EF07ED2 /* TTFortuneWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A567539C64EEAE1052123FE15A3B38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B85473B836A49D5F0F6F293BB53904 /* Assets.xcassets */; };
+		7DF49F5D4BD46063733141A91E4188DA /* TTFortuneWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6CD91EA09776C324206838C407756 /* TTFortuneWheel-dummy.m */; };
+		7F926F64B609C6A55B37ED3C6FC43621 /* SpinningWheelAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CBB62EBF90887188ECBAD8606AFECD /* SpinningWheelAnimator.swift */; };
+		86B1708B737072AB0B9E4C57493754AF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6630F66EC3E0DEBCD1482C1AD3B36C9E /* Utils.swift */; };
+		873C1BF57839AE7ABB07C74105A87230 /* Pods-HamsterWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE977894B5E65F40DC10E8B98DE77170 /* SpinningWheelSlice .swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BECAFA2887C89554E8486E9819C3 /* SpinningWheelSlice .swift */; };
+		E39C101D933AAE69ED6EC03D2EB559B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E5DB40034DE40EC023EE552AFE09AA5B /* TTFortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657E9769F9E2A341D91358CB25F5EDA /* TTFortuneWheel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		871FF28A990E34D0C65B9D8E85A76D9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B57D2BC790032DEF000FCA9368471D0;
+			remoteInfo = TTFortuneWheel;
+		};
+		EC4D68CA964BBC4E9C25A251BFEC9464 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A7F0C629C56F39B0296FB7086F4068E;
+			remoteInfo = "TTFortuneWheel-TTFortuneWheel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AA6ED7921B1360DD5C57BB00EF07ED2 /* TTFortuneWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-umbrella.h"; sourceTree = "<group>"; };
+		2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTFortuneWheel.xcconfig; sourceTree = "<group>"; };
+		24C6CD91EA09776C324206838C407756 /* TTFortuneWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTFortuneWheel-dummy.m"; sourceTree = "<group>"; };
+		25DCFD58CF9C038B0FD0AFC69AD176A9 /* SpinningWheelSliceImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelSliceImpl.swift; path = TTFortuneWheel/SpinningWheelSliceImpl.swift; sourceTree = "<group>"; };
+		26223B9F95056708ED8B2067EE6E7C02 /* Pods-HamsterWheel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-frameworks.sh"; sourceTree = "<group>"; };
+		2FE131E79656293F37691C4F70F27BD8 /* FortuneWheelLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FortuneWheelLayer.swift; path = TTFortuneWheel/FortuneWheelLayer.swift; sourceTree = "<group>"; };
+		524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
+		56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HamsterWheel-dummy.m"; sourceTree = "<group>"; };
+		608DA2101165EA934795B98A6D8FC185 /* Pods-HamsterWheel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-resources.sh"; sourceTree = "<group>"; };
+		65A5614BDB7FC628C8F7596517392ABF /* Pods-HamsterWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HamsterWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6630F66EC3E0DEBCD1482C1AD3B36C9E /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = TTFortuneWheel/Utils.swift; sourceTree = "<group>"; };
+		667B7016DC3DDE14B1886483AF3BE596 /* TTFortuneWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TTFortuneWheel.modulemap; sourceTree = "<group>"; };
+		72CBB62EBF90887188ECBAD8606AFECD /* SpinningWheelAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelAnimator.swift; path = TTFortuneWheel/SpinningWheelAnimator.swift; sourceTree = "<group>"; };
+		7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
+		86BE3E13D0C48D5773041E9CD6E2705C /* Pods-HamsterWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HamsterWheel-acknowledgements.plist"; sourceTree = "<group>"; };
+		88FA3B4E2DA8D745E294D2D576BE6855 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HamsterWheel.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95B85473B836A49D5F0F6F293BB53904 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TTFortuneWheel/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		A2B1604AFB6B7576303B10C125324F9D /* TTFortuneWheel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-prefix.pch"; sourceTree = "<group>"; };
+		A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HamsterWheel-umbrella.h"; sourceTree = "<group>"; };
+		A8DA3C1BACAC2E37DA60462F67501643 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7AA58A88314B0A3CBA6D4E2DEB7EEB /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07C9010D3DAEEF31E115A6B18CD8F52 /* TTFortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTFortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5A0BECAFA2887C89554E8486E9819C3 /* SpinningWheelSlice .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SpinningWheelSlice .swift"; path = "TTFortuneWheel/SpinningWheelSlice .swift"; sourceTree = "<group>"; };
+		EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTFortuneWheel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECAB1BEB3AE0D65351425A67996F6391 /* ResourceBundle-TTFortuneWheel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TTFortuneWheel-Info.plist"; sourceTree = "<group>"; };
+		F657E9769F9E2A341D91358CB25F5EDA /* TTFortuneWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TTFortuneWheel.swift; path = TTFortuneWheel/TTFortuneWheel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DC2A488DE6181E5D0D7F009D15CD309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382E31DAC19490351185AEE52139DA7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2C179AA8DD44C11C814B823626B1FA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39C101D933AAE69ED6EC03D2EB559B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F120FEC88DD2924D766B635638D7C3D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D98C4E01F4BA808E9CEAF4E9851765A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC7AA58A88314B0A3CBA6D4E2DEB7EEB /* Pods_HamsterWheel.framework */,
+				EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */,
+				D07C9010D3DAEEF31E115A6B18CD8F52 /* TTFortuneWheel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FF4A063AE07A37645091F99858E3863 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95B85473B836A49D5F0F6F293BB53904 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3EB29B1B25CFFD53B2972EDB10660BB3 /* Pods-HamsterWheel */ = {
+			isa = PBXGroup;
+			children = (
+				A8DA3C1BACAC2E37DA60462F67501643 /* Info.plist */,
+				8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */,
+				65A5614BDB7FC628C8F7596517392ABF /* Pods-HamsterWheel-acknowledgements.markdown */,
+				86BE3E13D0C48D5773041E9CD6E2705C /* Pods-HamsterWheel-acknowledgements.plist */,
+				56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */,
+				26223B9F95056708ED8B2067EE6E7C02 /* Pods-HamsterWheel-frameworks.sh */,
+				608DA2101165EA934795B98A6D8FC185 /* Pods-HamsterWheel-resources.sh */,
+				A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */,
+				524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */,
+				7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */,
+			);
+			name = "Pods-HamsterWheel";
+			path = "Target Support Files/Pods-HamsterWheel";
+			sourceTree = "<group>";
+		};
+		629F94DC96DDA1CC946636309AF810FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5E5FAF03779CA64E0606D0F43C78029 /* TTFortuneWheel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63BC179F21A811C0E02E80A0BCA22150 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				88FA3B4E2DA8D745E294D2D576BE6855 /* Info.plist */,
+				ECAB1BEB3AE0D65351425A67996F6391 /* ResourceBundle-TTFortuneWheel-Info.plist */,
+				667B7016DC3DDE14B1886483AF3BE596 /* TTFortuneWheel.modulemap */,
+				2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */,
+				24C6CD91EA09776C324206838C407756 /* TTFortuneWheel-dummy.m */,
+				A2B1604AFB6B7576303B10C125324F9D /* TTFortuneWheel-prefix.pch */,
+				1AA6ED7921B1360DD5C57BB00EF07ED2 /* TTFortuneWheel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TTFortuneWheel";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				629F94DC96DDA1CC946636309AF810FE /* Pods */,
+				1D98C4E01F4BA808E9CEAF4E9851765A /* Products */,
+				8CACC719E13DECCA8823DEA4EB8291B8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8CACC719E13DECCA8823DEA4EB8291B8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB29B1B25CFFD53B2972EDB10660BB3 /* Pods-HamsterWheel */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D5E5FAF03779CA64E0606D0F43C78029 /* TTFortuneWheel */ = {
+			isa = PBXGroup;
+			children = (
+				2FE131E79656293F37691C4F70F27BD8 /* FortuneWheelLayer.swift */,
+				72CBB62EBF90887188ECBAD8606AFECD /* SpinningWheelAnimator.swift */,
+				D5A0BECAFA2887C89554E8486E9819C3 /* SpinningWheelSlice .swift */,
+				25DCFD58CF9C038B0FD0AFC69AD176A9 /* SpinningWheelSliceImpl.swift */,
+				F657E9769F9E2A341D91358CB25F5EDA /* TTFortuneWheel.swift */,
+				6630F66EC3E0DEBCD1482C1AD3B36C9E /* Utils.swift */,
+				2FF4A063AE07A37645091F99858E3863 /* Resources */,
+				63BC179F21A811C0E02E80A0BCA22150 /* Support Files */,
+			);
+			path = TTFortuneWheel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		11EC4CA9ACD0EBBF7EE037E523268C77 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873C1BF57839AE7ABB07C74105A87230 /* Pods-HamsterWheel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984447D3555F1B580DA7E01DBEB9824A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B3874B9356CF2879EDE16C7698E38B /* TTFortuneWheel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0A7F0C629C56F39B0296FB7086F4068E /* TTFortuneWheel-TTFortuneWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E92C0750EC8EC7F179DFF7D98DE015E /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */;
+			buildPhases = (
+				0DE226AF4F7F73E5005CF03314F3D647 /* Sources */,
+				F120FEC88DD2924D766B635638D7C3D7 /* Frameworks */,
+				1C931B6B7BC17C2B92F419F0A2648450 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTFortuneWheel-TTFortuneWheel";
+			productName = "TTFortuneWheel-TTFortuneWheel";
+			productReference = EA168DDBE30A55F750868C46DD726DFD /* TTFortuneWheel.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		8B57D2BC790032DEF000FCA9368471D0 /* TTFortuneWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0323A3EB763469D7F0461BA3AB336C75 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */;
+			buildPhases = (
+				C3AE429166FD0D7B0FD7324EB5EF2FDE /* Sources */,
+				C2C179AA8DD44C11C814B823626B1FA3 /* Frameworks */,
+				1C5949E40B714D31CAEB23115CEDA64A /* Resources */,
+				984447D3555F1B580DA7E01DBEB9824A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				922CFB516B797394A240C62CD1D4441F /* PBXTargetDependency */,
+			);
+			name = TTFortuneWheel;
+			productName = TTFortuneWheel;
+			productReference = D07C9010D3DAEEF31E115A6B18CD8F52 /* TTFortuneWheel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B99D4A6DB4260C53AE31E70E0BA7DEB0 /* Pods-HamsterWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F5B27204563D95A0CF677914E899C4 /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */;
+			buildPhases = (
+				90C6552AE734DB0AED1BC6D7190A8E38 /* Sources */,
+				9DC2A488DE6181E5D0D7F009D15CD309 /* Frameworks */,
+				11EC4CA9ACD0EBBF7EE037E523268C77 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40E16782A083209D7166938CE4249860 /* PBXTargetDependency */,
+			);
+			name = "Pods-HamsterWheel";
+			productName = "Pods-HamsterWheel";
+			productReference = AC7AA58A88314B0A3CBA6D4E2DEB7EEB /* Pods_HamsterWheel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 1D98C4E01F4BA808E9CEAF4E9851765A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B99D4A6DB4260C53AE31E70E0BA7DEB0 /* Pods-HamsterWheel */,
+				8B57D2BC790032DEF000FCA9368471D0 /* TTFortuneWheel */,
+				0A7F0C629C56F39B0296FB7086F4068E /* TTFortuneWheel-TTFortuneWheel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C5949E40B714D31CAEB23115CEDA64A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B51169D7C5CD950EA8A14E1AC0A9769 /* TTFortuneWheel.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C931B6B7BC17C2B92F419F0A2648450 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A567539C64EEAE1052123FE15A3B38C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DE226AF4F7F73E5005CF03314F3D647 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90C6552AE734DB0AED1BC6D7190A8E38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1654F08923FC68B661BACB3F1667049B /* Pods-HamsterWheel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3AE429166FD0D7B0FD7324EB5EF2FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4A931C8ACF7C767D9F2BE17DF049C0 /* FortuneWheelLayer.swift in Sources */,
+				7F926F64B609C6A55B37ED3C6FC43621 /* SpinningWheelAnimator.swift in Sources */,
+				CE977894B5E65F40DC10E8B98DE77170 /* SpinningWheelSlice .swift in Sources */,
+				0EB6190B2DDA842F91DEFF2B033382B9 /* SpinningWheelSliceImpl.swift in Sources */,
+				7DF49F5D4BD46063733141A91E4188DA /* TTFortuneWheel-dummy.m in Sources */,
+				E5DB40034DE40EC023EE552AFE09AA5B /* TTFortuneWheel.swift in Sources */,
+				86B1708B737072AB0B9E4C57493754AF /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40E16782A083209D7166938CE4249860 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TTFortuneWheel;
+			target = 8B57D2BC790032DEF000FCA9368471D0 /* TTFortuneWheel */;
+			targetProxy = 871FF28A990E34D0C65B9D8E85A76D9F /* PBXContainerItemProxy */;
+		};
+		922CFB516B797394A240C62CD1D4441F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TTFortuneWheel-TTFortuneWheel";
+			target = 0A7F0C629C56F39B0296FB7086F4068E /* TTFortuneWheel-TTFortuneWheel */;
+			targetProxy = EC4D68CA964BBC4E9C25A251BFEC9464 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D23278938ADF334174C5BF2A4B6B1B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		39F933212AA6F8A174EDB460145E57C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HamsterWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HamsterWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5137963C83701EE996CB5351CA1ECACF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TTFortuneWheel";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/ResourceBundle-TTFortuneWheel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		64010963675426B8F0BA8A6E1F56A0CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		995C3A53DEAA96B47E756185345E180D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D7EFBCC57C89C5ACB9391CEFDF7D418A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0C6D56AC40C945E94DA671A4822E8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HamsterWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HamsterWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F2FF99717B1766DE954F06509C9F2631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108BBC88043D8EA7CB2E5597F1DCA9E /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TTFortuneWheel";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/ResourceBundle-TTFortuneWheel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0323A3EB763469D7F0461BA3AB336C75 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7EFBCC57C89C5ACB9391CEFDF7D418A /* Debug */,
+				64010963675426B8F0BA8A6E1F56A0CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				995C3A53DEAA96B47E756185345E180D /* Debug */,
+				1D23278938ADF334174C5BF2A4B6B1B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42F5B27204563D95A0CF677914E899C4 /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F933212AA6F8A174EDB460145E57C1 /* Debug */,
+				F0C6D56AC40C945E94DA671A4822E8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E92C0750EC8EC7F179DFF7D98DE015E /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5137963C83701EE996CB5351CA1ECACF /* Debug */,
+				F2FF99717B1766DE954F06509C9F2631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
