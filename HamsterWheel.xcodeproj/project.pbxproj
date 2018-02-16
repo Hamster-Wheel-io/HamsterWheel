@@ -23,6 +23,8 @@
 		B946F5E620212892006C7CA7 /* childish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DF20212891006C7CA7 /* childish.mp3 */; };
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
+		B974E8EE2033BFE600152741 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B974E8EC2033BFE600152741 /* LoginController.swift */; };
+		B974E8EF2033BFE600152741 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B974E8ED2033BFE600152741 /* LoginController.xib */; };
 		B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */; };
 		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
@@ -70,6 +72,8 @@
 		B946F5DF20212891006C7CA7 /* childish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = childish.mp3; sourceTree = "<group>"; };
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
+		B974E8EC2033BFE600152741 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B974E8ED2033BFE600152741 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFive.sks; sourceTree = "<group>"; };
 		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
@@ -190,6 +194,15 @@
 			path = DDAudio;
 			sourceTree = "<group>";
 		};
+		B974E8EB2033BFB600152741 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				B974E8EC2033BFE600152741 /* LoginController.swift */,
+				B974E8ED2033BFE600152741 /* LoginController.xib */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
 		C4B297AA2016CDD1009FCA9F = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,7 @@
 			children = (
 				C4B297B62016CDD1009FCA9F /* AppDelegate.swift */,
 				B91C453F2017E309004BF2FB /* Storyboards */,
+				B974E8EB2033BFB600152741 /* LoginController */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
 				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
@@ -329,6 +343,7 @@
 				B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */,
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
+				B974E8EF2033BFE600152741 /* LoginController.xib in Resources */,
 				C474EF5120337B740042D942 /* Assets.xcassets in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
@@ -426,6 +441,7 @@
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
+				B974E8EE2033BFE600152741 /* LoginController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
 				C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */,

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="HamsterWheel" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueGradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tuE-Xf-D7R">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" distribution="fillEqually" spacing="294" translatesAutoresizingMaskIntoConstraints="NO" id="JVd-lh-tL8">
+                    <rect key="frame" x="0.0" y="100" width="667" height="275"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" image="left_tree_color" translatesAutoresizingMaskIntoConstraints="NO" id="CKU-eu-9Yw">
+                            <rect key="frame" x="0.0" y="0.0" width="186.5" height="275"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" image="right_tree_color" translatesAutoresizingMaskIntoConstraints="NO" id="BuN-UB-7KV">
+                            <rect key="frame" x="480.5" y="0.0" width="186.5" height="275"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="island" translatesAutoresizingMaskIntoConstraints="NO" id="CY2-FU-65V">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="400"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FPk-Jq-BWL">
+                    <rect key="frame" x="250" y="100" width="167" height="225"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hammy" translatesAutoresizingMaskIntoConstraints="NO" id="Y0j-Du-EGd">
+                            <rect key="frame" x="0.0" y="0.0" width="167" height="112.5"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HamsterWheelText" translatesAutoresizingMaskIntoConstraints="NO" id="3aV-h9-8Be">
+                            <rect key="frame" x="0.0" y="112.5" width="167" height="112.5"/>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="izi-h7-AUe"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="FPk-Jq-BWL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="2f4-gQ-0IL"/>
+                <constraint firstAttribute="trailing" secondItem="FPk-Jq-BWL" secondAttribute="trailing" constant="250" id="4Gt-Ia-A7C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tuE-Xf-D7R" secondAttribute="trailing" id="9tU-jc-IS7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JVd-lh-tL8" secondAttribute="trailing" id="A4D-ds-a6s"/>
+                <constraint firstItem="JVd-lh-tL8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BdK-9M-JHF"/>
+                <constraint firstItem="CY2-FU-65V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FJU-8X-imS"/>
+                <constraint firstItem="JVd-lh-tL8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="IrD-cE-4dB"/>
+                <constraint firstItem="CY2-FU-65V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KUE-c9-Td1"/>
+                <constraint firstItem="JVd-lh-tL8" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="W0i-4i-QIh"/>
+                <constraint firstAttribute="bottom" secondItem="CY2-FU-65V" secondAttribute="bottom" constant="-25" id="boz-I0-A94"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tuE-Xf-D7R" secondAttribute="bottom" id="iQs-e3-n50"/>
+                <constraint firstItem="tuE-Xf-D7R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mB4-xD-HAE"/>
+                <constraint firstItem="CY2-FU-65V" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qZr-85-jnG"/>
+                <constraint firstAttribute="bottom" secondItem="FPk-Jq-BWL" secondAttribute="bottom" constant="50" id="qfD-zm-n0S"/>
+                <constraint firstItem="FPk-Jq-BWL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="250" id="u0X-hN-lsW"/>
+                <constraint firstItem="tuE-Xf-D7R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="urQ-7d-4w4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BlueGradientBackground" width="736" height="414"/>
+        <image name="Hammy" width="613" height="511"/>
+        <image name="HamsterWheelText" width="1840" height="530"/>
+        <image name="island" width="736" height="532"/>
+        <image name="left_tree_color" width="140" height="160"/>
+        <image name="right_tree_color" width="140" height="160"/>
+    </resources>
+</document>
