@@ -19,6 +19,7 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
     }
     
     public var title: String
+    public var animal: String?
     public var degree: CGFloat = 0.0
     
     
@@ -54,42 +55,40 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
     
     public var style:Style = .brickRed
     
-    public init(title:String) {
+    public init(title: String, animal: String?) {
         self.title = title
+        self.animal = animal
     }
     
     public convenience init(title:String, degree:CGFloat) {
-        self.init(title:title)
+        self.init(title:title, animal: nil)
         self.degree = degree
     }
     
     public func drawAdditionalGraphics(in context:CGContext, circularSegmentHeight:CGFloat,radius:CGFloat,sliceDegree:CGFloat) {
         var image: UIImage?
-        // TODO: Change images
-//        switch title {
-//        case "Cow":
-//            image = UIImage(named: "cowHead")
-//        case "Dog":
-//            image = UIImage(named: "cowHead")
-//        case "Duck":
-//            image = UIImage(named: "cowHead")
-//        case "Pig":
-//            image = UIImage(named: "cowHead")
-//        case "Cat":
-//            image = UIImage(named: "cowHead")
-//        default:
-//            return
-//        }
+        if let animal = animal {
+            switch animal {
+            case "Dog":     image = #imageLiteral(resourceName: "dog")
+            case "Cow":     image = #imageLiteral(resourceName: "cow")
+            case "Cat":     image = #imageLiteral(resourceName: "cat")
+            case "Duck":    image = #imageLiteral(resourceName: "duck")
+            case "Sheep":   image = #imageLiteral(resourceName: "sheep")
+            case "Chicken": image = #imageLiteral(resourceName: "chicken")
+            case "Horse":   image = #imageLiteral(resourceName: "horse")
+            default:
+                return
+            }
+        }
         if let image = image {
-            let centerOffset = CGPoint(x: -150, y: -20)
-            let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: 75, height: 60)
+            let centerOffset = CGPoint(x: -120, y: -130)
+            let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: 90, height: 80)
             let additionalGraphicPath = UIBezierPath(rect: additionalGraphicRect)
             context.saveGState()
             additionalGraphicPath.addClip()
             context.scaleBy(x: 1, y: -1)
-            context.draw(image.cgImage!, in: CGRect(x: additionalGraphicRect.minX, y: -additionalGraphicRect.minY, width: additionalGraphicRect.width, height: additionalGraphicRect.height), byTiling: true)
+            context.draw(image.scaled(to: additionalGraphicRect.size, scalingMode: .aspectFit).cgImage! , in: CGRect(x: additionalGraphicRect.minX, y: -additionalGraphicRect.minY, width: additionalGraphicRect.width, height: additionalGraphicRect.height), byTiling: true)
             context.restoreGState()
-
         }
     }
 }

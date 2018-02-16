@@ -59,7 +59,7 @@ class AGlevel3: SKScene {
     
     func setupAudioButton() {
         // Creates button to play audio
-        audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
+        audioButton = SKButton2(defaultButtonImage: "redSheepButton", activeButtonImage: "redSheepButtonPressed", buttonAction: { [unowned self] in
             self.playAudio(soundName: "sheepBaa", soundExtention: ".wav")
             self.nextButton.isHidden = false
         })

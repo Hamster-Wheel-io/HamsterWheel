@@ -12,15 +12,18 @@ import AVFoundation
 
 class AGlevel4: SKScene {
     
-    let slices = [ HWheelSlice(title: "Cow"),
-                   HWheelSlice(title: "Dog"),
-                   HWheelSlice(title: "Cat"),
-                   HWheelSlice(title: "Duck"),
-                   HWheelSlice(title: "Sheep"),
-                   HWheelSlice(title: "Hamster"),
-                   HWheelSlice(title: "Horse")]
+    let slices = [ HWheelSlice(title: "", animal: "Cow"),
+                   HWheelSlice(title: "", animal: "Dog"),
+                   HWheelSlice(title: "", animal: "Cat"),
+                   HWheelSlice(title: "", animal: "Duck"),
+                   HWheelSlice(title: "", animal: "Sheep"),
+                   HWheelSlice(title: "", animal: "Chicken"),
+                   HWheelSlice(title: "", animal: "Horse")]
     
     var wheel: TTFortuneWheel?
+    var frameImage: UIImageView?
+    var spinButtonImage: UIImageView?
+    var spinButton: UIButton?
     
     var audio: AVAudioPlayer?
     var start: DispatchTime?
@@ -59,7 +62,7 @@ class AGlevel4: SKScene {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
-                    
+                    self.removeWheel()
                     // Present the scene
                     view.presentScene(scene)
                 }
@@ -85,7 +88,7 @@ class AGlevel4: SKScene {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
-                    
+                    self.removeWheel()
                     // Present the scene
                     view.presentScene(scene)
                 }
@@ -105,9 +108,9 @@ class AGlevel4: SKScene {
     // Add both the wheel frame and spin button to the view
     func addWheelImages(view: SKView) {
         // Adds the wheel frame
-        addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 382, width: 365, image: #imageLiteral(resourceName: "wheelFrame"))
+        frameImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 382, width: 365, image: #imageLiteral(resourceName: "wheelFrame"))
         // adds the spin button image
-        addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 150, width: 150, image: #imageLiteral(resourceName: "spin"))
+        spinButtonImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 150, width: 150, image: #imageLiteral(resourceName: "spin"))
     }
     
     // Adds the rotating wheel to the view
@@ -147,6 +150,9 @@ class AGlevel4: SKScene {
     
     func removeWheel() {
         wheel?.removeFromSuperview()
+        frameImage?.removeFromSuperview()
+        spinButtonImage?.removeFromSuperview()
+        spinButton?.removeFromSuperview()
     }
     
     // Adds the center Spin button to the view
@@ -164,11 +170,12 @@ class AGlevel4: SKScene {
         btn.setTitleColor(.yellow, for: .normal)
         btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
         btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
+        spinButton = btn
         view.addSubview(btn)
     }
     
     // Adds an image to the view on the given location
-    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) {
+    func addImageToCenter(x: CGFloat, y: CGFloat, height: CGFloat, width: CGFloat, image: UIImage) -> UIImageView{
         let imageView = UIImageView(frame: CGRect(x: x,
                                                   y: y,
                                                   width: width,
@@ -177,6 +184,7 @@ class AGlevel4: SKScene {
         
         imageView.image = image
         view?.addSubview(imageView)
+        return imageView
     }
     // MARK: Functionality
     
@@ -198,17 +206,19 @@ class AGlevel4: SKScene {
         var sound = String()
         var extention = String()
         print(index)
-        switch self.slices[index].title {
-        case "Dog":     sound = "dogBark";          extention = ".wav"
-        case "Cow":     sound = "cowMoo";           extention = ".mp3"
-        case "Cat":     sound = "catMeow";          extention = ".wav"
-        case "Duck":    sound = "duckQuacking";     extention = ".wav"
-        case "Sheep":   sound = "sheepBaa";         extention = ".wav"
-        case "Hamster": sound = "rooster";          extention = ".wav"
-        case "Horse":   sound = "horseWhinnying";   extention = ".wav"
-        default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
+        if let animal = self.slices[index].animal {
+            switch animal {
+            case "Dog":     sound = "dogBark";          extention = ".wav"
+            case "Cow":     sound = "cowMoo";           extention = ".mp3"
+            case "Cat":     sound = "catMeow";          extention = ".wav"
+            case "Duck":    sound = "duckQuacking";     extention = ".wav"
+            case "Sheep":   sound = "sheepBaa";         extention = ".wav"
+            case "Chicken": sound = "rooster";          extention = ".wav"
+            case "Horse":   sound = "horseWhinnying";   extention = ".wav"
+            default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
+            }
+            self.playAudio(soundName: sound, soundExtention: extention)
         }
-        self.playAudio(soundName: sound, soundExtention: extention)
     }
     
     func playAudio(soundName: String, soundExtention: String) {
