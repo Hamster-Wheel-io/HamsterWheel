@@ -21,12 +21,20 @@ class AGlevel4: SKScene {
                    HWheelSlice(title: "Horse")]
     
     var wheel: TTFortuneWheel?
+    
     var audio: AVAudioPlayer?
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
     
     var menuButton: SKButton!
     var backButton: SKButton!
     
     override func didMove(to view: SKView) {
+        
+        // Start time in level
+        self.start = DispatchTime.now()
+        
         // Adds the rotating wheel
         addWheel(view: view, width: 350, height: 350)
         // Adds the spin button and the wheel frame
@@ -137,6 +145,10 @@ class AGlevel4: SKScene {
         view.addSubview(fortuneWheel)
     }
     
+    func removeWheel() {
+        wheel?.removeFromSuperview()
+    }
+    
     // Adds the center Spin button to the view
     func addSpinButton(view: SKView) {
         let btn = UIButton()
@@ -172,7 +184,7 @@ class AGlevel4: SKScene {
     @objc func spinWheel() {
         if let wheel = wheel {
             wheel.startAnimating()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 let index = self.randomIndex()
                 self.wheel?.startAnimating(fininshIndex: index) { (finished) in
                     self.playSoundForIndex(index: index)
@@ -212,6 +224,21 @@ class AGlevel4: SKScene {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    // FIXME: Add function to end of level
+    // Sets the end time and calculates the time spent on the level using the start time
+    func setEndTimeAndCalculateDifference() {
+        // end time when level is complete
+        self.end = DispatchTime.now()
+        print(self.end as Any)
+        
+        // Difference in nano seconds (UInt64) converted to a Double
+        let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
+        let timeInterval = (nanoTime / 1000000000)
+        
+        self.totalTime = timeInterval
+        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     // Generates a random index based on the length of the slices array

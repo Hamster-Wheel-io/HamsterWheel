@@ -11,17 +11,26 @@ import AVFoundation
 
 class AGlevel3: SKScene {
     
-    var playingSound: Bool = false
+    // Game elements
     var audioButton: SKButton2!
     var nextButton: SKButton2!
-    
-    var menuButton: SKButton!
-    var backButton: SKButton!
     var titleLabel: SKLabelNode!
     
+    // Navigation buttons
+    var menuButton: SKButton!
+    var backButton: SKButton!
+    
+    // Players and Trackers
     var audio: AVAudioPlayer?
+    var start: DispatchTime?
+    var end: DispatchTime?
+    var totalTime: Double?
     
     override func didMove(to view: SKView) {
+        
+        // Start time in level
+        self.start = DispatchTime.now()
+        
         // Creating and adding audio button to view
         setupAudioButton()
         // Creating and adding title label
@@ -75,13 +84,10 @@ class AGlevel3: SKScene {
         /* Setup button selection handler for homescreen */
         menuButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                
-                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                self.setEndTimeAndCalculateDifference()
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
-                    
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
-                    
                     // Present the scene
                     view.presentScene(scene)
                 }
@@ -101,13 +107,10 @@ class AGlevel3: SKScene {
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                
-                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
+                self.setEndTimeAndCalculateDifference()
                 if let scene = SKScene(fileNamed: "AGlevel2") {
-                    
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
-                    
                     // Present the scene
                     view.presentScene(scene)
                 }
@@ -135,6 +138,20 @@ class AGlevel3: SKScene {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    // Sets the end time and calculates the time spent on the level using the start time
+    func setEndTimeAndCalculateDifference() {
+        // end time when level is complete
+        self.end = DispatchTime.now()
+        print(self.end as Any)
+        
+        // Difference in nano seconds (UInt64) converted to a Double
+        let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
+        let timeInterval = (nanoTime / 1000000000)
+        
+        self.totalTime = timeInterval
+        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     func transitionToNextScene() {
