@@ -14,7 +14,6 @@
 		B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91C45412017E41B004BF2FB /* DDLevelTwo.swift */; };
 		B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45422017E41B004BF2FB /* DDLevelOne.sks */; };
 		B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91C45442017E41B004BF2FB /* DDLevelOne.swift */; };
-		B91C454B2017E41B004BF2FB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45452017E41B004BF2FB /* Actions.sks */; };
 		B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelTwo.sks */; };
 		B946F5E220212892006C7CA7 /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DB20212891006C7CA7 /* pop.mp3 */; };
 		B946F5E320212892006C7CA7 /* crazy_celebrate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5DC20212891006C7CA7 /* crazy_celebrate.mp3 */; };
@@ -62,7 +61,6 @@
 		B91C45412017E41B004BF2FB /* DDLevelTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLevelTwo.swift; sourceTree = "<group>"; };
 		B91C45422017E41B004BF2FB /* DDLevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelOne.sks; sourceTree = "<group>"; };
 		B91C45442017E41B004BF2FB /* DDLevelOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLevelOne.swift; sourceTree = "<group>"; };
-		B91C45452017E41B004BF2FB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B91C45462017E41B004BF2FB /* DDLevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelTwo.sks; sourceTree = "<group>"; };
 		B946F5DB20212891006C7CA7 /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		B946F5DC20212891006C7CA7 /* crazy_celebrate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crazy_celebrate.mp3; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 		B91C45402017E41B004BF2FB /* DDScenes */ = {
 			isa = PBXGroup;
 			children = (
-				B91C45452017E41B004BF2FB /* Actions.sks */,
 				B91C45422017E41B004BF2FB /* DDLevelOne.sks */,
 				B91C45442017E41B004BF2FB /* DDLevelOne.swift */,
 				B91C45462017E41B004BF2FB /* DDLevelTwo.sks */,
@@ -336,7 +333,6 @@
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
-				B91C454B2017E41B004BF2FB /* Actions.sks in Resources */,
 				C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */,
 				C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
