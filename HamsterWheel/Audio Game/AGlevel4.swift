@@ -82,8 +82,6 @@ class AGlevel4: SKScene {
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                
-                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
                 if let scene = SKScene(fileNamed: "AGlevel3") {
                     
                     // Set the scale mode to scale to fit the window
@@ -236,7 +234,7 @@ class AGlevel4: SKScene {
         }
     }
     
-    // FIXME: Add function to end of level
+    // FIXME: Add this function to end of level
     // Sets the end time and calculates the time spent on the level using the start time
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete

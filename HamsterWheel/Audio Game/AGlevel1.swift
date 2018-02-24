@@ -12,7 +12,7 @@ import AVFoundation
 class AGlevel1: SKScene {
     // Game elements
     var audioButton: SKButton2!
-    var nextButton: SKButton2!
+    var nextButton: SKButton!
     var titleLabel: SKLabelNode!
     
     // Navigation buttons
@@ -34,7 +34,7 @@ class AGlevel1: SKScene {
         // Creating and adding title label
         setupTitleLabel()
         // Adding next level button action
-        setupNextLevelButton()
+        connectNextLevelButton()
         // Adding home button action
         setupHomeButton()
     }
@@ -65,12 +65,10 @@ class AGlevel1: SKScene {
         addChild(audioButton)
     }
     
-    func setupNextLevelButton() {
-        nextButton = SKButton2(defaultButtonImage: "nextButton", activeButtonImage: "nextButton", buttonAction: transitionToNextScene)
-        nextButton.position = CGPoint(x: 1200, y: -630)
-        // Setting is hidden to true to hide it until the audio button has been pressed once
+    func connectNextLevelButton() {
+        nextButton = self.childNode(withName: "nextButton") as! SKButton
+        nextButton.selectedHandler = transitionToNextScene
         nextButton.isHidden = true
-        addChild(nextButton)
     }
     
     func setupHomeButton() {
