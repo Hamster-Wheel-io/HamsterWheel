@@ -142,17 +142,19 @@ class AGlevel3: SKScene {
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
         self.end = DispatchTime.now()
-        print(self.end as Any)
         
         // Difference in nano seconds (UInt64) converted to a Double
         let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
         let timeInterval = (nanoTime / 1000000000)
         
         self.totalTime = timeInterval
-        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     func transitionToNextScene() {
+        // Calculates the time spend on the level
+        setEndTimeAndCalculateDifference()
+        
+        // Creates and show next level
         let level4 = AGlevel4(fileNamed: "AGlevel4")
         level4?.scaleMode = .aspectFill
         self.view?.presentScene(level4)

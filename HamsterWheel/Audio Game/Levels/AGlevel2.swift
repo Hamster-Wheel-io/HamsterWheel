@@ -1,5 +1,5 @@
 //
-//  AGlevel1.swift
+//  AGlevel2.swift
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 1/30/18.
@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class AGlevel1: SKScene {
+class AGlevel2: SKScene {
     // Game elements
     var audioButton: SKButton2!
     var nextButton: SKButton!
@@ -17,6 +17,7 @@ class AGlevel1: SKScene {
     
     // Navigation buttons
     var menuButton: SKButton!
+    var backButton: SKButton!
     
     // Players and Trackers
     var audio: AVAudioPlayer?
@@ -33,16 +34,18 @@ class AGlevel1: SKScene {
         setupAudioButton()
         // Creating and adding title label
         setupTitleLabel()
-        // Adding next level button action
+        // Creating and adding next level button
         connectNextLevelButton()
-        // Adding home button action
+        
         setupHomeButton()
+        setupBackButton()
     }
     
-    // UI Setup
+    // MARK: UI Setup
+    
     func setupTitleLabel() {
         // Create title label
-        titleLabel = SKLabelNode(text: "The cow 🐮🐄 says ...")
+        titleLabel = SKLabelNode(text: "The dog 🐕🐶 says ...")
         // Position on screen
         // TODO: do position based on view size
         titleLabel.position = CGPoint(x: 680, y: -200)
@@ -55,8 +58,8 @@ class AGlevel1: SKScene {
     
     func setupAudioButton() {
         // Creates button to play audio
-        audioButton = SKButton2(defaultButtonImage: "redCowButton", activeButtonImage: "redCowButtonPressed", buttonAction: { [unowned self] in
-            self.playAudio(soundName: "cowMoo", soundExtention: ".mp3")
+        audioButton = SKButton2(defaultButtonImage: "redDogButton", activeButtonImage: "redDogButtonPressed", buttonAction: { [unowned self] in
+            self.playAudio(soundName: "dogBark", soundExtention: ".wav")
             self.nextButton.isHidden = false
         })
         // Position in center of the screen
@@ -74,7 +77,7 @@ class AGlevel1: SKScene {
     func setupHomeButton() {
         /* Set UI connections */
         menuButton = self.childNode(withName: "menuButton") as! SKButton
-
+        
         /* Setup button selection handler for homescreen */
         menuButton.selectedHandler = { [unowned self] in
             if let view = self.view {
@@ -85,7 +88,7 @@ class AGlevel1: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-
+                
                 // Debug helpers
                 view.showsFPS = true
                 view.showsPhysics = true
@@ -93,8 +96,32 @@ class AGlevel1: SKScene {
             }
         }
     }
-
-    // Functionality
+    
+    func setupBackButton() {
+        /* Set UI connections */
+        backButton = self.childNode(withName: "backButton") as! SKButton
+        
+        /* Setup button selection handler for homescreen */
+        backButton.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                self.setEndTimeAndCalculateDifference()
+                if let scene = SKScene(fileNamed: "AGlevel1") {
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                // Debug helpers
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+            }
+        }
+    }
+    
+    // MARK: Functionality
+    
     func playAudio(soundName: String, soundExtention: String) {
         // Fetch the sound data set.
         if let asset = NSDataAsset(name: soundName) {
@@ -114,14 +141,12 @@ class AGlevel1: SKScene {
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
         self.end = DispatchTime.now()
-        print(self.end as Any)
         
         // Difference in nano seconds (UInt64) converted to a Double
         let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
         let timeInterval = (nanoTime / 1000000000)
         
         self.totalTime = timeInterval
-        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     func transitionToNextScene() {
@@ -129,8 +154,8 @@ class AGlevel1: SKScene {
         setEndTimeAndCalculateDifference()
         
         // Creates and show next level
-        let level2 = AGlevel2(fileNamed: "AGlevel2")
-        level2?.scaleMode = .aspectFill
-        self.view?.presentScene(level2)
+        let level3 = AGlevel3(fileNamed: "AGlevel3")
+        level3?.scaleMode = .aspectFill
+        self.view?.presentScene(level3)
     }
 }

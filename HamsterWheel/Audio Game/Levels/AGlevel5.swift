@@ -1,5 +1,5 @@
 //
-//  AGlevel2.swift
+//  AGlevel3.swift
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 1/30/18.
@@ -9,7 +9,8 @@
 import SpriteKit
 import AVFoundation
 
-class AGlevel2: SKScene {
+class AGlevel5: SKScene {
+    
     // Game elements
     var audioButton: SKButton2!
     var nextButton: SKButton!
@@ -45,7 +46,7 @@ class AGlevel2: SKScene {
     
     func setupTitleLabel() {
         // Create title label
-        titleLabel = SKLabelNode(text: "The dog 🐕🐶 says ...")
+        titleLabel = SKLabelNode(text: "The cow says ...")
         // Position on screen
         // TODO: do position based on view size
         titleLabel.position = CGPoint(x: 680, y: -200)
@@ -58,8 +59,8 @@ class AGlevel2: SKScene {
     
     func setupAudioButton() {
         // Creates button to play audio
-        audioButton = SKButton2(defaultButtonImage: "redDogButton", activeButtonImage: "redDogButtonPressed", buttonAction: { [unowned self] in
-            self.playAudio(soundName: "dogBark", soundExtention: ".wav")
+        audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
+            self.playAudio(soundName: "sheepBaa", soundExtention: ".wav")
             self.nextButton.isHidden = false
         })
         // Position in center of the screen
@@ -70,7 +71,7 @@ class AGlevel2: SKScene {
     
     func connectNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.selectedHandler = transitionToNextScene
+        // nextButton.selectedHandler = transitionToNextScene
         nextButton.isHidden = true
     }
     
@@ -105,7 +106,7 @@ class AGlevel2: SKScene {
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
                 self.setEndTimeAndCalculateDifference()
-                if let scene = SKScene(fileNamed: "AGlevel1") {
+                if let scene = SKScene(fileNamed: "AGlevel4") {
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
                     // Present the scene
@@ -141,19 +142,17 @@ class AGlevel2: SKScene {
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
         self.end = DispatchTime.now()
-        print(self.end as Any)
         
         // Difference in nano seconds (UInt64) converted to a Double
         let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
         let timeInterval = (nanoTime / 1000000000)
         
         self.totalTime = timeInterval
-        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
-    func transitionToNextScene() {
-        let level3 = AGlevel3(fileNamed: "AGlevel3")
-        level3?.scaleMode = .aspectFill
-        self.view?.presentScene(level3)
-    }
+//    func transitionToNextScene() {
+//        let level4 = AGlevel4(fileNamed: "AGlevel4")
+//        level4?.scaleMode = .aspectFill
+//        self.view?.presentScene(level4)
+//    }
 }

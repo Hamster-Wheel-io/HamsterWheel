@@ -30,6 +30,8 @@
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
 		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
+		C42CE0A620422CD00003FA0E /* AGlevel5.sks in Resources */ = {isa = PBXBuildFile; fileRef = C42CE0A420422CCF0003FA0E /* AGlevel5.sks */; };
+		C42CE0A720422CD00003FA0E /* AGlevel5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42CE0A520422CD00003FA0E /* AGlevel5.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
 		C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420B20314ACB006EE3C5 /* AGlevel3.sks */; };
 		C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGlevel3.swift */; };
@@ -79,6 +81,8 @@
 		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
+		C42CE0A420422CCF0003FA0E /* AGlevel5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel5.sks; sourceTree = "<group>"; };
+		C42CE0A520422CD00003FA0E /* AGlevel5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel5.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
 		C44E420B20314ACB006EE3C5 /* AGlevel3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel3.sks; sourceTree = "<group>"; };
 		C44E420C20314ACB006EE3C5 /* AGlevel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel3.swift; sourceTree = "<group>"; };
@@ -137,14 +141,8 @@
 		B91C453D2017E2C6004BF2FB /* Audio Game */ = {
 			isa = PBXGroup;
 			children = (
-				C459441D20211BED00C3D18A /* AGlevel1.sks */,
-				C459441F20211C8400C3D18A /* AGlevel1.swift */,
-				C44E420D20314ACB006EE3C5 /* AGlevel2.sks */,
-				C44E420E20314ACB006EE3C5 /* AGlevel2.swift */,
-				C44E420B20314ACB006EE3C5 /* AGlevel3.sks */,
-				C44E420C20314ACB006EE3C5 /* AGlevel3.swift */,
-				C40A8EF12023B0D40085E22D /* AGlevel4.sks */,
-				C40A8EF32023B0F10085E22D /* AGlevel4.swift */,
+				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
+				C42CE0A3204228090003FA0E /* Levels */,
 			);
 			path = "Audio Game";
 			sourceTree = "<group>";
@@ -192,6 +190,23 @@
 			path = DDAudio;
 			sourceTree = "<group>";
 		};
+		C42CE0A3204228090003FA0E /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				C459441D20211BED00C3D18A /* AGlevel1.sks */,
+				C459441F20211C8400C3D18A /* AGlevel1.swift */,
+				C44E420D20314ACB006EE3C5 /* AGlevel2.sks */,
+				C44E420E20314ACB006EE3C5 /* AGlevel2.swift */,
+				C44E420B20314ACB006EE3C5 /* AGlevel3.sks */,
+				C44E420C20314ACB006EE3C5 /* AGlevel3.swift */,
+				C40A8EF12023B0D40085E22D /* AGlevel4.sks */,
+				C40A8EF32023B0F10085E22D /* AGlevel4.swift */,
+				C42CE0A420422CCF0003FA0E /* AGlevel5.sks */,
+				C42CE0A520422CD00003FA0E /* AGlevel5.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		C4B297AA2016CDD1009FCA9F = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +231,6 @@
 				C4B297B62016CDD1009FCA9F /* AppDelegate.swift */,
 				B91C453F2017E309004BF2FB /* Storyboards */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
-				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
@@ -333,6 +347,7 @@
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
 				C474EF5120337B740042D942 /* Assets.xcassets in Resources */,
+				C42CE0A620422CD00003FA0E /* AGlevel5.sks in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
@@ -430,6 +445,7 @@
 				C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
+				C42CE0A720422CD00003FA0E /* AGlevel5.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
 				C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */,

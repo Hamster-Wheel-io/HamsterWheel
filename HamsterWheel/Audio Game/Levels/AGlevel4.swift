@@ -32,6 +32,7 @@ class AGlevel4: SKScene {
     
     var menuButton: SKButton!
     var backButton: SKButton!
+    var nextButton: SKButton!
     
     override func didMove(to view: SKView) {
         
@@ -46,6 +47,7 @@ class AGlevel4: SKScene {
         
         setupHomeButton()
         setupBackButton()
+        connectNextLevelButton()
     }
     
     // MARK: UI setup
@@ -97,6 +99,12 @@ class AGlevel4: SKScene {
                 view.showsDrawCount = true
             }
         }
+    }
+    
+    func connectNextLevelButton() {
+        nextButton = self.childNode(withName: "nextButton") as! SKButton
+        nextButton.selectedHandler = transitionToNextScene
+        nextButton.isHidden = true
     }
     
     // MARK: Wheel
@@ -194,6 +202,7 @@ class AGlevel4: SKScene {
                 let index = self.randomIndex()
                 self.wheel?.startAnimating(fininshIndex: index) { (finished) in
                     self.playSoundForIndex(index: index)
+                    self.nextButton.isHidden = false
                 }
             }
         }
@@ -234,19 +243,28 @@ class AGlevel4: SKScene {
         }
     }
     
+    func transitionToNextScene() {
+        // Calculates the time spend on the level
+        setEndTimeAndCalculateDifference()
+        
+        // Creates and show next level
+        let level5 = AGlevel5(fileNamed: "AGlevel5")
+        level5?.scaleMode = .aspectFill
+        removeWheel()
+        self.view?.presentScene(level5)
+    }
+    
     // FIXME: Add this function to end of level
     // Sets the end time and calculates the time spent on the level using the start time
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
         self.end = DispatchTime.now()
-        print(self.end as Any)
         
         // Difference in nano seconds (UInt64) converted to a Double
         let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
         let timeInterval = (nanoTime / 1000000000)
         
         self.totalTime = timeInterval
-        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     // Generates a random index based on the length of the slices array
