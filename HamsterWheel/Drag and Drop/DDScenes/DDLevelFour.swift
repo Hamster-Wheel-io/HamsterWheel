@@ -203,10 +203,10 @@ class DDLevelFour: SKScene {
         }
     }
     
-    // FIXME: change to DDlevelSix
+    // FIXME: change to DDlevelFive
     func transitionToScene() {
         // change to level5
-        let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
+        let levelFive = DDLevelFive(fileNamed: "DDLevelFour")
         levelFive?.scaleMode = .aspectFill
         audio?.stop()
         self.view?.presentScene(levelFive!)
