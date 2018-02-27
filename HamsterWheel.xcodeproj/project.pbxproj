@@ -27,6 +27,8 @@
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */; };
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
+		B9FE4A362044E291004804C3 /* DDLevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* DDLevelSeven.swift */; };
+		B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */; };
 		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
@@ -74,6 +76,8 @@
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFour.swift; sourceTree = "<group>"; };
 		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
+		B9FE4A352044E291004804C3 /* DDLevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelSeven.swift; sourceTree = "<group>"; };
+		B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
 		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */,
 				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
+				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
+				B9FE4A352044E291004804C3 /* DDLevelSeven.swift */,
 			);
 			path = DDScenes;
 			sourceTree = "<group>";
@@ -418,8 +424,10 @@
 				C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
+				B9FE4A362044E291004804C3 /* DDLevelSeven.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
 				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
+				B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */,
 				B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
@@ -569,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3FX26JCU7E;
+				DEVELOPMENT_TEAM = S44SNCV32X;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -586,7 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3FX26JCU7E;
+				DEVELOPMENT_TEAM = S44SNCV32X;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

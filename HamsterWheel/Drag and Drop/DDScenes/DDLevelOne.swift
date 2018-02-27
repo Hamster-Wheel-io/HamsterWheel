@@ -71,6 +71,7 @@ class DDLevelOne: SKScene {
                 
                 // MARK: cartoon voice here!
                 self.playCartoonVoice()
+                
             }
         }
     }
@@ -87,11 +88,6 @@ class DDLevelOne: SKScene {
         
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        
-        // let fadeAction = SKAction.fadeOut(withDuration: 2)
-        // let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
-        // let spinWithSound = SKAction.group([spinAction, musicAction])
-        
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
@@ -130,6 +126,11 @@ class DDLevelOne: SKScene {
                 self.totalTime = timeInterval
                 print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
                 
+                // FIXME: testing the vibration
+                // let vibrateAction = SKAction.run() {
+                    // self.vibratePhone()
+                // }
+
                 player.run(spinAction)
                 player.run(musicAction)
                 self.run(zoomWithTransition)
@@ -176,6 +177,7 @@ class DDLevelOne: SKScene {
     }
     
     
+    
     func navigateToHomeScreen() {
         let home = MainMenuScene(fileNamed: "MainMenuScreen")
         home?.scaleMode = .aspectFill
@@ -191,8 +193,7 @@ class DDLevelOne: SKScene {
         self.view?.presentScene(levelTwo!)
         print("Success")
     }
-    
-    
+  
     func movePlayerTo(location: CGPoint) {
         player.position = location
     }
