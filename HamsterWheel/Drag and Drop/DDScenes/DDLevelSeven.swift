@@ -27,6 +27,9 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     var player1Dragging = false
     var player2Dragging = false
     
+    var player1Success = false
+    var player2Success = false
+    
     
     override func didMove(to view: SKView) {
         
@@ -81,43 +84,56 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
             }
         }
 
+        func setupPlayer1Physics() {
+            player1 = childNode(withName: "player1") as! SKSpriteNode
+            player1.physicsBody = SKPhysicsBody(circleOfRadius: 60)
+            player1.physicsBody?.affectedByGravity = false
+            player1.physicsBody?.categoryBitMask = PhysicsCategory.Player1
+            player1.physicsBody?.collisionBitMask = PhysicsCategory.Wall
+            player1.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape1
+        }
         
-        player1 = childNode(withName: "player1") as! SKSpriteNode
-        player1.physicsBody = SKPhysicsBody(circleOfRadius: 60)
-        player1.physicsBody?.affectedByGravity = false
-        player1.physicsBody?.categoryBitMask = PhysicsCategory.Player1
-        player1.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        player1.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape1
+        func setupPlayer2Physics() {
+            player2 = childNode(withName: "player2") as! SKSpriteNode
+            player2.physicsBody = SKPhysicsBody(circleOfRadius: 60)
+            player2.physicsBody?.affectedByGravity = false
+            player2.physicsBody?.categoryBitMask = PhysicsCategory.Player2
+            player2.physicsBody?.collisionBitMask = PhysicsCategory.Wall
+            player2.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape2
+        }
         
-        player2 = childNode(withName: "player2") as! SKSpriteNode
-        player2.physicsBody = SKPhysicsBody(circleOfRadius: 60)
-        player2.physicsBody?.affectedByGravity = false
-        player2.physicsBody?.categoryBitMask = PhysicsCategory.Player2
-        player2.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        player2.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape2
+        func setupMatchShape1Physics() {
+            matchShape1 = childNode(withName: "matchShape1") as! SKSpriteNode!
+            matchShape1.physicsBody = SKPhysicsBody(circleOfRadius: 30)
+            matchShape1.physicsBody?.affectedByGravity = false
+            matchShape1.physicsBody?.isDynamic = false
+            matchShape1.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape1
+            matchShape1.physicsBody?.collisionBitMask = 0
+            matchShape1.physicsBody?.contactTestBitMask = PhysicsCategory.Player1
+        }
         
-        matchShape1 = childNode(withName: "matchShape1") as! SKSpriteNode!
-        matchShape1.physicsBody = SKPhysicsBody(circleOfRadius: 30)
-        matchShape1.physicsBody?.affectedByGravity = false
-        matchShape1.physicsBody?.isDynamic = false
-        matchShape1.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape1
-        matchShape1.physicsBody?.collisionBitMask = 0
-        matchShape1.physicsBody?.contactTestBitMask = PhysicsCategory.Player1
+        func setupMatchShape2Physics() {
+            matchShape2 = childNode(withName: "matchShape2") as! SKSpriteNode!
+            matchShape2.physicsBody = SKPhysicsBody(circleOfRadius: 30)
+            matchShape2.physicsBody?.affectedByGravity = false
+            matchShape2.physicsBody?.isDynamic = false
+            matchShape2.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape2
+            matchShape2.physicsBody?.collisionBitMask = PhysicsCategory.None
+            matchShape2.physicsBody?.contactTestBitMask = PhysicsCategory.Player2
+        }
         
-        matchShape2 = childNode(withName: "matchShape2") as! SKSpriteNode!
-        matchShape2.physicsBody = SKPhysicsBody(circleOfRadius: 30)
-        matchShape2.physicsBody?.affectedByGravity = false
-        matchShape2.physicsBody?.isDynamic = false
-        matchShape2.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape2
-        matchShape2.physicsBody?.collisionBitMask = PhysicsCategory.None
-        matchShape2.physicsBody?.contactTestBitMask = PhysicsCategory.Player2
-        
-        wall = childNode(withName: "wall") as! SKSpriteNode!
-        wall.physicsBody?.categoryBitMask = PhysicsCategory.Wall
-        wall.physicsBody?.collisionBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
-        wall.physicsBody?.contactTestBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
-        
-       
+        func setupWallPhysics() {
+            wall = childNode(withName: "wall") as! SKSpriteNode!
+            wall.physicsBody?.categoryBitMask = PhysicsCategory.Wall
+            wall.physicsBody?.collisionBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
+            wall.physicsBody?.contactTestBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
+        }
+
+        setupPlayer1Physics()
+        setupPlayer2Physics()
+        setupMatchShape1Physics()
+        setupMatchShape2Physics()
+        setupWallPhysics()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -128,8 +144,10 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
             print("some player hit the wall\n")
         } else if collision == PhysicsCategory.MatchShape1 | PhysicsCategory.Player1 {
             print("player1 hit the match\n")
+            player1Success = true
         } else if collision == PhysicsCategory.MatchShape2 | PhysicsCategory.Player2 {
             print("player2 hit the match\n")
+            player2Success = true
         }
     }
     
@@ -213,30 +231,33 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        
-        
-
-        
-        // Get the coordinates of the player when touch ends
-        let xCoord = player1.position.x
-        let yCoord = player1.position.y
-        
-        // Get the range around the matchShape
-        let upperBoundx = matchShape1.position.x + 30
-        let upperBoundy = matchShape1.position.y + 30
-        let lowerBoundx = matchShape1.position.x - 30
-        let lowerBoundy = matchShape1.position.y - 30
+        if player1Success && player2Success {
+            player1.run(spinAction)
+            player2.run(spinAction)
+            player1.run(musicAction)
+            player2.run(musicAction)
+            self.run(zoomWithTransition)
+        }
+//        // Get the coordinates of the player when touch ends
+//        let xCoord = player1.position.x
+//        let yCoord = player1.position.y
+//
+//        // Get the range around the matchShape
+//        let upperBoundx = matchShape1.position.x + 30
+//        let upperBoundy = matchShape1.position.y + 30
+//        let lowerBoundx = matchShape1.position.x - 30
+//        let lowerBoundy = matchShape1.position.y - 30
         
         // Check if the player is within the range of coordinates of the matchShape
-        if lowerBoundx <= xCoord && xCoord <= upperBoundx {
-            if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-                
-                player1.run(spinAction)
-                player1.run(musicAction)
-                self.run(zoomWithTransition)
-                
-            }
-        }
+//        if lowerBoundx <= xCoord && xCoord <= upperBoundx {
+//            if lowerBoundy <= yCoord && yCoord <= upperBoundy {
+//
+//                player1.run(spinAction)
+//                player1.run(musicAction)
+//                self.run(zoomWithTransition)
+//
+//            }
+//        }
     }
     
     // MARK: call this func when the user touches the player
@@ -276,9 +297,9 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     
     func transitionToScene() {
         // FIXME: change to level5
-        let levelFive = DDLevelFive(fileNamed: "DDLevelSeven")
-        levelFive?.scaleMode = .aspectFill
-        self.view?.presentScene(levelFive!)
+        let levelOne = DDLevelOne(fileNamed: "DDLevelOne")
+        levelOne?.scaleMode = .aspectFill
+        self.view?.presentScene(levelOne!)
         print("Success")
     }
     
