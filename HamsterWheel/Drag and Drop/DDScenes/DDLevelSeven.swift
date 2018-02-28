@@ -10,12 +10,7 @@ import SpriteKit
 import AVFoundation
 
 class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
-    
-    var start: DispatchTime?
-    var end: DispatchTime?
-    var totalTime: Double?
-    
-    
+
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var player1: SKSpriteNode!
@@ -29,7 +24,8 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     var homeButton: SKButton!
     var backButton: SKButton!
     
-    var isDragging = false
+    var player1Dragging = false
+    var player2Dragging = false
     
     
     override func didMove(to view: SKView) {
@@ -84,9 +80,7 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
                 view.showsDrawCount = true
             }
         }
-        
-        // <<<<<<<<<< Start time in level
-        start = DispatchTime.now()
+
         
         player1 = childNode(withName: "player1") as! SKSpriteNode
         player1.physicsBody = SKPhysicsBody(circleOfRadius: 60)
@@ -96,6 +90,8 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         player1.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape1
         
         player2 = childNode(withName: "player2") as! SKSpriteNode
+        player2.physicsBody = SKPhysicsBody(circleOfRadius: 60)
+        player2.physicsBody?.affectedByGravity = false
         player2.physicsBody?.categoryBitMask = PhysicsCategory.Player2
         player2.physicsBody?.collisionBitMask = PhysicsCategory.Wall
         player2.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape2
@@ -105,10 +101,13 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         matchShape1.physicsBody?.affectedByGravity = false
         matchShape1.physicsBody?.isDynamic = false
         matchShape1.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape1
-        matchShape1.physicsBody?.collisionBitMask = PhysicsCategory.None
+        matchShape1.physicsBody?.collisionBitMask = 0
         matchShape1.physicsBody?.contactTestBitMask = PhysicsCategory.Player1
         
         matchShape2 = childNode(withName: "matchShape2") as! SKSpriteNode!
+        matchShape2.physicsBody = SKPhysicsBody(circleOfRadius: 30)
+        matchShape2.physicsBody?.affectedByGravity = false
+        matchShape2.physicsBody?.isDynamic = false
         matchShape2.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape2
         matchShape2.physicsBody?.collisionBitMask = PhysicsCategory.None
         matchShape2.physicsBody?.contactTestBitMask = PhysicsCategory.Player2
@@ -122,16 +121,15 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("\ncontact happened\n")
         
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
-            print("\nsome player hit the wall")
+            print("some player hit the wall\n")
         } else if collision == PhysicsCategory.MatchShape1 | PhysicsCategory.Player1 {
-            print("\nplayer1 hit the match")
+            print("player1 hit the match\n")
         } else if collision == PhysicsCategory.MatchShape2 | PhysicsCategory.Player2 {
-            print("\nplayer2 hit the match")
+            print("player2 hit the match\n")
         }
     }
     
@@ -142,8 +140,20 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
             if player1.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player1.size = CGSize(width: 250, height: 250)
-                isDragging = true
+                player1.size.width += 10
+                player1.size.height += 10
+                player1Dragging = true
+                
+                // MARK: cartoon voice here!
+                self.playCartoonVoice()
+            }
+            
+            if player2.contains(touch.location(in: self)) {
+                
+                // increase the player size to que the user that they touches the piece
+                player2.size.width += 10
+                player2.size.height += 10
+                player2Dragging = true
                 
                 // MARK: cartoon voice here!
                 self.playCartoonVoice()
@@ -153,9 +163,15 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
        
-        if isDragging {
+        if player1Dragging {
             if let touch = touches.first {
-                movePlayerTo(location: touch.location(in: self))
+                move(player: player1, location: touch.location(in: self))
+            }
+        }
+        
+        if player2Dragging {
+            if let touch = touches.first {
+                move(player: player2, location: touch.location(in: self))
             }
         }
     }
@@ -165,10 +181,6 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
         
-        // let fadeAction = SKAction.fadeOut(withDuration: 2)
-        // let fadeWithDelay = SKAction.sequence([SKAction.wait(forDuration: 2), fadeAction])
-        // let spinWithSound = SKAction.group([spinAction, musicAction])
-        
         let zoomAction = SKAction.scale(by: 2, duration: 1)
         let transitionAction = SKAction.run {
             self.transitionToScene()
@@ -177,10 +189,33 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         let wait = SKAction.wait(forDuration: 1)
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
-        isDragging = false
+        // only perform these actions if the user touches on the shape
+        if let touch = touches.first {
+            if player1.contains(touch.location(in: self)) {
+                
+                // increase the player size to que the user that they touches the piece
+                // reset the player size to the original size
+                player1.size.width -= 10
+                player1.size.height -= 10
+                player1Dragging = false
+
+            }
+        }
+        if let touch = touches.first {
+            if player2.contains(touch.location(in: self)) {
+                
+                // increase the player size to que the user that they touches the piece
+                // reset the player size to the original size
+                player2.size.width -= 10
+                player2.size.height -= 10
+                player2Dragging = false
+                
+            }
+        }
         
-        // reset the player size to the original size
-        player1.size = CGSize(width: 230, height: 230)
+        
+        
+
         
         // Get the coordinates of the player when touch ends
         let xCoord = player1.position.x
@@ -195,14 +230,6 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-                
-                // <<<<<<<<<<   end time when level is complete
-                end = DispatchTime.now()
-                
-                // <<<<< Difference in nano seconds (UInt64) converted to a Double
-                let nanoTime = Double((end?.uptimeNanoseconds)!) - Double((start?.uptimeNanoseconds)!)
-                let timeInterval = (nanoTime / 1000000000)
-                self.totalTime = timeInterval
                 
                 player1.run(spinAction)
                 player1.run(musicAction)
@@ -224,7 +251,7 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
-                // print(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
     }
@@ -242,7 +269,7 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
                 audio?.play()
             } catch let error as NSError {
                 // Should print...
-                // print(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
     }
@@ -256,9 +283,8 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func movePlayerTo(location: CGPoint) {
-        player1.position = location
-        
+    func move(player: SKSpriteNode, location: CGPoint) {
+        player.position = location
     }
     
     override func update(_ currentTime: TimeInterval) {

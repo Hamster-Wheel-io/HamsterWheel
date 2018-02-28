@@ -10,12 +10,7 @@ import SpriteKit
 import AVFoundation
 
 class DDLevelOne: SKScene {
-    
-    var start: DispatchTime?
-    var end: DispatchTime?
-    var totalTime: Double?
-    
-    
+ 
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!
@@ -28,9 +23,7 @@ class DDLevelOne: SKScene {
 
     override func didMove(to view: SKView) {
         
-        // <<<<<<<<<< Start time in level
-        self.start = DispatchTime.now()
-
+       
         player = childNode(withName: "player") as! SKSpriteNode
         matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
         
@@ -66,7 +59,8 @@ class DDLevelOne: SKScene {
             if player.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player.size = CGSize(width: 250, height: 250)
+                player.size.width += 10
+                player.size.height += 10
                 isDragging = true
                 
                 // MARK: cartoon voice here!
@@ -99,7 +93,8 @@ class DDLevelOne: SKScene {
         isDragging = false
         
         // reset the player size to the original size
-        player.size = CGSize(width: 230, height: 230)
+        player.size.width -= 10
+        player.size.height -= 10
         
         // Get the coordinates of the player when touch ends
         let xCoord = player.position.x
@@ -114,22 +109,6 @@ class DDLevelOne: SKScene {
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
             if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-                
-                // <<<<<<<<<<   end time when level is complete
-                self.end = DispatchTime.now()
-                print(self.end as Any)
-                
-                // <<<<< Difference in nano seconds (UInt64) converted to a Double
-                let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
-                let timeInterval = (nanoTime / 1000000000)
-                // print("timeInterval: \(timeInterval)")
-                self.totalTime = timeInterval
-                print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
-                
-                // FIXME: testing the vibration
-                // let vibrateAction = SKAction.run() {
-                    // self.vibratePhone()
-                // }
 
                 player.run(spinAction)
                 player.run(musicAction)

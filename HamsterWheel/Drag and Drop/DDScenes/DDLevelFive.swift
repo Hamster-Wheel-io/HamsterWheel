@@ -200,9 +200,9 @@ class DDLevelFive: SKScene {
     
     func transitionToScene() {
         // change to level5
-        let levelFive = DDLevelFive(fileNamed: "DDLevelFive")
-        levelFive?.scaleMode = .aspectFill
-        self.view?.presentScene(levelFive!)
+        let levelSix = DDLevelFive(fileNamed: "DDLevelSix")
+        levelSix?.scaleMode = .aspectFill
+        self.view?.presentScene(levelSix!)
         print("Success")
     }
     
