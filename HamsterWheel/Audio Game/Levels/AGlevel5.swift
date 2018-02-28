@@ -15,6 +15,8 @@ class AGlevel5: SKScene {
     var audioButton: SKButton2!
     var nextButton: SKButton!
     var titleLabel: SKLabelNode!
+    var grayOutView: SKNode!
+    var spellLabel: SKLabelNode!
     
     // Navigation buttons
     var menuButton: SKButton!
@@ -31,19 +33,31 @@ class AGlevel5: SKScene {
         // Start time in level
         self.start = DispatchTime.now()
         
-        // Creating and adding audio button to view
-        setupAudioButton()
-        // Creating and adding title label
-        setupTitleLabel()
-        // Creating and adding next level button
-        connectNextLevelButton()
-        
-        setupHomeButton()
-        setupBackButton()
+        // Sets up all UI elements in this level
+        setup()
     }
     
-    // MARK: UI Setup
+    // MARK: Scene Connections
+    // Main
     
+    func setup() {
+        // Creating and adding audio button to view
+        setupAudioButton()
+        
+        // Creating and adding title label
+        setupTitleLabel()
+        
+        // Connecting the navigation buttons to variables
+        connectNextLevelButton()
+        setupHomeButton()
+        setupBackButton()
+        
+        // Connect elements for word spelling and hide them
+        setupGrayOutView()
+        setupSpellLabel()
+    }
+    
+    // Creates and adds the title label
     func setupTitleLabel() {
         // Create title label
         titleLabel = SKLabelNode(text: "The cow says ...")
@@ -57,11 +71,11 @@ class AGlevel5: SKScene {
         addChild(titleLabel)
     }
     
+    // Creates and adds the aufio button with the correct images and action
     func setupAudioButton() {
         // Creates button to play audio
         audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
-            self.playAudio(soundName: "sheepBaa", soundExtention: ".wav")
-            self.nextButton.isHidden = false
+            self.audioButtonPressed()
         })
         // Position in center of the screen
         audioButton.position = CGPoint(x: 680, y: -385)
@@ -69,12 +83,15 @@ class AGlevel5: SKScene {
         addChild(audioButton)
     }
     
+    // Navigation
+    // Connects the skscene button to code
     func connectNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
         // nextButton.selectedHandler = transitionToNextScene
         nextButton.isHidden = true
     }
     
+    // Connects the skscene button to code
     func setupHomeButton() {
         /* Set UI connections */
         menuButton = self.childNode(withName: "menuButton") as! SKButton
@@ -98,6 +115,7 @@ class AGlevel5: SKScene {
         }
     }
     
+    // Connects the skscene button to code
     func setupBackButton() {
         /* Set UI connections */
         backButton = self.childNode(withName: "backButton") as! SKButton
@@ -121,8 +139,34 @@ class AGlevel5: SKScene {
         }
     }
     
+    // Word Spelling
+    
+    // Connects the skscene label to spellLabel variable
+    func setupSpellLabel() {
+        spellLabel = self.childNode(withName: "spellLabel") as? SKLabelNode
+        spellLabel.isHidden = true
+        spellLabel.text = ""
+    }
+    
+    // Connects the skscene gray view to the grayOutView variable
+    func setupGrayOutView() {
+        grayOutView = self.childNode(withName: "grayOutView")
+        grayOutView?.isHidden = true
+    }
+    
     // MARK: Functionality
     
+    // Audio
+    // Actions to make when the audio button is pressed
+    func audioButtonPressed() {
+        playAudio(soundName: "sheepBaa", soundExtention: ".wav")
+        nextButton.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            self.spellWord(word: "DOG")
+        }
+    }
+    
+    // Plays the selected sound
     func playAudio(soundName: String, soundExtention: String) {
         // Fetch the sound data set.
         if let asset = NSDataAsset(name: soundName) {
@@ -138,6 +182,32 @@ class AGlevel5: SKScene {
         }
     }
     
+    // Word Spelling
+    func spellWord(word: String) {
+        grayOutView.isHidden = false
+        spellLabel.isHidden = false
+        
+        for i in 0..<word.count {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(i * 1), execute: {
+                let index = word.index(word.startIndex, offsetBy: i)
+                self.spellLabel.text?.append(word[index])
+                if index.encodedOffset == word.endIndex.encodedOffset - 1 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(i * 1), execute: {
+                        self.spellingDone()
+                    })
+                }
+            })
+        }
+    }
+    
+    func spellingDone() {
+        spellLabel.isHidden = true
+        spellLabel.text = ""
+        grayOutView.isHidden = true
+    }
+    
+    // Time Tracking
+    
     // Sets the end time and calculates the time spent on the level using the start time
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
@@ -149,10 +219,12 @@ class AGlevel5: SKScene {
         
         self.totalTime = timeInterval
     }
+    // General
     
-//    func transitionToNextScene() {
-//        let level4 = AGlevel4(fileNamed: "AGlevel4")
-//        level4?.scaleMode = .aspectFill
-//        self.view?.presentScene(level4)
-//    }
+    //    func transitionToNextScene() {
+    //        let level4 = AGlevel4(fileNamed: "AGlevel4")
+    //        level4?.scaleMode = .aspectFill
+    //        self.view?.presentScene(level4)
+    //    }
 }
+
