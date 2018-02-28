@@ -74,7 +74,7 @@ class AGlevel5: SKScene {
     // Creates and adds the aufio button with the correct images and action
     func setupAudioButton() {
         // Creates button to play audio
-        audioButton = SKButton2(defaultButtonImage: "redButton", activeButtonImage: "redButtonPressed", buttonAction: { [unowned self] in
+        audioButton = SKButton2(defaultButtonImage: "redCowButton", activeButtonImage: "redCowButtonPressed", buttonAction: { [unowned self] in
             self.audioButtonPressed()
         })
         // Position in center of the screen
@@ -159,10 +159,10 @@ class AGlevel5: SKScene {
     // Audio
     // Actions to make when the audio button is pressed
     func audioButtonPressed() {
-        playAudio(soundName: "sheepBaa", soundExtention: ".wav")
+        playAudio(soundName: "cowMoo", soundExtention: ".mp3")
         nextButton.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.spellWord(word: "DOG")
+            self.spellWord(word: "COW")
         }
     }
     
