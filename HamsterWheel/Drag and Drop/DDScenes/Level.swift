@@ -9,7 +9,7 @@
 import SpriteKit
 import AVFoundation
 
-class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
+class DDLevel: SKScene, SKPhysicsContactDelegate {
 
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
@@ -30,104 +30,15 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     var player1Success = false
     var player2Success = false
     
+    var levelSelector: DragDropLevelSelector?
+    
     
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
         
-        print("Level 7 did move to view")
-        /* Set UI connections */
-        homeButton = self.childNode(withName: "homeButton") as! SKButton
-        
-        /* Setup button selection handler for homescreen */
-        homeButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
-                
-                // FIXME: Load the SKScene from 'MainMenuScene.sks'
-                if let scene = SKScene(fileNamed: "MainMenuScene") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
-                    view.presentScene(scene)
-                }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
-            }
-        }
-        
-        /* Set UI connections */
-        backButton = self.childNode(withName: "backButton") as! SKButton
-        
-        /* Setup button selection handler for homescreen */
-        backButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
-                
-                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                if let scene = SKScene(fileNamed: "DDLevelThree") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
-                    view.presentScene(scene)
-                }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
-            }
-        }
-
-        func setupPlayer1Physics() {
-            player1 = childNode(withName: "player1") as! SKSpriteNode
-            player1.physicsBody = SKPhysicsBody(circleOfRadius: 60)
-            player1.physicsBody?.affectedByGravity = false
-            player1.physicsBody?.categoryBitMask = PhysicsCategory.Player1
-            player1.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-            player1.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape1
-        }
-        
-        func setupPlayer2Physics() {
-            player2 = childNode(withName: "player2") as! SKSpriteNode
-            player2.physicsBody = SKPhysicsBody(circleOfRadius: 60)
-            player2.physicsBody?.affectedByGravity = false
-            player2.physicsBody?.categoryBitMask = PhysicsCategory.Player2
-            player2.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-            player2.physicsBody?.contactTestBitMask = PhysicsCategory.MatchShape2
-        }
-        
-        func setupMatchShape1Physics() {
-            matchShape1 = childNode(withName: "matchShape1") as! SKSpriteNode!
-            matchShape1.physicsBody = SKPhysicsBody(circleOfRadius: 30)
-            matchShape1.physicsBody?.affectedByGravity = false
-            matchShape1.physicsBody?.isDynamic = false
-            matchShape1.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape1
-            matchShape1.physicsBody?.collisionBitMask = 0
-            matchShape1.physicsBody?.contactTestBitMask = PhysicsCategory.Player1
-        }
-        
-        func setupMatchShape2Physics() {
-            matchShape2 = childNode(withName: "matchShape2") as! SKSpriteNode!
-            matchShape2.physicsBody = SKPhysicsBody(circleOfRadius: 30)
-            matchShape2.physicsBody?.affectedByGravity = false
-            matchShape2.physicsBody?.isDynamic = false
-            matchShape2.physicsBody?.categoryBitMask = PhysicsCategory.MatchShape2
-            matchShape2.physicsBody?.collisionBitMask = PhysicsCategory.None
-            matchShape2.physicsBody?.contactTestBitMask = PhysicsCategory.Player2
-        }
-        
-        func setupWallPhysics() {
-            wall = childNode(withName: "wall") as! SKSpriteNode!
-            wall.physicsBody?.categoryBitMask = PhysicsCategory.Wall
-            wall.physicsBody?.collisionBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
-            wall.physicsBody?.contactTestBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
-        }
+        loadHomeButton()
+        loadBackButton()
 
         setupPlayer1Physics()
         setupPlayer2Physics()
@@ -200,8 +111,11 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         let musicAction = SKAction.run { self.playSuccessMusic()}
         
         let zoomAction = SKAction.scale(by: 2, duration: 1)
+        
+        let scene = SKScene(fileNamed: "DDLevelSeven")
+        
         let transitionAction = SKAction.run {
-            self.transitionToScene()
+            self.transition(toScene: scene!)
         }
         
         let wait = SKAction.wait(forDuration: 1)
@@ -211,7 +125,7 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             if player1.contains(touch.location(in: self)) {
                 
-                // increase the player size to que the user that they touches the piece
+                // increase the player size to que the user that they touched the piece
                 // reset the player size to the original size
                 player1.size.width -= 10
                 player1.size.height -= 10
@@ -222,12 +136,10 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             if player2.contains(touch.location(in: self)) {
                 
-                // increase the player size to que the user that they touches the piece
                 // reset the player size to the original size
                 player2.size.width -= 10
                 player2.size.height -= 10
                 player2Dragging = false
-                
             }
         }
         
@@ -238,29 +150,9 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
             player2.run(musicAction)
             self.run(zoomWithTransition)
         }
-//        // Get the coordinates of the player when touch ends
-//        let xCoord = player1.position.x
-//        let yCoord = player1.position.y
-//
-//        // Get the range around the matchShape
-//        let upperBoundx = matchShape1.position.x + 30
-//        let upperBoundy = matchShape1.position.y + 30
-//        let lowerBoundx = matchShape1.position.x - 30
-//        let lowerBoundy = matchShape1.position.y - 30
-        
-        // Check if the player is within the range of coordinates of the matchShape
-//        if lowerBoundx <= xCoord && xCoord <= upperBoundx {
-//            if lowerBoundy <= yCoord && yCoord <= upperBoundy {
-//
-//                player1.run(spinAction)
-//                player1.run(musicAction)
-//                self.run(zoomWithTransition)
-//
-//            }
-//        }
     }
     
-    // MARK: call this func when the user touches the player
+    // MARK: play sound when user touches the player
     func playCartoonVoice() {
         if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
@@ -295,13 +187,36 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func transitionToScene() {
+    func transition(toScene: SKScene) {
         // FIXME: change to level5
-        let levelOne = DDLevelOne(fileNamed: "DDLevelOne")
-        levelOne?.scaleMode = .aspectFill
-        self.view?.presentScene(levelOne!)
+        let one = SKScene(fileNamed: "DDLevelOne")
+        let two = SKScene(fileNamed: "DDLevelTwo")
+        let three = SKScene(fileNamed: "DDLevelThree")
+        let four = SKScene(fileNamed: "DDLevelFour")
+        let five = SKScene(fileNamed: "DDLevelFive")
+        let six = SKScene(fileNamed: "DDLevelSix")
+        let seven = SKScene(fileNamed: "DDLevelSeven")
+        
+        toScene.scaleMode = .aspectFill
+        self.view?.presentScene(toScene)
         print("Success")
     }
+    
+    func transitionToPreviousScene() {
+        if let view = view {
+            // Calculates the time spend on the level
+            
+            if let selector = levelSelector {
+                if selector.currentLevel != nil {
+                    selector.currentLevel! -= 1
+                } else {
+                    selector.currentLevel = 1
+                }
+                view.presentScene(selector)
+            }
+        }
+    }
+
     
     
     func move(player: SKSpriteNode, location: CGPoint) {
@@ -311,8 +226,6 @@ class DDLevelSeven: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-    
-    
 }
 
 

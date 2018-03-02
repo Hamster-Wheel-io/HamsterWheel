@@ -23,12 +23,15 @@
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
+		B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */; };
+		B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */; };
+		B9CDD29F2048E31D00AD3152 /* LevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */; };
 		B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */; };
 		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */; };
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
-		B9FE4A362044E291004804C3 /* DDLevelSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* DDLevelSeven.swift */; };
+		B9FE4A362044E291004804C3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* Level.swift */; };
 		B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */; };
 		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
@@ -73,12 +76,15 @@
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
+		B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpLevel.swift; sourceTree = "<group>"; };
+		B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupPhysics.swift; sourceTree = "<group>"; };
+		B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelector.swift; sourceTree = "<group>"; };
 		B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFive.sks; sourceTree = "<group>"; };
 		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFour.swift; sourceTree = "<group>"; };
 		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
-		B9FE4A352044E291004804C3 /* DDLevelSeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelSeven.swift; sourceTree = "<group>"; };
+		B9FE4A352044E291004804C3 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
 		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
@@ -179,7 +185,10 @@
 				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
 				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
-				B9FE4A352044E291004804C3 /* DDLevelSeven.swift */,
+				B9FE4A352044E291004804C3 /* Level.swift */,
+				B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */,
+				B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */,
+				B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */,
 			);
 			path = DDScenes;
 			sourceTree = "<group>";
@@ -424,11 +433,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */,
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
 				C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
-				B9FE4A362044E291004804C3 /* DDLevelSeven.swift in Sources */,
+				B9CDD29F2048E31D00AD3152 /* LevelSelector.swift in Sources */,
+				B9FE4A362044E291004804C3 /* Level.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
 				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
 				B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */,
@@ -443,6 +454,7 @@
 				C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
+				B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
