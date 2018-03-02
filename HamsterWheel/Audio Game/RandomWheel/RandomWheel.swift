@@ -10,7 +10,9 @@ import SpriteKit
 import TTFortuneWheel
 import AVFoundation
 
-class AGlevel4: SKScene {
+class RandomWheel: SKScene {
+    
+    var levelSelector: AudioGameLevelSelector?
     
     let slices = [ HWheelSlice(title: "", animal: "Cow"),
                    HWheelSlice(title: "", animal: "Dog"),
@@ -35,15 +37,15 @@ class AGlevel4: SKScene {
     var nextButton: SKButton!
     
     override func didMove(to view: SKView) {
-        
-        // Start time in level
-        self.start = DispatchTime.now()
-        
         // Adds the rotating wheel
         addWheel(view: view, width: 350, height: 350)
+        
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
         addSpinButton(view: view)
+        
+        // Start time in level
+        self.start = DispatchTime.now()
         
         setupHomeButton()
         setupBackButton()
@@ -84,19 +86,18 @@ class AGlevel4: SKScene {
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                if let scene = SKScene(fileNamed: "AGlevel3") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    self.removeWheel()
-                    // Present the scene
-                    view.presentScene(scene)
-                }
+                // Calculates the time spend on the level
+                self.setEndTimeAndCalculateDifference()
                 
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
+                if let selector = self.levelSelector {
+                    if selector.currentLevel != nil {
+                        selector.currentLevel! -= 1
+                    } else {
+                        selector.currentLevel = 1
+                    }
+                    self.removeWheel()
+                    view.presentScene(selector)
+                }
             }
         }
     }
@@ -244,14 +245,30 @@ class AGlevel4: SKScene {
     }
     
     func transitionToNextScene() {
-        // Calculates the time spend on the level
-        setEndTimeAndCalculateDifference()
+        if let view = view {
+            // Calculates the time spend on the level
+            setEndTimeAndCalculateDifference()
+            
+            if let selector = levelSelector {
+                if selector.currentLevel != nil {
+                    selector.currentLevel! += 1
+                } else {
+                    selector.currentLevel = 1
+                }
+                
+                removeWheel()
+                view.presentScene(selector)
+            }
+        }
         
-        // Creates and show next level
-        let level5 = AGlevel5(fileNamed: "AGlevel5")
-        level5?.scaleMode = .aspectFill
-        removeWheel()
-        self.view?.presentScene(level5)
+//        // Calculates the time spend on the level
+//        setEndTimeAndCalculateDifference()
+//
+//        // Creates and show next level
+//        let level5 = AGlevel5(fileNamed: "AGlevel5")
+//        level5?.scaleMode = .aspectFill
+//
+//        self.view?.presentScene(level5)
     }
     
     // FIXME: Add this function to end of level
