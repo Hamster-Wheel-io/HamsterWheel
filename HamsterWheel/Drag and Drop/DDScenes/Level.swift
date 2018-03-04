@@ -37,8 +37,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.contactDelegate = self
         
-        loadHomeButton()
-        loadBackButton()
+        //loadHomeButton()
+        //loadBackButton()
 
         setupPlayer1Physics()
         setupPlayer2Physics()

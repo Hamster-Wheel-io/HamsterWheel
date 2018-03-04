@@ -8,11 +8,15 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class DragDropLevelSelector: SKScene {
     
     var currentLevel: Int?
     var lastLevel = 5
+    
+    var homeButton: SKButton!
+    var backButton: SKButton!
     
     override func didMove(to view: SKView) {
         // Check to see what level is next
@@ -41,13 +45,18 @@ class DragDropLevelSelector: SKScene {
                 scene.levelSelector = self
                 currentLevel = 1
                 // Level 1 variables
-//                scene.animal = "Cow"
-//                scene.defaultButtonImage = "redCowButton"
-//                scene.pressedButtonImage = "redCowButtonPressed"
-//                scene.audioFileName = "cowMoo"
-//                scene.audioFileExtension = ".mp3"
-//                scene.hasSpelling = false
-                // Sets scale mode
+                var audio: AVAudioPlayer?
+                var soundEffect: AVAudioPlayer?
+                
+                var player: SKSpriteNode!
+                var matchShape: SKSpriteNode!
+                
+                
+                
+                var isDragging = false
+
+                var levelSelector: DragDropLevelSelector?
+                loadHomeButton()
                 scene.scaleMode = .aspectFill
                 // Present the scene
                 view.presentScene(scene)
@@ -63,7 +72,21 @@ class DragDropLevelSelector: SKScene {
                 currentLevel = 2
                 
                 // Level 2 variables
-
+                
+                var start: DispatchTime?
+                var end: DispatchTime?
+                var totalTime: Double?
+                
+                
+                var audio: AVAudioPlayer?
+                var soundEffect: AVAudioPlayer?
+                var player: SKSpriteNode!
+                var matchShape: SKSpriteNode!
+                
+                var homeButton: SKButton!
+                var backButton: SKButton!
+                
+                var isDragging = false
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill

@@ -9,7 +9,9 @@
 import SpriteKit
 import AVFoundation
 
-extension DDLevel {
+extension DragDropLevelSelector {
+    
+    
     
     func loadHomeButton() {
         print("Level 7 did move to view")
@@ -48,7 +50,6 @@ extension DDLevel {
             if let view = self.view {
                 
                 // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                self.transitionToPreviousScene()
                 
                 // Debug helpers
                 view.showsFPS = true
