@@ -29,7 +29,7 @@ class MainMenuScene: SKScene {
                 // FIXME: Chamge for testing
                 // Load the SKScene from 'GameScene.sks'
                 
-                if let scene = SKScene(fileNamed: "DDLevelOne") {
+                if let scene = SKScene(fileNamed: "DDLevelSeven") {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
@@ -42,6 +42,12 @@ class MainMenuScene: SKScene {
                 view.showsFPS = true
                 view.showsPhysics = true
                 view.showsDrawCount = true
+//                let selector = DDLevelSelector()
+//                selector.currentLevel = 1
+//
+//                // Present the scene
+//                view.presentScene(selector)
+                
             }
         }
         

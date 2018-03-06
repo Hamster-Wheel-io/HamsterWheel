@@ -50,13 +50,9 @@ class DDLevelSelector: SKScene {
                 
                 var player: SKSpriteNode!
                 var matchShape: SKSpriteNode!
-                
-                
-                
                 var isDragging = false
 
                 var levelSelector: DDLevelSelector?
-                loadHomeButton()
                 scene.scaleMode = .aspectFill
                 // Present the scene
                 view.presentScene(scene)

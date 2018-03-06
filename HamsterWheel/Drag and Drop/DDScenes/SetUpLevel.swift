@@ -9,10 +9,8 @@
 import SpriteKit
 import AVFoundation
 
-extension DDLevelSelector {
-    
-    
-    
+extension DDLevel {
+
     func loadHomeButton() {
         print("Level 7 did move to view")
         /* Set UI connections */

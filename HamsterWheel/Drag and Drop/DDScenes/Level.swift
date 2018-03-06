@@ -30,21 +30,30 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var player1Success = false
     var player2Success = false
     
+    var playerBig = CGSize(width: 110, height: 110)
+    var playerSmall = CGSize(width: 100, height: 100)
+
+    
     var levelSelector: DDLevelSelector?
     
     
     override func didMove(to view: SKView) {
+       
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         physicsWorld.contactDelegate = self
         
-        //loadHomeButton()
         //loadBackButton()
+        loadHomeButton()
 
         setupPlayer1Physics()
         setupPlayer2Physics()
         setupMatchShape1Physics()
         setupMatchShape2Physics()
         setupWallPhysics()
+        
+        player1.size = playerSmall
+        player2.size = playerSmall
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -62,6 +71,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         // only perform these actions if the user touches on the shape
@@ -69,8 +79,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             if player1.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player1.size.width += 10
-                player1.size.height += 10
+                player1.size = playerBig
                 player1Dragging = true
                 
                 // MARK: cartoon voice here!
@@ -80,8 +89,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             if player2.contains(touch.location(in: self)) {
                 
                 // increase the player size to que the user that they touches the piece
-                player2.size.width += 10
-                player2.size.height += 10
+                player2.size = playerBig
                 player2Dragging = true
                 
                 // MARK: cartoon voice here!
@@ -90,19 +98,13 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    var fingerLocationOnScreen = CGPoint()
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            self.fingerLocationOnScreen = touch.location(in: self)
+        }
        
-        if player1Dragging {
-            if let touch = touches.first {
-                move(player: player1, location: touch.location(in: self))
-            }
-        }
-        
-        if player2Dragging {
-            if let touch = touches.first {
-                move(player: player2, location: touch.location(in: self))
-            }
-        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -122,26 +124,26 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
         // only perform these actions if the user touches on the shape
-        if let touch = touches.first {
-            if player1.contains(touch.location(in: self)) {
-                
+//        if let touch = touches.first {
+//            if player1.contains(touch.location(in: self)) {
+        
                 // increase the player size to que the user that they touched the piece
                 // reset the player size to the original size
-                player1.size.width -= 10
-                player1.size.height -= 10
+                player1.size = playerSmall
                 player1Dragging = false
+                player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
 
-            }
-        }
-        if let touch = touches.first {
-            if player2.contains(touch.location(in: self)) {
-                
+//            }
+//        }
+//        if let touch = touches.first {
+//            if player2.contains(touch.location(in: self)) {
+        
                 // reset the player size to the original size
-                player2.size.width -= 10
-                player2.size.height -= 10
+                player2.size = playerSmall
                 player2Dragging = false
-            }
-        }
+                player2.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+//            }
+//        }
         
         if player1Success && player2Success {
             player1.run(spinAction)
@@ -220,11 +222,23 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     
     func move(player: SKSpriteNode, location: CGPoint) {
-        player.position = location
+        // player.position = location
+        let dX = location.x - player.position.x
+        let dY = location.y - player.position.y
+        let vector = CGVector(dx: dX, dy: dY)
+        
+        player.physicsBody?.applyForce(vector)
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if player1Dragging {
+            move(player: player1, location: fingerLocationOnScreen)
+        }
+        
+        if player2Dragging {
+            move(player: player2, location: fingerLocationOnScreen)
+        }
     }
 }
 
