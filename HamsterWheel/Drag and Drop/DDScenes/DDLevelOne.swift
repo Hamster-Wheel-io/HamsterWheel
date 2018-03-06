@@ -15,7 +15,6 @@ class DDLevelOne: SKScene {
     var end: DispatchTime?
     var totalTime: Double?
     
-    
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var player: SKSpriteNode!

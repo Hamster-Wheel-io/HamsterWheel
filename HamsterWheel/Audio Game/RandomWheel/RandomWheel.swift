@@ -10,7 +10,9 @@ import SpriteKit
 import TTFortuneWheel
 import AVFoundation
 
-class AGlevel4: SKScene {
+class RandomWheel: SKScene {
+    
+    var levelSelector: AudioGameLevelSelector?
     
     let slices = [ HWheelSlice(title: "", animal: "Cow"),
                    HWheelSlice(title: "", animal: "Dog"),
@@ -32,20 +34,22 @@ class AGlevel4: SKScene {
     
     var menuButton: SKButton!
     var backButton: SKButton!
+    var nextButton: SKButton!
     
     override func didMove(to view: SKView) {
-        
-        // Start time in level
-        self.start = DispatchTime.now()
-        
         // Adds the rotating wheel
         addWheel(view: view, width: 350, height: 350)
+        
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
         addSpinButton(view: view)
         
+        // Start time in level
+        self.start = DispatchTime.now()
+        
         setupHomeButton()
         setupBackButton()
+        connectNextLevelButton()
     }
     
     // MARK: UI setup
@@ -82,23 +86,26 @@ class AGlevel4: SKScene {
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
+                // Calculates the time spend on the level
+                self.setEndTimeAndCalculateDifference()
                 
-                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
-                if let scene = SKScene(fileNamed: "AGlevel3") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
+                if let selector = self.levelSelector {
+                    if selector.currentLevel != nil {
+                        selector.currentLevel! -= 1
+                    } else {
+                        selector.currentLevel = 1
+                    }
                     self.removeWheel()
-                    // Present the scene
-                    view.presentScene(scene)
+                    view.presentScene(selector)
                 }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
             }
         }
+    }
+    
+    func connectNextLevelButton() {
+        nextButton = self.childNode(withName: "nextButton") as! SKButton
+        nextButton.selectedHandler = transitionToNextScene
+        nextButton.isHidden = true
     }
     
     // MARK: Wheel
@@ -196,6 +203,7 @@ class AGlevel4: SKScene {
                 let index = self.randomIndex()
                 self.wheel?.startAnimating(fininshIndex: index) { (finished) in
                     self.playSoundForIndex(index: index)
+                    self.nextButton.isHidden = false
                 }
             }
         }
@@ -236,19 +244,44 @@ class AGlevel4: SKScene {
         }
     }
     
-    // FIXME: Add function to end of level
+    func transitionToNextScene() {
+        if let view = view {
+            // Calculates the time spend on the level
+            setEndTimeAndCalculateDifference()
+            
+            if let selector = levelSelector {
+                if selector.currentLevel != nil {
+                    selector.currentLevel! += 1
+                } else {
+                    selector.currentLevel = 1
+                }
+                
+                removeWheel()
+                view.presentScene(selector)
+            }
+        }
+        
+//        // Calculates the time spend on the level
+//        setEndTimeAndCalculateDifference()
+//
+//        // Creates and show next level
+//        let level5 = AGlevel5(fileNamed: "AGlevel5")
+//        level5?.scaleMode = .aspectFill
+//
+//        self.view?.presentScene(level5)
+    }
+    
+    // FIXME: Add this function to end of level
     // Sets the end time and calculates the time spent on the level using the start time
     func setEndTimeAndCalculateDifference() {
         // end time when level is complete
         self.end = DispatchTime.now()
-        print(self.end as Any)
         
         // Difference in nano seconds (UInt64) converted to a Double
         let nanoTime = Double((self.end?.uptimeNanoseconds)!) - Double((self.start?.uptimeNanoseconds)!)
         let timeInterval = (nanoTime / 1000000000)
         
         self.totalTime = timeInterval
-        print("timeInterval: \(self.totalTime!)") /* <<<<<< save this value to db >>>>>> */
     }
     
     // Generates a random index based on the length of the slices array
