@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import AVFoundation
 
-class DragDropLevelSelector: SKScene {
+class DDLevelSelector: SKScene {
     
     var currentLevel: Int?
     var lastLevel = 5
@@ -55,7 +55,7 @@ class DragDropLevelSelector: SKScene {
                 
                 var isDragging = false
 
-                var levelSelector: DragDropLevelSelector?
+                var levelSelector: DDLevelSelector?
                 loadHomeButton()
                 scene.scaleMode = .aspectFill
                 // Present the scene

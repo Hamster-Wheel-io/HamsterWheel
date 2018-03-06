@@ -48,21 +48,10 @@ class MainMenuScene: SKScene {
         playButtonGame2 = self.childNode(withName: "playButton2") as! SKButton
         playButtonGame2.selectedHandler = { [unowned self] in
             if let view = self.view {
+                let selector = AudioGameLevelSelector()
+                selector.currentLevel = 1
                 
-                // Load the SKScene from 'AGlevel1.sks'
-                if let scene = SKScene(fileNamed: "AGlevel1") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
-                    view.presentScene(scene)
-                }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
+                view.presentScene(selector)
             }
         }
         

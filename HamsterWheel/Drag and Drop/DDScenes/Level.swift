@@ -30,7 +30,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var player1Success = false
     var player2Success = false
     
-    var levelSelector: DragDropLevelSelector?
+    var levelSelector: DDLevelSelector?
     
     
     override func didMove(to view: SKView) {

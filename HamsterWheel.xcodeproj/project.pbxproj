@@ -25,7 +25,12 @@
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
 		B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */; };
 		B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */; };
-		B9CDD29F2048E31D00AD3152 /* LevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */; };
+		B9CDD29F2048E31D00AD3152 /* DDLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */; };
+		B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */; };
+		B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */; };
+		B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */; };
+		B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */; };
+		B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */; };
 		B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */; };
 		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
@@ -33,18 +38,14 @@
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
 		B9FE4A362044E291004804C3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* Level.swift */; };
 		B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */; };
-		C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */ = {isa = PBXBuildFile; fileRef = C40A8EF12023B0D40085E22D /* AGlevel4.sks */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
-		C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420B20314ACB006EE3C5 /* AGlevel3.sks */; };
-		C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGlevel3.swift */; };
-		C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C44E420D20314ACB006EE3C5 /* AGlevel2.sks */; };
-		C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420E20314ACB006EE3C5 /* AGlevel2.swift */; };
-		C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C459441D20211BED00C3D18A /* AGlevel1.sks */; };
-		C459442020211C8400C3D18A /* AGlevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGlevel1.swift */; };
+		C44E421020314ACB006EE3C5 /* AGSpellingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */; };
+		C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */; };
+		C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGAudioExtension.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
 		C474EF5120337B740042D942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C474EF5020337B740042D942 /* Assets.xcassets */; };
-		C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGlevel4.swift */; };
+		C485650F203396EF00CC9B1F /* AGTimeTrackingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297B82016CDD1009FCA9F /* GameScene.sks */; };
 		C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297BA2016CDD1009FCA9F /* Actions.sks */; };
@@ -78,7 +79,12 @@
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
 		B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpLevel.swift; sourceTree = "<group>"; };
 		B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupPhysics.swift; sourceTree = "<group>"; };
-		B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelector.swift; sourceTree = "<group>"; };
+		B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelSelector.swift; sourceTree = "<group>"; };
+		B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLevelSelector.swift; sourceTree = "<group>"; };
+		B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGButtonLevel.sks; sourceTree = "<group>"; };
+		B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAudioLevel.swift; sourceTree = "<group>"; };
+		B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RandomWheel.sks; sourceTree = "<group>"; };
+		B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWheel.swift; sourceTree = "<group>"; };
 		B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFive.sks; sourceTree = "<group>"; };
 		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
@@ -86,16 +92,12 @@
 		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
 		B9FE4A352044E291004804C3 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
-		C40A8EF12023B0D40085E22D /* AGlevel4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel4.sks; sourceTree = "<group>"; };
-		C40A8EF32023B0F10085E22D /* AGlevel4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel4.swift; sourceTree = "<group>"; };
+		C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTimeTrackingExtension.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
-		C44E420B20314ACB006EE3C5 /* AGlevel3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel3.sks; sourceTree = "<group>"; };
-		C44E420C20314ACB006EE3C5 /* AGlevel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel3.swift; sourceTree = "<group>"; };
-		C44E420D20314ACB006EE3C5 /* AGlevel2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel2.sks; sourceTree = "<group>"; };
-		C44E420E20314ACB006EE3C5 /* AGlevel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGlevel2.swift; sourceTree = "<group>"; };
-		C459441D20211BED00C3D18A /* AGlevel1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGlevel1.sks; sourceTree = "<group>"; };
-		C459441F20211C8400C3D18A /* AGlevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGlevel1.swift; sourceTree = "<group>"; };
+		C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpellingExtension.swift; sourceTree = "<group>"; };
+		C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationExtension.swift; sourceTree = "<group>"; };
+		C459441F20211C8400C3D18A /* AGAudioExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAudioExtension.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
 		C474EF5020337B740042D942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,14 +150,8 @@
 		B91C453D2017E2C6004BF2FB /* Audio Game */ = {
 			isa = PBXGroup;
 			children = (
-				C459441D20211BED00C3D18A /* AGlevel1.sks */,
-				C459441F20211C8400C3D18A /* AGlevel1.swift */,
-				C44E420D20314ACB006EE3C5 /* AGlevel2.sks */,
-				C44E420E20314ACB006EE3C5 /* AGlevel2.swift */,
-				C44E420B20314ACB006EE3C5 /* AGlevel3.sks */,
-				C44E420C20314ACB006EE3C5 /* AGlevel3.swift */,
-				C40A8EF12023B0D40085E22D /* AGlevel4.sks */,
-				C40A8EF32023B0F10085E22D /* AGlevel4.swift */,
+				B9CDD2A3204F285E00AD3152 /* ButtonGame */,
+				B9CDD2A2204F285300AD3152 /* RandomWheel */,
 			);
 			path = "Audio Game";
 			sourceTree = "<group>";
@@ -186,7 +182,7 @@
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
 				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
 				B9FE4A352044E291004804C3 /* Level.swift */,
-				B9CDD29E2048E31D00AD3152 /* LevelSelector.swift */,
+				B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */,
 				B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */,
 				B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */,
 			);
@@ -205,6 +201,37 @@
 				B946F5DB20212891006C7CA7 /* pop.mp3 */,
 			);
 			path = DDAudio;
+			sourceTree = "<group>";
+		};
+		B9CDD2A2204F285300AD3152 /* RandomWheel */ = {
+			isa = PBXGroup;
+			children = (
+				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
+				B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */,
+				B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */,
+			);
+			path = RandomWheel;
+			sourceTree = "<group>";
+		};
+		B9CDD2A3204F285E00AD3152 /* ButtonGame */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDD2A4204F299100AD3152 /* SingleButtonExtensions */,
+				B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */,
+				B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */,
+			);
+			path = ButtonGame;
+			sourceTree = "<group>";
+		};
+		B9CDD2A4204F299100AD3152 /* SingleButtonExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				C459441F20211C8400C3D18A /* AGAudioExtension.swift */,
+				C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */,
+				C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */,
+				C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */,
+			);
+			path = SingleButtonExtensions;
 			sourceTree = "<group>";
 		};
 		C4B297AA2016CDD1009FCA9F = {
@@ -231,7 +258,7 @@
 				C4B297B62016CDD1009FCA9F /* AppDelegate.swift */,
 				B91C453F2017E309004BF2FB /* Storyboards */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
-				C445FCD1202E587600A551D5 /* HWheelSlice.swift */,
+				B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
@@ -346,26 +373,24 @@
 				B946F5E220212892006C7CA7 /* pop.mp3 in Resources */,
 				B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */,
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
+				B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
 				C474EF5120337B740042D942 /* Assets.xcassets in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */,
-				C44E421120314ACB006EE3C5 /* AGlevel2.sks in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */,
 				B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
 				B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */,
 				B9511FBF20466754005338EA /* shapes.atlas in Resources */,
-				C40A8EF22023B0D40085E22D /* AGlevel4.sks in Resources */,
-				C459441E20211BED00C3D18A /* AGlevel1.sks in Resources */,
 				B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */,
 				B946F5E520212892006C7CA7 /* cartoon_voice_says_yahoo.mp3 in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
-				C44E420F20314ACB006EE3C5 /* AGlevel3.sks in Resources */,
 				C4B297BB2016CDD1009FCA9F /* Actions.sks in Resources */,
+				B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */,
 				B946F5E320212892006C7CA7 /* crazy_celebrate.mp3 in Resources */,
 				B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */,
 				B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */,
@@ -435,25 +460,28 @@
 			files = (
 				B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */,
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
-				C44E421220314ACB006EE3C5 /* AGlevel2.swift in Sources */,
+				C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
-				B9CDD29F2048E31D00AD3152 /* LevelSelector.swift in Sources */,
+				B9CDD29F2048E31D00AD3152 /* DDLevelSelector.swift in Sources */,
 				B9FE4A362044E291004804C3 /* Level.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
-				C459442020211C8400C3D18A /* AGlevel1.swift in Sources */,
+				C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */,
 				B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */,
 				B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
+				B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
-				C44E421020314ACB006EE3C5 /* AGlevel3.swift in Sources */,
+				C44E421020314ACB006EE3C5 /* AGSpellingExtension.swift in Sources */,
+				B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
-				C485650F203396EF00CC9B1F /* AGlevel4.swift in Sources */,
+				C485650F203396EF00CC9B1F /* AGTimeTrackingExtension.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
+				B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */,
 				B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
