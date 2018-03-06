@@ -81,8 +81,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 // increase the player size to que the user that they touches the piece
                 player1.size = playerBig
                 player1Dragging = true
+                player2Dragging = false
                 
-                // MARK: cartoon voice here!
                 self.playCartoonVoice()
             }
             
@@ -91,8 +91,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 // increase the player size to que the user that they touches the piece
                 player2.size = playerBig
                 player2Dragging = true
+                player1Dragging = false
                 
-                // MARK: cartoon voice here!
                 self.playCartoonVoice()
             }
         }
@@ -124,26 +124,14 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
         // only perform these actions if the user touches on the shape
-//        if let touch = touches.first {
-//            if player1.contains(touch.location(in: self)) {
-        
-                // increase the player size to que the user that they touched the piece
-                // reset the player size to the original size
-                player1.size = playerSmall
-                player1Dragging = false
-                player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        player1.size = playerSmall
+        player1Dragging = false
+        player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
 
-//            }
-//        }
-//        if let touch = touches.first {
-//            if player2.contains(touch.location(in: self)) {
-        
-                // reset the player size to the original size
-                player2.size = playerSmall
-                player2Dragging = false
-                player2.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-//            }
-//        }
+        player2.size = playerSmall
+        player2Dragging = false
+        player2.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+
         
         if player1Success && player2Success {
             player1.run(spinAction)
