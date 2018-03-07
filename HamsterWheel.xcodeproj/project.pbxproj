@@ -23,7 +23,7 @@
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
-		B9CDD29B2048E16300AD3152 /* SetupLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupLevel.swift */; };
+		B9CDD29B2048E16300AD3152 /* SetupScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupScene.swift */; };
 		B9CDD29F2048E31D00AD3152 /* DDLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */; };
 		B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */; };
 		B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */; };
@@ -81,7 +81,7 @@
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
-		B9CDD29A2048E16300AD3152 /* SetupLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupLevel.swift; sourceTree = "<group>"; };
+		B9CDD29A2048E16300AD3152 /* SetupScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScene.swift; sourceTree = "<group>"; };
 		B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelSelector.swift; sourceTree = "<group>"; };
 		B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLevelSelector.swift; sourceTree = "<group>"; };
 		B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGButtonLevel.sks; sourceTree = "<group>"; };
@@ -150,6 +150,7 @@
 			children = (
 				B9FE4A352044E291004804C3 /* DDLevel.swift */,
 				B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */,
+				B9CDD29A2048E16300AD3152 /* SetupScene.swift */,
 				B9DB75E3204F8A5B001A902B /* Physics */,
 				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
@@ -257,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
-				B9CDD29A2048E16300AD3152 /* SetupLevel.swift */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CDD29B2048E16300AD3152 /* SetupLevel.swift in Sources */,
+				B9CDD29B2048E16300AD3152 /* SetupScene.swift in Sources */,
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
 				C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,

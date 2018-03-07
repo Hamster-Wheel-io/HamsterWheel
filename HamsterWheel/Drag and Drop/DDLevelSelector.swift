@@ -55,7 +55,6 @@ class DDLevelSelector: SKScene {
                 
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.showsPhysics = true
             }
         }
     }
@@ -79,7 +78,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.showsPhysics = true
             }
         }
     }
@@ -103,7 +101,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.showsPhysics = true
             }
         }
     }
@@ -113,7 +110,7 @@ class DDLevelSelector: SKScene {
             if let scene = DDLevel(fileNamed: "DDLevelFour") {
                 scene.levelSelector = self
                 currentLevel = 4
-                scene.has2Players = true
+                scene.has2Players = false
                 scene.loadHomeButton()
                 scene.loadBackButton()
                 
@@ -129,7 +126,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                //view.presentScene(scene)
             }
         }
     }
@@ -154,7 +150,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                //view.presentScene(scene)
             }
         }
     }
@@ -178,7 +173,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-               // view.presentScene(scene)
             }
         }
     }
@@ -194,15 +188,16 @@ class DDLevelSelector: SKScene {
                 scene.player2Texture = "circleBlu"
                 scene.match1Texture = "circleRedMatch"
                 scene.match2Texture = "circleBluMatch"
+                scene.wallTexture = "wall"
                 scene.player1Position = CGPoint(x: -458, y: 162)
                 scene.player2Position = CGPoint(x: -370, y: -60)
                 scene.match1Position = CGPoint(x: -184, y: -186)
                 scene.match2Position = CGPoint(x: 498, y: 153)
+                scene.wallPosition = CGPoint(x: 0, y: 0)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                // view.presentScene(scene)
    
             }
         }

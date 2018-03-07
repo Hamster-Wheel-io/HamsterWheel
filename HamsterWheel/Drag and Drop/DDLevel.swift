@@ -13,43 +13,45 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
 
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
-    var player1: Player1!
-    var player2: Player2!
-    
-    var match1: Match1!
-    var match2: Match2!
-    
-    var wall: Wall!
-    
     var homeButton: SKButton!
     var backButton: SKButton!
     
-    var has2Players = false
-    
-    var player1Dragging = false
-    var player2Dragging = false
-    
-    var player1Success = false
-    var player2Success = false
-    
-    var playerBig = CGSize(width: 110, height: 110)
-    var playerSmall = CGSize(width: 100, height: 100)
-    var matchSize = CGSize(width: 150, height: 150)
-    
-    
+    // Items that can be interacted with in the game
+    var player1: Player1!
+    var player2: Player2!
+    var match1: Match1!
+    var match2: Match2!
+    var wall: Wall!
+
+    // Set the texture variables
     var player1Texture: String?
     var player2Texture: String?
-    
     var match1Texture: String?
     var match2Texture: String?
-    
     var wallTexture: String?
-    var wallPosition: CGPoint?
+
+    // Hold the player size variable because it increases on touche
+    var playerBig = CGSize(width: 110, height: 110)
+    var playerSmall = CGSize(width: 100, height: 100)
     
+    // Set the position variables because the pieces are placed
+    // in different spots on the board in each level
     var player1Position: CGPoint?
     var player2Position: CGPoint?
     var match1Position: CGPoint?
     var match2Position: CGPoint?
+    var wallPosition: CGPoint?
+    
+    // If there are 2 players, there will be 2 matches
+    var has2Players = false
+    
+    // Use this variable for touchesMoved
+    var player1Dragging = false
+    var player2Dragging = false
+    
+    // For tracking the success of 2 players on the board
+    var player1Success = false
+    var player2Success = false
     
     
     var levelSelector: DDLevelSelector?
@@ -61,6 +63,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         
+        // Set the textures of the player(s) and match(es)
         if let texture = player1Texture, let position = player1Position {
             setupPlayer1(texture: texture, position: position)
         }
@@ -102,7 +105,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             if player1.contains(touch.location(in: self)) {
                 
-                // increase the player size to que the user that they touches the piece
+                // Show the user they are touching the piece.
                 player1.size = playerBig
                 player1Dragging = true
                 player2Dragging = false
@@ -110,10 +113,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 self.playCartoonVoice()
             }
             
+            // Check if there is a second player on the screen
             if let player2 = player2 {
+                
                 if (player2.contains(touch.location(in: self))) {
                     
-                    // increase the player size to que the user that they touches the piece
+                    // Show the user they are touching the piece.
                     player2.size = playerBig
                     player2Dragging = true
                     player1Dragging = false
@@ -126,6 +131,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     var fingerLocationOnScreen = CGPoint()
     
+    // Tells the physicsBody which direction to apply the force
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             self.fingerLocationOnScreen = touch.location(in: self)
@@ -138,14 +144,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
         
-        let zoomAction = SKAction.scale(by: 2, duration: 1)
         
-        let scene = SKScene(fileNamed: "DDLevelSeven")
-        
-        
-        let wait = SKAction.wait(forDuration: 1)
-        
-        // only perform these actions if the user touches on the shape
+        // only perform these actions if the user drags the shape
         player1.size = playerSmall
         player1Dragging = false
         player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -154,14 +154,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         player2Dragging = false
         player2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
 
-        
-        if player1Success && player2Success {
-            player1.run(spinAction)
-            player2?.run(spinAction)
-            player1.run(musicAction)
-            player2?.run(musicAction)
-            self.transitionToNextScene()
-
+        if has2Players {
+            if player1Success && player2Success {
+                player1.run(spinAction)
+                player2?.run(spinAction)
+                player1.run(musicAction)
+                player2?.run(musicAction)
+                self.transitionToNextScene()
+                
+            }
         } else if player1Success {
             player1.run(spinAction)
             player1.run(musicAction)
@@ -173,10 +174,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     func playCartoonVoice() {
         if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
-                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                // Use NSDataAssets's data property to access the yahoo voice.
                 soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
-                // Play the above sound file
                 soundEffect?.play()
                 audio?.play()
             } catch let error as NSError {
@@ -186,19 +186,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    // MARK: call this function when the user successfully completes the challenges
+    // MARK: play ssuccess music when user completes the challenge(s)
     func playSuccessMusic() {
-        // Fetch the sound data set.
+        // Fetch the sound data set
         if let music = NSDataAsset(name: "clown_music") {
             do {
-                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
-                
+                // Use NSDataAssets' data property to access success music
                 audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
-                // Play the above sound file
-                
                 audio?.play()
             } catch let error as NSError {
-                // Should print...
                 print(error.localizedDescription)
             }
         }
@@ -218,22 +214,10 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    func transitionToNextScene() {
-        if let view = view {
-            
-            if let selector = levelSelector {
-                if selector.currentLevel != nil {
-                    selector.currentLevel! += 1
-                } else {
-                    selector.currentLevel = 1
-                }
-                view.presentScene(selector)
-            }
-        }
-    }
+    
+    
 
-    
-    
+    // Use force to move the player across the screen
     func move(player: SKSpriteNode, location: CGPoint) {
         // player.position = location
         let dX = location.x - player.position.x
@@ -254,52 +238,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    // Setup title label and add it to the scene
-    func setupPlayer1(texture: String, position: CGPoint) {
-        player1 = Player1(imageNamed: texture)
-        player1.size = playerSmall
-        player1.position = position
-        player1.zPosition = 2
-        
-        addChild(player1)
-    }
     
-    func setupMatch1(texture: String, position: CGPoint) {
-        match1 = Match1(imageNamed: texture)
-        match1.size = matchSize
-        match1.position = position
-        match1.zPosition = 1
-        
-        addChild(match1)
-    }
-    
-    func setupPlayer2(texture: String, position: CGPoint) {
-        player2 = Player2(imageNamed: texture)
-        player2.size = playerSmall
-        player2.position = position
-        player2.zPosition = 2
-        
-        addChild(player2)
-    }
-    
-    func setupMatch2(texture: String, position: CGPoint) {
-        match2 = Match2(imageNamed: texture)
-        match2.size = matchSize
-        match2.position = position
-        match2.zPosition = 1
-        
-        addChild(match2)
-    }
-    
-    func setupWall(texture: String, position: CGPoint) {
-        wall = Wall(imageNamed: texture)
-        wall.size = CGSize(width: 100, height: 400)
-        wall.position = position
-        wall.zPosition = 1
-        
-        addChild(wall)
-    }
-
 }
 
 
