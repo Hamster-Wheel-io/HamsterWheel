@@ -53,52 +53,24 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var player1Success = false
     var player2Success = false
     
-    
+    // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
     
-    
+
     override func didMove(to view: SKView) {
 
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         physicsWorld.contactDelegate = self
         
-        
-        // Set the textures of the player(s) and match(es)
-        if let texture = player1Texture, let position = player1Position {
-            setupPlayer1(texture: texture, position: position)
-        }
-        if let texture = player2Texture, let position = player2Position {
-            setupPlayer2(texture: texture, position: position)
-        }
-        if let texture = match1Texture, let position = match1Position {
-            setupMatch1(texture: texture, position: position)
-        }
-        if let texture = match2Texture, let position = match2Position {
-            setupMatch2(texture: texture, position: position)
-        }
-        if let texture = wallTexture, let position = wallPosition {
-            setupWall(texture: texture, position: position)
-        }
-        
-   
+        setupTextures()
+
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        
-        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
-        if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
-            print("some player hit the wall\n")
-        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player1 {
-            print("player1 hit the match\n")
-            player1Success = true
-        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
-            print("player2 hit the match\n")
-            player2Success = true
-        }
+        setupCollisions(contact)
     }
     
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         // only perform these actions if the user touches on the shape
@@ -139,20 +111,23 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
        
     }
     
+    func resetPlayerSize() {
+        // only perform these actions if the user drags the shape
+        player1.size = playerSmall
+        player1Dragging = false
+        player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        
+        player2?.size = playerSmall
+        player2Dragging = false
+        player2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
         
-        
-        // only perform these actions if the user drags the shape
-        player1.size = playerSmall
-        player1Dragging = false
-        player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-
-        player2?.size = playerSmall
-        player2Dragging = false
-        player2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        resetPlayerSize()
 
         if has2Players {
             if player1Success && player2Success {
@@ -161,7 +136,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 player1.run(musicAction)
                 player2?.run(musicAction)
                 self.transitionToNextScene()
-                
             }
         } else if player1Success {
             player1.run(spinAction)
@@ -201,19 +175,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func transitionToPreviousScene() {
-        if let view = view {
-            
-            if let selector = levelSelector {
-                if selector.currentLevel != nil {
-                    selector.currentLevel! -= 1
-                } else {
-                    selector.currentLevel = 1
-                }
-                view.presentScene(selector)
-            }
-        }
-    }
+
     
     
 

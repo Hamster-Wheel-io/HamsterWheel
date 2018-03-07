@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 3/1/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 Phyllis Wong. All rights reserved.
 //
 
 import SpriteKit
@@ -24,13 +24,10 @@ extension DDLevel {
                     
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
                     view.presentScene(scene)
                 }
-                
                 // Debug helpers
-//                view.showsPhysics = true
+                // view.showsPhysics = true
             }
         }
     }
@@ -42,13 +39,45 @@ extension DDLevel {
         
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
+            if self.view != nil {
                 
-                // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
                 self.transitionToPreviousScene()
                 // Debug helpers
-//                view.showsPhysics = true
+                // view.showsPhysics = true
             }
+        }
+    }
+    
+    func setupTextures() {
+        // Set the textures of the player(s) and match(es)
+        if let texture = player1Texture, let position = player1Position {
+            setupPlayer1(texture: texture, position: position)
+        }
+        if let texture = player2Texture, let position = player2Position {
+            setupPlayer2(texture: texture, position: position)
+        }
+        if let texture = match1Texture, let position = match1Position {
+            setupMatch1(texture: texture, position: position)
+        }
+        if let texture = match2Texture, let position = match2Position {
+            setupMatch2(texture: texture, position: position)
+        }
+        if let texture = wallTexture, let position = wallPosition {
+            setupWall(texture: texture, position: position)
+        }
+    }
+    
+    func setupCollisions(_ contact: SKPhysicsContact) {
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
+            print("some player hit the wall\n")
+        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player1 {
+            print("player1 hit the match\n")
+            player1Success = true
+        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
+            print("player2 hit the match\n")
+            player2Success = true
         }
     }
     
@@ -98,13 +127,28 @@ extension DDLevel {
         addChild(wall)
     }
 
-    // Back button calls this to go back 1 scene
+    // Success calls this to go forward one scene
     func transitionToNextScene() {
         if let view = view {
             
             if let selector = levelSelector {
                 if selector.currentLevel != nil {
                     selector.currentLevel! += 1
+                } else {
+                    selector.currentLevel = 1
+                }
+                view.presentScene(selector)
+            }
+        }
+    }
+    
+    // Back button calls this to go back one scene
+    func transitionToPreviousScene() {
+        if let view = view {
+            
+            if let selector = levelSelector {
+                if selector.currentLevel != nil {
+                    selector.currentLevel! -= 1
                 } else {
                     selector.currentLevel = 1
                 }

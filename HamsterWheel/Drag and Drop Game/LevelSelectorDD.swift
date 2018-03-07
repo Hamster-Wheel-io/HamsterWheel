@@ -12,9 +12,7 @@ import AVFoundation
 
 class DDLevelSelector: SKScene {
     
-    var currentLevel: Int?
-    var lastLevel = 5
-    
+    var currentLevel: Int?    
     var homeButton: SKButton!
     var backButton: SKButton!
     
