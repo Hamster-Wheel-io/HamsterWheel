@@ -69,19 +69,18 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
         var image: UIImage?
         if let animal = animal {
             switch animal {
-            case "Dog":     image = #imageLiteral(resourceName: "dog")
-            case "Cow":     image = #imageLiteral(resourceName: "cow")
-            case "Cat":     image = #imageLiteral(resourceName: "cat")
-            case "Duck":    image = #imageLiteral(resourceName: "duck")
-            case "Sheep":   image = #imageLiteral(resourceName: "sheep")
-            case "Chicken": image = #imageLiteral(resourceName: "chicken")
-            case "Horse":   image = #imageLiteral(resourceName: "horse")
+            case "Dog":     image = #imageLiteral(resourceName: "dogButtonPressed")
+            case "Cow":     image = #imageLiteral(resourceName: "cowButtonPressed")
+            case "Cat":     image = #imageLiteral(resourceName: "catButtonPressed")
+            case "Pig":     image = #imageLiteral(resourceName: "pigButtonPressed") // TODO: Get other image or remove
+            case "Sheep":   image = #imageLiteral(resourceName: "sheepButtonPressed")
+            case "Horse":   image = #imageLiteral(resourceName: "horseButtonPressed")
             default:
                 return
             }
         }
         if let image = image {
-            let centerOffset = CGPoint(x: -120, y: -130)
+            let centerOffset = CGPoint(x: -90, y: -140)
             let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: 90, height: 80)
             let additionalGraphicPath = UIBezierPath(rect: additionalGraphicRect)
             context.saveGState()

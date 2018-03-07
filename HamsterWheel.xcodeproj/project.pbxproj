@@ -33,7 +33,6 @@
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
-		C474EF5120337B740042D942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C474EF5020337B740042D942 /* Assets.xcassets */; };
 		C485650F203396EF00CC9B1F /* RandomWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* RandomWheel.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297B92016CDD1009FCA9F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297B82016CDD1009FCA9F /* GameScene.sks */; };
@@ -51,6 +50,7 @@
 		C4C9B4B02048DE29007F113D /* AGNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9B4AF2048DE29007F113D /* AGNavigationExtension.swift */; };
 		C4C9B4B22048DE5F007F113D /* AGAudioExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9B4B12048DE5F007F113D /* AGAudioExtension.swift */; };
 		C4C9B4B42048DEFF007F113D /* AGSpellingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9B4B32048DEFF007F113D /* AGSpellingExtension.swift */; };
+		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +82,6 @@
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
-		C474EF5020337B740042D942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B297B82016CDD1009FCA9F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		C4C9B4AF2048DE29007F113D /* AGNavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNavigationExtension.swift; sourceTree = "<group>"; };
 		C4C9B4B12048DE5F007F113D /* AGAudioExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAudioExtension.swift; sourceTree = "<group>"; };
 		C4C9B4B32048DEFF007F113D /* AGSpellingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSpellingExtension.swift; sourceTree = "<group>"; };
+		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
-				C474EF5020337B740042D942 /* Assets.xcassets */,
+				C4CBA73D204F750600B79920 /* Assets.xcassets */,
 				C4B297DD2016D363009FCA9F /* assets.atlas */,
 				C4B297D62016D16D009FCA9F /* Additions */,
 				C4B297C82016CDD1009FCA9F /* Info.plist */,
@@ -356,9 +356,9 @@
 			files = (
 				B946F5E220212892006C7CA7 /* pop.mp3 in Resources */,
 				B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */,
+				C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */,
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
-				C474EF5120337B740042D942 /* Assets.xcassets in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
