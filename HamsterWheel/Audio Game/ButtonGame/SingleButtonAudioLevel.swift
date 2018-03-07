@@ -5,29 +5,19 @@
 //  Created by Bob De Kort on 3/1/18.
 //  Copyright © 2018 Bob De Kort. All rights reserved.
 //
-<<<<<<< HEAD
-=======
 
->>>>>>> development
 import UIKit
 import SpriteKit
 import AVFoundation
 
 class SingleButtonAudioLevel: SKScene {
     // Game elements
-<<<<<<< HEAD
     // Audio
     var audioButton: SKButton2!
     var titleLabel: SKLabelNode!
     
     // Spelling
-=======
-        // Audio
-    var audioButton: SKButton2!
-    var titleLabel: SKLabelNode!
-    
-        // Spelling
->>>>>>> development
+
     var hasSpelling: Bool?
     var grayOutView: SKNode!
     var spellLabel: SKLabelNode!
