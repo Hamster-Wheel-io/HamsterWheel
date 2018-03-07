@@ -136,6 +136,8 @@ class DDLevelSelector: SKScene {
                 scene.levelSelector = self
                 currentLevel = 5
                 scene.has2Players = true
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
                 // Level 5 variables
                 scene.player1Texture = "circleYel"
@@ -159,6 +161,8 @@ class DDLevelSelector: SKScene {
                 scene.levelSelector = self
                 currentLevel = 6
                 scene.has2Players = true
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
                 // Level 6 variables
                 scene.player1Texture = "triangleRed"
@@ -182,6 +186,8 @@ class DDLevelSelector: SKScene {
                 scene.levelSelector = self
                 currentLevel = 7
                 scene.has2Players = true
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
                 // Level 7 variables
                 scene.player1Texture = "circleRed"
@@ -198,7 +204,8 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-   
+                // Debug helpers
+                // view.showsPhysics = true
             }
         }
     }

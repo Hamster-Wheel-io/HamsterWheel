@@ -30,7 +30,7 @@ extension DDLevel {
                 }
                 
                 // Debug helpers
-                view.showsPhysics = true
+//                view.showsPhysics = true
             }
         }
     }
@@ -47,7 +47,7 @@ extension DDLevel {
                 // FIXME: Load the SKScene from before. Hard Code this until I figure out an algorithm.
                 self.transitionToPreviousScene()
                 // Debug helpers
-                view.showsPhysics = true
+//                view.showsPhysics = true
             }
         }
     }
