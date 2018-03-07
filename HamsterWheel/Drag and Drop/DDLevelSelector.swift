@@ -129,7 +129,7 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.presentScene(scene)
+                //view.presentScene(scene)
             }
         }
     }
@@ -154,7 +154,7 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.presentScene(scene)
+                //view.presentScene(scene)
             }
         }
     }
@@ -178,7 +178,7 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.presentScene(scene)
+               // view.presentScene(scene)
             }
         }
     }
@@ -202,7 +202,7 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                view.presentScene(scene)
+                // view.presentScene(scene)
    
             }
         }
