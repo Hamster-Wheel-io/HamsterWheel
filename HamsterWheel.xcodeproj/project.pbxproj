@@ -23,20 +23,24 @@
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
-		B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */; };
-		B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */; };
+		B9CDD29B2048E16300AD3152 /* SetupLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupLevel.swift */; };
 		B9CDD29F2048E31D00AD3152 /* DDLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */; };
 		B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */; };
 		B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */; };
 		B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */; };
 		B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */; };
 		B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */; };
+		B9CDD2AE204F6A6700AD3152 /* Player1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AD204F6A6700AD3152 /* Player1.swift */; };
+		B9CDD2B0204F704800AD3152 /* Match1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AF204F704800AD3152 /* Match1.swift */; };
+		B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2B1204F714D00AD3152 /* Wall.swift */; };
+		B9CDD2B4204F74FC00AD3152 /* Player2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2B3204F74FC00AD3152 /* Player2.swift */; };
+		B9CDD2B6204F753400AD3152 /* Match2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2B5204F753400AD3152 /* Match2.swift */; };
 		B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */; };
 		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
 		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */; };
 		B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */; };
-		B9FE4A362044E291004804C3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* Level.swift */; };
+		B9FE4A362044E291004804C3 /* DDLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* DDLevel.swift */; };
 		B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
@@ -77,20 +81,24 @@
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
-		B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpLevel.swift; sourceTree = "<group>"; };
-		B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupPhysics.swift; sourceTree = "<group>"; };
+		B9CDD29A2048E16300AD3152 /* SetupLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupLevel.swift; sourceTree = "<group>"; };
 		B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelSelector.swift; sourceTree = "<group>"; };
 		B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLevelSelector.swift; sourceTree = "<group>"; };
 		B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGButtonLevel.sks; sourceTree = "<group>"; };
 		B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAudioLevel.swift; sourceTree = "<group>"; };
 		B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RandomWheel.sks; sourceTree = "<group>"; };
 		B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWheel.swift; sourceTree = "<group>"; };
+		B9CDD2AD204F6A6700AD3152 /* Player1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player1.swift; sourceTree = "<group>"; };
+		B9CDD2AF204F704800AD3152 /* Match1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match1.swift; sourceTree = "<group>"; };
+		B9CDD2B1204F714D00AD3152 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		B9CDD2B3204F74FC00AD3152 /* Player2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player2.swift; sourceTree = "<group>"; };
+		B9CDD2B5204F753400AD3152 /* Match2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match2.swift; sourceTree = "<group>"; };
 		B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFive.sks; sourceTree = "<group>"; };
 		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
 		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9CDFF3D2030344500BFA9DF /* DDLevelFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFour.swift; sourceTree = "<group>"; };
 		B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevelFive.swift; sourceTree = "<group>"; };
-		B9FE4A352044E291004804C3 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		B9FE4A352044E291004804C3 /* DDLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLevel.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTimeTrackingExtension.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
@@ -140,6 +148,10 @@
 		B91C453C2017E2B0004BF2FB /* Drag and Drop */ = {
 			isa = PBXGroup;
 			children = (
+				B9FE4A352044E291004804C3 /* DDLevel.swift */,
+				B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */,
+				B9DB75E3204F8A5B001A902B /* Physics */,
+				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
 				B946F5DA20212863006C7CA7 /* DDAudio */,
 				B91C45402017E41B004BF2FB /* DDScenes */,
@@ -180,11 +192,6 @@
 				B9CDFF3F2033647000BFA9DF /* DDLevelFive.swift */,
 				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
-				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
-				B9FE4A352044E291004804C3 /* Level.swift */,
-				B9CDD29E2048E31D00AD3152 /* DDLevelSelector.swift */,
-				B9CDD29C2048E21500AD3152 /* SetupPhysics.swift */,
-				B9CDD29A2048E16300AD3152 /* SetUpLevel.swift */,
 			);
 			path = DDScenes;
 			sourceTree = "<group>";
@@ -232,6 +239,27 @@
 				C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */,
 			);
 			path = SingleButtonExtensions;
+			sourceTree = "<group>";
+		};
+		B9CDD2B7204F754F00AD3152 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDD2AD204F6A6700AD3152 /* Player1.swift */,
+				B9CDD2B3204F74FC00AD3152 /* Player2.swift */,
+				B9CDD2AF204F704800AD3152 /* Match1.swift */,
+				B9CDD2B5204F753400AD3152 /* Match2.swift */,
+				B9CDD2B1204F714D00AD3152 /* Wall.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		B9DB75E3204F8A5B001A902B /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				B9FE4A372044E5F3004804C3 /* PhysicsCategories.swift */,
+				B9CDD29A2048E16300AD3152 /* SetupLevel.swift */,
+			);
+			path = Physics;
 			sourceTree = "<group>";
 		};
 		C4B297AA2016CDD1009FCA9F = {
@@ -458,17 +486,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CDD29B2048E16300AD3152 /* SetUpLevel.swift in Sources */,
+				B9CDD29B2048E16300AD3152 /* SetupLevel.swift in Sources */,
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
 				C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */,
 				B911CEB22021051700EC7CFF /* DDLevelThree.swift in Sources */,
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
 				B9CDD29F2048E31D00AD3152 /* DDLevelSelector.swift in Sources */,
-				B9FE4A362044E291004804C3 /* Level.swift in Sources */,
+				B9FE4A362044E291004804C3 /* DDLevel.swift in Sources */,
 				B91C454A2017E41B004BF2FB /* DDLevelOne.swift in Sources */,
 				C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */,
+				B9CDD2B4204F74FC00AD3152 /* Player2.swift in Sources */,
+				B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */,
 				B9FE4A382044E5F3004804C3 /* PhysicsCategories.swift in Sources */,
+				B9CDD2B6204F753400AD3152 /* Match2.swift in Sources */,
 				B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */,
+				B9CDD2B0204F704800AD3152 /* Match1.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
@@ -476,13 +508,13 @@
 				B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
+				B9CDD2AE204F6A6700AD3152 /* Player1.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
 				C485650F203396EF00CC9B1F /* AGTimeTrackingExtension.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
 				B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */,
-				B9CDD29D2048E21500AD3152 /* SetupPhysics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

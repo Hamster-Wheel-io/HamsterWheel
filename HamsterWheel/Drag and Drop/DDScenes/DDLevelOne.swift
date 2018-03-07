@@ -13,8 +13,8 @@ class DDLevelOne: SKScene {
  
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
-    var player: SKSpriteNode!
-    var matchShape: SKSpriteNode!
+    var player: Player1!
+    var match: Match1!
     
     var homeButton: SKButton!
 
@@ -24,8 +24,9 @@ class DDLevelOne: SKScene {
     override func didMove(to view: SKView) {
         
        
-        player = childNode(withName: "player") as! SKSpriteNode
-        matchShape = childNode(withName: "matchShape") as! SKSpriteNode!
+//        player = Player1(imageNamed: "circleRed")
+        
+        // match = Match1(imageNamed: "circleRedMatch")
         
         /* Set UI connections */
         homeButton = self.childNode(withName: "homeButton") as! SKButton
@@ -101,10 +102,10 @@ class DDLevelOne: SKScene {
         let yCoord = player.position.y
         
         // Get the range around the matchShape
-        let upperBoundx = matchShape.position.x + 30
-        let upperBoundy = matchShape.position.y + 30
-        let lowerBoundx = matchShape.position.x - 30
-        let lowerBoundy = matchShape.position.y - 30
+        let upperBoundx = match.position.x + 30
+        let upperBoundy = match.position.y + 30
+        let lowerBoundx = match.position.x - 30
+        let lowerBoundy = match.position.y - 30
 
         // Check if the player is within the range of coordinates of the matchShape
         if lowerBoundx <= xCoord && xCoord <= upperBoundx {
@@ -166,7 +167,7 @@ class DDLevelOne: SKScene {
     
     
     func transitionToScene() {
-        let levelTwo = DDLevelTwo(fileNamed: "DDLevelTwo")
+        let levelTwo = DDLevelTwo(fileNamed: "DDLevelOne")
         levelTwo?.scaleMode = .aspectFill
         audio?.stop()
         self.view?.presentScene(levelTwo!)

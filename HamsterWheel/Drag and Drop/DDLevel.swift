@@ -13,16 +13,18 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
 
     var audio: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
-    var player1: SKSpriteNode!
-    var player2: SKSpriteNode!
+    var player1: Player1!
+    var player2: Player2!
     
-    var matchShape1: SKSpriteNode!
-    var matchShape2: SKSpriteNode!
+    var match1: Match1!
+    var match2: Match2!
     
-    var wall: SKSpriteNode!
+    var wall: Wall!
     
     var homeButton: SKButton!
     var backButton: SKButton!
+    
+    var has2Players = false
     
     var player1Dragging = false
     var player2Dragging = false
@@ -32,28 +34,44 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     var playerBig = CGSize(width: 110, height: 110)
     var playerSmall = CGSize(width: 100, height: 100)
-
+    var matchSize = CGSize(width: 150, height: 150)
+    
+    
+    var player1Texture: String?
+    var player2Texture: String?
+    
+    var match1Texture: String?
+    var match2Texture: String?
+    
+    var player1Position: CGPoint?
+    var player2Position: CGPoint?
+    var match1Position: CGPoint?
+    var match2Position: CGPoint?
+    
     
     var levelSelector: DDLevelSelector?
     
     
     override func didMove(to view: SKView) {
-       
+
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        
         physicsWorld.contactDelegate = self
         
-        //loadBackButton()
-        loadHomeButton()
-
-        setupPlayer1Physics()
-        setupPlayer2Physics()
-        setupMatchShape1Physics()
-        setupMatchShape2Physics()
-        setupWallPhysics()
         
-        player1.size = playerSmall
-        player2.size = playerSmall
+        if let texture = player1Texture, let position = player1Position {
+            setupPlayer1(texture: texture, position: position)
+        }
+        if let texture = player2Texture, let position = player2Position {
+            setupPlayer2(texture: texture, position: position)
+        }
+        if let texture = match1Texture, let position = match1Position {
+            setupMatch1(texture: texture, position: position)
+        }
+        if let texture = match2Texture, let position = match2Position {
+            setupMatch2(texture: texture, position: position)
+        }
+        
+   
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -62,10 +80,10 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
             print("some player hit the wall\n")
-        } else if collision == PhysicsCategory.MatchShape1 | PhysicsCategory.Player1 {
+        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player1 {
             print("player1 hit the match\n")
             player1Success = true
-        } else if collision == PhysicsCategory.MatchShape2 | PhysicsCategory.Player2 {
+        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
             print("player2 hit the match\n")
             player2Success = true
         }
@@ -86,14 +104,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 self.playCartoonVoice()
             }
             
-            if player2.contains(touch.location(in: self)) {
-                
-                // increase the player size to que the user that they touches the piece
-                player2.size = playerBig
-                player2Dragging = true
-                player1Dragging = false
-                
-                self.playCartoonVoice()
+            if let player2 = player2 {
+                if (player2.contains(touch.location(in: self))) {
+                    
+                    // increase the player size to que the user that they touches the piece
+                    player2.size = playerBig
+                    player2Dragging = true
+                    player1Dragging = false
+                    
+                    self.playCartoonVoice()
+                }
             }
         }
     }
@@ -116,29 +136,30 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         let scene = SKScene(fileNamed: "DDLevelSeven")
         
-        let transitionAction = SKAction.run {
-            self.transition(toScene: scene!)
-        }
         
         let wait = SKAction.wait(forDuration: 1)
-        let zoomWithTransition = SKAction.sequence([wait, zoomAction, transitionAction])
         
         // only perform these actions if the user touches on the shape
         player1.size = playerSmall
         player1Dragging = false
         player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
 
-        player2.size = playerSmall
+        player2?.size = playerSmall
         player2Dragging = false
-        player2.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        player2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
 
         
         if player1Success && player2Success {
             player1.run(spinAction)
-            player2.run(spinAction)
+            player2?.run(spinAction)
             player1.run(musicAction)
-            player2.run(musicAction)
-            self.run(zoomWithTransition)
+            player2?.run(musicAction)
+            self.transitionToNextScene()
+
+        } else if player1Success {
+            player1.run(spinAction)
+            player1.run(musicAction)
+            self.transitionToNextScene()
         }
     }
     
@@ -177,28 +198,26 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func transition(toScene: SKScene) {
-        // FIXME: change to level5
-        let one = SKScene(fileNamed: "DDLevelOne")
-        let two = SKScene(fileNamed: "DDLevelTwo")
-        let three = SKScene(fileNamed: "DDLevelThree")
-        let four = SKScene(fileNamed: "DDLevelFour")
-        let five = SKScene(fileNamed: "DDLevelFive")
-        let six = SKScene(fileNamed: "DDLevelSix")
-        let seven = SKScene(fileNamed: "DDLevelSeven")
-        
-        toScene.scaleMode = .aspectFill
-        self.view?.presentScene(toScene)
-        print("Success")
-    }
     
     func transitionToPreviousScene() {
         if let view = view {
-            // Calculates the time spend on the level
             
             if let selector = levelSelector {
                 if selector.currentLevel != nil {
                     selector.currentLevel! -= 1
+                } else {
+                    selector.currentLevel = 1
+                }
+                view.presentScene(selector)
+            }
+        }
+    }
+    func transitionToNextScene() {
+        if let view = view {
+            
+            if let selector = levelSelector {
+                if selector.currentLevel != nil {
+                    selector.currentLevel! += 1
                 } else {
                     selector.currentLevel = 1
                 }
@@ -225,9 +244,47 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
         
         if player2Dragging {
-            move(player: player2, location: fingerLocationOnScreen)
+            move(player: player2!, location: fingerLocationOnScreen)
         }
     }
+    
+    // Setup title label and add it to the scene
+    func setupPlayer1(texture: String, position: CGPoint) {
+        player1 = Player1(imageNamed: texture)
+        player1.size = playerSmall
+        player1.position = position
+        player1.zPosition = 2
+        
+        addChild(player1)
+    }
+    
+    func setupMatch1(texture: String, position: CGPoint) {
+        match1 = Match1(imageNamed: texture)
+        match1.size = matchSize
+        match1.position = position
+        match1.zPosition = 1
+        
+        addChild(match1)
+    }
+    
+    func setupPlayer2(texture: String, position: CGPoint) {
+        player2 = Player2(imageNamed: texture)
+        player2.size = playerSmall
+        player2.position = position
+        player2.zPosition = 2
+        
+        addChild(player2)
+    }
+    
+    func setupMatch2(texture: String, position: CGPoint) {
+        match2 = Match2(imageNamed: texture)
+        match2.size = matchSize
+        match2.position = position
+        match2.zPosition = 1
+        
+        addChild(match2)
+    }
+
 }
 
 

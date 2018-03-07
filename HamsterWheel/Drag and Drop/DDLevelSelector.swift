@@ -44,18 +44,18 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 1
-                // Level 1 variables
-                var audio: AVAudioPlayer?
-                var soundEffect: AVAudioPlayer?
+                scene.has2Players = false
+                scene.loadHomeButton()
                 
-                var player: SKSpriteNode!
-                var matchShape: SKSpriteNode!
-                var isDragging = false
-
-                var levelSelector: DDLevelSelector?
+                // Level 1 variables
+                scene.player1Texture = "squareRed"
+                scene.match1Texture = "squareRedMatch"
+                scene.player1Position = CGPoint(x: 1125, y: 525)
+                scene.match1Position = CGPoint(x: 235, y: 207)
+                
                 scene.scaleMode = .aspectFill
-                // Present the scene
                 view.presentScene(scene)
+                view.showsPhysics = true
             }
         }
     }
@@ -66,29 +66,20 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 2
+                scene.has2Players = false
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
                 // Level 2 variables
-                
-                var start: DispatchTime?
-                var end: DispatchTime?
-                var totalTime: Double?
-                
-                
-                var audio: AVAudioPlayer?
-                var soundEffect: AVAudioPlayer?
-                var player: SKSpriteNode!
-                var matchShape: SKSpriteNode!
-                
-                var homeButton: SKButton!
-                var backButton: SKButton!
-                
-                var isDragging = false
+                scene.player1Texture = "circleBlu"
+                scene.match1Texture = "circleBluMatch"
+                scene.player1Position = CGPoint(x: 260, y: 550)
+                scene.match1Position = CGPoint(x: 1150, y: 160)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
                 view.presentScene(scene)
+                view.showsPhysics = true
             }
         }
     }
@@ -99,15 +90,20 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 3
+                scene.has2Players = false
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
-                // Level 1 variables
-
+                // Level 3 variables
+                scene.player1Texture = "triangleYel"
+                scene.match1Texture = "triangleYelMatch"
+                scene.player1Position = CGPoint(x: 1210, y: 375)
+                scene.match1Position = CGPoint(x: 321, y: 142)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
                 view.presentScene(scene)
+                view.showsPhysics = true
             }
         }
     }
@@ -116,15 +112,23 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelFour") {
                 scene.levelSelector = self
-                currentLevel = 3
+                currentLevel = 4
+                scene.has2Players = true
+                scene.loadHomeButton()
+                scene.loadBackButton()
                 
-                // Level 1 variables
+                // Level 4 variables
+                scene.player1Texture = "squareRed"
+                scene.match1Texture = "squareRedMatch"
+                scene.match2Texture = "triangleBluMatch"
+                scene.player1Position = CGPoint(x: 223, y: 115)
+                scene.match1Position = CGPoint(x: 1084, y: 570)
+                scene.match2Position = CGPoint(x: 462, y: 502)
                 
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
+                view.presentScene(scene)
                 view.presentScene(scene)
             }
         }

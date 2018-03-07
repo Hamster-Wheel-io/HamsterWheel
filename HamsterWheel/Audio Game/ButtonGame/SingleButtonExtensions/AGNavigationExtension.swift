@@ -34,9 +34,9 @@ extension SingleButtonAudioLevel {
                 }
                 
                 // Debug helpers
-                view.showsFPS = true
+
                 view.showsPhysics = true
-                view.showsDrawCount = true
+               
             }
         }
     }

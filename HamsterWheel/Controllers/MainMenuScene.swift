@@ -21,33 +21,12 @@ class MainMenuScene: SKScene {
         
         /* Set UI connections */
         playButtonGame1 = self.childNode(withName: "playButton1") as! SKButton
-        
-        /* Setup button selection handler */
         playButtonGame1.selectedHandler = { [unowned self] in
             if let view = self.view {
+                let selector = DDLevelSelector()
+                selector.currentLevel = 1
                 
-                // FIXME: Chamge for testing
-                // Load the SKScene from 'GameScene.sks'
-                
-                if let scene = SKScene(fileNamed: "DDLevelSeven") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
-                    view.presentScene(scene)
-                }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
-//                let selector = DDLevelSelector()
-//                selector.currentLevel = 1
-//
-//                // Present the scene
-//                view.presentScene(selector)
-                
+                view.presentScene(selector)
             }
         }
         
