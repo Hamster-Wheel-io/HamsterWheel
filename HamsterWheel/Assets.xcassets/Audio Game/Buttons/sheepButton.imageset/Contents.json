@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "sheepButton.png",
+      "filename" : "sheepButtonPressed.png",
       "scale" : "1x"
     },
     {
