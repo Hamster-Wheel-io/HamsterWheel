@@ -23,6 +23,8 @@ class AudioGameLevelSelector: SKScene {
                 case 3: loadLevel3()
                 case 4: loadLevel4()
                 case 5: loadLevel5()
+                case 6: loadLevel6()
+                case 7: loadLevel7()
                 
                 default: returnToMainMenu()
             }
@@ -39,8 +41,8 @@ class AudioGameLevelSelector: SKScene {
                 currentLevel = 1 // Just to be sure
                 // Level 1 variables
                 scene.animal = "Cow"
-                scene.defaultButtonImage = "redCowButton"
-                scene.pressedButtonImage = "redCowButtonPressed"
+                scene.defaultButtonImage = "cowButton"
+                scene.pressedButtonImage = "cowButtonPressed"
                 scene.audioFileName = "cowMoo"
                 scene.audioFileExtension = ".mp3"
                 scene.hasSpelling = false
@@ -63,8 +65,8 @@ class AudioGameLevelSelector: SKScene {
                 
                 // Level 2 variables
                 scene.animal = "Dog"
-                scene.defaultButtonImage = "redDogButton"
-                scene.pressedButtonImage = "redDogButtonPressed"
+                scene.defaultButtonImage = "dogButton"
+                scene.pressedButtonImage = "dogButtonPressed"
                 scene.audioFileName = "dogBark"
                 scene.audioFileExtension = ".wav"
                 scene.hasSpelling = false
@@ -87,8 +89,8 @@ class AudioGameLevelSelector: SKScene {
                 
                 // Level 3 variables
                 scene.animal = "Sheep"
-                scene.defaultButtonImage = "redSheepButton"
-                scene.pressedButtonImage = "redSheepButtonPressed"
+                scene.defaultButtonImage = "sheepButton"
+                scene.pressedButtonImage = "sheepButtonPressed"
                 scene.audioFileName = "sheepBaa"
                 scene.audioFileExtension = ".wav"
                 scene.hasSpelling = false
@@ -121,10 +123,56 @@ class AudioGameLevelSelector: SKScene {
                 currentLevel = 5 // Just to be sure
                 
                 scene.animal = "Cow"
-                scene.defaultButtonImage = "redCowButton"
-                scene.pressedButtonImage = "redCowButtonPressed"
+                scene.defaultButtonImage = "cowButton"
+                scene.pressedButtonImage = "cowButtonPressed"
                 scene.audioFileName = "cowMoo"
                 scene.audioFileExtension = ".mp3"
+                scene.hasSpelling = true
+                
+                // Sets scale mode
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+        }
+    }
+    
+    func loadLevel6() {
+        if let view = view {
+            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
+                
+                scene.levelSelector = self
+                currentLevel = 6 // Just to be sure
+                
+                scene.animal = "Dog"
+                scene.defaultButtonImage = "dogButton"
+                scene.pressedButtonImage = "dogButtonPressed"
+                scene.audioFileName = "dogBark"
+                scene.audioFileExtension = ".wav"
+                scene.hasSpelling = true
+                
+                // Sets scale mode
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+        }
+    }
+    
+    func loadLevel7() {
+        if let view = view {
+            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
+                
+                scene.levelSelector = self
+                currentLevel = 7 // Just to be sure
+                
+                scene.animal = "Cat"
+                scene.defaultButtonImage = "catButton"
+                scene.pressedButtonImage = "catButtonPressed"
+                scene.audioFileName = "catMeow"
+                scene.audioFileExtension = ".wav"
                 scene.hasSpelling = true
                 
                 // Sets scale mode
