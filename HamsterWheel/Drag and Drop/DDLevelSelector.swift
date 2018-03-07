@@ -138,15 +138,22 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelFive") {
                 scene.levelSelector = self
-                currentLevel = 3
+                currentLevel = 5
+                scene.has2Players = true
                 
-                // Level 1 variables
-                
+                // Level 5 variables
+                scene.player1Texture = "circleYel"
+                scene.player2Texture = "squareBlu"
+                scene.match1Texture = "circleYelMatch"
+                scene.match2Texture = "squareBluMatch"
+                scene.player1Position = CGPoint(x: 960, y: 170)
+                scene.player2Position = CGPoint(x: 1115, y: 475)
+                scene.match1Position = CGPoint(x: 475, y: 590)
+                scene.match2Position = CGPoint(x: 224, y: 200)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
+                view.presentScene(scene)
                 view.presentScene(scene)
             }
         }
@@ -155,15 +162,22 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelSix") {
                 scene.levelSelector = self
-                currentLevel = 3
+                currentLevel = 6
+                scene.has2Players = true
                 
-                // Level 1 variables
-                
+                // Level 6 variables
+                scene.player1Texture = "triangleRed"
+                scene.player2Texture = "squareYel"
+                scene.match1Texture = "triangleRedMatch"
+                scene.match2Texture = "squareYelMatch"
+                scene.player1Position = CGPoint(x: 100, y: 452)
+                scene.player2Position = CGPoint(x: 1208, y: 636)
+                scene.match1Position = CGPoint(x: 1056, y: 498)
+                scene.match2Position = CGPoint(x: 260, y: 253)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
+                view.presentScene(scene)
                 view.presentScene(scene)
             }
         }
@@ -172,16 +186,24 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelSeven") {
                 scene.levelSelector = self
-                currentLevel = 3
+                currentLevel = 7
+                scene.has2Players = true
                 
-                // Level 1 variables
-                
+                // Level 7 variables
+                scene.player1Texture = "circleRed"
+                scene.player2Texture = "circleBlu"
+                scene.match1Texture = "circleRedMatch"
+                scene.match2Texture = "circleBluMatch"
+                scene.player1Position = CGPoint(x: -458, y: 162)
+                scene.player2Position = CGPoint(x: -370, y: -60)
+                scene.match1Position = CGPoint(x: -184, y: -186)
+                scene.match2Position = CGPoint(x: 498, y: 153)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
-                
-                // Present the scene
                 view.presentScene(scene)
+                view.presentScene(scene)
+   
             }
         }
     }

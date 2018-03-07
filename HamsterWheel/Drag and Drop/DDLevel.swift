@@ -43,6 +43,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var match1Texture: String?
     var match2Texture: String?
     
+    var wallTexture: String?
+    var wallPosition: CGPoint?
+    
     var player1Position: CGPoint?
     var player2Position: CGPoint?
     var match1Position: CGPoint?
@@ -69,6 +72,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
         if let texture = match2Texture, let position = match2Position {
             setupMatch2(texture: texture, position: position)
+        }
+        if let texture = wallTexture, let position = wallPosition {
+            setupWall(texture: texture, position: position)
         }
         
    
@@ -283,6 +289,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         match2.zPosition = 1
         
         addChild(match2)
+    }
+    
+    func setupWall(texture: String, position: CGPoint) {
+        wall = Wall(imageNamed: texture)
+        wall.size = CGSize(width: 100, height: 400)
+        wall.position = position
+        wall.zPosition = 1
+        
+        addChild(wall)
     }
 
 }
