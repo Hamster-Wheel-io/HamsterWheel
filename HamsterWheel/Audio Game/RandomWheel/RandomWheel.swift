@@ -17,9 +17,8 @@ class RandomWheel: SKScene {
     let slices = [ HWheelSlice(title: "", animal: "Cow"),
                    HWheelSlice(title: "", animal: "Dog"),
                    HWheelSlice(title: "", animal: "Cat"),
-                   HWheelSlice(title: "", animal: "Duck"),
+                   HWheelSlice(title: "", animal: "Pig"),
                    HWheelSlice(title: "", animal: "Sheep"),
-                   HWheelSlice(title: "", animal: "Chicken"),
                    HWheelSlice(title: "", animal: "Horse")]
     
     var wheel: TTFortuneWheel?
@@ -219,9 +218,8 @@ class RandomWheel: SKScene {
             case "Dog":     sound = "dogBark";          extention = ".wav"
             case "Cow":     sound = "cowMoo";           extention = ".mp3"
             case "Cat":     sound = "catMeow";          extention = ".wav"
-            case "Duck":    sound = "duckQuacking";     extention = ".wav"
+            case "Pig":     sound = "duckQuacking";     extention = ".wav"
             case "Sheep":   sound = "sheepBaa";         extention = ".wav"
-            case "Chicken": sound = "rooster";          extention = ".wav"
             case "Horse":   sound = "horseWhinnying";   extention = ".wav"
             default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
             }
