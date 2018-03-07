@@ -5,6 +5,10 @@
 //  Created by Bob De Kort on 3/1/18.
 //  Copyright © 2018 Bob De Kort. All rights reserved.
 //
+<<<<<<< HEAD
+=======
+
+>>>>>>> development
 import Foundation
 import SpriteKit
 
@@ -34,9 +38,15 @@ extension SingleButtonAudioLevel {
                 }
                 
                 // Debug helpers
+<<<<<<< HEAD
 
                 view.showsPhysics = true
                
+=======
+                view.showsFPS = true
+                view.showsPhysics = true
+                view.showsDrawCount = true
+>>>>>>> development
             }
         }
     }

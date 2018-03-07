@@ -260,6 +260,7 @@ class RandomWheel: SKScene {
             }
         }
         
+<<<<<<< HEAD:HamsterWheel/Audio Game/RandomWheel/RandomWheel.swift
         //        // Calculates the time spend on the level
         //        setEndTimeAndCalculateDifference()
         //
@@ -268,6 +269,16 @@ class RandomWheel: SKScene {
         //        level5?.scaleMode = .aspectFill
         //
         //        self.view?.presentScene(level5)
+=======
+//        // Calculates the time spend on the level
+//        setEndTimeAndCalculateDifference()
+//
+//        // Creates and show next level
+//        let level5 = AGlevel5(fileNamed: "AGlevel5")
+//        level5?.scaleMode = .aspectFill
+//
+//        self.view?.presentScene(level5)
+>>>>>>> development:HamsterWheel/Audio Game/RandomWheel/RandomWheel.swift
     }
     
     // FIXME: Add this function to end of level
