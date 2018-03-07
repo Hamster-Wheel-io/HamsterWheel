@@ -51,6 +51,10 @@
 		C4C9B4B22048DE5F007F113D /* AGAudioExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9B4B12048DE5F007F113D /* AGAudioExtension.swift */; };
 		C4C9B4B42048DEFF007F113D /* AGSpellingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9B4B32048DEFF007F113D /* AGSpellingExtension.swift */; };
 		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
+		C4CBA741204F908A00B79920 /* ColoringGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBA740204F908A00B79920 /* ColoringGame.swift */; };
+		C4CBA743204F941300B79920 /* ColoringScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA742204F941300B79920 /* ColoringScene.sks */; };
+		C4CBA745204FA0D900B79920 /* ColoringGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBA744204FA0D900B79920 /* ColoringGameViewController.swift */; };
+		C4CBA747204FA12B00B79920 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBA746204FA12B00B79920 /* ColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,10 @@
 		C4C9B4B12048DE5F007F113D /* AGAudioExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAudioExtension.swift; sourceTree = "<group>"; };
 		C4C9B4B32048DEFF007F113D /* AGSpellingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSpellingExtension.swift; sourceTree = "<group>"; };
 		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4CBA740204F908A00B79920 /* ColoringGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGame.swift; sourceTree = "<group>"; };
+		C4CBA742204F941300B79920 /* ColoringScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ColoringScene.sks; sourceTree = "<group>"; };
+		C4CBA744204FA0D900B79920 /* ColoringGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameViewController.swift; sourceTree = "<group>"; };
+		C4CBA746204FA12B00B79920 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,6 +221,7 @@
 				B91C453F2017E309004BF2FB /* Storyboards */,
 				B91C453D2017E2C6004BF2FB /* Audio Game */,
 				B91C453C2017E2B0004BF2FB /* Drag and Drop */,
+				C4CBA73F204F905800B79920 /* ColoringGame */,
 				C4B297D52016D159009FCA9F /* Controllers */,
 				C4B297D42016D147009FCA9F /* Scenes */,
 				C4CBA73D204F750600B79920 /* Assets.xcassets */,
@@ -282,6 +291,17 @@
 				C4C9B4B52048E292007F113D /* SingleButtonExtensions */,
 			);
 			path = ButtonGame;
+			sourceTree = "<group>";
+		};
+		C4CBA73F204F905800B79920 /* ColoringGame */ = {
+			isa = PBXGroup;
+			children = (
+				C4CBA740204F908A00B79920 /* ColoringGame.swift */,
+				C4CBA742204F941300B79920 /* ColoringScene.sks */,
+				C4CBA744204FA0D900B79920 /* ColoringGameViewController.swift */,
+				C4CBA746204FA12B00B79920 /* ColorButton.swift */,
+			);
+			path = ColoringGame;
 			sourceTree = "<group>";
 		};
 		E615C7EB125D816DCF707F77 /* Frameworks */ = {
@@ -359,6 +379,7 @@
 				C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */,
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
+				C4CBA743204F941300B79920 /* ColoringScene.sks in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
@@ -407,10 +428,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyDraw/SwiftyDraw.framework",
 				"${BUILT_PRODUCTS_DIR}/TTFortuneWheel/TTFortuneWheel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDraw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTFortuneWheel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,16 +473,19 @@
 				B9CDFF402033647000BFA9DF /* DDLevelFive.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				C404D6D8204889E200DE549D /* SingleButtonAudioLevel.swift in Sources */,
+				C4CBA741204F908A00B79920 /* ColoringGame.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				C4C9B4AE2048DDFC007F113D /* AGTimeTrackingExtension.swift in Sources */,
+				C4CBA747204FA12B00B79920 /* ColorButton.swift in Sources */,
 				C4C9B4B22048DE5F007F113D /* AGAudioExtension.swift in Sources */,
 				C4C9B4B02048DE29007F113D /* AGNavigationExtension.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
 				B9CDFF3E2030344500BFA9DF /* DDLevelFour.swift in Sources */,
 				C485650F203396EF00CC9B1F /* RandomWheel.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
+				C4CBA745204FA0D900B79920 /* ColoringGameViewController.swift in Sources */,
 				B91C45472017E41B004BF2FB /* DDLevelTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

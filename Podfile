@@ -7,6 +7,6 @@ target 'HamsterWheel' do
 
   # Pods for HamsterWheel
   pod 'TTFortuneWheel'
-
+  pod "SwiftyDraw"
 
 end

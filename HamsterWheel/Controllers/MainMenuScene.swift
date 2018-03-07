@@ -56,5 +56,14 @@ class MainMenuScene: SKScene {
         }
         
         playButtonGame3 = self.childNode(withName: "playButton3") as! SKButton
+        playButtonGame3.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                let vc = ColoringGameViewController()
+                
+                UIView.transition(with: view, duration: 0.3, options: .transitionFlipFromRight, animations: {
+                    view.window?.rootViewController = vc
+                }, completion: nil)
+            }
+        }
     }
 }
