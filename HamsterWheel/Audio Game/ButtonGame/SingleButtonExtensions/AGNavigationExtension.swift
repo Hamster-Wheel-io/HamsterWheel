@@ -35,7 +35,8 @@ extension SingleButtonAudioLevel {
                 }
                 
                 // Debug helpers
-                view.showsPhysics = true
+                // view.showsPhysics = true
+               
 
             }
         }

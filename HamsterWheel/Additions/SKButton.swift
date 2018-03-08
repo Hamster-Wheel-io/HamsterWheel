@@ -14,6 +14,7 @@ enum SKButtonNodeState {
 }
 
 class SKButton: SKSpriteNode {
+    var selectedColor: UIColor?
     
     /* Setup a dummy action closure */
     var selectedHandler: () -> Void = { print("No button action set") }

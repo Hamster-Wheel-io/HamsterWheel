@@ -17,7 +17,6 @@ class SingleButtonAudioLevel: SKScene {
     var titleLabel: SKLabelNode!
     
     // Spelling
-
     var hasSpelling: Bool?
     var grayOutView: SKNode!
     var spellLabel: SKLabelNode!
