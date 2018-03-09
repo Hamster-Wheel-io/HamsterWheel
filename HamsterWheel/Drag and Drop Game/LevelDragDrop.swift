@@ -131,7 +131,13 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, transitionAction])
+        let musicStopAction = SKAction.run { self.audio?.stop() }
+        let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
+        let player1RemoveAction = SKAction.run { self.player1.removeFromParent() }
+        let player2RemoveAction = SKAction.run { self.player2.removeFromParent() }
+        let removeSequence1 = SKAction.sequence([shrinkAction, player1RemoveAction])
+        let removeSequence2 = SKAction.sequence([shrinkAction, player2RemoveAction])
+        let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
         resetPlayerSize()
 
@@ -141,12 +147,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             if player1Success {
                 player1.run(spinAction)
                 player1.run(fastFadeAction)
-                player1.removeFromParent()
+                player1.run(removeSequence1)
                 
                 if player2Success {
                     player2.run(spinAction)
                     player2.run(fastFadeAction)
-                    player2.removeFromParent()
+                    player2.run(removeSequence2)
                     self.run(successSequence)
                 }
             }
@@ -155,12 +161,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             if player2Success {
                 player2.run(spinAction)
                 player2.run(fastFadeAction)
-                player2.removeFromParent()
+                player2.run(removeSequence2)
                 
                 if player1Success {
                     player1.run(spinAction)
                     player1.run(fastFadeAction)
-                    player1.removeFromParent()
+                    player1.run(removeSequence1)
                     self.run(successSequence)
                 }
             }

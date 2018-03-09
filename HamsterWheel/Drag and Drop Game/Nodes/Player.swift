@@ -20,10 +20,10 @@ class Player1: SKSpriteNode {
     }
     
     func setupPlayer1Physics() {
-        
         self.physicsBody = SKPhysicsBody(circleOfRadius: 50)
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.linearDamping = 1
+        self.physicsBody?.linearDamping = 0.7
+        self.physicsBody?.angularDamping = 0.5
         self.physicsBody?.categoryBitMask = PhysicsCategory.Player1
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Match1
@@ -44,10 +44,10 @@ class Player2: SKSpriteNode {
     }
     
     func setupPlayer2Physics() {
-        
         self.physicsBody = SKPhysicsBody(circleOfRadius: 50)
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.linearDamping = 1
+        self.physicsBody?.linearDamping = 0.7
+        self.physicsBody?.angularDamping = 0.5
         self.physicsBody?.categoryBitMask = PhysicsCategory.Player2
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Match2
