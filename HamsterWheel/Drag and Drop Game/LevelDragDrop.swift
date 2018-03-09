@@ -60,6 +60,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
 
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        
         physicsWorld.contactDelegate = self
         
         setupTextures()
@@ -124,70 +125,47 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        let wait = SKAction.wait(forDuration: 2)
+        let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
+        // let removePlayer1Action = SKAction.run { self.player1.removeFromParent() }
+        let successSequence = SKAction.sequence([musicAction, wait, transitionAction])
         
         resetPlayerSize()
 
         if has2Players {
-            if player1Success && player2Success {
+            // Got player1 correct before player2
+            if player1Success {
                 player1.run(spinAction)
-                player2?.run(spinAction)
-                player1.run(musicAction)
-                player2?.run(musicAction)
-                self.transitionToNextScene()
+                player1.removeFromParent()
+                
+                if player2Success {
+                    player2.run(spinAction)
+                    player2.removeFromParent()
+                    self.run(successSequence)
+                }
             }
+            // Got player2 correct before player2
+            if player2Success {
+                player2.run(spinAction)
+                player2.removeFromParent()
+                
+                if player1Success {
+                    player1.run(spinAction)
+                    player1.removeFromParent()
+                    self.run(successSequence)
+                }
+            }
+            
         } else if player1Success {
             player1.run(spinAction)
-            player1.run(musicAction)
-            self.transitionToNextScene()
+            player1.removeFromParent()
+            self.run(successSequence)
         }
     }
-    
-    // MARK: play sound when user touches the player
-    func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
-            do {
-                // Use NSDataAssets's data property to access the yahoo voice.
-                soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
-                soundEffect?.play()
-                audio?.play()
-            } catch let error as NSError {
-                // Should print...
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    // MARK: play ssuccess music when user completes the challenge(s)
-    func playSuccessMusic() {
-        // Fetch the sound data set
-        if let music = NSDataAsset(name: "clown_music") {
-            do {
-                // Use NSDataAssets' data property to access success music
-                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
-                audio?.play()
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
     
 
-    
-    
-
-    // Use force to move the player across the screen
-    func move(player: SKSpriteNode, location: CGPoint) {
-        // player.position = location
-        let dX = location.x - player.position.x
-        let dY = location.y - player.position.y
-        let vector = CGVector(dx: dX, dy: dY)
-        
-        player.physicsBody?.applyForce(vector)
-    }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
