@@ -21,30 +21,34 @@ class MainMenuScene: SKScene {
         
         /* Set UI connections */
         playButtonGame1 = self.childNode(withName: "playButton1") as! SKButton
-        
-        /* Setup button selection handler */
         playButtonGame1.selectedHandler = { [unowned self] in
             if let view = self.view {
+                let selector = DDLevelSelector()
+                selector.currentLevel = 1
                 
-                // FIXME: change to drag and drop
-                // Load the SKScene from 'GameScene.sks'
-                if let scene = SKScene(fileNamed: "LevelOne") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
-                    
-                    // Present the scene
-                    view.presentScene(scene)
-                }
-                
-                // Debug helpers
-                view.showsFPS = true
-                view.showsPhysics = true
-                view.showsDrawCount = true
+                view.presentScene(selector)
             }
         }
         
         playButtonGame2 = self.childNode(withName: "playButton2") as! SKButton
+        playButtonGame2.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                let selector = AudioGameLevelSelector()
+                selector.currentLevel = 1
+                
+                view.presentScene(selector)
+            }
+        }
+        
         playButtonGame3 = self.childNode(withName: "playButton3") as! SKButton
+        playButtonGame3.selectedHandler = { [unowned self] in
+            if let view = self.view {
+                let vc = ColoringGameViewController()
+                
+                UIView.transition(with: view, duration: 0.3, options: .transitionFlipFromRight, animations: {
+                    view.window?.rootViewController = vc
+                }, completion: nil)
+            }
+        }
     }
 }
