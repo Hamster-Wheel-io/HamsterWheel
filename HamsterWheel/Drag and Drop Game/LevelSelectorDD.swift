@@ -120,7 +120,6 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1084, y: 570)
                 scene.match2Position = CGPoint(x: 462, y: 502)
                 
-                
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
@@ -202,8 +201,6 @@ class DDLevelSelector: SKScene {
                 // Sets scale mode
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
-                // Debug helpers
-                // view.showsPhysics = true
             }
         }
     }
