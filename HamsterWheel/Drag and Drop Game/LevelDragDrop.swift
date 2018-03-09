@@ -126,33 +126,40 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let wait = SKAction.wait(forDuration: 2)
+        let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
+        let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic()}
-        // let removePlayer1Action = SKAction.run { self.player1.removeFromParent() }
-        let successSequence = SKAction.sequence([musicAction, wait, transitionAction])
+        let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, transitionAction])
         
         resetPlayerSize()
 
         if has2Players {
+            
             // Got player1 correct before player2
             if player1Success {
                 player1.run(spinAction)
+                player1.run(fastFadeAction)
                 player1.removeFromParent()
                 
                 if player2Success {
                     player2.run(spinAction)
+                    player2.run(fastFadeAction)
                     player2.removeFromParent()
                     self.run(successSequence)
                 }
             }
+            
             // Got player2 correct before player2
             if player2Success {
                 player2.run(spinAction)
+                player2.run(fastFadeAction)
                 player2.removeFromParent()
                 
                 if player1Success {
                     player1.run(spinAction)
+                    player1.run(fastFadeAction)
                     player1.removeFromParent()
                     self.run(successSequence)
                 }
