@@ -15,21 +15,18 @@ class Player: SKSpriteNode {
         let size = CGSize(width: 100, height: 100)
         let texture = SKTexture(imageNamed: imageNamed)
         
-        func setupPlayerPhysics() {
-            self.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-            self.physicsBody?.affectedByGravity = false
-            self.physicsBody?.allowsRotation = false
-            self.physicsBody?.linearDamping = 0.7
-        }
-        
         super.init(texture: texture, color: .white, size: size)
-        setupPlayerPhysics()
+        self.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.mass = 0
+        self.physicsBody?.linearDamping = 0.5
+    
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 class Player1: Player {

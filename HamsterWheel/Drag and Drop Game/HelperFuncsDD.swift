@@ -46,11 +46,11 @@ extension DDLevel {
     // Use force to move the player across the screen
     func move(player: SKSpriteNode, location: CGPoint) {
         // player.position = location
-        let dX = (location.x - player.position.x) * 5
-        let dY = (location.y - player.position.y) * 5
-        let vector = CGVector(dx: dX, dy: dY)
-        
-        player.physicsBody?.applyForce(vector)
+        let dx = (location.x - player.position.x) * 4
+        let dy = (location.y - player.position.y) * 4
+        let vector = CGVector(dx: dx, dy: dy)
+        player.physicsBody?.velocity = vector
+        // player.physicsBody?.applyForce(vector)
     }
     
 }
