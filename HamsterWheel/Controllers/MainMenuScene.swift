@@ -20,7 +20,7 @@ class MainMenuScene: SKScene {
         /* Setup your scene here */
         
         /* Set UI connections */
-        playButtonGame1 = self.childNode(withName: "playButton1") as! SKButton
+        playButtonGame1 = self.childNode(withName: "shapesButton") as! SKButton
         playButtonGame1.selectedHandler = { [unowned self] in
             if let view = self.view {
                 let selector = DDLevelSelector()
@@ -30,7 +30,7 @@ class MainMenuScene: SKScene {
             }
         }
         
-        playButtonGame2 = self.childNode(withName: "playButton2") as! SKButton
+        playButtonGame2 = self.childNode(withName: "audioButton") as! SKButton
         playButtonGame2.selectedHandler = { [unowned self] in
             if let view = self.view {
                 let selector = AudioGameLevelSelector()
@@ -40,7 +40,7 @@ class MainMenuScene: SKScene {
             }
         }
         
-        playButtonGame3 = self.childNode(withName: "playButton3") as! SKButton
+        playButtonGame3 = self.childNode(withName: "coloringButton") as! SKButton
         playButtonGame3.selectedHandler = { [unowned self] in
             if let view = self.view {
                 let vc = ColoringGameViewController()
