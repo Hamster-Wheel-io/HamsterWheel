@@ -1,10 +1,9 @@
-//
 //  Player.swift
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 3/6/18.
 //  Copyright © 2018 Bob De Kort. All rights reserved.
-//
+
 
 import Foundation
 import SpriteKit
