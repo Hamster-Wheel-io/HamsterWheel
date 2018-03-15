@@ -6,7 +6,7 @@ target 'HamsterWheel' do
   use_frameworks!
 
   # Pods for HamsterWheel
-  pod 'TTFortuneWheel', '~> 0.1'
-  pod "SwiftyDraw"
+  pod 'TTFortuneWheel', '~> 0.1.5'
+  pod 'SwiftyDraw', '~> 1.0'
 
 end
