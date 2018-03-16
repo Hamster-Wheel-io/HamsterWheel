@@ -211,7 +211,6 @@ class RandomWheel: SKScene {
     func playSoundForIndex(index: Int) {
         var sound = String()
         var extention = String()
-        print(index)
         if let animal = self.slices[index].animal {
             switch animal {
             case "Dog":     sound = "dogBark";          extention = ".wav"

@@ -60,7 +60,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
 
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        
         physicsWorld.contactDelegate = self
         
         setupTextures()
@@ -142,7 +141,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         resetPlayerSize()
 
         if has2Players {
-            
+    
             // Got player1 correct before player2
             if player1Success {
                 player1.run(spinAction)
@@ -178,8 +177,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-
-    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if player1Dragging {
@@ -190,8 +187,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             move(player: player2!, location: fingerLocationOnScreen)
         }
     }
-    
-    
 }
 
 
