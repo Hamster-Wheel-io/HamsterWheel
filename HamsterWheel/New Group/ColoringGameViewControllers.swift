@@ -12,6 +12,8 @@ import SpriteKit
 class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     
     var drawView : SwiftyDrawView!
+    
+    var whiteButton: ColorButton!
     var redButton : ColorButton!
     var greenButton : ColorButton!
     var blueButton : ColorButton!
@@ -21,11 +23,13 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     
     var deleteButton : UIButton!
     var backButton: UIButton!
+    var undoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         drawView = SwiftyDrawView(frame: self.view.frame)
+        drawView.lineColor = .green
         drawView.delegate = self
         drawView.backgroundColor = .white
         
@@ -34,42 +38,55 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     }
     
     func addButtons() {
-        redButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 50, width: 40, height: 40), color: UIColor.red)
+        // Color Buttons
+        whiteButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 50, width: 40, height: 40), color: UIColor.white)
+        whiteButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
+        self.view.addSubview(whiteButton)
+        
+        redButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 100, width: 40, height: 40), color: UIColor.red)
         redButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(redButton)
         
-        greenButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 100, width: 40, height: 40), color: UIColor.green)
+        greenButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 150, width: 40, height: 40), color: UIColor.green)
         greenButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(greenButton)
         
-        blueButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 150, width: 40, height: 40), color: UIColor.blue)
+        blueButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 200, width: 40, height: 40), color: UIColor.blue)
         blueButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(blueButton)
         
-        orangeButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 200, width: 40, height: 40), color: UIColor.orange)
+        orangeButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 250, width: 40, height: 40), color: UIColor.orange)
         orangeButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(orangeButton)
         
-        purpleButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 250, width: 40, height: 40), color: UIColor.purple)
+        purpleButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 300, width: 40, height: 40), color: UIColor.purple)
         purpleButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(purpleButton)
         
-        yellowButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 300, width: 40, height: 40), color: UIColor.yellow)
+        yellowButton = ColorButton(frame: CGRect(x: self.view.frame.width - 60, y: self.view.frame.height - 350, width: 40, height: 40), color: UIColor.yellow)
         yellowButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         self.view.addSubview(yellowButton)
         
-        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
-        backButton.clipsToBounds = true
-        
-        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
-        self.view.addSubview(backButton)
-        
+        // Game buttons
         deleteButton = UIButton(frame: CGRect(x: 10, y: 70, width: 50, height: 50))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         self.view.addSubview(deleteButton)
+        
+        undoButton = UIButton(frame: CGRect(x: 10, y: 130, width: 50, height: 50))
+        undoButton.setImage(#imageLiteral(resourceName: "leftArrow"), for: .normal)
+        undoButton.clipsToBounds = true
+        undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
+        self.view.addSubview(undoButton)
+        
+        // Navigation Button
+        
+        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        backButton.clipsToBounds = true
+        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
+        self.view.addSubview(backButton)
     }
     
     @objc func backToMainMenu() {
@@ -103,6 +120,7 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     
     func SwiftyDrawDidBeginDrawing(view: SwiftyDrawView) {
         UIView.animate(withDuration: 0.5, animations: {
+            self.whiteButton.alpha = 0.0
             self.redButton.alpha = 0.0
             self.blueButton.alpha = 0.0
             self.greenButton.alpha = 0.0
@@ -111,6 +129,7 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
             self.yellowButton.alpha = 0.0
             self.backButton.alpha = 0.0
             self.deleteButton.alpha = 0.0
+            self.undoButton.alpha = 0.0
         })
     }
     
@@ -120,6 +139,7 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     
     func SwiftyDrawDidFinishDrawing(view: SwiftyDrawView) {
         UIView.animate(withDuration: 0.5, animations: {
+            self.whiteButton.alpha = 1.0
             self.redButton.alpha = 1.0
             self.blueButton.alpha = 1.0
             self.greenButton.alpha = 1.0
@@ -128,6 +148,7 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
             self.yellowButton.alpha = 1.0
             self.backButton.alpha = 1.0
             self.deleteButton.alpha = 1.0
+            self.undoButton.alpha = 1.0
         })
     }
     
