@@ -71,12 +71,9 @@ extension DDLevel {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
-            print("some player hit the wall\n")
         } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player1 {
-            print("player1 hit the match\n")
             player1Success = true
         } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
-            print("player2 hit the match\n")
             player2Success = true
         }
     }
