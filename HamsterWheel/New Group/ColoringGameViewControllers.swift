@@ -102,7 +102,6 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     }
     
     func SwiftyDrawDidBeginDrawing(view: SwiftyDrawView) {
-        print("Did begin drawing")
         UIView.animate(withDuration: 0.5, animations: {
             self.redButton.alpha = 0.0
             self.blueButton.alpha = 0.0
@@ -116,11 +115,10 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     }
     
     func SwiftyDrawIsDrawing(view: SwiftyDrawView) {
-        print("Is Drawing")
+        
     }
     
     func SwiftyDrawDidFinishDrawing(view: SwiftyDrawView) {
-        print("Did finish drawing")
         UIView.animate(withDuration: 0.5, animations: {
             self.redButton.alpha = 1.0
             self.blueButton.alpha = 1.0
@@ -134,6 +132,6 @@ class ColoringGameViewController: UIViewController, SwiftyDrawViewDelegate {
     }
     
     func SwiftyDrawDidCancelDrawing(view: SwiftyDrawView) {
-        print("Did cancel")
+        
     }
 }
