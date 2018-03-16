@@ -41,6 +41,18 @@ extension DDLevel {
         }
     }
     
+    func playUhOhSound() {
+        if let music = NSDataAsset(name: "uh-oh-sound") {
+            do {
+                // Use NSDataAssets' data property to access success music
+                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
+                audio?.play()
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     
     // MARK: Friction Physics.
     // Use force to move the player across the screen

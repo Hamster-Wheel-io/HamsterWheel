@@ -25,6 +25,7 @@
 		B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */; };
 		B946F5E820212892006C7CA7 /* DogBark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B946F5E120212892006C7CA7 /* DogBark.mp3 */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
+		B959E145205B51C8008EE045 /* DDLevelEight.sks in Resources */ = {isa = PBXBuildFile; fileRef = B959E144205B51C8008EE045 /* DDLevelEight.sks */; };
 		B9CDD29B2048E16300AD3152 /* SetupDDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */; };
 		B9CDD29F2048E31D00AD3152 /* LevelSelectorDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* LevelSelectorDD.swift */; };
 		B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */; };
@@ -81,6 +82,7 @@
 		B946F5E020212891006C7CA7 /* mr_clown_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mr_clown_music.mp3; sourceTree = "<group>"; };
 		B946F5E120212892006C7CA7 /* DogBark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogBark.mp3; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
+		B959E144205B51C8008EE045 /* DDLevelEight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelEight.sks; sourceTree = "<group>"; };
 		B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDDScene.swift; sourceTree = "<group>"; };
 		B9CDD29E2048E31D00AD3152 /* LevelSelectorDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorDD.swift; sourceTree = "<group>"; };
 		B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AGLevelSelector.swift; path = RandomWheel/AGLevelSelector.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */,
 				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
 				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
+				B959E144205B51C8008EE045 /* DDLevelEight.sks */,
 			);
 			path = DDScenes;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */,
 				B946F5E520212892006C7CA7 /* cartoon_voice_says_yahoo.mp3 in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
+				B959E145205B51C8008EE045 /* DDLevelEight.sks in Resources */,
 				B911879E2050918100BD03D8 /* AGButtonLevel.sks in Resources */,
 				B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */,
 				B946F5E320212892006C7CA7 /* crazy_celebrate.mp3 in Resources */,

@@ -27,6 +27,7 @@ class DDLevelSelector: SKScene {
             case 5: loadLevel5()
             case 6: loadLevel6()
             case 7: loadLevel7()
+            case 8: loadLevel8()
                 
             default: loadLevel1()
             }
@@ -182,14 +183,37 @@ class DDLevelSelector: SKScene {
             if let scene = DDLevel(fileNamed: "DDLevelSeven") {
                 scene.levelSelector = self
                 currentLevel = 7
+                scene.has2Players = false
+                scene.loadHomeButton()
+                scene.loadBackButton()
+                
+                // Level 7 variables
+                scene.player1Texture = "squareBlu"
+                scene.match1Texture = "squareBluMatch"
+                scene.wallTexture = "wall"
+                scene.player1Position = CGPoint(x: -458, y: 162)
+                scene.match1Position = CGPoint(x: 384, y: -186)
+                scene.wallPosition = CGPoint(x: 0, y: 0)
+                
+                // Sets scale mode
+                scene.scaleMode = .aspectFill
+                view.presentScene(scene)
+            }
+        }
+    }
+    func loadLevel8() {
+        if let view = view {
+            if let scene = DDLevel(fileNamed: "DDLevelEight") {
+                scene.levelSelector = self
+                currentLevel = 8
                 scene.has2Players = true
                 scene.loadHomeButton()
                 scene.loadBackButton()
                 
                 // Level 7 variables
-                scene.player1Texture = "circleRed"
+                scene.player1Texture = "triangleRed"
                 scene.player2Texture = "circleBlu"
-                scene.match1Texture = "circleRedMatch"
+                scene.match1Texture = "triangleRedMatch"
                 scene.match2Texture = "circleBluMatch"
                 scene.wallTexture = "wall"
                 scene.player1Position = CGPoint(x: -458, y: 162)
@@ -204,5 +228,4 @@ class DDLevelSelector: SKScene {
             }
         }
     }
-    
 }

@@ -34,7 +34,7 @@ class Player1: Player {
         super.init(imageNamed: imageNamed)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Player1
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Match1
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Match1 | PhysicsCategory.Match2
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -48,7 +48,7 @@ class Player2: Player {
         super.init(imageNamed: imageNamed)
         self.physicsBody?.categoryBitMask = PhysicsCategory.Player2
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Match2
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Match2 | PhysicsCategory.Match1
     }
 
     required init?(coder aDecoder: NSCoder) {

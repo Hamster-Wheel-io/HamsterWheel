@@ -8,6 +8,7 @@
 
 import SpriteKit
 import AVFoundation
+import AudioToolbox
 
 extension DDLevel {
 
@@ -75,6 +76,14 @@ extension DDLevel {
             player1Success = true
         } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
             player2Success = true
+        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player2 {
+            // play uh-oh sound and vibrate the phone
+            playUhOhSound()
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player1 {
+            // play uh-oh sound and vibrate the phone
+            playUhOhSound()
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))  
         }
     }
     
