@@ -11,7 +11,6 @@
 		B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */ = {isa = PBXBuildFile; fileRef = B90655D02028CAF2000874DF /* DDLevelFour.sks */; };
 		B911879E2050918100BD03D8 /* AGButtonLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B911879D2050918100BD03D8 /* AGButtonLevel.sks */; };
 		B91187A12050929300BD03D8 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91187A02050929300BD03D8 /* ColorButton.swift */; };
-		B91187A3205092A900BD03D8 /* ColoringGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91187A2205092A900BD03D8 /* ColoringGame.swift */; };
 		B91187A5205092C500BD03D8 /* ColoringGameViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91187A4205092C500BD03D8 /* ColoringGameViewControllers.swift */; };
 		B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = B911CEAF202104B000EC7CFF /* DDLevelThree.sks */; };
 		B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45422017E41B004BF2FB /* DDLevelOne.sks */; };
@@ -58,7 +57,6 @@
 		C4B297DE2016D363009FCA9F /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4B297DD2016D363009FCA9F /* assets.atlas */; };
 		C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297DF2016D453009FCA9F /* MainMenuScene.swift */; };
 		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
-		C4CBA743204F941300B79920 /* ColoringScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA742204F941300B79920 /* ColoringScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +65,6 @@
 		B90655D02028CAF2000874DF /* DDLevelFour.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFour.sks; sourceTree = "<group>"; };
 		B911879D2050918100BD03D8 /* AGButtonLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGButtonLevel.sks; sourceTree = "<group>"; };
 		B91187A02050929300BD03D8 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
-		B91187A2205092A900BD03D8 /* ColoringGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGame.swift; sourceTree = "<group>"; };
 		B91187A4205092C500BD03D8 /* ColoringGameViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringGameViewControllers.swift; sourceTree = "<group>"; };
 		B911CEAF202104B000EC7CFF /* DDLevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelThree.sks; sourceTree = "<group>"; };
 		B91C45422017E41B004BF2FB /* DDLevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelOne.sks; sourceTree = "<group>"; };
@@ -117,7 +114,6 @@
 		C4B297DD2016D363009FCA9F /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		C4B297DF2016D453009FCA9F /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C4CBA742204F941300B79920 /* ColoringScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ColoringScene.sks; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,9 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B91187A02050929300BD03D8 /* ColorButton.swift */,
-				B91187A2205092A900BD03D8 /* ColoringGame.swift */,
 				B91187A4205092C500BD03D8 /* ColoringGameViewControllers.swift */,
-				C4CBA742204F941300B79920 /* ColoringScene.sks */,
 			);
 			name = ColoringGame;
 			path = "New Group";
@@ -417,7 +411,6 @@
 				B946F5E720212892006C7CA7 /* mr_clown_music.mp3 in Resources */,
 				B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */,
 				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
-				C4CBA743204F941300B79920 /* ColoringScene.sks in Resources */,
 				B946F5E420212892006C7CA7 /* music_tension.mp3 in Resources */,
 				B946F5E620212892006C7CA7 /* childish.mp3 in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
@@ -508,7 +501,6 @@
 				C4B297BD2016CDD1009FCA9F /* GameScene.swift in Sources */,
 				B9CDD29F2048E31D00AD3152 /* LevelSelectorDD.swift in Sources */,
 				B9FE4A362044E291004804C3 /* LevelDragDrop.swift in Sources */,
-				B91187A3205092A900BD03D8 /* ColoringGame.swift in Sources */,
 				C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */,
 				B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */,
 				B9201866205208CF00F1339E /* HelperFuncsDD.swift in Sources */,

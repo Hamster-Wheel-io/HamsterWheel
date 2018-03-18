@@ -16,6 +16,8 @@ class ColorButton : UIButton {
         self.color = color
         super.init(frame: frame)
         self.layer.cornerRadius = 0.5 * frame.size.width
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor.black.cgColor
         self.clipsToBounds = true
         self.backgroundColor = color
     }
