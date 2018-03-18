@@ -28,11 +28,28 @@ class ColoringGameViewController: UIViewController {
     var backButton: UIButton!
     var undoButton: UIButton!
     
+    var colorIndicator: UIView?
+    
+    var selectedColor: UIColor! {
+        didSet {
+            switch selectedColor {
+            case UIColor.white?:
+                drawView.lineWidth = 25
+            default:
+                drawView.lineWidth = 10
+            }
+            
+            colorIndicator?.backgroundColor = selectedColor
+            drawView.lineColor = selectedColor
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         drawView = SwiftyDrawView(frame: self.view.frame)
         drawView.lineColor = .green
+        selectedColor = .green
         drawView.delegate = self
         drawView.backgroundColor = .white
         
@@ -65,9 +82,6 @@ class ColoringGameViewController: UIViewController {
         // Target
         newButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
         
-        
-        // Constraints
-        
         return newButton
     }
     
@@ -98,6 +112,14 @@ class ColoringGameViewController: UIViewController {
     }
     
     func addLeftButtons() {
+        
+        // Navigation Button
+        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        backButton.clipsToBounds = true
+        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
+        self.view.addSubview(backButton)
+        
         // Game buttons
         deleteButton = UIButton(frame: CGRect(x: 10, y: 70, width: 50, height: 50))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
@@ -111,19 +133,20 @@ class ColoringGameViewController: UIViewController {
         undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
         self.view.addSubview(undoButton)
         
-        // Navigation Button
-        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
-        backButton.clipsToBounds = true
-        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
-        self.view.addSubview(backButton)
+        // Indicates the selected color
+        colorIndicator = UIView(frame: CGRect(x: 10, y: 190, width: 50, height: 50))
+        colorIndicator!.layer.borderWidth = 3
+        colorIndicator!.layer.borderColor = UIColor.black.cgColor
+        colorIndicator!.backgroundColor = .green
+        colorIndicator!.layer.cornerRadius = colorIndicator!.frame.width * 0.5
+        self.view.addSubview(colorIndicator!)
     }
     
     @objc func colorButtonPressed(button: ColorButton) {
         if let color = button.backgroundColor {
-            drawView.lineColor = color
+            selectedColor = color
         } else {
-            drawView.lineColor = .red
+            selectedColor = .green
         }
     }
     
@@ -163,12 +186,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
                 self.backButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
+                self.colorIndicator?.alpha = 0.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.backButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
+                self.colorIndicator?.alpha = 0.0
             })
         }
     }
@@ -184,12 +209,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
                 self.backButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
+                self.colorIndicator?.alpha = 1.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.backButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
+                self.colorIndicator?.alpha = 1.0
             })
         }
     }
