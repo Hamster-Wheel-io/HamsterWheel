@@ -12,44 +12,6 @@ import AudioToolbox
 
 extension DDLevel {
 
-    func loadHomeButton() {
-        /* Set UI connections */
-        homeButton = self.childNode(withName: "homeButton") as! SKButton
-        
-        // Stop audio when navigate to home screen
-        
-        /* Setup button selection handler for homescreen */
-        homeButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
-                self.audio?.stop()
-                // FIXME: Load the SKScene from 'MainMenuScene.sks'
-                if let scene = SKScene(fileNamed: "MainMenuScene") {
-                    
-                    // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFit
-                    view.presentScene(scene)
-                }
-                // Debug helpers
-                // view.showsPhysics = true
-            }
-        }
-    }
-    
-    func loadBackButton() {
-        
-        /* Set UI connections */
-        backButton = self.childNode(withName: "backButton") as! SKButton
-        
-        /* Setup button selection handler for homescreen */
-        backButton.selectedHandler = { [unowned self] in
-            if self.view != nil {
-                
-                self.transitionToPreviousScene()
-                // Debug helpers
-                // view.showsPhysics = true
-            }
-        }
-    }
     
     func setupTextures() {
         // Set the textures of the shape(s) and match(es)
