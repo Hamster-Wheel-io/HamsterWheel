@@ -56,13 +56,14 @@ extension DDLevel {
     
     // MARK: Friction Physics.
     // Use force to move the player across the screen
-    func move(player: SKSpriteNode, location: CGPoint) {
-        // player.position = location
-        let dx = (location.x - player.position.x) * 4
-        let dy = (location.y - player.position.y) * 4
-        let vector = CGVector(dx: dx, dy: dy)
-        player.physicsBody?.velocity = vector
-        // player.physicsBody?.applyForce(vector)
-    }
+//    func move(player: SKSpriteNode) {
+////    func move(player: SKSpriteNode, location: CGPoint) {
+//        // player.position = location
+//        let dx = (location.x - player.position.x) * 4
+//        let dy = (location.y - player.position.y) * 4
+//        let vector = CGVector(dx: dx, dy: dy)
+//        player.physicsBody?.velocity = vector
+//        // player.physicsBody?.applyForce(vector)
+//    }
     
 }

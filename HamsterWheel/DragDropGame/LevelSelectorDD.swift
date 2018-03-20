@@ -52,7 +52,7 @@ class DDLevelSelector: SKScene {
                 scene.player1Position = CGPoint(x: 1125, y: 525)
                 scene.match1Position = CGPoint(x: 235, y: 207)
                 
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -75,7 +75,7 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1150, y: 160)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -98,7 +98,7 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 321, y: 142)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -122,7 +122,7 @@ class DDLevelSelector: SKScene {
                 scene.match2Position = CGPoint(x: 462, y: 502)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -148,7 +148,7 @@ class DDLevelSelector: SKScene {
                 scene.match2Position = CGPoint(x: 224, y: 200)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -173,7 +173,7 @@ class DDLevelSelector: SKScene {
                 scene.match2Position = CGPoint(x: 260, y: 253)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -196,7 +196,7 @@ class DDLevelSelector: SKScene {
                 scene.wallPosition = CGPoint(x: 0, y: 0)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
@@ -223,7 +223,7 @@ class DDLevelSelector: SKScene {
                 scene.wallPosition = CGPoint(x: 0, y: 0)
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }

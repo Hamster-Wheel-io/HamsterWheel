@@ -29,7 +29,7 @@ extension SingleButtonAudioLevel {
                 self.setEndTimeAndCalculateDifference()
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
+                    scene.scaleMode = .aspectFit
                     // Present the scene
                     view.presentScene(scene)
                 }

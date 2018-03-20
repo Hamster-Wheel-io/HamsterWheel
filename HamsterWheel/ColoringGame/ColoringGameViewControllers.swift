@@ -157,7 +157,7 @@ class ColoringGameViewController: UIViewController {
             if let skView = self.view as? SKView {
                 
                 skView.ignoresSiblingOrder = true
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // TODO: Figure out how to transition nice
                 skView.presentScene(scene, transition: .fade(withDuration: 1))

@@ -47,7 +47,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = false
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -71,7 +71,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = false
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -95,7 +95,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = false
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -129,7 +129,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = true
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -152,7 +152,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = true
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -175,7 +175,7 @@ class AudioGameLevelSelector: SKScene {
                 scene.hasSpelling = true
                 
                 // Sets scale mode
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -187,7 +187,7 @@ class AudioGameLevelSelector: SKScene {
         if let view = view {
             if let scene = SKScene(fileNamed: "MainMenuScene") {
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 // Present the scene
                 view.presentScene(scene)
             }

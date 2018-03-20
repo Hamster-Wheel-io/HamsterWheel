@@ -17,6 +17,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var backButton: SKButton!
     
     // Items that can be interacted with in the game
+    // FIXME: rename to shape instead of player
     var player1: Player1!
     var player2: Player2!
     var match1: Match1!
@@ -75,40 +76,50 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
 
         // only perform these actions if the user touches on the shape
         if let touch = touches.first {
-            if player1.contains(touch.location(in: self)) {
-                
+            let location = touch.location(in: self)
+            print(location)
+            if player1.contains(location) {
+                player1.position = location
                 // Show the user they are touching the piece.
                 player1.size = playerBig
                 player1Dragging = true
                 player2Dragging = false
                 
-                self.playCartoonVoice()
+//                self.playCartoonVoice()
             }
             
             // Check if there is a second player on the screen
             if let player2 = player2 {
-                
-                if (player2.contains(touch.location(in: self))) {
+                if player2.contains(location) {
                     
                     // Show the user they are touching the piece.
                     player2.size = playerBig
                     player2Dragging = true
                     player1Dragging = false
                     
-                    self.playCartoonVoice()
+//                    self.playCartoonVoice()
                 }
             }
         }
     }
     
-    var fingerLocationOnScreen = CGPoint()
+//    var fingerLocationOnScreen = CGPoint()
     
     // Tells the physicsBody which direction to apply the force
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            self.fingerLocationOnScreen = touch.location(in: self)
+//        if let touch = touches.first {
+//            let fingerLocationOnScreen = touch.location(in: self)
+//        }
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            if player1.contains(location) {
+                player1.position = location
+            }
+//                else if player2.contains(location) {
+//                player2.position = location
+//            }
         }
-       
     }
     
     func resetPlayerSize() {
@@ -177,16 +188,18 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        if player1Dragging {
-            move(player: player1, location: fingerLocationOnScreen)
-        }
-        
-        if player2Dragging {
-            move(player: player2!, location: fingerLocationOnScreen)
-        }
-    }
+//    override func update(_ currentTime: TimeInterval) {
+//        // Called before each frame is rendered
+//        if player1Dragging {
+////            move(player: player1, location: fingerLocationOnScreen)
+//            move(player: player1)
+//        }
+//
+//        if player2Dragging {
+////            move(player: player2!, location: fingerLocationOnScreen)
+//            move(player: player2!)
+//        }
+//    }
 }
 
 

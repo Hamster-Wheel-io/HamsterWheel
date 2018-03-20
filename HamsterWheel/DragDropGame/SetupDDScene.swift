@@ -26,7 +26,7 @@ extension DDLevel {
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     
                     // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
+                    scene.scaleMode = .aspectFit
                     view.presentScene(scene)
                 }
                 // Debug helpers
