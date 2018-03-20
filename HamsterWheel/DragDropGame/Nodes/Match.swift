@@ -25,7 +25,7 @@ class Match1: SKSpriteNode {
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.Match1
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Player1
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Shape1
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,7 +49,7 @@ class Match2: SKSpriteNode {
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.Match2
         self.physicsBody?.collisionBitMask = PhysicsCategory.Wall
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Player2
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Shape2
     }
     
     required init?(coder aDecoder: NSCoder) {

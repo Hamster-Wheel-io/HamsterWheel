@@ -11,7 +11,7 @@ import AVFoundation
 
 extension DDLevel {
     
-    // Play sound when user touches the player
+    // Play sound when user touches the shape
     func playCartoonVoice() {
         if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
             do {
@@ -55,15 +55,15 @@ extension DDLevel {
     
     
     // MARK: Friction Physics.
-    // Use force to move the player across the screen
-//    func move(player: SKSpriteNode) {
-////    func move(player: SKSpriteNode, location: CGPoint) {
-//        // player.position = location
-//        let dx = (location.x - player.position.x) * 4
-//        let dy = (location.y - player.position.y) * 4
+    // Use force to move the shape across the screen
+//    func move(shape: SKSpriteNode) {
+////    func move(shape: SKSpriteNode, location: CGPoint) {
+//        // shape.position = location
+//        let dx = (location.x - shape.position.x) * 4
+//        let dy = (location.y - shape.position.y) * 4
 //        let vector = CGVector(dx: dx, dy: dy)
-//        player.physicsBody?.velocity = vector
-//        // player.physicsBody?.applyForce(vector)
+//        shape.physicsBody?.velocity = vector
+//        // shape.physicsBody?.applyForce(vector)
 //    }
     
 }

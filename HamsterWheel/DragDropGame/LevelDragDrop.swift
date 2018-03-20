@@ -18,41 +18,41 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     // Items that can be interacted with in the game
     // FIXME: rename to shape instead of player
-    var player1: Player1!
-    var player2: Player2!
+    var shape1: Shape1!
+    var shape2: Shape2!
     var match1: Match1!
     var match2: Match2!
     var wall: Wall!
 
     // Set the texture variables
-    var player1Texture: String?
-    var player2Texture: String?
+    var shape1Texture: String?
+    var shape2Texture: String?
     var match1Texture: String?
     var match2Texture: String?
     var wallTexture: String?
 
-    // Hold the player size variable because it increases on touche
-    var playerBig = CGSize(width: 110, height: 110)
-    var playerSmall = CGSize(width: 100, height: 100)
+    // Hold the shape size variable because it increases on touche
+    var shapeBig = CGSize(width: 110, height: 110)
+    var shapeSmall = CGSize(width: 100, height: 100)
     
     // Set the position variables because the pieces are placed
     // in different spots on the board in each level
-    var player1Position: CGPoint?
-    var player2Position: CGPoint?
+    var shape1Position: CGPoint?
+    var shape2Position: CGPoint?
     var match1Position: CGPoint?
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
     
-    // If there are 2 players, there will be 2 matches
-    var has2Players = false
+    // If there are 2 shapes, there will be 2 matches
+    var has2Shapes = false
     
     // Use this variable for touchesMoved
-    var player1Dragging = false
-    var player2Dragging = false
+    var shape1Dragging = false
+    var shape2Dragging = false
     
-    // For tracking the success of 2 players on the board
-    var player1Success = false
-    var player2Success = false
+    // For tracking the success of 2 shapes on the board
+    var shape1Success = false
+    var shape2Success = false
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
@@ -77,25 +77,26 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         // only perform these actions if the user touches on the shape
         if let touch = touches.first {
             let location = touch.location(in: self)
-            print(location)
-            if player1.contains(location) {
-                player1.position = location
+//            print(location)
+            if shape1.contains(location) {
+                shape1.position = location
+                
                 // Show the user they are touching the piece.
-                player1.size = playerBig
-                player1Dragging = true
-                player2Dragging = false
+                shape1.size = shapeBig
+                shape1Dragging = true
+                shape2Dragging = false
                 
 //                self.playCartoonVoice()
             }
             
-            // Check if there is a second player on the screen
-            if let player2 = player2 {
-                if player2.contains(location) {
+            // Check if there is a second shape on the screen
+            if let shape2 = shape2 {
+                if shape2.contains(location) {
                     
                     // Show the user they are touching the piece.
-                    player2.size = playerBig
-                    player2Dragging = true
-                    player1Dragging = false
+                    shape2.size = shapeBig
+                    shape2Dragging = true
+                    shape1Dragging = false
                     
 //                    self.playCartoonVoice()
                 }
@@ -113,24 +114,24 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if player1.contains(location) {
-                player1.position = location
+            if shape1.contains(location) {
+                shape1.position = location
             }
-//                else if player2.contains(location) {
-//                player2.position = location
+//                else if shape2.contains(location) {
+//                shape2.position = location
 //            }
         }
     }
     
-    func resetPlayerSize() {
+    func resetShapeSize() {
         // only perform these actions if the user drags the shape
-        player1.size = playerSmall
-        player1Dragging = false
-        player1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        shape1.size = shapeSmall
+        shape1Dragging = false
+        shape1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         
-        player2?.size = playerSmall
-        player2Dragging = false
-        player2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        shape2?.size = shapeSmall
+        shape2Dragging = false
+        shape2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -143,61 +144,61 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let musicAction = SKAction.run { self.playSuccessMusic()}
         let musicStopAction = SKAction.run { self.audio?.stop() }
         let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
-        let player1RemoveAction = SKAction.run { self.player1.removeFromParent() }
-        let player2RemoveAction = SKAction.run { self.player2.removeFromParent() }
-        let removeSequence1 = SKAction.sequence([shrinkAction, player1RemoveAction])
-        let removeSequence2 = SKAction.sequence([shrinkAction, player2RemoveAction])
+        let shape1RemoveAction = SKAction.run { self.shape1.removeFromParent() }
+        let shape2RemoveAction = SKAction.run { self.shape2.removeFromParent() }
+        let removeSequence1 = SKAction.sequence([shrinkAction, shape1RemoveAction])
+        let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
-        resetPlayerSize()
+        resetShapeSize()
 
-        if has2Players {
+        if has2Shapes {
     
-            // Got player1 correct before player2
-            if player1Success {
-                player1.run(spinAction)
-                player1.run(fastFadeAction)
-                player1.run(removeSequence1)
+            // Got shape1 correct before shape2
+            if shape1Success {
+                shape1.run(spinAction)
+                shape1.run(fastFadeAction)
+                shape1.run(removeSequence1)
                 
-                if player2Success {
-                    player2.run(spinAction)
-                    player2.run(fastFadeAction)
-                    player2.run(removeSequence2)
+                if shape2Success {
+                    shape2.run(spinAction)
+                    shape2.run(fastFadeAction)
+                    shape2.run(removeSequence2)
                     self.run(successSequence)
                 }
             }
             
-            // Got player2 correct before player2
-            if player2Success {
-                player2.run(spinAction)
-                player2.run(fastFadeAction)
-                player2.run(removeSequence2)
+            // Got shape2 correct before shape2
+            if shape2Success {
+                shape2.run(spinAction)
+                shape2.run(fastFadeAction)
+                shape2.run(removeSequence2)
                 
-                if player1Success {
-                    player1.run(spinAction)
-                    player1.run(fastFadeAction)
-                    player1.run(removeSequence1)
+                if shape1Success {
+                    shape1.run(spinAction)
+                    shape1.run(fastFadeAction)
+                    shape1.run(removeSequence1)
                     self.run(successSequence)
                 }
             }
             
-        } else if player1Success {
-            player1.run(spinAction)
-            player1.removeFromParent()
+        } else if shape1Success {
+            shape1.run(spinAction)
+            shape1.removeFromParent()
             self.run(successSequence)
         }
     }
     
 //    override func update(_ currentTime: TimeInterval) {
 //        // Called before each frame is rendered
-//        if player1Dragging {
-////            move(player: player1, location: fingerLocationOnScreen)
-//            move(player: player1)
+//        if shape1Dragging {
+////            move(shape: shape1, location: fingerLocationOnScreen)
+//            move(shape: shape1)
 //        }
 //
-//        if player2Dragging {
-////            move(player: player2!, location: fingerLocationOnScreen)
-//            move(player: player2!)
+//        if shape2Dragging {
+////            move(shape: shape2!, location: fingerLocationOnScreen)
+//            move(shape: shape2!)
 //        }
 //    }
 }
