@@ -28,8 +28,10 @@ class DDLevelSelector: SKScene {
             case 6: loadLevel6()
             case 7: loadLevel7()
             case 8: loadLevel8()
+//            case 1: loadLevel7()
+//            case 2: loadLevel8()
                 
-            default: loadLevel1()
+            default: loadLevel8()
             }
         } else {
             currentLevel = 1
@@ -180,9 +182,9 @@ class DDLevelSelector: SKScene {
                 scene.shape1Texture = "squareBlu"
                 scene.match1Texture = "squareBluMatch"
                 scene.wallTexture = "wall"
-                scene.shape1Position = CGPoint(x: -458, y: 162)
-                scene.match1Position = CGPoint(x: 384, y: -186)
-                scene.wallPosition = CGPoint(x: 0, y: 0)
+                scene.shape1Position = CGPoint(x: 250, y: 550)
+                scene.match1Position = CGPoint(x: 1000, y: 200)
+                scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFit
@@ -203,11 +205,11 @@ class DDLevelSelector: SKScene {
                 scene.match1Texture = "triangleRedMatch"
                 scene.match2Texture = "circleBluMatch"
                 scene.wallTexture = "wall"
-                scene.shape1Position = CGPoint(x: -458, y: 162)
-                scene.shape2Position = CGPoint(x: -370, y: -60)
-                scene.match1Position = CGPoint(x: -184, y: -186)
-                scene.match2Position = CGPoint(x: 498, y: 153)
-                scene.wallPosition = CGPoint(x: 0, y: 0)
+                scene.shape1Position = CGPoint(x: 260, y: 360)
+                scene.shape2Position = CGPoint(x: 370, y: scene.frame.height - 100.0)
+                scene.match1Position = CGPoint(x: 1080, y: 580)
+                scene.match2Position = CGPoint(x: 500, y: 150)
+                scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFit

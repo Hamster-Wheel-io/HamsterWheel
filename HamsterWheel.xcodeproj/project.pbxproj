@@ -122,7 +122,6 @@
 				B9DB75E3204F8A5B001A902B /* Physics */,
 				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
-				B91C45402017E41B004BF2FB /* DDScenes */,
 			);
 			path = DragDropGame;
 			sourceTree = "<group>";
@@ -144,13 +143,6 @@
 				C4B297C52016CDD1009FCA9F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		B91C45402017E41B004BF2FB /* DDScenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DDScenes;
 			sourceTree = "<group>";
 		};
 		B9B363FE205E077B00B261AD /* ColoringGame */ = {

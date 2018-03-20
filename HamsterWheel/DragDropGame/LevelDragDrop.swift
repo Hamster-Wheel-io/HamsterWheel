@@ -184,19 +184,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             self.run(successSequence)
         }
     }
-    
-//    override func update(_ currentTime: TimeInterval) {
-//        // Called before each frame is rendered
-//        if shape1Dragging {
-////            move(shape: shape1, location: fingerLocationOnScreen)
-//            move(shape: shape1)
-//        }
-//
-//        if shape2Dragging {
-////            move(shape: shape2!, location: fingerLocationOnScreen)
-//            move(shape: shape2!)
-//        }
-//    }
 }
 
 extension DDLevel {
