@@ -39,12 +39,11 @@ class DDLevelSelector: SKScene {
     
     func loadLevel1() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelOne") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 
                 scene.levelSelector = self
                 currentLevel = 1
                 scene.has2Shapes = false
-                scene.loadHomeButton()
                 
                 // Level 1 variables
                 scene.shape1Texture = "squareRed"
@@ -60,13 +59,11 @@ class DDLevelSelector: SKScene {
     
     func loadLevel2() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelTwo") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 
                 scene.levelSelector = self
                 currentLevel = 2
                 scene.has2Shapes = false
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 2 variables
                 scene.shape1Texture = "circleBlu"
@@ -83,13 +80,11 @@ class DDLevelSelector: SKScene {
     
     func loadLevel3() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelThree") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 
                 scene.levelSelector = self
                 currentLevel = 3
                 scene.has2Shapes = false
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 3 variables
                 scene.shape1Texture = "triangleYel"
@@ -106,13 +101,11 @@ class DDLevelSelector: SKScene {
     
     func loadLevel4() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelFour") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 4
                 scene.has2Shapes = false
-                scene.loadHomeButton()
-                scene.loadBackButton()
-                
+            
                 // Level 4 variables
                 scene.shape1Texture = "squareRed"
                 scene.match1Texture = "squareRedMatch"
@@ -130,12 +123,10 @@ class DDLevelSelector: SKScene {
     
     func loadLevel5() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelFive") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 5
                 scene.has2Shapes = true
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 5 variables
                 scene.shape1Texture = "circleYel"
@@ -155,12 +146,10 @@ class DDLevelSelector: SKScene {
     }
     func loadLevel6() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelSix") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 6
                 scene.has2Shapes = true
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 6 variables
                 scene.shape1Texture = "triangleRed"
@@ -180,12 +169,10 @@ class DDLevelSelector: SKScene {
     }
     func loadLevel7() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelSeven") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 7
                 scene.has2Shapes = false
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 7 variables
                 scene.shape1Texture = "squareBlu"
@@ -203,12 +190,10 @@ class DDLevelSelector: SKScene {
     }
     func loadLevel8() {
         if let view = view {
-            if let scene = DDLevel(fileNamed: "DDLevelEight") {
+            if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 8
                 scene.has2Shapes = true
-                scene.loadHomeButton()
-                scene.loadBackButton()
                 
                 // Level 7 variables
                 scene.shape1Texture = "triangleRed"

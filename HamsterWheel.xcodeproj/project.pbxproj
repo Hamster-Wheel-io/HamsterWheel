@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AB5EC6A8B1E8339A230D2611 /* Pods_HamsterWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */; };
-		B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */ = {isa = PBXBuildFile; fileRef = B90655D02028CAF2000874DF /* DDLevelFour.sks */; };
-		B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */ = {isa = PBXBuildFile; fileRef = B911CEAF202104B000EC7CFF /* DDLevelThree.sks */; };
-		B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45422017E41B004BF2FB /* DDLevelOne.sks */; };
-		B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelTwo.sks */; };
+		B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelScene.sks */; };
 		B9201866205208CF00F1339E /* HelperFuncsDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9201865205208CF00F1339E /* HelperFuncsDD.swift */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
-		B959E145205B51C8008EE045 /* DDLevelEight.sks in Resources */ = {isa = PBXBuildFile; fileRef = B959E144205B51C8008EE045 /* DDLevelEight.sks */; };
 		B9B36401205E077B00B261AD /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B363FF205E077B00B261AD /* ColorButton.swift */; };
 		B9B36402205E077B00B261AD /* ColoringGameViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */; };
 		B9CDD29B2048E16300AD3152 /* SetupDDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */; };
@@ -27,9 +23,6 @@
 		B9CDD2AE204F6A6700AD3152 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AD204F6A6700AD3152 /* Shape.swift */; };
 		B9CDD2B0204F704800AD3152 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AF204F704800AD3152 /* Match.swift */; };
 		B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2B1204F714D00AD3152 /* Wall.swift */; };
-		B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */; };
-		B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */; };
-		B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */; };
 		B9FE4A362044E291004804C3 /* LevelDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* LevelDragDrop.swift */; };
 		B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
@@ -53,13 +46,9 @@
 /* Begin PBXFileReference section */
 		2DABA7FC9EEAF45C85DF23B7 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
 		710ED6FAF80008B4A6841217 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
-		B90655D02028CAF2000874DF /* DDLevelFour.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFour.sks; sourceTree = "<group>"; };
-		B911CEAF202104B000EC7CFF /* DDLevelThree.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelThree.sks; sourceTree = "<group>"; };
-		B91C45422017E41B004BF2FB /* DDLevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelOne.sks; sourceTree = "<group>"; };
-		B91C45462017E41B004BF2FB /* DDLevelTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelTwo.sks; sourceTree = "<group>"; };
+		B91C45462017E41B004BF2FB /* DDLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelScene.sks; sourceTree = "<group>"; };
 		B9201865205208CF00F1339E /* HelperFuncsDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncsDD.swift; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
-		B959E144205B51C8008EE045 /* DDLevelEight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelEight.sks; sourceTree = "<group>"; };
 		B9B363FF205E077B00B261AD /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoringGameViewControllers.swift; sourceTree = "<group>"; };
 		B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDDScene.swift; sourceTree = "<group>"; };
@@ -72,9 +61,6 @@
 		B9CDD2AD204F6A6700AD3152 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B9CDD2AF204F704800AD3152 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		B9CDD2B1204F714D00AD3152 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
-		B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelFive.sks; sourceTree = "<group>"; };
-		B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSix.sks; sourceTree = "<group>"; };
-		B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelSeven.sks; sourceTree = "<group>"; };
 		B9FE4A352044E291004804C3 /* LevelDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDragDrop.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategoriesDD.swift; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTimeTrackingExtension.swift; sourceTree = "<group>"; };
@@ -129,10 +115,10 @@
 		B91C453C2017E2B0004BF2FB /* DragDropGame */ = {
 			isa = PBXGroup;
 			children = (
+				B9E0F2E22061967000C5F4B7 /* DDLevelExtensions */,
 				B9FE4A352044E291004804C3 /* LevelDragDrop.swift */,
-				B9201865205208CF00F1339E /* HelperFuncsDD.swift */,
 				B9CDD29E2048E31D00AD3152 /* LevelSelectorDD.swift */,
-				B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */,
+				B91C45462017E41B004BF2FB /* DDLevelScene.sks */,
 				B9DB75E3204F8A5B001A902B /* Physics */,
 				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
@@ -163,14 +149,6 @@
 		B91C45402017E41B004BF2FB /* DDScenes */ = {
 			isa = PBXGroup;
 			children = (
-				B91C45422017E41B004BF2FB /* DDLevelOne.sks */,
-				B91C45462017E41B004BF2FB /* DDLevelTwo.sks */,
-				B911CEAF202104B000EC7CFF /* DDLevelThree.sks */,
-				B90655D02028CAF2000874DF /* DDLevelFour.sks */,
-				B9CDFF3720302CC900BFA9DF /* DDLevelFive.sks */,
-				B9CDFF3920302CF500BFA9DF /* DDLevelSix.sks */,
-				B9CDFF3B20302D1800BFA9DF /* DDLevelSeven.sks */,
-				B959E144205B51C8008EE045 /* DDLevelEight.sks */,
 			);
 			path = DDScenes;
 			sourceTree = "<group>";
@@ -232,6 +210,15 @@
 				B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */,
 			);
 			path = Physics;
+			sourceTree = "<group>";
+		};
+		B9E0F2E22061967000C5F4B7 /* DDLevelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */,
+				B9201865205208CF00F1339E /* HelperFuncsDD.swift */,
+			);
+			path = DDLevelExtensions;
 			sourceTree = "<group>";
 		};
 		C4B297AA2016CDD1009FCA9F = {
@@ -360,22 +347,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CDFF3820302CC900BFA9DF /* DDLevelFive.sks in Resources */,
 				C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */,
 				B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */,
-				B9CDFF3C20302D1800BFA9DF /* DDLevelSeven.sks in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
-				B91C454C2017E41B004BF2FB /* DDLevelTwo.sks in Resources */,
-				B911CEB0202104B000EC7CFF /* DDLevelThree.sks in Resources */,
+				B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
-				B91C45482017E41B004BF2FB /* DDLevelOne.sks in Resources */,
 				B9511FBF20466754005338EA /* shapes.atlas in Resources */,
-				B9CDFF3A20302CF500BFA9DF /* DDLevelSix.sks in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
-				B959E145205B51C8008EE045 /* DDLevelEight.sks in Resources */,
 				B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */,
-				B90655D12028CAF2000874DF /* DDLevelFour.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
