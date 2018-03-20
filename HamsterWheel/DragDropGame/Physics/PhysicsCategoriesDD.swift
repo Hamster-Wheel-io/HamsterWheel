@@ -18,8 +18,8 @@ import Foundation
 // FIXME: Correct to match game pieces
 struct PhysicsCategory {
     static let None: UInt32 = 0              // 0000000
-    static let Player1: UInt32 = 0b1         // 0000001
-    static let Player2: UInt32 = 0b10        // 0000010
+    static let Shape1: UInt32 = 0b1         // 0000001
+    static let Shape2: UInt32 = 0b10        // 0000010
     static let Wall: UInt32 = 0b100          // 0000100
     static let Match1: UInt32 = 0b1000       // 0001000
     static let Match2: UInt32 = 0b10000      // 0010000

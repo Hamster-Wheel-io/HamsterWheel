@@ -26,7 +26,7 @@ extension DDLevel {
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     
                     // Set the scale mode to scale to fit the window
-                    scene.scaleMode = .aspectFill
+                    scene.scaleMode = .aspectFit
                     view.presentScene(scene)
                 }
                 // Debug helpers
@@ -52,12 +52,12 @@ extension DDLevel {
     }
     
     func setupTextures() {
-        // Set the textures of the player(s) and match(es)
-        if let texture = player1Texture, let position = player1Position {
-            setupPlayer1(texture: texture, position: position)
+        // Set the textures of the shape(s) and match(es)
+        if let texture = shape1Texture, let position = shape1Position {
+            setupShape1(texture: texture, position: position)
         }
-        if let texture = player2Texture, let position = player2Position {
-            setupPlayer2(texture: texture, position: position)
+        if let texture = shape2Texture, let position = shape2Position {
+            setupShape2(texture: texture, position: position)
         }
         if let texture = match1Texture, let position = match1Position {
             setupMatch1(texture: texture, position: position)
@@ -73,16 +73,16 @@ extension DDLevel {
     func setupCollisions(_ contact: SKPhysicsContact) {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        if collision == PhysicsCategory.Wall | PhysicsCategory.Player1 | PhysicsCategory.Player2 {
-        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player1 {
-            player1Success = true
-        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player2 {
-            player2Success = true
-        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Player2 {
+        if collision == PhysicsCategory.Wall | PhysicsCategory.Shape1 | PhysicsCategory.Shape2 {
+        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape1 {
+            shape1Success = true
+        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape2 {
+            shape2Success = true
+        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape2 {
             // play uh-oh sound and vibrate the phone
             playUhOhSound()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Player1 {
+        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape1 {
             // play uh-oh sound and vibrate the phone
             playUhOhSound()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))  
@@ -90,13 +90,13 @@ extension DDLevel {
     }
     
     // Setup the peices on the board
-    func setupPlayer1(texture: String, position: CGPoint) {
-        player1 = Player1(imageNamed: texture)
-        player1.size = playerSmall
-        player1.position = position
-        player1.zPosition = 2
+    func setupShape1(texture: String, position: CGPoint) {
+        shape1 = Shape1(imageNamed: texture)
+        shape1.size = shapeSmall
+        shape1.position = position
+        shape1.zPosition = 2
         
-        addChild(player1)
+        addChild(shape1)
     }
     
     func setupMatch1(texture: String, position: CGPoint) {
@@ -108,13 +108,13 @@ extension DDLevel {
         addChild(match1)
     }
     
-    func setupPlayer2(texture: String, position: CGPoint) {
-        player2 = Player2(imageNamed: texture)
-        player2.size = playerSmall
-        player2.position = position
-        player2.zPosition = 2
+    func setupShape2(texture: String, position: CGPoint) {
+        shape2 = Shape2(imageNamed: texture)
+        shape2.size = shapeSmall
+        shape2.position = position
+        shape2.zPosition = 2
         
-        addChild(player2)
+        addChild(shape2)
     }
     
     func setupMatch2(texture: String, position: CGPoint) {

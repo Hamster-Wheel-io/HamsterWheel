@@ -23,7 +23,7 @@ class Wall: SKSpriteNode {
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.Wall
         self.physicsBody?.collisionBitMask = PhysicsCategory.None
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Player1 | PhysicsCategory.Player2
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Shape1 | PhysicsCategory.Shape2
     }
     
     required init?(coder aDecoder: NSCoder) {

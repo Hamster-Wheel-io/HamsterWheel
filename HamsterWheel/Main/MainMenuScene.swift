@@ -25,7 +25,8 @@ class MainMenuScene: SKScene {
             if let view = self.view {
                 let selector = DDLevelSelector()
                 selector.currentLevel = 1
-                
+                // Set the scale mode to scale to fit the window
+                selector.scaleMode = .aspectFit
                 view.presentScene(selector)
             }
         }
