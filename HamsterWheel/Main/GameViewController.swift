@@ -23,21 +23,6 @@ class GameViewController: UIViewController {
             view.ignoresSiblingOrder = true
         }
     }
-    
-    // Fixes the letter boxing issue
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let skView = self.view as! SKView
-        if let scene = skView.scene {
-            var size = scene.size
-            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
-            if newHeight > size.height {
-                scene.anchorPoint = CGPoint(x: 0.5, y: ((newHeight - scene.size.height) / 4 / newHeight)+0.5)
-                size.height = newHeight
-                scene.size = size
-            }
-        }
-    }
 
     override var shouldAutorotate: Bool {
         return true

@@ -19,9 +19,11 @@ extension SingleButtonAudioLevel {
         nextButton.isHidden = true
     }
     
+    // FIXME: make this func consitent between games
     func setupHomeButton() {
         /* Set UI connections */
         menuButton = self.childNode(withName: "menuButton") as! SKButton
+        menuButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
         
         /* Setup button selection handler for homescreen */
         menuButton.selectedHandler = { [unowned self] in
@@ -45,6 +47,8 @@ extension SingleButtonAudioLevel {
     func setupBackButton() {
         /* Set UI connections */
         backButton = self.childNode(withName: "backButton") as! SKButton
+        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
+        
         if let selector = levelSelector {
             if let current = selector.currentLevel {
                 if current < 2 {
@@ -52,6 +56,7 @@ extension SingleButtonAudioLevel {
                 }
             }
         }
+        
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {

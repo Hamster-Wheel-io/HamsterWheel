@@ -51,5 +51,23 @@ class MainMenuScene: SKScene {
                 }, completion: nil)
             }
         }
+        
+        sceneDidLayoutSubviews(skView: view)
+    }
+    
+    /*
+     Extends the view to the edges of the frame
+     Avoiding letter boxing (black bars top and bottom)
+     */
+    func sceneDidLayoutSubviews(skView: SKView) {
+        if let scene = skView.scene {
+            var size = scene.size
+            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
+            if newHeight > size.height {
+                scene.anchorPoint = CGPoint(x: 0, y: (newHeight - scene.size.height) / 2.0 / newHeight)
+                size.height = newHeight
+                scene.size = size
+            }
+        }
     }
 }

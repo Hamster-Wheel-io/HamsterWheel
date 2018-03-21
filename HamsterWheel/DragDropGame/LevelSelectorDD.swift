@@ -39,6 +39,7 @@ class DDLevelSelector: SKScene {
         }
     }
     
+    
     func loadLevel1() {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
@@ -188,7 +189,9 @@ class DDLevelSelector: SKScene {
                 
                 // Sets scale mode
                 scene.scaleMode = .aspectFit
+                
                 view.presentScene(scene)
+                
             }
         }
     }

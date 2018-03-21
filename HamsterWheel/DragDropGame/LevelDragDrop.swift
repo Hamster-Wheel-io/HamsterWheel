@@ -64,10 +64,30 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         loadHomeButton()
         loadBackButton()
         setupTextures()
+        
+        // Avoids letter boxing on iPad
+        sceneDidLayoutSubviews()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         setupCollisions(contact)
+    }
+    
+    /*
+     Extends the view to the edges of the frame
+     Avoiding letter boxing (black bars top and bottom)
+     */
+    func sceneDidLayoutSubviews() {
+        let skView = self.view!
+        if let scene = skView.scene {
+            var size = scene.size
+            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
+            if newHeight > size.height {
+                scene.anchorPoint = CGPoint(x: 0, y: (newHeight - scene.size.height) / 2.0 / newHeight)
+                size.height = newHeight
+                scene.size = size
+            }
+        }
     }
     
 
@@ -83,6 +103,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 shape1.size = shapeBig
                 shape1Dragging = true
                 shape2Dragging = false
+                
+                // FIXME: change how audio is engaged
                 self.playCartoonVoice()
             }
             
@@ -132,12 +154,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let wait = SKAction.wait(forDuration: 2)
+        let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
-        let musicAction = SKAction.run { self.playSuccessMusic()}
+        let musicAction = SKAction.run { self.playSuccessMusic() }
         let musicStopAction = SKAction.run { self.audio?.stop() }
         let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
         let shape1RemoveAction = SKAction.run { self.shape1.removeFromParent() }
@@ -190,6 +212,7 @@ extension DDLevel {
     
     func loadHomeButton() {
         homeButton = self.childNode(withName: "homeButton") as! SKButton
+        homeButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
         homeButton.selectedHandler = { [unowned self] in
             
             if let view = self.view {
@@ -207,6 +230,7 @@ extension DDLevel {
     
     func loadBackButton() {
         backButton = self.childNode(withName: "backButton") as! SKButton
+        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         
         if let selector = levelSelector {
             if let current = selector.currentLevel {
