@@ -122,9 +122,10 @@ class ColoringGameViewController: UIViewController {
         self.view.addSubview(backButton)
         
         // Game buttons
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
+        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 50, height: 50))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
+        deleteButton.contentMode = .scaleToFill
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         self.view.addSubview(deleteButton)
         
