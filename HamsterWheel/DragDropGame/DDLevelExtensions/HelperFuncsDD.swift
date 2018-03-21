@@ -17,9 +17,9 @@ extension DDLevel {
             do {
                 // Use NSDataAssets's data property to access the yahoo voice.
                 soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
-                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
+//                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                 soundEffect?.play()
-                audio?.play()
+//                audio?.play()
             } catch let error as NSError {
                 // Should print...
                 print(error.localizedDescription)

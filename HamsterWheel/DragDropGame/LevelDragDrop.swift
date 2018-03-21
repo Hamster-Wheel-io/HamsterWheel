@@ -56,7 +56,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
-    
 
     override func didMove(to view: SKView) {
 
@@ -65,11 +64,30 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         loadHomeButton()
         loadBackButton()
         setupTextures()
-
+        
+        // Avoids letter boxing on iPad
+        sceneDidLayoutSubviews()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         setupCollisions(contact)
+    }
+    
+    /*
+     Extends the view to the edges of the frame
+     Avoiding letter boxing (black bars top and bottom)
+     */
+    func sceneDidLayoutSubviews() {
+        let skView = self.view!
+        if let scene = skView.scene {
+            var size = scene.size
+            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
+            if newHeight > size.height {
+                scene.anchorPoint = CGPoint(x: 0, y: (newHeight - scene.size.height) / 2.0 / newHeight)
+                size.height = newHeight
+                scene.size = size
+            }
+        }
     }
     
 
@@ -78,7 +96,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         // only perform these actions if the user touches on the shape
         if let touch = touches.first {
             let location = touch.location(in: self)
-//            print(location)
             if shape1.contains(location) {
                 shape1.position = location
                 
@@ -87,7 +104,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 shape1Dragging = true
                 shape2Dragging = false
                 
-//                self.playCartoonVoice()
+                // FIXME: change how audio is engaged
+                self.playCartoonVoice()
             }
             
             // Check if there is a second shape on the screen
@@ -98,29 +116,28 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                     shape2.size = shapeBig
                     shape2Dragging = true
                     shape1Dragging = false
-                    
-//                    self.playCartoonVoice()
+                    self.playCartoonVoice()
                 }
             }
         }
     }
     
-//    var fingerLocationOnScreen = CGPoint()
     
     // Tells the physicsBody which direction to apply the force
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let touch = touches.first {
-//            let fingerLocationOnScreen = touch.location(in: self)
-//        }
         for touch in touches {
             let location = touch.location(in: self)
             
             if shape1.contains(location) {
                 shape1.position = location
             }
-//                else if shape2.contains(location) {
-//                shape2.position = location
-//            }
+            
+            // Check if shape2 is present in the scene
+            if let shape2 = shape2 {
+                if shape2.contains(location) {
+                    shape2.position = location
+                }
+            }
         }
     }
     
@@ -137,12 +154,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let wait = SKAction.wait(forDuration: 2)
+        let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
-        let musicAction = SKAction.run { self.playSuccessMusic()}
+        let musicAction = SKAction.run { self.playSuccessMusic() }
         let musicStopAction = SKAction.run { self.audio?.stop() }
         let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
         let shape1RemoveAction = SKAction.run { self.shape1.removeFromParent() }
@@ -189,50 +206,31 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             self.run(successSequence)
         }
     }
-    
-//    override func update(_ currentTime: TimeInterval) {
-//        // Called before each frame is rendered
-//        if shape1Dragging {
-////            move(shape: shape1, location: fingerLocationOnScreen)
-//            move(shape: shape1)
-//        }
-//
-//        if shape2Dragging {
-////            move(shape: shape2!, location: fingerLocationOnScreen)
-//            move(shape: shape2!)
-//        }
-//    }
 }
 
 extension DDLevel {
     
     func loadHomeButton() {
-        /* Set UI connections */
         homeButton = self.childNode(withName: "homeButton") as! SKButton
-        
-        // Stop audio when navigate to home screen
-        
-        /* Setup button selection handler for homescreen */
+        homeButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
         homeButton.selectedHandler = { [unowned self] in
+            
             if let view = self.view {
+                // Stop audio when navigate to home screen
                 self.audio?.stop()
-                // FIXME: Load the SKScene from 'MainMenuScene.sks'
+                
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
-                    
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFit
                     view.presentScene(scene)
                 }
-                // Debug helpers
-                // view.showsPhysics = true
             }
         }
     }
     
     func loadBackButton() {
-        
-        /* Set UI connections */
         backButton = self.childNode(withName: "backButton") as! SKButton
+        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         
         if let selector = levelSelector {
             if let current = selector.currentLevel {
@@ -242,16 +240,11 @@ extension DDLevel {
             }
         }
         
-        /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if self.view != nil {
-                
                 self.transitionToPreviousScene()
-                // Debug helpers
-                // view.showsPhysics = true
             }
         }
     }
-    
 }
 

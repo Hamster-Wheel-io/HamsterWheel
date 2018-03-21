@@ -23,6 +23,7 @@
 		B9CDD2AE204F6A6700AD3152 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AD204F6A6700AD3152 /* Shape.swift */; };
 		B9CDD2B0204F704800AD3152 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AF204F704800AD3152 /* Match.swift */; };
 		B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2B1204F714D00AD3152 /* Wall.swift */; };
+		B9E0F2E42061E6C500C5F4B7 /* SKScenePositionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */; };
 		B9FE4A362044E291004804C3 /* LevelDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A352044E291004804C3 /* LevelDragDrop.swift */; };
 		B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
@@ -61,6 +62,7 @@
 		B9CDD2AD204F6A6700AD3152 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B9CDD2AF204F704800AD3152 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		B9CDD2B1204F714D00AD3152 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScenePositionExtension.swift; sourceTree = "<group>"; };
 		B9FE4A352044E291004804C3 /* LevelDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDragDrop.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategoriesDD.swift; sourceTree = "<group>"; };
 		C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTimeTrackingExtension.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 				B9DB75E3204F8A5B001A902B /* Physics */,
 				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
-				B91C45402017E41B004BF2FB /* DDScenes */,
 			);
 			path = DragDropGame;
 			sourceTree = "<group>";
@@ -144,13 +145,6 @@
 				C4B297C52016CDD1009FCA9F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		B91C45402017E41B004BF2FB /* DDScenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DDScenes;
 			sourceTree = "<group>";
 		};
 		B9B363FE205E077B00B261AD /* ColoringGame */ = {
@@ -273,6 +267,7 @@
 				C4B297D22016D123009FCA9F /* SKButton.swift */,
 				C459442720212C4300C3D18A /* SKButton2.swift */,
 				C4260B1A20376B200023B208 /* ImageScalingExtension.swift */,
+				B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -436,6 +431,7 @@
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
+				B9E0F2E42061E6C500C5F4B7 /* SKScenePositionExtension.swift in Sources */,
 				C44E421020314ACB006EE3C5 /* AGSpellingExtension.swift in Sources */,
 				B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,

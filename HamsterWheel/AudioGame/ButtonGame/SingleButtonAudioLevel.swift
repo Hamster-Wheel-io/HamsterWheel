@@ -67,6 +67,26 @@ class SingleButtonAudioLevel: SKScene {
         // AGSpellingExtension.swift
         setupGrayOutView()
         setupSpellLabel()
+        
+        // Avoids letter boxing on iPad
+        sceneDidLayoutSubviews()
+    }
+    
+    /*
+     Extends the view to the edges of the frame
+     Avoiding letter boxing (black bars top and bottom)
+     */
+    func sceneDidLayoutSubviews() {
+        let skView = self.view!
+        if let scene = skView.scene {
+            var size = scene.size
+            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
+            if newHeight > size.height {
+                scene.anchorPoint = CGPoint(x: 0, y: (newHeight - scene.size.height) / 2.0 / newHeight)
+                size.height = newHeight
+                scene.size = size
+            }
+        }
     }
     
     // Setup title label and add it to the scene

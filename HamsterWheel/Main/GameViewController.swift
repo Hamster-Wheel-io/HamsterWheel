@@ -8,42 +8,19 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'MainMenuScene.sks'
-            // MainMenuScene()
             if let scene = SKScene(fileNamed: "MainMenuScene") {
-                // Set the scale mode to scale to fit the window
+                // Set the scale mode to scale to fit iPad
                 scene.scaleMode = .aspectFit
-                
-                // Present the scene
                 view.presentScene(scene)
             }
-            
-            // FIXME: look into what this does!!!
+            // Increase performance by not having the scene render the children in order
             view.ignoresSiblingOrder = true
-            
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let skView = self.view as! SKView
-        if let scene = skView.scene {
-            var size = scene.size
-            let newHeight = skView.bounds.size.height / skView.bounds.width * size.width
-            if newHeight > size.height {
-                scene.anchorPoint = CGPoint(x: 0.5, y: ((newHeight - scene.size.height) / 4 / newHeight)+0.5)
-                size.height = newHeight
-                scene.size = size
-            }
         }
     }
 
