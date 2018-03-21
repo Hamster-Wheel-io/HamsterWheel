@@ -25,8 +25,9 @@ class ColoringGameViewController: UIViewController {
     var colorStackView: UIStackView?
     
     var deleteButton : UIButton!
-    var backButton: UIButton!
+    var homeButton: UIButton!
     var undoButton: UIButton!
+    var navigationButtons: [UIButton] = []
     
     var colorIndicator: UIView?
     
@@ -115,14 +116,14 @@ class ColoringGameViewController: UIViewController {
     func addLeftButtons() {
         
         // Navigation Button
-        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
-        backButton.clipsToBounds = true
-        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
-        self.view.addSubview(backButton)
+        homeButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        homeButton.clipsToBounds = true
+        homeButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
+        homeButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
+        self.view.addSubview(homeButton)
         
         // Game buttons
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 50, height: 50))
+        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.contentMode = .scaleToFill
@@ -185,14 +186,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
         if let stackView = colorStackView {
             UIView.animate(withDuration: 0.3, animations: {
                 stackView.alpha = 0.0
-                self.backButton.alpha = 0.0
+                self.homeButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
                 self.colorIndicator?.alpha = 0.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.backButton.alpha = 0.0
+                self.homeButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
                 self.colorIndicator?.alpha = 0.0
@@ -204,14 +205,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
         if let stackView = colorStackView {
             UIView.animate(withDuration: 0.3, animations: {
                 stackView.alpha = 1.0
-                self.backButton.alpha = 1.0
+                self.homeButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
                 self.colorIndicator?.alpha = 1.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.backButton.alpha = 1.0
+                self.homeButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
                 self.colorIndicator?.alpha = 1.0
