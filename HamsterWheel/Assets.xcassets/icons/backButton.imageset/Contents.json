@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "nextButton.png",
+      "filename" : "backButton.png",
       "scale" : "1x"
     },
     {

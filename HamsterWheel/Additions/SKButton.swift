@@ -25,21 +25,21 @@ class SKButton: SKSpriteNode {
             switch state {
             case .active:
                 /* Enable touch */
-                self.isUserInteractionEnabled = true
-                
-                /* Visible */
-                self.alpha = 1
+//                self.isUserInteractionEnabled = true
+//                
+//                /* Visible */
+//                self.alpha = 1
                 break
             case .selected:
                 /* Semi transparent */
-                self.alpha = 0.7
+//                self.alpha = 0.7
                 break
             case .hidden:
-                /* Disable touch */
-                self.isUserInteractionEnabled = false
-                
-                /* Hide */
-                self.alpha = 0
+//                /* Disable touch */
+//                self.isUserInteractionEnabled = false
+//
+//                /* Hide */
+//                self.alpha = 0
                 break
             }
         }
