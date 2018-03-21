@@ -29,6 +29,9 @@ class ColoringGameViewController: UIViewController {
     var undoButton: UIButton!
     var navigationButtons: [UIButton] = []
     
+    var widthMultiplier = 0.0
+    var heightMultiplier = 0.0
+    
     var colorIndicator: UIView?
     
     var selectedColor: UIColor! {
@@ -56,6 +59,10 @@ class ColoringGameViewController: UIViewController {
         
         self.view.addSubview(drawView)
         setupButtons()
+        
+        // Size for the SE Logical Resolution
+        widthMultiplier = Double(self.view.frame.size.width) / 320
+        heightMultiplier = Double(self.view.frame.size.height) / 568
         
     }
     
@@ -123,7 +130,11 @@ class ColoringGameViewController: UIViewController {
         self.view.addSubview(homeButton)
         
         // Game buttons
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
+        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 50, height: 50))
+        
+        deleteButton.frame.size.width = deleteButton.frame.width * CGFloat(widthMultiplier)
+        deleteButton.frame.size.height = deleteButton.frame.height * CGFloat(heightMultiplier)
+        deleteButton.frame.origin = CGPoint(x: deleteButton.frame.origin.x * CGFloat(widthMultiplier), y: deleteButton.frame.origin.y * CGFloat(heightMultiplier))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.contentMode = .scaleToFill
