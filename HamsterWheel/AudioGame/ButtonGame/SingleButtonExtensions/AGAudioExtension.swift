@@ -26,7 +26,9 @@ extension SingleButtonAudioLevel {
             self.audioButtonPressed()
         })
         // Position in center of the screen
-        audioButton.position = CGPoint(x: 680, y: -385)
+        if let view = self.view {
+            audioButton.position = convertPoint(fromView: view.center)
+        }
         
         // Add button to view
         addChild(audioButton)

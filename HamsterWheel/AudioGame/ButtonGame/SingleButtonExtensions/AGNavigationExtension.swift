@@ -13,12 +13,6 @@ extension SingleButtonAudioLevel {
     
     // MARK: Navigation buttons setup
     
-    func connectNextLevelButton() {
-        nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.selectedHandler = transitionToNextScene
-        nextButton.isHidden = true
-    }
-    
     // FIXME: make this func consitent between games
     func setupHomeButton() {
         /* Set UI connections */
@@ -47,7 +41,7 @@ extension SingleButtonAudioLevel {
     func setupBackButton() {
         /* Set UI connections */
         backButton = self.childNode(withName: "backButton") as! SKButton
-        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
+        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         
         if let selector = levelSelector {
             if let current = selector.currentLevel {
@@ -74,6 +68,13 @@ extension SingleButtonAudioLevel {
                 }
             }
         }
+    }
+    
+    func connectNextLevelButton() {
+        nextButton = self.childNode(withName: "nextButton") as! SKButton
+        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
+        nextButton.selectedHandler = transitionToNextScene
+        nextButton.isHidden = true
     }
     
     func transitionToNextScene() {

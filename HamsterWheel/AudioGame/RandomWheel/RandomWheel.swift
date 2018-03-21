@@ -36,7 +36,7 @@ class RandomWheel: SKScene {
     
     override func didMove(to view: SKView) {
         // Adds the rotating wheel
-        addWheel(view: view, width: 350, height: 350)
+        addWheel(view: view, width: view.bounds.height * 0.8, height: view.bounds.height * 0.8)
         
         // Adds the spin button and the wheel frame
         addWheelImages(view: view)
@@ -48,6 +48,9 @@ class RandomWheel: SKScene {
         setupHomeButton()
         setupBackButton()
         connectNextLevelButton()
+        
+        // Fixes letter boxing on iPad
+        sceneDidLayoutSubviews()
     }
     
     // MARK: UI setup
@@ -55,7 +58,7 @@ class RandomWheel: SKScene {
     func setupHomeButton() {
         /* Set UI connections */
         menuButton = self.childNode(withName: "menuButton") as! SKButton
-        
+        menuButton.position = positionFromTop(CGPoint(x: 75.0, y: 75.0))
         /* Setup button selection handler for homescreen */
         menuButton.selectedHandler = { [unowned self] in
             if let view = self.view {
@@ -80,6 +83,7 @@ class RandomWheel: SKScene {
     func setupBackButton() {
         /* Set UI connections */
         backButton = self.childNode(withName: "backButton") as! SKButton
+        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
@@ -102,6 +106,7 @@ class RandomWheel: SKScene {
     
     func connectNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
+        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
         nextButton.selectedHandler = transitionToNextScene
         nextButton.isHidden = true
     }
@@ -113,9 +118,17 @@ class RandomWheel: SKScene {
     // Add both the wheel frame and spin button to the view
     func addWheelImages(view: SKView) {
         // Adds the wheel frame
-        frameImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 382, width: 365, image: #imageLiteral(resourceName: "wheelFrame"))
+        frameImage = addImageToCenter(x: view.bounds.midX,
+                                      y: view.bounds.midY + 10,
+                                      height: view.bounds.height * 0.9 - 8,
+                                      width: view.bounds.height * 0.9,
+                                      image: #imageLiteral(resourceName: "wheelFrame"))
         // adds the spin button image
-        spinButtonImage = addImageToCenter(x: view.bounds.midX, y: view.bounds.midY + 10, height: 150, width: 150, image: #imageLiteral(resourceName: "spin"))
+        spinButtonImage = addImageToCenter(x: view.bounds.midX,
+                                           y: view.bounds.midY + 5,
+                                           height: view.bounds.height * 0.3,
+                                           width: view.bounds.height * 0.3,
+                                           image: #imageLiteral(resourceName: "spin"))
     }
     
     // Adds the rotating wheel to the view
@@ -173,7 +186,7 @@ class RandomWheel: SKScene {
         
         btn.setTitle("SPIN", for: .normal)
         btn.setTitleColor(.yellow, for: .normal)
-        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
+        btn.titleLabel?.font = UIFont(name: "AmericanTypewriter-Bold", size: 20)
         btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
         spinButton = btn
         view.addSubview(btn)
@@ -186,8 +199,8 @@ class RandomWheel: SKScene {
                                                   width: width,
                                                   height: height))
         imageView.center = CGPoint(x: x, y: y)
-        
         imageView.image = image
+        imageView.contentMode = .scaleAspectFit
         view?.addSubview(imageView)
         return imageView
     }

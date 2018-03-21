@@ -80,8 +80,8 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
             }
         }
         if let image = image {
-            let centerOffset = CGPoint(x: -90, y: -140)
-            let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: 90, height: 80)
+            let centerOffset = CGPoint(x: -radius * 0.55, y: -radius * 0.80)
+            let additionalGraphicRect = CGRect(x: centerOffset.x, y: centerOffset.y, width: radius * 0.5, height: radius * 0.5)
             let additionalGraphicPath = UIBezierPath(rect: additionalGraphicRect)
             context.saveGState()
             additionalGraphicPath.addClip()

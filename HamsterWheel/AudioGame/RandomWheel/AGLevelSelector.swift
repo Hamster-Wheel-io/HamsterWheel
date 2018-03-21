@@ -108,7 +108,7 @@ class AudioGameLevelSelector: SKScene {
             if let scene = RandomWheel(fileNamed: "RandomWheel") {
                 scene.levelSelector = self
                 currentLevel = 4 // Just to be sure
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
         }
