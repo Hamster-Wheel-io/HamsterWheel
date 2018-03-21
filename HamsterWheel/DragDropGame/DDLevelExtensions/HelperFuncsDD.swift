@@ -13,7 +13,7 @@ extension DDLevel {
     
     // Play sound when user touches the shape
     func playCartoonVoice() {
-        if let asset = NSDataAsset(name: "yahoo"), let pop = NSDataAsset(name: "pop") {
+        if let pop = NSDataAsset(name: "pop") {
             do {
                 // Use NSDataAssets's data property to access the yahoo voice.
                 soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
