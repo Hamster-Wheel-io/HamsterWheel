@@ -55,6 +55,7 @@ class ColoringGameViewController: UIViewController {
         
         self.view.addSubview(drawView)
         setupButtons()
+        
     }
     
     func setupButtons() {
@@ -114,27 +115,27 @@ class ColoringGameViewController: UIViewController {
     func addLeftButtons() {
         
         // Navigation Button
-        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
         backButton.clipsToBounds = true
         backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
         backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
         self.view.addSubview(backButton)
         
         // Game buttons
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 70, width: 50, height: 50))
+        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         self.view.addSubview(deleteButton)
         
-        undoButton = UIButton(frame: CGRect(x: 10, y: 130, width: 50, height: 50))
-        undoButton.setImage(#imageLiteral(resourceName: "leftArrow"), for: .normal)
+        undoButton = UIButton(frame: CGRect(x: 10, y: 90, width: 30, height: 30))
+        undoButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
         undoButton.clipsToBounds = true
         undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
         self.view.addSubview(undoButton)
         
         // Indicates the selected color
-        colorIndicator = UIView(frame: CGRect(x: 10, y: 190, width: 50, height: 50))
+        colorIndicator = UIView(frame: CGRect(x: 10, y: 130, width: 30, height: 30))
         colorIndicator!.layer.borderWidth = 3
         colorIndicator!.layer.borderColor = UIColor.black.cgColor
         colorIndicator!.backgroundColor = .green
