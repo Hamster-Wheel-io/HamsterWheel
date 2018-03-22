@@ -149,15 +149,11 @@ class ColoringGameViewController: UIViewController {
         colorIndicator!.layer.borderColor = UIColor.black.cgColor
         colorIndicator!.backgroundColor = .green
         colorIndicator!.layer.cornerRadius = colorIndicator!.frame.width * 0.5
-        self.view.addSubview(colorIndicator!)
+        // self.view.addSubview(colorIndicator!)
     }
     
     func addLeftButtons() {
         // Game buttons
-        /*
-         FIXME: Add buttons in a stack view
-         Give one button a height constraint
-        */
         let stackView = UIStackView(arrangedSubviews: navigationButtons)
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -166,15 +162,13 @@ class ColoringGameViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
-        // stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -200).isActive = true
-        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        // Set StackView height related to the parent view height
+        // Set StackView width related to the StackView height to keep the aspect ratio
         let stackHeight = self.view.frame.height / 3.0
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
+        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: (stackHeight - 20)/3.0).isActive = true
-//        stackView.addConstraint(as)
         stackView.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
-        
-        
     }
     
     @objc func colorButtonPressed(button: ColorButton) {
