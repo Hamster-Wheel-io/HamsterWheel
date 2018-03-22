@@ -122,22 +122,28 @@ class ColoringGameViewController: UIViewController {
         stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    
     func generateNavigationButtons() {
         // Navigation Button
-        homeButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        homeButton = UIButton()
         homeButton.clipsToBounds = true
         homeButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
         homeButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
+        homeButton.translatesAutoresizingMaskIntoConstraints = false
+//        homeButton.aspectRatioConstraint.isActive = true
+//        homeButton.addConstraint(aspectRatioConstraint)
+        
         navigationButtons.append(homeButton)
         
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
+        deleteButton = UIButton()
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.contentMode = .scaleToFill
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         navigationButtons.append(deleteButton)
         
-        undoButton = UIButton(frame: CGRect(x: 10, y: 90, width: 30, height: 30))
+//        undoButton = UIButton(frame: CGRect(x: 10, y: 90, width: 30, height: 30))
+        undoButton = UIButton()
         undoButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
         undoButton.clipsToBounds = true
         undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
@@ -153,21 +159,33 @@ class ColoringGameViewController: UIViewController {
     }
     
     func addLeftButtons() {
-        // Game buttons
+        /* Game buttons
+         Set StackView height related to the parent view height
+         StackView width related to the StackView height to keep the aspect ratio */
+ 
         let stackView = UIStackView(arrangedSubviews: navigationButtons)
+        var stackHeight: CGFloat = self.view.frame.width / 5
+        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
+            print("iPhoneX")
+            stackHeight = self.view.frame.width / 6
+        } else if self.view.frame.width > 1242 {
+            print("iPad")
+            stackHeight = self.view.frame.width / 5.5
+        }
+        
+        
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stackView)
         
-        // Set StackView height related to the parent view height
-        // Set StackView width related to the StackView height to keep the aspect ratio
-        let stackHeight = self.view.frame.height / 3.0
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
-        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: (stackHeight - 20)/3.0).isActive = true
+        // Autolayout constraints
+        let stackSpacing: CGFloat = 10
+        stackView.spacing = stackSpacing
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
+        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: (stackHeight - (stackSpacing * 2))/3.0).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
     }
     
@@ -253,5 +271,16 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
     
     func SwiftyDrawIsDrawing(view: SwiftyDrawView) {
         
+    }
+}
+
+extension UIButton {
+    override open var intrinsicContentSize: CGSize {
+        let intrinsicContentSize = super.intrinsicContentSize
+        
+        let adjustedWidth = intrinsicContentSize.width
+        let adjustedHeight = intrinsicContentSize.height
+        
+        return CGSize(width: adjustedWidth, height: adjustedHeight)
     }
 }
