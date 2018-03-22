@@ -25,8 +25,13 @@ class ColoringGameViewController: UIViewController {
     var colorStackView: UIStackView?
     
     var deleteButton : UIButton!
-    var backButton: UIButton!
+    var homeButton: UIButton!
     var undoButton: UIButton!
+    var navigationButtons: [UIButton] = []
+    var navigationStackView: UIStackView?
+    
+//    var widthMultiplier = 0.0
+//    var heightMultiplier = 0.0
     
     var colorIndicator: UIView?
     
@@ -56,6 +61,10 @@ class ColoringGameViewController: UIViewController {
         self.view.addSubview(drawView)
         setupButtons()
         
+//        // Size for the SE Logical Resolution
+//        widthMultiplier = Double(self.view.frame.size.width) / 320
+//        heightMultiplier = Double(self.view.frame.size.height) / 568
+        
     }
     
     func setupButtons() {
@@ -66,6 +75,7 @@ class ColoringGameViewController: UIViewController {
         addColorButtons()
         
         // Add back, undo and clear button
+        generateNavigationButtons()
         addLeftButtons()
     }
     
@@ -112,27 +122,26 @@ class ColoringGameViewController: UIViewController {
         stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func addLeftButtons() {
-        
+    func generateNavigationButtons() {
         // Navigation Button
-        backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
-        backButton.clipsToBounds = true
-        backButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
-        self.view.addSubview(backButton)
+        homeButton = UIButton(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        homeButton.clipsToBounds = true
+        homeButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
+        homeButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
+        navigationButtons.append(homeButton)
         
-        // Game buttons
         deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
+        deleteButton.contentMode = .scaleToFill
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
-        self.view.addSubview(deleteButton)
+        navigationButtons.append(deleteButton)
         
         undoButton = UIButton(frame: CGRect(x: 10, y: 90, width: 30, height: 30))
         undoButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
         undoButton.clipsToBounds = true
         undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
-        self.view.addSubview(undoButton)
+        navigationButtons.append(undoButton)
         
         // Indicates the selected color
         colorIndicator = UIView(frame: CGRect(x: 10, y: 130, width: 30, height: 30))
@@ -140,7 +149,26 @@ class ColoringGameViewController: UIViewController {
         colorIndicator!.layer.borderColor = UIColor.black.cgColor
         colorIndicator!.backgroundColor = .green
         colorIndicator!.layer.cornerRadius = colorIndicator!.frame.width * 0.5
-        self.view.addSubview(colorIndicator!)
+        // self.view.addSubview(colorIndicator!)
+    }
+    
+    func addLeftButtons() {
+        // Game buttons
+        let stackView = UIStackView(arrangedSubviews: navigationButtons)
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(stackView)
+        
+        // Set StackView height related to the parent view height
+        // Set StackView width related to the StackView height to keep the aspect ratio
+        let stackHeight = self.view.frame.height / 3.0
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
+        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: (stackHeight - 20)/3.0).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
     }
     
     @objc func colorButtonPressed(button: ColorButton) {
@@ -184,14 +212,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
         if let stackView = colorStackView {
             UIView.animate(withDuration: 0.3, animations: {
                 stackView.alpha = 0.0
-                self.backButton.alpha = 0.0
+                self.homeButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
                 self.colorIndicator?.alpha = 0.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.backButton.alpha = 0.0
+                self.homeButton.alpha = 0.0
                 self.deleteButton.alpha = 0.0
                 self.undoButton.alpha = 0.0
                 self.colorIndicator?.alpha = 0.0
@@ -203,14 +231,14 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
         if let stackView = colorStackView {
             UIView.animate(withDuration: 0.3, animations: {
                 stackView.alpha = 1.0
-                self.backButton.alpha = 1.0
+                self.homeButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
                 self.colorIndicator?.alpha = 1.0
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.backButton.alpha = 1.0
+                self.homeButton.alpha = 1.0
                 self.deleteButton.alpha = 1.0
                 self.undoButton.alpha = 1.0
                 self.colorIndicator?.alpha = 1.0
