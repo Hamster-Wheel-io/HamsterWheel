@@ -130,11 +130,16 @@ class ColoringGameViewController: UIViewController {
         self.view.addSubview(homeButton)
         
         // Game buttons
-        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 50, height: 50))
-        
-        deleteButton.frame.size.width = deleteButton.frame.width * CGFloat(widthMultiplier)
-        deleteButton.frame.size.height = deleteButton.frame.height * CGFloat(heightMultiplier)
-        deleteButton.frame.origin = CGPoint(x: deleteButton.frame.origin.x * CGFloat(widthMultiplier), y: deleteButton.frame.origin.y * CGFloat(heightMultiplier))
+        /*
+         FIXME: Add buttons in a stack view
+         Give one button a height constraint
+         
+        */
+        deleteButton = UIButton(frame: CGRect(x: 10, y: 50, width: 30, height: 30))
+//
+//        deleteButton.frame.size.width = deleteButton.frame.width * CGFloat(widthMultiplier)
+//        deleteButton.frame.size.height = deleteButton.frame.height * CGFloat(heightMultiplier)
+//        deleteButton.frame.origin = CGPoint(x: deleteButton.frame.origin.x * CGFloat(widthMultiplier), y: deleteButton.frame.origin.y * CGFloat(heightMultiplier))
         deleteButton.setImage(#imageLiteral(resourceName: "xButton"), for: .normal)
         deleteButton.clipsToBounds = true
         deleteButton.contentMode = .scaleToFill
