@@ -169,8 +169,10 @@ class ColoringGameViewController: UIViewController {
         stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
         // stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -200).isActive = true
         stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        let stackHeight = self.view.frame.height / 3.0
+        stackView.widthAnchor.constraint(equalToConstant: (stackHeight - 20)/3.0).isActive = true
+//        stackView.addConstraint(as)
+        stackView.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
         
         
     }
