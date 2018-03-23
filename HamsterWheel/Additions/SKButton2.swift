@@ -13,9 +13,9 @@ class SKButton2: SKNode {
     var activeButton: SKSpriteNode
     var action: () -> Void
     
-    init(defaultButtonImage: String, activeButtonImage: String, buttonAction: @escaping () -> Void) {
-        defaultButton = SKSpriteNode(imageNamed: defaultButtonImage)
-        activeButton = SKSpriteNode(imageNamed: activeButtonImage)
+    init(defaultButtonImage: UIImage, activeButtonImage: UIImage, buttonAction: @escaping () -> Void) {
+        defaultButton = SKSpriteNode(texture: SKTexture(image: defaultButtonImage))
+        activeButton = SKSpriteNode(texture: SKTexture(image: activeButtonImage))
         activeButton.isHidden = true
         action = buttonAction
         
