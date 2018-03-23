@@ -108,7 +108,12 @@ class ColoringGameViewController: UIViewController {
         
         if self.view.frame.width > 750 && self.view.frame.width < 1242 {
             print("iPhoneX")
-            stackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -40).isActive = true
+            if #available(iOS 11.0, *) {
+                stackView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -12).isActive = true
+            } else {
+                // Fallback on earlier versions
+                stackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -40).isActive = true
+            }
         }
         stackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -178,9 +183,18 @@ class ColoringGameViewController: UIViewController {
         stackView.spacing = stackSpacing
         stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
         
+        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
+            print("iPhoneX")
+            if #available(iOS 11.0, *) {
+                stackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: -40).isActive = true
+            } else {
+                // Fallback on earlier versions
+                stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -40).isActive = true
+            }
+        }
 //        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
 //            print("iPhoneX")
-            stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 40).isActive = true
+        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 40).isActive = true
 //        }
 //        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: (stackHeight - (stackSpacing * 2))/3.0).isActive = true
