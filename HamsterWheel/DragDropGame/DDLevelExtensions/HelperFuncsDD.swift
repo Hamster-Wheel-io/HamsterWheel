@@ -54,16 +54,16 @@ extension DDLevel {
     }
     
     
-    // MARK: Friction Physics.
-    // Use force to move the shape across the screen
+//     MARK: Friction Physics.
+//     Use force to move the shape across the screen
 //    func move(shape: SKSpriteNode) {
-////    func move(shape: SKSpriteNode, location: CGPoint) {
-//        // shape.position = location
-//        let dx = (location.x - shape.position.x) * 4
-//        let dy = (location.y - shape.position.y) * 4
-//        let vector = CGVector(dx: dx, dy: dy)
-//        shape.physicsBody?.velocity = vector
-//        // shape.physicsBody?.applyForce(vector)
-//    }
+    func move(shape: SKSpriteNode, location: CGPoint) {
+         shape.position = location
+        let dx = (location.x - shape.position.x) * 4
+        let dy = (location.y - shape.position.y) * 4
+        let vector = CGVector(dx: dx, dy: dy)
+        shape.physicsBody?.velocity = vector
+        // shape.physicsBody?.applyForce(vector)
+    }
     
 }

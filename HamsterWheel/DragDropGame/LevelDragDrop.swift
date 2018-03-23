@@ -105,19 +105,22 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    // Tells the physicsBody which direction to apply the force
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             
             if shape1.contains(location) {
-                shape1.position = location
+                shape2Dragging = false
+                move(shape: shape1, location: location)
+//                shape1.position = location
             }
             
             // Check if shape2 is present in the scene
             if let shape2 = shape2 {
                 if shape2.contains(location) {
-                    shape2.position = location
+                    shape1Dragging = false
+//                    shape2.position = location
+                    move(shape: shape2, location: location)
                 }
             }
         }

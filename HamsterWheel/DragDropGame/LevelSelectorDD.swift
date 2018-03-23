@@ -55,8 +55,6 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 235, y: 207)
                 
                 scene.scaleMode = .aspectFit
-                
-                
                 view.presentScene(scene)
             }
         }
