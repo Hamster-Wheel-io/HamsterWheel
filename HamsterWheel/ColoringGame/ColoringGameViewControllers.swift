@@ -30,9 +30,6 @@ class ColoringGameViewController: UIViewController {
     var navigationButtons: [UIButton] = []
     var navigationStackView: UIStackView?
     
-//    var widthMultiplier = 0.0
-//    var heightMultiplier = 0.0
-    
     var colorIndicator: UIView?
     
     var selectedColor: UIColor! {
@@ -43,7 +40,6 @@ class ColoringGameViewController: UIViewController {
             default:
                 drawView.lineWidth = 10
             }
-            
             colorIndicator?.backgroundColor = selectedColor
             drawView.lineColor = selectedColor
         }
@@ -60,23 +56,17 @@ class ColoringGameViewController: UIViewController {
         
         self.view.addSubview(drawView)
         setupButtons()
-        
-//        // Size for the SE Logical Resolution
-//        widthMultiplier = Double(self.view.frame.size.width) / 320
-//        heightMultiplier = Double(self.view.frame.size.height) / 568
-        
     }
     
     func setupButtons() {
         // Generates an array of color buttons
-        generateColorButtons()
-        
         // Add the array of buttons to the view
+        generateColorButtons()
         addColorButtons()
         
         // Add back, undo and clear button
         generateNavigationButtons()
-        addLeftButtons()
+        addNavButtons()
     }
     
     func colorButton(withColor color: UIColor) -> UIButton {
@@ -92,17 +82,14 @@ class ColoringGameViewController: UIViewController {
         
         // Target
         newButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
-        
         return newButton
     }
     
     func generateColorButtons() {
         var buttonArray = [UIButton]()
-        
         for item in colorDictionary {
             buttonArray.append(colorButton(withColor: item))
         }
-        
         colorButtons = buttonArray
     }
     
@@ -118,6 +105,11 @@ class ColoringGameViewController: UIViewController {
         
         stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive = true
+        
+        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
+            print("iPhoneX")
+            stackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -40).isActive = true
+        }
         stackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
@@ -130,9 +122,6 @@ class ColoringGameViewController: UIViewController {
         homeButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
         homeButton.addTarget(self, action: #selector(backToMainMenu), for: .touchUpInside)
         homeButton.translatesAutoresizingMaskIntoConstraints = false
-//        homeButton.aspectRatioConstraint.isActive = true
-//        homeButton.addConstraint(aspectRatioConstraint)
-        
         navigationButtons.append(homeButton)
         
         deleteButton = UIButton()
@@ -142,7 +131,6 @@ class ColoringGameViewController: UIViewController {
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         navigationButtons.append(deleteButton)
         
-//        undoButton = UIButton(frame: CGRect(x: 10, y: 90, width: 30, height: 30))
         undoButton = UIButton()
         undoButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
         undoButton.clipsToBounds = true
@@ -158,17 +146,22 @@ class ColoringGameViewController: UIViewController {
         // self.view.addSubview(colorIndicator!)
     }
     
-    func addLeftButtons() {
+    func addNavButtons() {
         /* Game buttons
          Set StackView height related to the parent view height
          StackView width related to the StackView height to keep the aspect ratio */
  
         let stackView = UIStackView(arrangedSubviews: navigationButtons)
-        var stackHeight: CGFloat = self.view.frame.width / 5
-        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
-            print("iPhoneX")
-            stackHeight = self.view.frame.width / 6
-        } else if self.view.frame.width > 1242 {
+        var stackHeight: CGFloat = 0.0
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            if self.view.frame.width > 750 && self.view.frame.width < 1242 {
+                print("iPhoneX")
+                stackHeight = self.view.frame.width / 6
+            }
+            stackHeight = self.view.frame.width / 5
+            
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
             print("iPad")
             stackHeight = self.view.frame.width / 5.5
         }
@@ -184,7 +177,12 @@ class ColoringGameViewController: UIViewController {
         let stackSpacing: CGFloat = 10
         stackView.spacing = stackSpacing
         stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
-        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
+        
+//        if self.view.frame.width > 750 && self.view.frame.width < 1242 {
+//            print("iPhoneX")
+            stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 40).isActive = true
+//        }
+//        stackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: (stackHeight - (stackSpacing * 2))/3.0).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: stackHeight).isActive = true
     }
@@ -202,7 +200,6 @@ class ColoringGameViewController: UIViewController {
         
         if let scene = SKScene(fileNamed: "MainMenuScene") {
             if let skView = self.view as? SKView {
-                
                 skView.ignoresSiblingOrder = true
                 scene.scaleMode = .aspectFit
                 
@@ -214,13 +211,8 @@ class ColoringGameViewController: UIViewController {
         }
     }
     
-    @objc func undo() {
-        drawView.removeLastLine()
-    }
-    
-    @objc func deleteDrawing() {
-        drawView.clearCanvas()
-    }
+    @objc func undo() { drawView.removeLastLine() }
+    @objc func deleteDrawing() { drawView.clearCanvas() }
 }
 
 
@@ -265,22 +257,55 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
     }
     
     // Needed to conform to SwiftyDrawViewDelegate, not being implemented
-    func SwiftyDrawDidCancelDrawing(view: SwiftyDrawView) {
-        
-    }
-    
-    func SwiftyDrawIsDrawing(view: SwiftyDrawView) {
-        
-    }
+    func SwiftyDrawDidCancelDrawing(view: SwiftyDrawView) {}
+    func SwiftyDrawIsDrawing(view: SwiftyDrawView) {}
 }
 
 extension UIButton {
     override open var intrinsicContentSize: CGSize {
         let intrinsicContentSize = super.intrinsicContentSize
-        
         let adjustedWidth = intrinsicContentSize.width
         let adjustedHeight = intrinsicContentSize.height
-        
         return CGSize(width: adjustedWidth, height: adjustedHeight)
+    }
+}
+
+extension UIDevice {
+    
+    var isIphoneX: Bool {
+        if #available(iOS 11.0, *), isIphone {
+            if isLandscape {
+                if let leftPadding = UIApplication.shared.keyWindow?.safeAreaInsets.left, leftPadding > 0 {
+                    return true
+                }
+                if let rightPadding = UIApplication.shared.keyWindow?.safeAreaInsets.right, rightPadding > 0 {
+                    return true
+                }
+            } else {
+                if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 0 {
+                    return true
+                }
+                if let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom, bottomPadding > 0 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    var isLandscape: Bool {
+        return UIDeviceOrientationIsLandscape(orientation) || UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
+    }
+    
+    var isPortrait: Bool {
+        return UIDeviceOrientationIsPortrait(orientation) || UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation)
+    }
+    
+    var isIphone: Bool {
+        return self.userInterfaceIdiom == .phone
+    }
+    
+    var isIpad: Bool {
+        return self.userInterfaceIdiom == .pad
     }
 }
