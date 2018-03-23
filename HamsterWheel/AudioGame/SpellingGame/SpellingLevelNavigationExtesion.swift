@@ -1,15 +1,16 @@
 //
-//  AGNavigationExtension.swift
+//  SpellingLevelNavigationExtesion.swift
 //  HamsterWheel
 //
-//  Created by Bob De Kort on 3/1/18.
+//  Created by Bob De Kort on 3/22/18.
 //  Copyright © 2018 Bob De Kort. All rights reserved.
 //
 
 import Foundation
+import UIKit
 import SpriteKit
 
-extension SingleButtonAudioLevel {
+extension SpellingLevel {
     
     // MARK: Navigation buttons setup
     
@@ -22,7 +23,6 @@ extension SingleButtonAudioLevel {
         /* Setup button selection handler for homescreen */
         menuButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                self.setEndTimeAndCalculateDifference()
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     // Set the scale mode to scale to fit the window
                     scene.scaleMode = .aspectFit
@@ -32,8 +32,8 @@ extension SingleButtonAudioLevel {
                 
                 // Debug helpers
                 // view.showsPhysics = true
-               
-
+                
+                
             }
         }
     }
@@ -54,9 +54,6 @@ extension SingleButtonAudioLevel {
         /* Setup button selection handler for homescreen */
         backButton.selectedHandler = { [unowned self] in
             if let view = self.view {
-                // Calculates the time spend on the level
-                self.setEndTimeAndCalculateDifference()
-                
                 if let selector = self.levelSelector {
                     if selector.currentLevel != nil {
                         selector.currentLevel! -= 1
@@ -70,26 +67,23 @@ extension SingleButtonAudioLevel {
         }
     }
     
-    func connectNextLevelButton() {
-        nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
-        nextButton.selectedHandler = transitionToNextScene
-        nextButton.isHidden = true
-    }
-    
-    func transitionToNextScene() {
-        if let view = view {
-            // Calculates the time spend on the level
-            setEndTimeAndCalculateDifference()
-            
-            if let selector = levelSelector {
-                if selector.currentLevel != nil {
-                    selector.currentLevel! += 1
-                } else {
-                    selector.currentLevel = 1
-                }
-                view.presentScene(selector)
-            }
-        }
-    }
+//    func connectNextLevelButton() {
+//        nextButton = self.childNode(withName: "nextButton") as! SKButton
+//        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
+//        nextButton.selectedHandler = transitionToNextScene
+//        nextButton.isHidden = true
+//    }
+//
+//    func transitionToNextScene() {
+//        if let view = view {
+//            if let selector = levelSelector {
+//                if selector.currentLevel != nil {
+//                    selector.currentLevel! += 1
+//                } else {
+//                    selector.currentLevel = 1
+//                }
+//                view.presentScene(selector)
+//            }
+//        }
+//    }
 }
