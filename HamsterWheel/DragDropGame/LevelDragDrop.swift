@@ -72,6 +72,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         setupCollisions(contact)
     }
+    
+    var activeShape: SKSpriteNode? = nil
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 

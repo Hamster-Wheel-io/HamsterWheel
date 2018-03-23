@@ -80,7 +80,7 @@ extension RandomWheel {
         let btn = UIButton()
         btn.frame = CGRect(x: view.bounds.minX + view.bounds.width * 0.1,
                            y: view.bounds.minY,
-                           width: view.bounds.width * 0.7,
+                           width: view.bounds.width * 0.5,
                            height: view.bounds.height)
         
         btn.addTarget(self, action: #selector(spinWheel), for: .touchUpInside)
