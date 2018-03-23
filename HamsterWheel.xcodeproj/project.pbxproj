@@ -16,8 +16,7 @@
 		B9CDD29B2048E16300AD3152 /* SetupDDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */; };
 		B9CDD29F2048E31D00AD3152 /* LevelSelectorDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29E2048E31D00AD3152 /* LevelSelectorDD.swift */; };
 		B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */; };
-		B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */; };
-		B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */; };
+		B9CDD2A6204F2A1900AD3152 /* SpellingLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A5204F2A1900AD3152 /* SpellingLevelScene.sks */; };
 		B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */; };
 		B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */; };
 		B9CDD2AE204F6A6700AD3152 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD2AD204F6A6700AD3152 /* Shape.swift */; };
@@ -28,11 +27,7 @@
 		B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
-		C44E421020314ACB006EE3C5 /* AGSpellingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */; };
-		C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */; };
-		C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459441F20211C8400C3D18A /* AGAudioExtension.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
-		C485650F203396EF00CC9B1F /* AGTimeTrackingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297BE2016CDD1009FCA9F /* GameViewController.swift */; };
 		C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B297C02016CDD1009FCA9F /* Main.storyboard */; };
@@ -41,7 +36,11 @@
 		C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B297DB2016D2DD009FCA9F /* MainMenuScene.sks */; };
 		C4B297DE2016D363009FCA9F /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C4B297DD2016D363009FCA9F /* assets.atlas */; };
 		C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297DF2016D453009FCA9F /* MainMenuScene.swift */; };
+		C4B80D3D2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B80D3C2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift */; };
 		C4BD97EC206486CB0090B4EE /* RandomWheelWheelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97EB206486CB0090B4EE /* RandomWheelWheelExtension.swift */; };
+		C4BD97EE20648D220090B4EE /* SpellingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97ED20648D220090B4EE /* SpellingLevel.swift */; };
+		C4BD97F0206493360090B4EE /* SpellButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97EF206493360090B4EE /* SpellButtonData.swift */; };
+		C4BD97F2206494A50090B4EE /* SpellingLevelNavigationExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */; };
 		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +55,7 @@
 		B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDDScene.swift; sourceTree = "<group>"; };
 		B9CDD29E2048E31D00AD3152 /* LevelSelectorDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorDD.swift; sourceTree = "<group>"; };
 		B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AGLevelSelector.swift; path = RandomWheel/AGLevelSelector.swift; sourceTree = "<group>"; };
-		B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AGButtonLevel.sks; sourceTree = "<group>"; };
-		B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAudioLevel.swift; sourceTree = "<group>"; };
+		B9CDD2A5204F2A1900AD3152 /* SpellingLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpellingLevelScene.sks; sourceTree = "<group>"; };
 		B9CDD2A9204F2A9A00AD3152 /* RandomWheel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RandomWheel.sks; sourceTree = "<group>"; };
 		B9CDD2AB204F2AB600AD3152 /* RandomWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWheel.swift; sourceTree = "<group>"; };
 		B9CDD2AD204F6A6700AD3152 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
@@ -66,12 +64,8 @@
 		B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScenePositionExtension.swift; sourceTree = "<group>"; };
 		B9FE4A352044E291004804C3 /* LevelDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDragDrop.swift; sourceTree = "<group>"; };
 		B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategoriesDD.swift; sourceTree = "<group>"; };
-		C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTimeTrackingExtension.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
-		C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpellingExtension.swift; sourceTree = "<group>"; };
-		C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationExtension.swift; sourceTree = "<group>"; };
-		C459441F20211C8400C3D18A /* AGAudioExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAudioExtension.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +77,11 @@
 		C4B297DB2016D2DD009FCA9F /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 		C4B297DD2016D363009FCA9F /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		C4B297DF2016D453009FCA9F /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		C4B80D3C2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingLevelSpellingExtension.swift; sourceTree = "<group>"; };
 		C4BD97EB206486CB0090B4EE /* RandomWheelWheelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWheelWheelExtension.swift; sourceTree = "<group>"; };
+		C4BD97ED20648D220090B4EE /* SpellingLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingLevel.swift; sourceTree = "<group>"; };
+		C4BD97EF206493360090B4EE /* SpellButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellButtonData.swift; sourceTree = "<group>"; };
+		C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingLevelNavigationExtesion.swift; sourceTree = "<group>"; };
 		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,9 +131,9 @@
 		B91C453D2017E2C6004BF2FB /* AudioGame */ = {
 			isa = PBXGroup;
 			children = (
-				B9CDD2A3204F285E00AD3152 /* ButtonGame */,
-				B9CDD2A2204F285300AD3152 /* RandomWheel */,
 				B9CDD2A0204F281D00AD3152 /* AGLevelSelector.swift */,
+				C4BD97F3206495720090B4EE /* SpellingGame */,
+				B9CDD2A2204F285300AD3152 /* RandomWheel */,
 			);
 			path = AudioGame;
 			sourceTree = "<group>";
@@ -168,27 +166,6 @@
 				C4BD97EB206486CB0090B4EE /* RandomWheelWheelExtension.swift */,
 			);
 			path = RandomWheel;
-			sourceTree = "<group>";
-		};
-		B9CDD2A3204F285E00AD3152 /* ButtonGame */ = {
-			isa = PBXGroup;
-			children = (
-				B9CDD2A4204F299100AD3152 /* SingleButtonExtensions */,
-				B9CDD2A5204F2A1900AD3152 /* AGButtonLevel.sks */,
-				B9CDD2A7204F2A4A00AD3152 /* SingleButtonAudioLevel.swift */,
-			);
-			path = ButtonGame;
-			sourceTree = "<group>";
-		};
-		B9CDD2A4204F299100AD3152 /* SingleButtonExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				C459441F20211C8400C3D18A /* AGAudioExtension.swift */,
-				C44E420E20314ACB006EE3C5 /* AGNavigationExtension.swift */,
-				C44E420C20314ACB006EE3C5 /* AGSpellingExtension.swift */,
-				C40A8EF32023B0F10085E22D /* AGTimeTrackingExtension.swift */,
-			);
-			path = SingleButtonExtensions;
 			sourceTree = "<group>";
 		};
 		B9CDD2B7204F754F00AD3152 /* Nodes */ = {
@@ -275,6 +252,18 @@
 			path = Additions;
 			sourceTree = "<group>";
 		};
+		C4BD97F3206495720090B4EE /* SpellingGame */ = {
+			isa = PBXGroup;
+			children = (
+				B9CDD2A5204F2A1900AD3152 /* SpellingLevelScene.sks */,
+				C4BD97ED20648D220090B4EE /* SpellingLevel.swift */,
+				C4BD97EF206493360090B4EE /* SpellButtonData.swift */,
+				C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */,
+				C4B80D3C2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift */,
+			);
+			path = SpellingGame;
+			sourceTree = "<group>";
+		};
 		E615C7EB125D816DCF707F77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */,
-				B9CDD2A6204F2A1900AD3152 /* AGButtonLevel.sks in Resources */,
+				B9CDD2A6204F2A1900AD3152 /* SpellingLevelScene.sks in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */,
@@ -420,13 +409,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B80D3D2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift in Sources */,
 				B9CDD29B2048E16300AD3152 /* SetupDDScene.swift in Sources */,
+				C4BD97EE20648D220090B4EE /* SpellingLevel.swift in Sources */,
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
-				C44E421220314ACB006EE3C5 /* AGNavigationExtension.swift in Sources */,
 				B9CDD29F2048E31D00AD3152 /* LevelSelectorDD.swift in Sources */,
 				B9FE4A362044E291004804C3 /* LevelDragDrop.swift in Sources */,
 				B9B36402205E077B00B261AD /* ColoringGameViewControllers.swift in Sources */,
-				C459442020211C8400C3D18A /* AGAudioExtension.swift in Sources */,
 				B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */,
 				B9201866205208CF00F1339E /* HelperFuncsDD.swift in Sources */,
 				B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */,
@@ -436,14 +425,13 @@
 				B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				B9E0F2E42061E6C500C5F4B7 /* SKScenePositionExtension.swift in Sources */,
-				C44E421020314ACB006EE3C5 /* AGSpellingExtension.swift in Sources */,
-				B9CDD2A8204F2A4A00AD3152 /* SingleButtonAudioLevel.swift in Sources */,
+				C4BD97F0206493360090B4EE /* SpellButtonData.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
+				C4BD97F2206494A50090B4EE /* SpellingLevelNavigationExtesion.swift in Sources */,
 				B9B36401205E077B00B261AD /* ColorButton.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				B9CDD2AE204F6A6700AD3152 /* Shape.swift in Sources */,
 				C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */,
-				C485650F203396EF00CC9B1F /* AGTimeTrackingExtension.swift in Sources */,
 				C4B297D32016D123009FCA9F /* SKButton.swift in Sources */,
 				B9CDD2AC204F2AB600AD3152 /* RandomWheel.swift in Sources */,
 			);

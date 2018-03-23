@@ -95,7 +95,6 @@ class RandomWheel: SKScene {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
         nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
         nextButton.selectedHandler = transitionToNextScene
-        nextButton.isHidden = true
     }
     
     // MARK: Functionality
@@ -109,7 +108,6 @@ class RandomWheel: SKScene {
                 let index = self.randomIndex()
                 self.wheel?.startAnimating(fininshIndex: index) { (finished) in
                     self.playSoundForIndex(index: index)
-                    self.nextButton.isHidden = false
                 }
             }
         }

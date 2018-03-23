@@ -78,8 +78,8 @@ extension RandomWheel {
     // Adds the center Spin button to the view
     func addSpinButton(view: SKView) {
         let btn = UIButton()
-        btn.frame = CGRect(x: view.bounds.midX,
-                           y: view.bounds.midY,
+        btn.frame = CGRect(x: view.bounds.minX + view.bounds.width * 0.1,
+                           y: view.bounds.minY,
                            width: view.bounds.width * 0.7,
                            height: view.bounds.height)
         

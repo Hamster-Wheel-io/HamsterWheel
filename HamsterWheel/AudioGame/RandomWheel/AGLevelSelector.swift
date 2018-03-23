@@ -31,7 +31,7 @@ class AudioGameLevelSelector: SKScene {
         if let view = view {
             if let scene = RandomWheel(fileNamed: "RandomWheel") {
                 scene.levelSelector = self
-                currentLevel = 2 // Just to be sure
+                currentLevel = 1 // Just to be sure
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
             }
@@ -40,130 +40,18 @@ class AudioGameLevelSelector: SKScene {
     
     func loadLevel2() {
         if let view = view {
-            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
-
+            if let scene = SpellingLevel(fileNamed: "SpellingLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 2 // Just to be sure
-
-                scene.animal = "Cow"
-                scene.defaultButtonImage = "cowButton"
-                scene.pressedButtonImage = "cowButtonPressed"
-                scene.audioFileName = "cowMoo"
-                scene.audioFileExtension = ".mp3"
-                scene.hasSpelling = true
-
-                // Sets scale mode
+                currentLevel = 2 // Just in case
+                
+                // scene setup
+                
                 scene.scaleMode = .aspectFit
-
-                // Present the scene
+                
                 view.presentScene(scene)
             }
         }
     }
-    
-//    func loadLevel3() {
-//        if let view = view {
-//            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
-//
-//                scene.levelSelector = self
-//                currentLevel = 3 // Just to be sure
-//
-//                // Level 3 variables
-//                scene.animal = "Sheep"
-//                scene.defaultButtonImage = "sheepButton"
-//                scene.pressedButtonImage = "sheepButtonPressed"
-//                scene.audioFileName = "sheepBaa"
-//                scene.audioFileExtension = ".wav"
-//                scene.hasSpelling = false
-//
-//                // Sets scale mode
-//                scene.scaleMode = .aspectFit
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//        }
-//    }
-//
-//    func loadLevel4() {
-//        if let view = view {
-//            if let scene = RandomWheel(fileNamed: "RandomWheel") {
-//                scene.levelSelector = self
-//                currentLevel = 4 // Just to be sure
-//                scene.scaleMode = .aspectFit
-//                view.presentScene(scene)
-//            }
-//        }
-//    }
-//
-//    func loadLevel5() {
-//        if let view = view {
-//            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
-//
-//                scene.levelSelector = self
-//                currentLevel = 5 // Just to be sure
-//
-//                scene.animal = "Cow"
-//                scene.defaultButtonImage = "cowButton"
-//                scene.pressedButtonImage = "cowButtonPressed"
-//                scene.audioFileName = "cowMoo"
-//                scene.audioFileExtension = ".mp3"
-//                scene.hasSpelling = true
-//
-//                // Sets scale mode
-//                scene.scaleMode = .aspectFit
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//        }
-//    }
-//
-//    func loadLevel6() {
-//        if let view = view {
-//            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
-//
-//                scene.levelSelector = self
-//                currentLevel = 6 // Just to be sure
-//
-//                scene.animal = "Dog"
-//                scene.defaultButtonImage = "dogButton"
-//                scene.pressedButtonImage = "dogButtonPressed"
-//                scene.audioFileName = "dogBark"
-//                scene.audioFileExtension = ".wav"
-//                scene.hasSpelling = true
-//
-//                // Sets scale mode
-//                scene.scaleMode = .aspectFit
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//        }
-//    }
-//
-//    func loadLevel7() {
-//        if let view = view {
-//            if let scene = SingleButtonAudioLevel(fileNamed: "AGButtonLevel") {
-//
-//                scene.levelSelector = self
-//                currentLevel = 7 // Just to be sure
-//
-//                scene.animal = "Cat"
-//                scene.defaultButtonImage = "catButton"
-//                scene.pressedButtonImage = "catButtonPressed"
-//                scene.audioFileName = "catMeow"
-//                scene.audioFileExtension = ".wav"
-//                scene.hasSpelling = true
-//
-//                // Sets scale mode
-//                scene.scaleMode = .aspectFit
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//        }
-//    }
 
     func returnToMainMenu() {
         if let view = view {
