@@ -15,9 +15,9 @@ class ColoringGameViewController: UIViewController {
                            UIColor.yellow,
                            UIColor.orange,
                            UIColor.red,
-                           UIColor.purple,
+                           UIColor.green,
                            UIColor.blue,
-                           UIColor.green]
+                           UIColor.purple]
     
     var drawView : SwiftyDrawView!
     
