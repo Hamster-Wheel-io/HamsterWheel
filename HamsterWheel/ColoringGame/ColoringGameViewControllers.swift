@@ -45,17 +45,50 @@ class ColoringGameViewController: UIViewController {
         }
     }
     
+    var templateView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
+        
         drawView = SwiftyDrawView(frame: self.view.frame)
+        drawView.delegate = self
+        drawView.backgroundColor = .clear
         drawView.lineColor = .green
         selectedColor = .green
-        drawView.delegate = self
-        drawView.backgroundColor = .white
         
         self.view.addSubview(drawView)
         setupButtons()
+        
+        addTemplate(template: #imageLiteral(resourceName: "fishPage"))
+        
+    }
+    
+    func addTemplate(template: UIImage) {
+        // Check if there already is a template view
+        if let templateView = templateView {
+            // If there is a template view change the image
+            templateView.image = template
+        } else {
+            // Else create and setup UIImageView
+            let imageView = UIImageView(image: template)
+            imageView.contentMode = .scaleAspectFit
+            imageView.frame = self.view.frame
+            
+            // Check if there is a drawView
+            drawView != nil ?
+                // If there is insert it below
+                self.view.insertSubview(imageView, belowSubview: drawView!) :
+                // Else just add subview
+                self.view.addSubview(imageView)
+        }
+    }
+    
+    func removeTemplate() {
+        if let templateView = templateView {
+            templateView.removeFromSuperview()
+        }
     }
     
     func setupButtons() {
