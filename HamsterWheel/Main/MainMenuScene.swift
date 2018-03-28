@@ -41,6 +41,7 @@ class MainMenuScene: SKScene {
             }
         }
         
+        
         playButtonGame3 = self.childNode(withName: "coloringButton") as! SKButton
         playButtonGame3.selectedHandler = { [unowned self] in
             if let view = self.view {
