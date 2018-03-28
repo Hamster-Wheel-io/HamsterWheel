@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 3/1/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import Foundation
