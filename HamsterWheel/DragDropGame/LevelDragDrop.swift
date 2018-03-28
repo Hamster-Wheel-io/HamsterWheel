@@ -90,45 +90,13 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 }
             }
             
-            
-            
             if let theDraggingShape = theDraggingShape {
                 self.playCartoonVoice()
                 theDraggingShape.zPosition = 100
                 theDraggingShape.position = location
                 theDraggingShape.size = shapeBig
             }
-            
-            
-            
-            // alterniative to the above
-            // let node = self.nodes(at: location)
         }
-//        // only perform these actions if the user touches on the shape
-//        if let touch = touches.first {
-//            let location = touch.location(in: self)
-//            if shape1.contains(location) {
-//                shape1.position = location
-//
-//                // Show the user they are touching the piece.
-//                shape1.size = shapeBig
-//                shape1Dragging = true
-//                shape2Dragging = false
-//                self.playCartoonVoice()
-//            }
-//
-//            // Check if there is a second shape on the screen
-//            if let shape2 = shape2 {
-//                if shape2.contains(location) {
-//
-//                    // Show the user they are touching the piece.
-//                    shape2.size = shapeBig
-//                    shape2Dragging = true
-//                    shape1Dragging = false
-//                    self.playCartoonVoice()
-//                }
-//            }
-//        }
     }
     
     
@@ -140,22 +108,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 move(shape: theDraggingShape, location: location)
             }
         }
-//        for touch in touches {
-//            if shape1.contains(location) {
-//                shape2Dragging = false
-//                move(shape: shape1, location: location)
-////                shape1.position = location
-//            }
-//
-//            // Check if shape2 is present in the scene
-//            if let shape2 = shape2 {
-//                if shape2.contains(location) {
-//                    shape1Dragging = false
-////                    shape2.position = location
-//                    move(shape: shape2, location: location)
-//                }
-//            }
-//        }
     }
     
     func resetShapeSize() {
@@ -172,16 +124,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic() }
         let musicStopAction = SKAction.run { self.audio?.stop() }
-        let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
+        let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 1)
         let shape1RemoveAction = SKAction.run { self.shape1?.removeFromParent() }
         let shape2RemoveAction = SKAction.run { self.shape2?.removeFromParent() }
         let removeSequence1 = SKAction.sequence([shrinkAction, shape1RemoveAction])
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
+        // Let the dragging shape go back to to the smallSize
         resetShapeSize()
         
-       
         let matches: [Match?] = [match1, match2]
         for match in matches {
             if let match = match {
@@ -192,6 +144,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                             match.isMatched = true
                             matchSprite.run(spinAction)
                             matchSprite.run(fastFadeAction)
+                            
                             if theDraggingShape == shape1 {
                                 matchSprite.run(removeSequence1)
                             } else if theDraggingShape == shape2 {

@@ -25,11 +25,13 @@ class DDLevelSelector: SKScene {
             case 3: loadLevel3()
             case 4: loadLevel4()
             case 5: loadLevel5()
+//                case 1: loadLevel5()
+//                case 2: loadLevel6()
             case 6: loadLevel6()
             case 7: loadLevel7()
             case 8: loadLevel8()
-//            case 1: loadLevel7()
-//            case 2: loadLevel8()
+            case 1: loadLevel7()
+            case 2: loadLevel8()
                 
             default: loadLevel8()
             }
@@ -109,6 +111,7 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 1
                 currentLevel = 4
                 scene.has2Shapes = false
             
@@ -132,7 +135,8 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 5
+                currentLevel = 1
+//                currentLevel = 5
                 scene.has2Shapes = true
                 
                 // Level 5 variables
@@ -157,7 +161,8 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 6
+                currentLevel = 2
+//                currentLevel = 6
                 scene.has2Shapes = true
                 
                 // Level 6 variables
