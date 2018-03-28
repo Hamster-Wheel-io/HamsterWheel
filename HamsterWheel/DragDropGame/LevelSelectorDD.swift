@@ -56,6 +56,8 @@ class DDLevelSelector: SKScene {
                 
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -74,9 +76,10 @@ class DDLevelSelector: SKScene {
                 scene.shape1Position = CGPoint(x: 260, y: 550)
                 scene.match1Position = CGPoint(x: 1150, y: 160)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -95,9 +98,9 @@ class DDLevelSelector: SKScene {
                 scene.shape1Position = CGPoint(x: 1210, y: 375)
                 scene.match1Position = CGPoint(x: 321, y: 142)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -117,9 +120,10 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1084, y: 570)
                 scene.match2Position = CGPoint(x: 462, y: 502)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -141,9 +145,11 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 475, y: 590)
                 scene.match2Position = CGPoint(x: 224, y: 200)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
             }
         }
     }
@@ -164,9 +170,12 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1056, y: 498)
                 scene.match2Position = CGPoint(x: 260, y: 253)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
+                
             }
         }
     }
@@ -174,7 +183,8 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 7
+                currentLevel = 1
+//                currentLevel = 7
                 scene.has2Shapes = false
                 
                 // Level 7 variables
@@ -185,10 +195,11 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1000, y: 200)
                 scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
-                
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                // scene.match2.matchSprite = scene.shape2
                 
             }
         }
@@ -197,6 +208,7 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 2
                 currentLevel = 8
                 scene.has2Shapes = true
                 
@@ -212,9 +224,12 @@ class DDLevelSelector: SKScene {
                 scene.match2Position = CGPoint(x: 500, y: 150)
                 scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                // Must happen after presentScene to avoid nil
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
             }
         }
     }

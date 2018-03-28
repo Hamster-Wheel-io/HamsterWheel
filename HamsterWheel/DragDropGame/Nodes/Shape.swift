@@ -15,7 +15,7 @@ class Shape: SKSpriteNode {
         let texture = SKTexture(imageNamed: imageNamed)
         
         super.init(texture: texture, color: .white, size: size)
-        self.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.mass = 0
