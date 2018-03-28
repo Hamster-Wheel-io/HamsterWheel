@@ -11,7 +11,7 @@ import AVFoundation
 import AudioToolbox
 
 extension DDLevel {
-   
+
     func setupTextures() {
         // Set the textures of the shape(s) and match(es)
         if let texture = shape1Texture, let position = shape1Position {

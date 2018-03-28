@@ -21,7 +21,7 @@ class Shape: SKSpriteNode {
         self.physicsBody?.mass = 0
         self.physicsBody?.friction = 0
         self.physicsBody?.restitution = 0
-        self.physicsBody?.linearDamping = 0.5    
+        self.physicsBody?.linearDamping = 0.5
     }
 
     required init?(coder aDecoder: NSCoder) {
