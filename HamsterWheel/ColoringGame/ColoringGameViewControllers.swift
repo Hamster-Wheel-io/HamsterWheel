@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 3/6/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 import UIKit
 import SwiftyDraw
