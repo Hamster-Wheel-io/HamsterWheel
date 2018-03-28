@@ -41,6 +41,8 @@ class RandomWheel: SKScene {
         
         // Fixes letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     // MARK: UI setup

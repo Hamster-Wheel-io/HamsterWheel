@@ -67,6 +67,8 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
