@@ -25,6 +25,8 @@ class DDLevelSelector: SKScene {
             case 3: loadLevel3()
             case 4: loadLevel4()
             case 5: loadLevel5()
+//                case 1: loadLevel5()
+//                case 2: loadLevel6()
             case 6: loadLevel6()
             case 7: loadLevel7()
             case 8: loadLevel8()
@@ -46,7 +48,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 1
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 1 variables
                 scene.shape1Texture = "squareRed"
@@ -55,9 +57,9 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 235, y: 207)
                 
                 scene.scaleMode = .aspectFit
-                
-                
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -68,7 +70,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 2
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 2 variables
                 scene.shape1Texture = "circleBlu"
@@ -76,9 +78,10 @@ class DDLevelSelector: SKScene {
                 scene.shape1Position = CGPoint(x: 260, y: 550)
                 scene.match1Position = CGPoint(x: 1150, y: 160)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -89,7 +92,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 3
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 3 variables
                 scene.shape1Texture = "triangleYel"
@@ -97,9 +100,9 @@ class DDLevelSelector: SKScene {
                 scene.shape1Position = CGPoint(x: 1210, y: 375)
                 scene.match1Position = CGPoint(x: 321, y: 142)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -108,8 +111,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 1
                 currentLevel = 4
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
             
                 // Level 4 variables
                 scene.shape1Texture = "squareRed"
@@ -119,9 +123,10 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1084, y: 570)
                 scene.match2Position = CGPoint(x: 462, y: 502)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
             }
         }
     }
@@ -130,8 +135,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 1
                 currentLevel = 5
-                scene.has2Shapes = true
+//                scene.has2Shapes = true
                 
                 // Level 5 variables
                 scene.shape1Texture = "circleYel"
@@ -143,9 +149,11 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 475, y: 590)
                 scene.match2Position = CGPoint(x: 224, y: 200)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
             }
         }
     }
@@ -153,8 +161,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 2
                 currentLevel = 6
-                scene.has2Shapes = true
+//                scene.has2Shapes = true
                 
                 // Level 6 variables
                 scene.shape1Texture = "triangleRed"
@@ -166,9 +175,12 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1056, y: 498)
                 scene.match2Position = CGPoint(x: 260, y: 253)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
+                
             }
         }
     }
@@ -176,8 +188,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 1
                 currentLevel = 7
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 7 variables
                 scene.shape1Texture = "squareBlu"
@@ -187,10 +200,11 @@ class DDLevelSelector: SKScene {
                 scene.match1Position = CGPoint(x: 1000, y: 200)
                 scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
-                
                 view.presentScene(scene)
+                
+                scene.match1.matchSprite = scene.shape1
+                // scene.match2.matchSprite = scene.shape2
                 
             }
         }
@@ -199,8 +213,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
+//                currentLevel = 2
                 currentLevel = 8
-                scene.has2Shapes = true
+//                scene.has2Shapes = true
                 
                 // Level 7 variables
                 scene.shape1Texture = "triangleRed"
@@ -214,9 +229,12 @@ class DDLevelSelector: SKScene {
                 scene.match2Position = CGPoint(x: 500, y: 150)
                 scene.wallPosition = CGPoint(x: scene.frame.width / 2.0, y: scene.frame.height / 2.0)
                 
-                // Sets scale mode
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                // Must happen after presentScene to avoid nil
+                scene.match1.matchSprite = scene.shape1
+                scene.match2?.matchSprite = scene.shape2
             }
         }
     }
