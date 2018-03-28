@@ -69,10 +69,7 @@ extension ColoringGameViewController {
             selectedColor = .green
         }
         
-        // If it is not the eraser
-        if button.backgroundColor != .white {
-            // Set the newly selected button
-            selectedButton = button
-        }
+        // Set the newly selected button
+        selectedButton = button
     }
 }

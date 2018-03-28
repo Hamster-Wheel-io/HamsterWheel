@@ -54,14 +54,14 @@ class ColoringGameViewController: UIViewController {
     
     var selectedButton: UIButton? {
         didSet {
+            if let prevButton = oldValue {
+                if prevButton.backgroundColor != .white {
+                    prevButton.layer.borderWidth = 3
+                    prevButton.layer.borderColor = UIColor.gray.cgColor
+                }
+            }
             // Exclude white because it is the eraser
             if selectedColor != .white {
-                if let prevButton = oldValue {
-                    if prevButton.backgroundColor != .white {
-                        prevButton.layer.borderWidth = 3
-                        prevButton.layer.borderColor = UIColor.gray.cgColor
-                    }
-                }
                 if let button = selectedButton {
                     button.layer.borderWidth = 5
                     button.layer.borderColor = UIColor.black.cgColor
