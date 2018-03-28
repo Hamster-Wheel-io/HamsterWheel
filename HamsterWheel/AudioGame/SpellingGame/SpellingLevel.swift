@@ -46,6 +46,8 @@ class SpellingLevel: SKScene {
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     func setupAnimalButtons() {

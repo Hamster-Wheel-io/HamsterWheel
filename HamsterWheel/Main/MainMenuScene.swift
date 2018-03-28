@@ -51,8 +51,10 @@ class MainMenuScene: SKScene {
                 }, completion: nil)
             }
         }
-        
-        sceneDidLayoutSubviews(skView: view)
+        // Avoids letter 
+        sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     /*
