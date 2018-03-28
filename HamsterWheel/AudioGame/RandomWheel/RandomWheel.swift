@@ -41,6 +41,8 @@ class RandomWheel: SKScene {
         
         // Fixes letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     // MARK: UI setup
@@ -61,11 +63,6 @@ class RandomWheel: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-                
-                // Debug helpers
-                view.showsFPS = true
-                // view.showsPhysics = true
-                view.showsDrawCount = true
             }
         }
     }

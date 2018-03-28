@@ -27,6 +27,7 @@
 		B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */; };
 		C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4260B1A20376B200023B208 /* ImageScalingExtension.swift */; };
 		C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445FCD1202E587600A551D5 /* HWheelSlice.swift */; };
+		C44DD65C206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DD65B206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297BE2016CDD1009FCA9F /* GameViewController.swift */; };
@@ -41,6 +42,9 @@
 		C4BD97EE20648D220090B4EE /* SpellingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97ED20648D220090B4EE /* SpellingLevel.swift */; };
 		C4BD97F0206493360090B4EE /* SpellButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97EF206493360090B4EE /* SpellButtonData.swift */; };
 		C4BD97F2206494A50090B4EE /* SpellingLevelNavigationExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */; };
+		C4C5E41C206B14E700FE107B /* ColorGameColorButtonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */; };
+		C4C5E41E206B153E00FE107B /* ColorGameTemplateExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */; };
+		C4C5E420206B15D700FE107B /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41F206B15D700FE107B /* ButtonExtension.swift */; };
 		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,7 @@
 		B9FE4A372044E5F3004804C3 /* PhysicsCategoriesDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategoriesDD.swift; sourceTree = "<group>"; };
 		C4260B1A20376B200023B208 /* ImageScalingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScalingExtension.swift; sourceTree = "<group>"; };
 		C445FCD1202E587600A551D5 /* HWheelSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWheelSlice.swift; sourceTree = "<group>"; };
+		C44DD65B206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGameUtilityButtonsExtension.swift; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +87,9 @@
 		C4BD97ED20648D220090B4EE /* SpellingLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingLevel.swift; sourceTree = "<group>"; };
 		C4BD97EF206493360090B4EE /* SpellButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellButtonData.swift; sourceTree = "<group>"; };
 		C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingLevelNavigationExtesion.swift; sourceTree = "<group>"; };
+		C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGameColorButtonsExtension.swift; sourceTree = "<group>"; };
+		C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGameTemplateExample.swift; sourceTree = "<group>"; };
+		C4C5E41F206B15D700FE107B /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +160,9 @@
 			children = (
 				B9B363FF205E077B00B261AD /* ColorButton.swift */,
 				B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */,
+				C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */,
+				C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */,
+				C44DD65B206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift */,
 			);
 			name = ColoringGame;
 			path = HamsterWheel/ColoringGame;
@@ -248,6 +259,7 @@
 				C459442720212C4300C3D18A /* SKButton2.swift */,
 				C4260B1A20376B200023B208 /* ImageScalingExtension.swift */,
 				B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */,
+				C4C5E41F206B15D700FE107B /* ButtonExtension.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -420,14 +432,18 @@
 				B9201866205208CF00F1339E /* HelperFuncsDD.swift in Sources */,
 				B9FE4A382044E5F3004804C3 /* PhysicsCategoriesDD.swift in Sources */,
 				B9CDD2B0204F704800AD3152 /* Match.swift in Sources */,
+				C4C5E41C206B14E700FE107B /* ColorGameColorButtonsExtension.swift in Sources */,
 				C445FCD2202E587600A551D5 /* HWheelSlice.swift in Sources */,
 				C4BD97EC206486CB0090B4EE /* RandomWheelWheelExtension.swift in Sources */,
 				B9CDD2A1204F281D00AD3152 /* AGLevelSelector.swift in Sources */,
 				C459442820212C4300C3D18A /* SKButton2.swift in Sources */,
 				B9E0F2E42061E6C500C5F4B7 /* SKScenePositionExtension.swift in Sources */,
+				C4C5E41E206B153E00FE107B /* ColorGameTemplateExample.swift in Sources */,
 				C4BD97F0206493360090B4EE /* SpellButtonData.swift in Sources */,
+				C44DD65C206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift in Sources */,
 				C4260B1B20376B200023B208 /* ImageScalingExtension.swift in Sources */,
 				C4BD97F2206494A50090B4EE /* SpellingLevelNavigationExtesion.swift in Sources */,
+				C4C5E420206B15D700FE107B /* ButtonExtension.swift in Sources */,
 				B9B36401205E077B00B261AD /* ColorButton.swift in Sources */,
 				C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */,
 				B9CDD2AE204F6A6700AD3152 /* Shape.swift in Sources */,
@@ -572,11 +588,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phyllisApps.Hamster-Wheel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobApps.Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -589,11 +605,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phyllisApps.Hamster-Wheel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobApps.Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

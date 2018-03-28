@@ -49,8 +49,11 @@ class MainMenuScene: SKScene {
                     view.window?.rootViewController = vc
                 }, completion: nil)
             }
-        }        
-        sceneDidLayoutSubviews(skView: view)
+        }
+        // Avoids letter 
+        sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     /*
