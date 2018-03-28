@@ -30,8 +30,8 @@ class DDLevelSelector: SKScene {
             case 6: loadLevel6()
             case 7: loadLevel7()
             case 8: loadLevel8()
-            case 1: loadLevel7()
-            case 2: loadLevel8()
+//            case 1: loadLevel7()
+//            case 2: loadLevel8()
                 
             default: loadLevel8()
             }
@@ -48,7 +48,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 1
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 1 variables
                 scene.shape1Texture = "squareRed"
@@ -70,7 +70,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 2
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 2 variables
                 scene.shape1Texture = "circleBlu"
@@ -92,7 +92,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 3
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
                 
                 // Level 3 variables
                 scene.shape1Texture = "triangleYel"
@@ -113,7 +113,7 @@ class DDLevelSelector: SKScene {
                 scene.levelSelector = self
 //                currentLevel = 1
                 currentLevel = 4
-                scene.has2Shapes = false
+//                scene.has2Shapes = false
             
                 // Level 4 variables
                 scene.shape1Texture = "squareRed"
@@ -135,9 +135,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 1
-//                currentLevel = 5
-                scene.has2Shapes = true
+//                currentLevel = 1
+                currentLevel = 5
+//                scene.has2Shapes = true
                 
                 // Level 5 variables
                 scene.shape1Texture = "circleYel"
@@ -161,9 +161,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 2
-//                currentLevel = 6
-                scene.has2Shapes = true
+//                currentLevel = 2
+                currentLevel = 6
+//                scene.has2Shapes = true
                 
                 // Level 6 variables
                 scene.shape1Texture = "triangleRed"
@@ -188,9 +188,9 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-                currentLevel = 1
-//                currentLevel = 7
-                scene.has2Shapes = false
+//                currentLevel = 1
+                currentLevel = 7
+//                scene.has2Shapes = false
                 
                 // Level 7 variables
                 scene.shape1Texture = "squareBlu"
@@ -215,7 +215,7 @@ class DDLevelSelector: SKScene {
                 scene.levelSelector = self
 //                currentLevel = 2
                 currentLevel = 8
-                scene.has2Shapes = true
+//                scene.has2Shapes = true
                 
                 // Level 7 variables
                 scene.shape1Texture = "triangleRed"

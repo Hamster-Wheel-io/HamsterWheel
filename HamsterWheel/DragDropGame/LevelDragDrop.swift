@@ -44,15 +44,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var wallPosition: CGPoint?
     
     // If there are 2 shapes, there will be 2 matches
-    var has2Shapes = false
+//    var has2Shapes = false
     
     // Use this variable for touchesMoved
-    var shape1Dragging = false
-    var shape2Dragging = false
+//    var shape1Dragging = false
+//    var shape2Dragging = false
     
     // For tracking the success of 2 shapes on the board
-    var shape1Success = false
-    var shape2Success = false
+//    var shape1Success = false
+//    var shape2Success = false
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
