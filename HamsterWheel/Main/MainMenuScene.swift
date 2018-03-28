@@ -36,7 +36,6 @@ class MainMenuScene: SKScene {
             if let view = self.view {
                 let selector = AudioGameLevelSelector()
                 selector.currentLevel = 1
-                
                 view.presentScene(selector)
             }
         }
@@ -50,8 +49,7 @@ class MainMenuScene: SKScene {
                     view.window?.rootViewController = vc
                 }, completion: nil)
             }
-        }
-        
+        }        
         sceneDidLayoutSubviews(skView: view)
     }
     

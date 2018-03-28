@@ -11,8 +11,7 @@ import AVFoundation
 import AudioToolbox
 
 extension DDLevel {
-
-    
+   
     func setupTextures() {
         // Set the textures of the shape(s) and match(es)
         if let texture = shape1Texture, let position = shape1Position {
@@ -37,11 +36,8 @@ extension DDLevel {
         
         if collision == PhysicsCategory.Wall | PhysicsCategory.Shape1 | PhysicsCategory.Shape2 {
         } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape1 {
-//            shape1Success = true
         } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape2 {
-//            shape2Success = true
         } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape2 {
-            // play uh-oh sound and vibrate the phone
             playUhOhSound()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape1 {
@@ -126,6 +122,5 @@ extension DDLevel {
                 view.presentScene(selector)
             }
         }
-    }
-    
+    }    
 }
