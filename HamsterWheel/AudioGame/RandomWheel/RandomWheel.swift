@@ -63,11 +63,6 @@ class RandomWheel: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-                
-                // Debug helpers
-                view.showsFPS = true
-                // view.showsPhysics = true
-                view.showsDrawCount = true
             }
         }
     }
