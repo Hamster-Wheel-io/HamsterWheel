@@ -25,22 +25,16 @@ class DDLevelSelector: SKScene {
             case 3: loadLevel3()
             case 4: loadLevel4()
             case 5: loadLevel5()
-//                case 1: loadLevel5()
-//                case 2: loadLevel6()
             case 6: loadLevel6()
             case 7: loadLevel7()
             case 8: loadLevel8()
-//            case 1: loadLevel7()
-//            case 2: loadLevel8()
                 
-            default: loadLevel8()
+            default: returnToMainMenu()
             }
         } else {
-            currentLevel = 1
-            loadLevel1()
+            returnToMainMenu()
         }
     }
-    
     
     func loadLevel1() {
         if let view = view {
@@ -48,7 +42,6 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 1
-//                scene.has2Shapes = false
                 
                 // Level 1 variables
                 scene.shape1Texture = "squareRed"
@@ -70,7 +63,6 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 2
-//                scene.has2Shapes = false
                 
                 // Level 2 variables
                 scene.shape1Texture = "circleBlu"
@@ -92,7 +84,6 @@ class DDLevelSelector: SKScene {
                 
                 scene.levelSelector = self
                 currentLevel = 3
-//                scene.has2Shapes = false
                 
                 // Level 3 variables
                 scene.shape1Texture = "triangleYel"
@@ -111,9 +102,7 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-//                currentLevel = 1
                 currentLevel = 4
-//                scene.has2Shapes = false
             
                 // Level 4 variables
                 scene.shape1Texture = "squareRed"
@@ -135,9 +124,7 @@ class DDLevelSelector: SKScene {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-//                currentLevel = 1
                 currentLevel = 5
-//                scene.has2Shapes = true
                 
                 // Level 5 variables
                 scene.shape1Texture = "circleYel"
@@ -157,13 +144,12 @@ class DDLevelSelector: SKScene {
             }
         }
     }
+    
     func loadLevel6() {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-//                currentLevel = 2
                 currentLevel = 6
-//                scene.has2Shapes = true
                 
                 // Level 6 variables
                 scene.shape1Texture = "triangleRed"
@@ -184,13 +170,12 @@ class DDLevelSelector: SKScene {
             }
         }
     }
+    
     func loadLevel7() {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-//                currentLevel = 1
                 currentLevel = 7
-//                scene.has2Shapes = false
                 
                 // Level 7 variables
                 scene.shape1Texture = "squareBlu"
@@ -204,18 +189,15 @@ class DDLevelSelector: SKScene {
                 view.presentScene(scene)
                 
                 scene.match1.matchSprite = scene.shape1
-                // scene.match2.matchSprite = scene.shape2
-                
             }
         }
     }
+    
     func loadLevel8() {
         if let view = view {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
-//                currentLevel = 2
                 currentLevel = 8
-//                scene.has2Shapes = true
                 
                 // Level 7 variables
                 scene.shape1Texture = "triangleRed"
@@ -235,6 +217,16 @@ class DDLevelSelector: SKScene {
                 // Must happen after presentScene to avoid nil
                 scene.match1.matchSprite = scene.shape1
                 scene.match2?.matchSprite = scene.shape2
+            }
+        }
+    }
+    
+    func returnToMainMenu() {
+        if let view = view {
+            if let scene = SKScene(fileNamed: "MainMenuScene") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFit
+                view.presentScene(scene)
             }
         }
     }

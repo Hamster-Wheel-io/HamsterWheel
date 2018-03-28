@@ -17,9 +17,7 @@ extension DDLevel {
             do {
                 // Use NSDataAssets's data property to access the yahoo voice.
                 soundEffect = try AVAudioPlayer(data: pop.data, fileTypeHint: ".mp3")
-//                audio = try AVAudioPlayer(data: asset.data, fileTypeHint: ".mp3")
                 soundEffect?.play()
-//                audio?.play()
             } catch let error as NSError {
                 // Should print...
                 print(error.localizedDescription)
@@ -54,9 +52,7 @@ extension DDLevel {
     }
     
     
-//     MARK: Friction Physics.
-//     Use force to move the shape across the screen
-//    func move(shape: SKSpriteNode) {
+    // MARK: Friction Physics
     func move(shape: SKSpriteNode, location: CGPoint) {
          shape.position = location
         let dx = (location.x - shape.position.x) * 4
