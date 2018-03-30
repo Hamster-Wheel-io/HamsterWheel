@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 3/22/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import Foundation
@@ -46,6 +46,8 @@ class SpellingLevel: SKScene {
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     func setupAnimalButtons() {
@@ -78,10 +80,10 @@ extension SpellingLevel {
     }
     
     func audioButtonPressed(data: SpellButtonData) {
+        // Update the state to prevent spamming
         self.isSpelling = true
-        self.playAudio(soundName: data.audioFileName, soundExtention: data.audioFileExtension)
         
-        // Check if we need to show the spelling of the animal
+        // show the spelling of the animal
         spellWord(word: data.word)
     }
     

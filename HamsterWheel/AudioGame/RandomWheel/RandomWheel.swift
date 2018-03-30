@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 2/1/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 import SpriteKit
 import TTFortuneWheel
@@ -36,11 +36,13 @@ class RandomWheel: SKScene {
         addWheel(view: view)
         
         setupHomeButton()
-        setupBackButton()
+        // setupBackButton()
         setupNextLevelButton()
         
         // Fixes letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     // MARK: UI setup
@@ -61,39 +63,13 @@ class RandomWheel: SKScene {
                     // Present the scene
                     view.presentScene(scene)
                 }
-                
-                // Debug helpers
-                view.showsFPS = true
-                // view.showsPhysics = true
-                view.showsDrawCount = true
-            }
-        }
-    }
-    
-    func setupBackButton() {
-        /* Set UI connections */
-        backButton = self.childNode(withName: "backButton") as! SKButton
-        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
-        
-        /* Setup button selection handler for homescreen */
-        backButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
-                if let selector = self.levelSelector {
-                    if selector.currentLevel != nil {
-                        selector.currentLevel! -= 1
-                    } else {
-                        selector.currentLevel = 1
-                    }
-                    self.removeWheel()
-                    view.presentScene(selector)
-                }
             }
         }
     }
     
     func setupNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
+        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         nextButton.selectedHandler = transitionToNextScene
     }
     

@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 3/22/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import Foundation
@@ -66,24 +66,4 @@ extension SpellingLevel {
             }
         }
     }
-    
-//    func connectNextLevelButton() {
-//        nextButton = self.childNode(withName: "nextButton") as! SKButton
-//        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
-//        nextButton.selectedHandler = transitionToNextScene
-//        nextButton.isHidden = true
-//    }
-//
-//    func transitionToNextScene() {
-//        if let view = view {
-//            if let selector = levelSelector {
-//                if selector.currentLevel != nil {
-//                    selector.currentLevel! += 1
-//                } else {
-//                    selector.currentLevel = 1
-//                }
-//                view.presentScene(selector)
-//            }
-//        }
-//    }
 }

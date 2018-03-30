@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 2/26/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import Foundation
@@ -26,24 +26,3 @@ struct PhysicsCategory {
     // 00000000000000000000000000000000 32 zeros
 }
 
-// categoryBitMask -
-// A category is a type of thing in your physics world. This example
-// contains Blocks (red), Coins (Yellow), Ground (Brown), and Player (Orange)
-// Each different type of thing needs a category. You can have up to 32 categories.
-
-// contactTestBitMask -
-// Contact mask generate a message in didBeginContact/didEndContact that occurs when two objects
-// make contact. Contacts do NOT produce a physical results, in other words when a contact occurs
-// between two objects it doen't mean that they bounce or show a physical interaction.
-
-// collisionBitMask -
-// Collisions generate physical interaction between objects. If you want an object to
-// bounce or bump or push another object it's collision mask must include the category
-// of object it will collide with.
-
-// In this example the Player object only collides with the ground. Block and Coin objects
-// will pass through the player. The Player object generates contact messages when it
-// makes contact with Coins, and Blocks (even though they don't generate a collision).
-
-// Look through the comments in the code blocks below to see how the PhysicsCategory
-// is used to set contacts and collisions.

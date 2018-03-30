@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Bob De Kort on 1/22/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import Foundation
@@ -36,7 +36,6 @@ class MainMenuScene: SKScene {
             if let view = self.view {
                 let selector = AudioGameLevelSelector()
                 selector.currentLevel = 1
-                
                 view.presentScene(selector)
             }
         }
@@ -51,8 +50,10 @@ class MainMenuScene: SKScene {
                 }, completion: nil)
             }
         }
-        
-        sceneDidLayoutSubviews(skView: view)
+        // Avoids letter 
+        sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     /*

@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 2/26/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import SpriteKit
@@ -19,9 +19,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     // Items that can be interacted with in the game
     // FIXME: rename to shape instead of player
     var shape1: Shape1!
-    var shape2: Shape2!
+    var shape2: Shape2?
     var match1: Match1!
-    var match2: Match2!
+    var match2: Match2?
     var wall: Wall!
 
     // Set the texture variables
@@ -43,23 +43,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
     
-    // If there are 2 shapes, there will be 2 matches
-    var has2Shapes = false
-    
-    // Use this variable for touchesMoved
-    var shape1Dragging = false
-    var shape2Dragging = false
-    
-    // For tracking the success of 2 shapes on the board
-    var shape1Success = false
-    var shape2Success = false
-    
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
 
     override func didMove(to view: SKView) {
 
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        self.physicsBody?.friction = 0
+        self.physicsBody?.restitution = 0
+        
         physicsWorld.contactDelegate = self
         loadHomeButton()
         loadBackButton()
@@ -67,76 +59,78 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
+        // Avoids letter boxing on iPhoneX
+        iPhoneXLetterBoxing()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         setupCollisions(contact)
     }
-    
-    var activeShape: SKSpriteNode? = nil
+ 
+    var dragLocation: CGPoint = CGPoint.zero
+    var theDraggingShape: SKSpriteNode? = nil
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-        // only perform these actions if the user touches on the shape
         if let touch = touches.first {
             let location = touch.location(in: self)
+            
+            dragLocation = location
+            
             if shape1.contains(location) {
-                shape1.position = location
-                
-                // Show the user they are touching the piece.
-                shape1.size = shapeBig
-                shape1Dragging = true
-                shape2Dragging = false
-                
-                // FIXME: change how audio is engaged
-                self.playCartoonVoice()
+                theDraggingShape = shape1
+            } else {
+                if let shape2 = shape2 {
+                    if shape2.contains(location) {
+                        theDraggingShape = shape2
+                    }
+                }
             }
             
-            // Check if there is a second shape on the screen
-            if let shape2 = shape2 {
-                if shape2.contains(location) {
-                    
-                    // Show the user they are touching the piece.
-                    shape2.size = shapeBig
-                    shape2Dragging = true
-                    shape1Dragging = false
-                    self.playCartoonVoice()
-                }
+            if let theDraggingShape = theDraggingShape {
+                self.playCartoonVoice()
+                theDraggingShape.zPosition = 100
+                theDraggingShape.position = location
+                theDraggingShape.size = shapeBig
             }
         }
     }
-    
-    
-    // Tells the physicsBody which direction to apply the force
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
+        if let touch = touches.first {
             let location = touch.location(in: self)
-            
-            if shape1.contains(location) {
-                shape1.position = location
-            }
-            
-            // Check if shape2 is present in the scene
-            if let shape2 = shape2 {
-                if shape2.contains(location) {
-                    shape2.position = location
-                }
-            }
+            dragLocation = location
         }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        if let theDraggingShape = theDraggingShape {
+            move(shape: theDraggingShape, location: dragLocation)
+        }
+    }
+    
+    // MARK: Friction Physics
+    func move(shape: SKSpriteNode, location: CGPoint) {
+        let x = (location.x - shape.position.x) * Shape.velocityMutiplier
+        let y = (location.y - shape.position.y) * Shape.velocityMutiplier
+        
+        let dx = CGFloat(max(min(x, Shape.maxVelocity), -Shape.maxVelocity))
+        let dy = CGFloat(max(min(y, Shape.maxVelocity), -Shape.maxVelocity))
+        let vector = CGVector(dx: dx, dy: dy)
+        shape.physicsBody?.velocity = vector
+        
+//        (shape as! Shape).label.text = "x: \(round(dx)) \n y: \(round(dy))"
     }
     
     func resetShapeSize() {
-        // only perform these actions if the user drags the shape
-        shape1.size = shapeSmall
-        shape1Dragging = false
-        shape1.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        
-        shape2?.size = shapeSmall
-        shape2Dragging = false
-        shape2?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        theDraggingShape?.size = shapeSmall
+        theDraggingShape?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        theDraggingShape?.zPosition = 10
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        theDraggingShape?.physicsBody?.velocity = CGVector.zero
         
         let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
@@ -145,50 +139,51 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic() }
         let musicStopAction = SKAction.run { self.audio?.stop() }
-        let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 0.5)
-        let shape1RemoveAction = SKAction.run { self.shape1.removeFromParent() }
-        let shape2RemoveAction = SKAction.run { self.shape2.removeFromParent() }
+        let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 1)
+        let shape1RemoveAction = SKAction.run { self.shape1?.removeFromParent() }
+        let shape2RemoveAction = SKAction.run { self.shape2?.removeFromParent() }
         let removeSequence1 = SKAction.sequence([shrinkAction, shape1RemoveAction])
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
+        // Let the dragging shape go back to to the smallSize
         resetShapeSize()
-
-        if has2Shapes {
-    
-            // Got shape1 correct before shape2
-            if shape1Success {
-                shape1.run(spinAction)
-                shape1.run(fastFadeAction)
-                shape1.run(removeSequence1)
+        
+        let matches: [Match?] = [match1, match2]
+        for match in matches {
+            if let match = match {
                 
-                if shape2Success {
-                    shape2.run(spinAction)
-                    shape2.run(fastFadeAction)
-                    shape2.run(removeSequence2)
-                    self.run(successSequence)
+                if match.isMatched == false || match.matchSprite == nil {
+                    if let matchSprite = match.matchSprite {
+                        if matchSprite.contains(match.position) {
+                            match.isMatched = true
+                            matchSprite.run(spinAction)
+                            matchSprite.run(fastFadeAction)
+                            
+                            if theDraggingShape == shape1 {
+                                matchSprite.run(removeSequence1)
+                            } else if theDraggingShape == shape2 {
+                                matchSprite.run(removeSequence2)
+                            }
+                        }
+                    }
                 }
             }
-            
-            // Got shape2 correct before shape2
-            if shape2Success {
-                shape2.run(spinAction)
-                shape2.run(fastFadeAction)
-                shape2.run(removeSequence2)
-                
-                if shape1Success {
-                    shape1.run(spinAction)
-                    shape1.run(fastFadeAction)
-                    shape1.run(removeSequence1)
-                    self.run(successSequence)
-                }
+        }
+        
+        
+        var allMatched = true
+        for match in matches {
+            if match?.isMatched == false && match?.matchSprite != nil {
+                allMatched = false
             }
-            
-        } else if shape1Success {
-            shape1.run(spinAction)
-            shape1.removeFromParent()
+        }
+        
+        if allMatched {
             self.run(successSequence)
         }
+        
+        theDraggingShape = nil
     }
 }
 

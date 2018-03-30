@@ -3,7 +3,7 @@
 //  HamsterWheel
 //
 //  Created by Phyllis Wong on 3/20/18.
-//  Copyright © 2018 Bob De Kort. All rights reserved.
+//  Copyright © 2018 HamsterWheel. All rights reserved.
 //
 
 import SpriteKit
@@ -62,6 +62,19 @@ extension SKScene {
             if newHeight > size.height {
                 scene.anchorPoint = CGPoint(x: 0, y: (newHeight - scene.size.height) / 2.0 / newHeight)
                 size.height = newHeight
+                scene.size = size
+            }
+        }
+    }
+    
+    func iPhoneXLetterBoxing() {
+        let skView = self.view!
+        if let scene = skView.scene {
+            var size = scene.size
+            let newWidth = skView.bounds.size.width / skView.bounds.height * size.height
+            if newWidth > size.width {
+                scene.anchorPoint = CGPoint(x: (newWidth - scene.size.width) / 2.0 / newWidth, y: 0)
+                size.width = newWidth
                 scene.size = size
             }
         }
