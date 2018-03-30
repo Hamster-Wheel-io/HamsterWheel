@@ -80,10 +80,10 @@ extension SpellingLevel {
     }
     
     func audioButtonPressed(data: SpellButtonData) {
+        // Update the state to prevent spamming
         self.isSpelling = true
-        self.playAudio(soundName: data.audioFileName, soundExtention: data.audioFileExtension)
         
-        // Check if we need to show the spelling of the animal
+        // show the spelling of the animal
         spellWord(word: data.word)
     }
     
