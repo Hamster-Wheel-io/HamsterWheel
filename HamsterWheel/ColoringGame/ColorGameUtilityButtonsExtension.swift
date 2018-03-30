@@ -19,14 +19,6 @@ extension ColoringGameViewController {
         deleteButton.addTarget(self, action: #selector(deleteDrawing), for: .touchUpInside)
         utilityButtons.append(deleteButton)
         
-        // Undo last drawn line
-        undoButton = UIButton()
-        // TODO: Change undo asset
-        undoButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
-        undoButton.clipsToBounds = true
-        undoButton.addTarget(self, action: #selector(undo), for: .touchUpInside)
-//        utilityButtons.append(undoButton)
-        
         // Use a white color as an eraser
         eraserButton = UIButton()
         eraserButton.clipsToBounds = true
