@@ -43,16 +43,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
     
-    // If there are 2 shapes, there will be 2 matches
-//    var has2Shapes = false
-    
-    // Use this variable for touchesMoved
-//    var shape1Dragging = false
-//    var shape2Dragging = false
-    
-    // For tracking the success of 2 shapes on the board
-//    var shape1Success = false
-//    var shape2Success = false
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
@@ -60,6 +50,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
 
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        self.physicsBody?.friction = 0
+        self.physicsBody?.restitution = 0
+        
         physicsWorld.contactDelegate = self
         loadHomeButton()
         loadBackButton()
@@ -75,13 +68,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         setupCollisions(contact)
     }
  
-    
+    var dragLocation: CGPoint = CGPoint.zero
     var theDraggingShape: SKSpriteNode? = nil
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         if let touch = touches.first {
             let location = touch.location(in: self)
+            
+            dragLocation = location
             
             if shape1.contains(location) {
                 theDraggingShape = shape1
@@ -101,16 +96,31 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    
-    
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            
-            if let theDraggingShape = theDraggingShape {
-                move(shape: theDraggingShape, location: location)
-            }
+            dragLocation = location
         }
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        if let theDraggingShape = theDraggingShape {
+            move(shape: theDraggingShape, location: dragLocation)
+        }
+    }
+    
+    // MARK: Friction Physics
+    func move(shape: SKSpriteNode, location: CGPoint) {
+        let x = (location.x - shape.position.x) * Shape.velocityMutiplier
+        let y = (location.y - shape.position.y) * Shape.velocityMutiplier
+        
+        let dx = CGFloat(max(min(x, Shape.maxVelocity), -Shape.maxVelocity))
+        let dy = CGFloat(max(min(y, Shape.maxVelocity), -Shape.maxVelocity))
+        let vector = CGVector(dx: dx, dy: dy)
+        shape.physicsBody?.velocity = vector
+        
+//        (shape as! Shape).label.text = "x: \(round(dx)) \n y: \(round(dy))"
     }
     
     func resetShapeSize() {
@@ -120,6 +130,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        theDraggingShape?.physicsBody?.velocity = CGVector.zero
+        
         let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
@@ -172,43 +185,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
         
         theDraggingShape = nil
-
-
-//        if has2Shapes {
-//
-//            // Got shape1 correct before shape2
-//            if shape1Success {
-//                shape1.run(spinAction)
-//                shape1.run(fastFadeAction)
-//                shape1.run(removeSequence1)
-//
-//                if shape2Success {
-//                    shape2.run(spinAction)
-//                    shape2.run(fastFadeAction)
-//                    shape2.run(removeSequence2)
-//                    self.run(successSequence)
-//                }
-//            }
-//
-//            // Got shape2 correct before shape2
-//            if shape2Success {
-//                shape2.run(spinAction)
-//                shape2.run(fastFadeAction)
-//                shape2.run(removeSequence2)
-//
-//                if shape1Success {
-//                    shape1.run(spinAction)
-//                    shape1.run(fastFadeAction)
-//                    shape1.run(removeSequence1)
-//                    self.run(successSequence)
-//                }
-//            }
-//
-//        } else if shape1Success {
-//            shape1.run(spinAction)
-//            shape1.removeFromParent()
-//            self.run(successSequence)
-//        }
     }
 }
 

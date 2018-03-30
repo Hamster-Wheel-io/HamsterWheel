@@ -176,6 +176,7 @@ class DDLevelSelector: SKScene {
             if let scene = DDLevel(fileNamed: "DDLevelScene") {
                 scene.levelSelector = self
                 currentLevel = 7
+//                currentLevel = 1
                 
                 // Level 7 variables
                 scene.shape1Texture = "squareBlu"

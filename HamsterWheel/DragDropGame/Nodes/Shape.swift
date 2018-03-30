@@ -10,6 +10,11 @@ import SpriteKit
 
 class Shape: SKSpriteNode {
     
+    static let maxVelocity: CGFloat = 10000
+    static let velocityMutiplier: CGFloat = 30
+    
+    let label = SKLabelNode()
+    
     init(imageNamed: String) {
         let size = CGSize(width: 100, height: 100)
         let texture = SKTexture(imageNamed: imageNamed)
@@ -21,7 +26,11 @@ class Shape: SKSpriteNode {
         self.physicsBody?.mass = 0
         self.physicsBody?.friction = 0
         self.physicsBody?.restitution = 0
-        self.physicsBody?.linearDamping = 0.5
+        self.physicsBody?.linearDamping = 0.0
+//        label.zPosition = 100
+//        label.fontColor = UIColor.black
+//        label.fontName = "HelveticaNeue-Bold"
+        addChild(label)
     }
 
     required init?(coder aDecoder: NSCoder) {
