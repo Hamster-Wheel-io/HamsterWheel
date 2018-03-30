@@ -36,7 +36,7 @@ class RandomWheel: SKScene {
         addWheel(view: view)
         
         setupHomeButton()
-        setupBackButton()
+        // setupBackButton()
         setupNextLevelButton()
         
         // Fixes letter boxing on iPad
@@ -67,30 +67,30 @@ class RandomWheel: SKScene {
         }
     }
     
-    func setupBackButton() {
-        /* Set UI connections */
-        backButton = self.childNode(withName: "backButton") as! SKButton
-        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
-        
-        /* Setup button selection handler for homescreen */
-        backButton.selectedHandler = { [unowned self] in
-            if let view = self.view {
-                if let selector = self.levelSelector {
-                    if selector.currentLevel != nil {
-                        selector.currentLevel! -= 1
-                    } else {
-                        selector.currentLevel = 1
-                    }
-                    self.removeWheel()
-                    view.presentScene(selector)
-                }
-            }
-        }
-    }
+//    func setupBackButton() {
+//        /* Set UI connections */
+//        backButton = self.childNode(withName: "backButton") as! SKButton
+//        backButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
+//
+//        /* Setup button selection handler for homescreen */
+//        backButton.selectedHandler = { [unowned self] in
+//            if let view = self.view {
+//                if let selector = self.levelSelector {
+//                    if selector.currentLevel != nil {
+//                        selector.currentLevel! -= 1
+//                    } else {
+//                        selector.currentLevel = 1
+//                    }
+//                    self.removeWheel()
+//                    view.presentScene(selector)
+//                }
+//            }
+//        }
+//    }
     
     func setupNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 275.0))
+        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         nextButton.selectedHandler = transitionToNextScene
     }
     
