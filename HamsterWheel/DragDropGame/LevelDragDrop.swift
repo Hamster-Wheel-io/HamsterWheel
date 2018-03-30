@@ -43,7 +43,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
     
-    
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
 
