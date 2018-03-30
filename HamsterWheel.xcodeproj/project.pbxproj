@@ -269,9 +269,9 @@
 			children = (
 				B9CDD2A5204F2A1900AD3152 /* SpellingLevelScene.sks */,
 				C4BD97ED20648D220090B4EE /* SpellingLevel.swift */,
-				C4BD97EF206493360090B4EE /* SpellButtonData.swift */,
 				C4BD97F1206494A50090B4EE /* SpellingLevelNavigationExtesion.swift */,
 				C4B80D3C2064A0BE00B15BC5 /* SpellingLevelSpellingExtension.swift */,
+				C4BD97EF206493360090B4EE /* SpellButtonData.swift */,
 			);
 			path = SpellingGame;
 			sourceTree = "<group>";
@@ -588,11 +588,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phyllisApps.Hamster-Wheel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobApps.Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,11 +605,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = 3FX26JCU7E;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phyllisApps.Hamster-Wheel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bobApps.Hamster-Wheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
