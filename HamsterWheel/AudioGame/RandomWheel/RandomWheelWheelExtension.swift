@@ -55,11 +55,9 @@ extension RandomWheel {
         fortuneWheel.slices.enumerated().forEach { (pair) in
             let slice = pair.element as! HWheelSlice
             let offset = pair.offset
-            switch offset % 4 {
-            case 0: slice.style = .brickRed
-            case 1: slice.style = .sandYellow
-            case 2: slice.style = .babyBlue
-            case 3: slice.style = .deepBlue
+            switch offset % 2 {
+            case 0: slice.style = .sandYellow
+            case 1: slice.style = .brickRed 
             default: slice.style = .brickRed
             }
         }
