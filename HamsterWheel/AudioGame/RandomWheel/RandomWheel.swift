@@ -69,7 +69,7 @@ class RandomWheel: SKScene {
     
     func setupNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
-        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
+//        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
         nextButton.selectedHandler = transitionToNextScene
     }
     
