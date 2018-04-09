@@ -14,12 +14,14 @@ class Shape: SKSpriteNode {
     static let velocityMutiplier: CGFloat = 30
     
     let label = SKLabelNode()
+    var home = CGPoint()
     
     init(imageNamed: String) {
         let size = CGSize(width: 100, height: 100)
         let texture = SKTexture(imageNamed: imageNamed)
         
         super.init(texture: texture, color: .white, size: size)
+//        self.isUserInteractionEnabled = true
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.allowsRotation = false
