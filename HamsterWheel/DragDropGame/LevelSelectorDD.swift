@@ -29,7 +29,7 @@ class DDLevelSelector: SKScene {
             case 7: loadLevel7()
             case 8: loadLevel8()
                 
-            default: returnToMainMenu()
+                default: returnToMainMenu()
             }
         } else {
             returnToMainMenu()
@@ -52,6 +52,7 @@ class DDLevelSelector: SKScene {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
                 
+                // Must happen after presentScene to avoid nil
                 scene.match1.matchSprite = scene.shape1
             }
         }
@@ -73,6 +74,7 @@ class DDLevelSelector: SKScene {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
                 
+                // Must happen after presentScene to avoid nil
                 scene.match1.matchSprite = scene.shape1
             }
         }
@@ -93,6 +95,8 @@ class DDLevelSelector: SKScene {
                 
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
+                
+                // Must happen after presentScene to avoid nil
                 scene.match1.matchSprite = scene.shape1
             }
         }
@@ -115,6 +119,8 @@ class DDLevelSelector: SKScene {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
                 
+                // Must happen after presentScene to avoid nil
+                scene.shape1.home = scene.shape1Position! // Sets the original position for the shape to snap back to
                 scene.match1.matchSprite = scene.shape1
             }
         }
@@ -139,6 +145,9 @@ class DDLevelSelector: SKScene {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
                 
+                // Must happen after presentScene to avoid nil
+                scene.shape1.home = scene.shape1Position!
+                scene.shape2?.home = scene.shape2Position!
                 scene.match1.matchSprite = scene.shape1
                 scene.match2?.matchSprite = scene.shape2
             }
@@ -164,9 +173,11 @@ class DDLevelSelector: SKScene {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
                 
+                // Must happen after presentScene to avoid nil
+                scene.shape1.home = scene.shape1Position!
+                scene.shape2?.home = scene.shape2Position!
                 scene.match1.matchSprite = scene.shape1
                 scene.match2?.matchSprite = scene.shape2
-                
             }
         }
     }
@@ -188,7 +199,7 @@ class DDLevelSelector: SKScene {
                 
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene)
-                
+                // Must happen after presentScene to avoid nil
                 scene.match1.matchSprite = scene.shape1
             }
         }
@@ -216,6 +227,8 @@ class DDLevelSelector: SKScene {
                 view.presentScene(scene)
                 
                 // Must happen after presentScene to avoid nil
+                scene.shape1.home = scene.shape1Position!
+                scene.shape2?.home = scene.shape2Position!
                 scene.match1.matchSprite = scene.shape1
                 scene.match2?.matchSprite = scene.shape2
             }

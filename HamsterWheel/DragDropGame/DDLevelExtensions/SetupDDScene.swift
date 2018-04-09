@@ -32,18 +32,39 @@ extension DDLevel {
     }
     
     func setupCollisions(_ contact: SKPhysicsContact) {
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Wall | PhysicsCategory.Shape1 | PhysicsCategory.Shape2 {
-        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape1 {
-        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape2 {
-        } else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape2 {
-            playUhOhSound()
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape1 {
+        }
+        else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape1 {
+        }
+        else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape2 {
+        }
+        else if collision == PhysicsCategory.Match1 | PhysicsCategory.Shape2 {
+            guard let shape = shape2 else { return }
+            let vector = CGVector(dx: 0, dy: 0)
+            self.theDraggingShape?.physicsBody?.velocity = vector
+            let moveAction = SKAction.move(to: shape.home, duration: 0.3)
+            
+            shape.run(moveAction)
             // play uh-oh sound and vibrate the phone
-            playUhOhSound()
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))  
+            self.theDraggingShape = nil
+            
+//            shape.run(moveAction)
+                playUhOhSound()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            } else if collision == PhysicsCategory.Match2 | PhysicsCategory.Shape1 {
+            
+                let vector = CGVector(dx: 0, dy: 0)
+                self.theDraggingShape?.physicsBody?.velocity = vector
+                let moveAction = SKAction.move(to: shape1.home, duration: 0.3)
+            
+                shape1.run(moveAction)
+                // play uh-oh sound and vibrate the phone
+                self.theDraggingShape = nil
+                playUhOhSound()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
     }
     

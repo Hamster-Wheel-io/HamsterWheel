@@ -39,6 +39,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     // in different spots on the board in each level
     var shape1Position: CGPoint?
     var shape2Position: CGPoint?
+    
     var match1Position: CGPoint?
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
@@ -69,6 +70,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
  
     var dragLocation: CGPoint = CGPoint.zero
     var theDraggingShape: SKSpriteNode? = nil
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
@@ -118,8 +120,10 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let dy = CGFloat(max(min(y, Shape.maxVelocity), -Shape.maxVelocity))
         let vector = CGVector(dx: dx, dy: dy)
         shape.physicsBody?.velocity = vector
-        
-//        (shape as! Shape).label.text = "x: \(round(dx)) \n y: \(round(dy))"
+    }
+    
+    func moveBackToOrigin(_ shape: SKSpriteNode, location: CGPoint) {
+        shape.position = location
     }
     
     func resetShapeSize() {
@@ -152,8 +156,13 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let matches: [Match?] = [match1, match2]
         for match in matches {
             if let match = match {
+                // match is a target for theDraggingShape
+                // matchSprite is the assigned shape for the target
+                
+                
                 
                 if match.isMatched == false || match.matchSprite == nil {
+                    
                     if let matchSprite = match.matchSprite {
                         if matchSprite.contains(match.position) {
                             match.isMatched = true
@@ -168,6 +177,9 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                 }
+                
+                // check for wrong shape match
+                
             }
         }
         
