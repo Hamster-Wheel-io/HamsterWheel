@@ -153,7 +153,7 @@ open class SwiftyDrawView: UIView {
         }
         
         self.delegate?.SwiftyDrawDidBeginDrawing(view: self)
-        if let touch = touches.first as UITouch! {
+        if let touch = touches.first as UITouch? {
             setTouchPoints(touch, view: self)
             let newLine = Line(path: CGMutablePath(), color: self.lineColor, width: self.lineWidth, opacity: self.lineOpacity)
             newLine.path.addPath(createNewPath())
@@ -170,7 +170,7 @@ open class SwiftyDrawView: UIView {
         }
         
         self.delegate?.SwiftyDrawIsDrawing(view: self)
-        if let touch = touches.first as UITouch! {
+        if let touch = touches.first as UITouch? {
             updateTouchPoints(touch, view: self)
             let newLine = createNewPath()
             if let currentPath = pathArray.last {
