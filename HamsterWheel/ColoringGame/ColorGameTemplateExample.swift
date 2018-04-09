@@ -11,19 +11,21 @@ import UIKit
 
 extension ColoringGameViewController {
     
+    // Loops over the colorPages array continuously , index 0 being nil (no template)
     @objc func toggleTemplate() {
-        if hasTemplate {
-            deleteDrawing()
-            removeTemplate()
-            hasTemplate = false
+        selectedTemplateIndex += 1
+        let templateIndex = selectedTemplateIndex % colorPages.count
+        
+        deleteDrawing()
+        
+        if let template = colorPages[templateIndex] {
+            addTemplate(template: template)
         } else {
-            deleteDrawing()
-            // TODO: Change template
-            addTemplate(template: #imageLiteral(resourceName: "fishPage"))
-            hasTemplate = true
+            removeTemplate()
         }
     }
     
+    // Adds/Replaces template with a given image
     func addTemplate(template: UIImage) {
         // Check if there already is a template view
         if let templateView = templateView {
@@ -45,6 +47,7 @@ extension ColoringGameViewController {
         }
     }
     
+    // Removes the template from the view
     func removeTemplate() {
         if let templateView = templateView {
             templateView.removeFromSuperview()
