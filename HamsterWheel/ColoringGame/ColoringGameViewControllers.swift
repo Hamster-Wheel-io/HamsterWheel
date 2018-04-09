@@ -11,6 +11,7 @@ import SpriteKit
 
 class ColoringGameViewController: UIViewController {
     
+    // Color to be used as drawing colors
     let colorDictionary = [UIColor.yellow,
                            UIColor.orange,
                            UIColor.red,
@@ -18,40 +19,54 @@ class ColoringGameViewController: UIViewController {
                            UIColor.blue,
                            UIColor.purple]
     
-    var drawView : SwiftyDrawView!
+    // Available templates, nil being an emty view to draw on
+    let colorPages = [nil, #imageLiteral(resourceName: "fishPage"), #imageLiteral(resourceName: "babyAnimalsPage"), #imageLiteral(resourceName: "hamsterOnWheelPage")]
     
+    // Drawing view
+    var drawView: SwiftyDrawView!
+    
+    // Array of all the color buttons to be used
     var colorButtons: [UIButton] = []
+    // Stack view for all color buttons
     var colorStackView: UIStackView?
     
+    // Return to main menu button
     var homeButton: UIButton!
-    // TODO: Remove
-    var navigationButtons: [UIButton] = []
-    var navigationStackView: UIStackView?
     
-    var deleteButton : UIButton!
-    var undoButton: UIButton!
-    var eraserButton: UIButton!
-    var templateButton: UIButton!
-    var hasTemplate: Bool = false
+    // Utility Section
+    var utilityButtons: [UIButton] = []     // Stores all buttons in the utility section
+    var utilityStackView: UIStackView?      // Displays all buttons in the utility section
     
-    var utilityButtons: [UIButton] = []
-    var utilityStackView: UIStackView?
+    var deleteButton : UIButton!            // Clear drawing
+    var undoButton: UIButton!               // Undo last stroke
+    var eraserButton: UIButton!             // Use a thick white stroke as the eraser
+    var templateButton: UIButton!           // Loops over available templates
+    var templateView: UIImageView?          // Used to display the templates
     
-    var colorIndicator: UIView?
+    // Used to determine next template
+    var selectedTemplateIndex = 0
     
     var selectedColor: UIColor! {
+        /*
+         Sets the desired stroke width for the selected color.
+         Sets the stroke color of the draw view to the selected color.
+         */
         didSet {
+            // Change the line stroke when selected color is white because it is the eraser.
             switch selectedColor {
             case UIColor.white?:
                 drawView.lineWidth = 25
             default:
                 drawView.lineWidth = 10
             }
-            colorIndicator?.backgroundColor = selectedColor
             drawView.lineColor = selectedColor
         }
     }
     
+    /*
+     Used to create a border around the selected color button,
+     Also takes into account that white is the eraser and should not get a border.
+     */
     var selectedButton: UIButton? {
         didSet {
             if let prevButton = oldValue {
@@ -70,11 +85,8 @@ class ColoringGameViewController: UIViewController {
         }
     }
     
-    var templateView: UIImageView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .white
         
         // Initialize drawview
@@ -82,10 +94,17 @@ class ColoringGameViewController: UIViewController {
         drawView.delegate = self
         drawView.backgroundColor = .clear
         
+        // Setup default values
         drawView.lineColor = .green
         selectedColor = .green
         
+        // Display drawing view
         self.view.addSubview(drawView)
+        /* Sets up:
+                - Color buttons
+                - Navigation buttons (home button)
+                - Utility buttons
+         */
         setupButtons()
     }
     
@@ -104,7 +123,6 @@ class ColoringGameViewController: UIViewController {
     }
     
     func addHomeButton() {
-        // Navigation Button
         homeButton = UIButton()
         homeButton.clipsToBounds = true
         homeButton.setImage(#imageLiteral(resourceName: "homeButton"), for: .normal)
@@ -147,7 +165,6 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
             self.colorStackView?.alpha = 0.0
             self.utilityStackView?.alpha = 0.0
             self.homeButton.alpha = 0.0
-            self.colorIndicator?.alpha = 0.0
         })
     }
     
@@ -156,7 +173,6 @@ extension ColoringGameViewController: SwiftyDrawViewDelegate {
             self.colorStackView?.alpha = 1.0
             self.utilityStackView?.alpha = 1.0
             self.homeButton.alpha = 1.0
-            self.colorIndicator?.alpha = 1.0
         })
     }
     

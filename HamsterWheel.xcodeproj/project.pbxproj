@@ -45,7 +45,7 @@
 		C4C5E41C206B14E700FE107B /* ColorGameColorButtonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */; };
 		C4C5E41E206B153E00FE107B /* ColorGameTemplateExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */; };
 		C4C5E420206B15D700FE107B /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5E41F206B15D700FE107B /* ButtonExtension.swift */; };
-		C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CBA73D204F750600B79920 /* Assets.xcassets */; };
+		C4D6A392207C160F009CFC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D6A391207C160F009CFC7B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +90,7 @@
 		C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGameColorButtonsExtension.swift; sourceTree = "<group>"; };
 		C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGameTemplateExample.swift; sourceTree = "<group>"; };
 		C4C5E41F206B15D700FE107B /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
-		C4CBA73D204F750600B79920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4D6A391207C160F009CFC7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,11 +158,11 @@
 		B9B363FE205E077B00B261AD /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				B9B363FF205E077B00B261AD /* ColorButton.swift */,
 				B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */,
 				C4C5E41B206B14E700FE107B /* ColorGameColorButtonsExtension.swift */,
 				C4C5E41D206B153E00FE107B /* ColorGameTemplateExample.swift */,
 				C44DD65B206B2BBD0049148D /* ColorGameUtilityButtonsExtension.swift */,
+				B9B363FF205E077B00B261AD /* ColorButton.swift */,
 			);
 			name = ColoringGame;
 			path = HamsterWheel/ColoringGame;
@@ -234,7 +234,7 @@
 				B9B363FE205E077B00B261AD /* ColoringGame */,
 				B91C453C2017E2B0004BF2FB /* DragDropGame */,
 				C4B297D52016D159009FCA9F /* Main */,
-				C4CBA73D204F750600B79920 /* Assets.xcassets */,
+				C4D6A391207C160F009CFC7B /* Assets.xcassets */,
 				C4B297DD2016D363009FCA9F /* assets.atlas */,
 				C4B297D62016D16D009FCA9F /* Additions */,
 				C4B297C82016CDD1009FCA9F /* Info.plist */,
@@ -346,13 +346,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4CBA73E204F750600B79920 /* Assets.xcassets in Resources */,
 				B9CDD2A6204F2A1900AD3152 /* SpellingLevelScene.sks in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
 				B9511FBF20466754005338EA /* shapes.atlas in Resources */,
+				C4D6A392207C160F009CFC7B /* Assets.xcassets in Resources */,
 				C4B297DC2016D2DD009FCA9F /* MainMenuScene.sks in Resources */,
 				B9CDD2AA204F2A9A00AD3152 /* RandomWheel.sks in Resources */,
 			);
