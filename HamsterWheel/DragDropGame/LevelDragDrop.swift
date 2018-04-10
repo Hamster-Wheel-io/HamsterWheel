@@ -136,6 +136,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         
         theDraggingShape?.physicsBody?.velocity = CGVector.zero
         
+        // MARK: SKActions
         let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
@@ -150,19 +151,35 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
+        
+        // Get the path to the particle file
+        guard let particlePath = Bundle.main.path(forResource: "Pizzaz", ofType: "sks") else { return }
+        
+        // Unpack the data that is in the particle file, create 1 for each match
+        let particle = NSKeyedUnarchiver.unarchiveObject(withFile: particlePath) as! SKEmitterNode
+        let particle2 = NSKeyedUnarchiver.unarchiveObject(withFile: particlePath) as! SKEmitterNode
+
+        // Set the name for the particles
+        particle.name = "pizzaz"
+        particle2.name = "pizzaz2"
+
+        // Set the position to emit particles on successful match
+        particle.position = match1.position
+        guard let match2 = match2 else { return } // There is not always a match2 on the scene
+        particle2.position = match2.position
+
+        particle.targetNode = shape1
+        particle2.targetNode = shape2
+        
         // Let the dragging shape go back to to the smallSize
         resetShapeSize()
         
+        // Hold the different match shapes in an array
         let matches: [Match?] = [match1, match2]
         for match in matches {
             if let match = match {
-                // match is a target for theDraggingShape
-                // matchSprite is the assigned shape for the target
-                
-                
-                
-                if match.isMatched == false || match.matchSprite == nil {
-                    
+                if match.isMatched == false || match.matchSprite == nil { // match is a target for theDraggingShape
+                                                                          // matchSprite is the assigned shape for the target
                     if let matchSprite = match.matchSprite {
                         if matchSprite.contains(match.position) {
                             match.isMatched = true
@@ -177,9 +194,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                 }
-                
-                // check for wrong shape match
-                
             }
         }
         
