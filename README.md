@@ -29,3 +29,4 @@ The wheels of learning keep on turning.
 * Parnell Kelly - Marketing and Logo concept
 * TTFortuneWheel - [Github Repository](https://github.com/tapptitude/TTFortuneWheel-iOS)
 * SwiftyDraw - [Github Repository](https://github.com/Awalz/SwiftyDraw)
+* Andrey Makurin - [Creative Market](https://creativemarket.com/Andrey1005)
