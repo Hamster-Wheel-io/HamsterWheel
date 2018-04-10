@@ -57,7 +57,7 @@ extension RandomWheel {
             let offset = pair.offset
             switch offset % 2 {
             case 0: slice.style = .sandYellow
-            case 1: slice.style = .brickRed 
+            case 1: slice.style = .brickRed
             default: slice.style = .brickRed
             }
         }
@@ -69,7 +69,6 @@ extension RandomWheel {
     func removeWheel() {
         wheel?.removeFromSuperview()
         frameImage?.removeFromSuperview()
-        spinButtonImage?.removeFromSuperview()
         spinButton?.removeFromSuperview()
     }
     
