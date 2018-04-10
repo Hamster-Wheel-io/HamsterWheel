@@ -13,10 +13,25 @@ import SpriteKit
 import AVFoundation
 
 class SpellingLevel: SKScene {
-    
-    let animalData = [SpellButtonData(word: "Cow", defaultImage: #imageLiteral(resourceName: "cowButton"), pressedImage: #imageLiteral(resourceName: "cowButtonPressed"), audioFileName: "cowMoo", audioFileExtension: ".mp3"),
-                      SpellButtonData(word: "Dog", defaultImage: #imageLiteral(resourceName: "dogButton"), pressedImage: #imageLiteral(resourceName: "dogButtonPressed"), audioFileName: "dogBark", audioFileExtension: ".wav"),
-                      SpellButtonData(word: "Cat", defaultImage: #imageLiteral(resourceName: "catButton"), pressedImage: #imageLiteral(resourceName: "catButtonPressed"), audioFileName: "catMeow", audioFileExtension: ".wav")]
+    // Stores the data for each button
+    let animalData = [SpellButtonData(word: "Cow",
+                                      defaultImage: #imageLiteral(resourceName: "cowButton"),
+                                      pressedImage: #imageLiteral(resourceName: "cowButtonPressed"),
+                                      audioFileName: "cowMoo",
+                                      audioFileExtension: ".mp3",
+                                      imageScale: 1),
+                      SpellButtonData(word: "Dog",
+                                      defaultImage: #imageLiteral(resourceName: "dogButton"),
+                                      pressedImage: #imageLiteral(resourceName: "dogButtonPressed"),
+                                      audioFileName: "dogBark",
+                                      audioFileExtension: ".wav",
+                                      imageScale: 1),
+                      SpellButtonData(word: "Cat",
+                                      defaultImage: #imageLiteral(resourceName: "catButton"),
+                                      pressedImage: #imageLiteral(resourceName: "catButtonPressed"),
+                                      audioFileName: "catMeow",
+                                      audioFileExtension: ".wav",
+                                      imageScale: 0.85)]
     
     // Navigation
     var levelSelector: AudioGameLevelSelector?
@@ -50,6 +65,10 @@ class SpellingLevel: SKScene {
         iPhoneXLetterBoxing()
     }
     
+    /*
+     Adds animal buttons to the scene
+     Will add all buttons in "animalData" and distribute them over the width of the screen
+     */
     func setupAnimalButtons() {
         if let view = view {
             let ratio = 1.0 / Double(animalData.count + 1)
@@ -71,6 +90,9 @@ extension SpellingLevel {
                 self.audioButtonPressed(data: data)
             }
         })
+        
+        // Image scale
+        audioButton.setScale(CGFloat(data.scale))
         
         // Position
         audioButton.position = convertPoint(fromView: CGPoint(x: x, y: y))

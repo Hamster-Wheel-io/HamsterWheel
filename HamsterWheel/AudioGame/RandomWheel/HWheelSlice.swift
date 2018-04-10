@@ -69,12 +69,12 @@ public class HWheelSlice: FortuneWheelSliceProtocol {
         var image: UIImage?
         if let animal = animal {
             switch animal {
-            case "Dog":     image = #imageLiteral(resourceName: "dogButton")
-            case "Cow":     image = #imageLiteral(resourceName: "cowButton")
-            case "Cat":     image = #imageLiteral(resourceName: "catButton")
-            case "Pig":     image = #imageLiteral(resourceName: "pigButton")  // TODO: Get other image or remove
-            case "Sheep":   image = #imageLiteral(resourceName: "sheepButton")
-            case "Horse":   image = #imageLiteral(resourceName: "horseButton")
+            case "Dog":     image = #imageLiteral(resourceName: "dogButtonPressed")
+            case "Cow":     image = #imageLiteral(resourceName: "cowButtonPressed")
+            case "Cat":     image = #imageLiteral(resourceName: "catButtonPressed")
+            case "Pig":     image = #imageLiteral(resourceName: "pigButtonPressed")  // TODO: Get other image or remove
+            case "Sheep":   image = #imageLiteral(resourceName: "sheepButtonPressed")
+            case "Horse":   image = #imageLiteral(resourceName: "horseButtonPressed")
             default:
                 return
             }
