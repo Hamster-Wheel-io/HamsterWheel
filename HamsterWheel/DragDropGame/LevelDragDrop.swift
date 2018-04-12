@@ -132,6 +132,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         theDraggingShape?.zPosition = 10
     }
     
+    func makeSuccessParticles() -> SKEmitterNode? {
+        guard let particles = SKEmitterNode(fileNamed: "Pizzaz") else {
+            print("No Pizzaz particles")
+            return nil
+        }
+        
+        particles.zPosition = 999
+        return particles
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         theDraggingShape?.physicsBody?.velocity = CGVector.zero
@@ -151,28 +161,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         
-        
-        // Get the path to the particle file
-        guard let particlePath = Bundle.main.path(forResource: "Pizzaz", ofType: "sks") else { return }
-        
-        // Unpack the data that is in the particle file, create 1 for each match
-        let particle = NSKeyedUnarchiver.unarchiveObject(withFile: particlePath) as! SKEmitterNode
-        let particle2 = NSKeyedUnarchiver.unarchiveObject(withFile: particlePath) as! SKEmitterNode
-
-        // Set the name for the particles
-        particle.name = "pizzaz"
-        particle2.name = "pizzaz2"
-
-        particle.targetNode = shape1
-        // Set the position to emit particles on successful match
-        particle.position = match1.position
-        if let match2 = match2 {
-            particle2.targetNode = shape2
-            particle2.position = match2.position
-            
-        } // There is not always a match2 on the scene
-
-        
         // Let the dragging shape go back to to the smallSize
         resetShapeSize()
         
@@ -189,8 +177,20 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                             matchSprite.run(fastFadeAction)
                             
                             if theDraggingShape == shape1 {
+                                if let particles = makeSuccessParticles() {
+                                    particles.position = match1.position
+                                    self.addChild(particles)
+                                } else {
+                                    print("No particles")
+                                }
                                 matchSprite.run(removeSequence1)
                             } else if theDraggingShape == shape2 {
+                                if let particles = makeSuccessParticles() {
+                                    particles.position = match2!.position
+                                    self.addChild(particles)
+                                } else {
+                                    print("No particles")
+                                }
                                 matchSprite.run(removeSequence2)
                             }
                         }
