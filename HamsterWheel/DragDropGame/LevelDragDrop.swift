@@ -163,13 +163,15 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         particle.name = "pizzaz"
         particle2.name = "pizzaz2"
 
+        particle.targetNode = shape1
         // Set the position to emit particles on successful match
         particle.position = match1.position
-        guard let match2 = match2 else { return } // There is not always a match2 on the scene
-        particle2.position = match2.position
+        if let match2 = match2 {
+            particle2.targetNode = shape2
+            particle2.position = match2.position
+            
+        } // There is not always a match2 on the scene
 
-        particle.targetNode = shape1
-        particle2.targetNode = shape2
         
         // Let the dragging shape go back to to the smallSize
         resetShapeSize()
