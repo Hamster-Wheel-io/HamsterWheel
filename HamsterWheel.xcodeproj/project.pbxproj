@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB5EC6A8B1E8339A230D2611 /* Pods_HamsterWheel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBD01CFA08A9E7BEC42BEE3 /* Pods_HamsterWheel.framework */; };
+		B911ABC2207C3358003AF58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B911ABC0207C3358003AF58E /* Assets.xcassets */; };
+		B911ABC7207C3C8F003AF58E /* Pizzaz.sks in Resources */ = {isa = PBXBuildFile; fileRef = B911ABC6207C3C8F003AF58E /* Pizzaz.sks */; };
 		B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelScene.sks */; };
 		B9201866205208CF00F1339E /* HelperFuncsDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9201865205208CF00F1339E /* HelperFuncsDD.swift */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		2DABA7FC9EEAF45C85DF23B7 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
 		710ED6FAF80008B4A6841217 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamsterWheel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
+		B911ABC0207C3358003AF58E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B911ABC6207C3C8F003AF58E /* Pizzaz.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pizzaz.sks; sourceTree = SOURCE_ROOT; };
 		B91C45462017E41B004BF2FB /* DDLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelScene.sks; sourceTree = "<group>"; };
 		B9201865205208CF00F1339E /* HelperFuncsDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncsDD.swift; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				B9DB75E3204F8A5B001A902B /* Physics */,
 				B9CDD2B7204F754F00AD3152 /* Nodes */,
 				B9511FBE20466753005338EA /* shapes.atlas */,
+				B911ABC0207C3358003AF58E /* Assets.xcassets */,
 			);
 			path = DragDropGame;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 		B9E0F2E22061967000C5F4B7 /* DDLevelExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				B911ABC6207C3C8F003AF58E /* Pizzaz.sks */,
 				B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */,
 				B9201865205208CF00F1339E /* HelperFuncsDD.swift */,
 			);
@@ -347,6 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CDD2A6204F2A1900AD3152 /* SpellingLevelScene.sks in Resources */,
+				B911ABC7207C3C8F003AF58E /* Pizzaz.sks in Resources */,
+				B911ABC2207C3358003AF58E /* Assets.xcassets in Resources */,
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */,
@@ -592,7 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = CYUN49XUZ7;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,7 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S44SNCV32X;
+				DEVELOPMENT_TEAM = CYUN49XUZ7;
 				INFOPLIST_FILE = HamsterWheel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
