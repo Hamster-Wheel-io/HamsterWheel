@@ -50,7 +50,7 @@ class MainMenuScene: SKScene {
                 }, completion: nil)
             }
         }
-        // Avoids letter 
+        // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
         // Avoids letter boxing on iPhoneX
         iPhoneXLetterBoxing()

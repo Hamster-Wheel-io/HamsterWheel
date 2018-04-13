@@ -35,7 +35,7 @@ extension ColoringGameViewController {
         templateButton = UIButton()
         templateButton.setImage(#imageLiteral(resourceName: "templateIcon"), for: .normal)
         templateButton.clipsToBounds = true
-        templateButton.addTarget(self, action: #selector(toggleTemplate), for: .touchUpInside)
+        templateButton.addTarget(self, action: #selector(openTemplateMenu), for: .touchUpInside)
         utilityButtons.append(templateButton)
     }
     

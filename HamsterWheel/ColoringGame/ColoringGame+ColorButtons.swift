@@ -71,5 +71,6 @@ extension ColoringGameViewController {
         
         // Set the newly selected button
         selectedButton = button
+        moveTemplateMenuOut()
     }
 }
