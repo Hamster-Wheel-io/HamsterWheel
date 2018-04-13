@@ -175,11 +175,6 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                 print("alert worked")
                 self.run(transitionAction)
             })
-//            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "popupIcon")!, message: "Success", duration: 4.0, presentingView: self.view!, completion: {
-//                // Completed
-//                print("alert worked")
-//                self.run(transitionAction)
-//            })
         }
         
         let gameCompleteSequence = SKAction.sequence([musicAction, popupAction, wait, slowFadeAction, musicStopAction])
