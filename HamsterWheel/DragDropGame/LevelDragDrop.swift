@@ -169,11 +169,17 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
         let popupAction = SKAction.run {
             
-            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "popupIcon")!, message: "Success", duration: 4.0, presentingView: self.view!, completion: {
+            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "pow")!, message: "Success", duration: 4.0, particleEffectFileName: "PizzazBig.sks", presentingView: self.view!, completion: {
                 // Completed
+                
                 print("alert worked")
                 self.run(transitionAction)
             })
+//            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "popupIcon")!, message: "Success", duration: 4.0, presentingView: self.view!, completion: {
+//                // Completed
+//                print("alert worked")
+//                self.run(transitionAction)
+//            })
         }
         
         let gameCompleteSequence = SKAction.sequence([musicAction, popupAction, wait, slowFadeAction, musicStopAction])

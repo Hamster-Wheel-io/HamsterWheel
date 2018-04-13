@@ -13,6 +13,7 @@
 		B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B91C45462017E41B004BF2FB /* DDLevelScene.sks */; };
 		B9201866205208CF00F1339E /* AudioMethodsDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9201865205208CF00F1339E /* AudioMethodsDD.swift */; };
 		B9511FBF20466754005338EA /* shapes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B9511FBE20466753005338EA /* shapes.atlas */; };
+		B98E746E20804F6C00B11FF6 /* PizzazBig.sks in Resources */ = {isa = PBXBuildFile; fileRef = B98E746D20804F6C00B11FF6 /* PizzazBig.sks */; };
 		B9B36401205E077B00B261AD /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B363FF205E077B00B261AD /* ColorButton.swift */; };
 		B9B36402205E077B00B261AD /* ColoringGameViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */; };
 		B9CDD29B2048E16300AD3152 /* SetupDDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */; };
@@ -58,6 +59,7 @@
 		B91C45462017E41B004BF2FB /* DDLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DDLevelScene.sks; sourceTree = "<group>"; };
 		B9201865205208CF00F1339E /* AudioMethodsDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMethodsDD.swift; sourceTree = "<group>"; };
 		B9511FBE20466753005338EA /* shapes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = shapes.atlas; sourceTree = "<group>"; };
+		B98E746D20804F6C00B11FF6 /* PizzazBig.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PizzazBig.sks; sourceTree = SOURCE_ROOT; };
 		B9B363FF205E077B00B261AD /* ColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		B9B36400205E077B00B261AD /* ColoringGameViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoringGameViewControllers.swift; sourceTree = "<group>"; };
 		B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDDScene.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				B911ABC6207C3C8F003AF58E /* Pizzaz.sks */,
+				B98E746D20804F6C00B11FF6 /* PizzazBig.sks */,
 				B9CDD29A2048E16300AD3152 /* SetupDDScene.swift */,
 				B9201865205208CF00F1339E /* AudioMethodsDD.swift */,
 			);
@@ -358,6 +361,7 @@
 				C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */,
 				C4B297DE2016D363009FCA9F /* assets.atlas in Resources */,
 				B91C454C2017E41B004BF2FB /* DDLevelScene.sks in Resources */,
+				B98E746E20804F6C00B11FF6 /* PizzazBig.sks in Resources */,
 				C4B297C72016CDD1009FCA9F /* LaunchScreen.storyboard in Resources */,
 				B9511FBF20466754005338EA /* shapes.atlas in Resources */,
 				C4D6A392207C160F009CFC7B /* Assets.xcassets in Resources */,
