@@ -31,8 +31,8 @@ extension DDLevel {
         if let music = NSDataAsset(name: "clown_music") {
             do {
                 // Use NSDataAssets' data property to access success music
-                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
-                audio?.play()
+                audioPlayer = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
+                audioPlayer?.play()
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
@@ -43,11 +43,16 @@ extension DDLevel {
         if let music = NSDataAsset(name: "uh-oh-sound") {
             do {
                 // Use NSDataAssets' data property to access success music
-                audio = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
-                audio?.play()
+                audioPlayer = try AVAudioPlayer(data: music.data, fileTypeHint: ".mp3")
+                
+                // Reduce the volume of this audio file as it is louder than the rest
+                audioPlayer?.prepareToPlay()
+                audioPlayer?.volume = 0.4
+                audioPlayer?.play()
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
+
         }
     }
 }
