@@ -18,11 +18,14 @@ class SpellButtonData {
     var audioFileName: String
     var audioFileExtension: String
     
-    init(word: String, defaultImage: UIImage, pressedImage: UIImage, audioFileName: String, audioFileExtension: String) {
+    var scale: Double = 1
+    
+    init(word: String, defaultImage: UIImage, pressedImage: UIImage, audioFileName: String, audioFileExtension: String, imageScale: Double = 1) {
         self.word = word
         self.defaultImage = defaultImage
         self.pressedImage = pressedImage
         self.audioFileName = audioFileName
         self.audioFileExtension = audioFileExtension
+        self.scale = imageScale
     }
 }
