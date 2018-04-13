@@ -11,7 +11,7 @@ import AVFoundation
 
 class DDLevel: SKScene, SKPhysicsContactDelegate {
 
-    var audio: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var homeButton: SKButton!
     var backButton: SKButton!
@@ -57,11 +57,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         loadHomeButton()
         loadBackButton()
         setupTextures()
+        setupAudio()
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
         // Avoids letter boxing on iPhoneX
         iPhoneXLetterBoxing()
+    }
+    
+    func setupAudio() {
+        try? AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -153,7 +158,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic() }
-        let musicStopAction = SKAction.run { self.audio?.stop() }
+        let musicStopAction = SKAction.run { self.audioPlayer?.stop() }
         let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 1)
         let shape1RemoveAction = SKAction.run { self.shape1?.removeFromParent() }
         let shape2RemoveAction = SKAction.run { self.shape2?.removeFromParent() }
@@ -224,7 +229,7 @@ extension DDLevel {
             
             if let view = self.view {
                 // Stop audio when navigate to home screen
-                self.audio?.stop()
+                self.audioPlayer?.stop()
                 
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     // Set the scale mode to scale to fit the window
