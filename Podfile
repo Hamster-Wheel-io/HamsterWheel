@@ -8,5 +8,6 @@ target 'HamsterWheel' do
   # Pods for HamsterWheel
   pod 'TTFortuneWheel', '~> 0.1.5'
   pod 'SwiftyDraw', '~> 1.0'
+  pod 'APESuperHUD', :git => 'https://github.com/apegroup/APESuperHUD.git'
 
 end

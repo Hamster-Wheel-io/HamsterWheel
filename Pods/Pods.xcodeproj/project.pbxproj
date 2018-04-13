@@ -3,226 +3,264 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		109F201D6BB34981A6AD668BFF1BAF2B /* TTFortuneWheel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A62438EC84E5427397BC42EA71DA97FE /* TTFortuneWheel.bundle */; };
-		11454DA9401EE39154FAD7E279EF1AEA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F023809872C61E67378200A62EABCE /* Utils.swift */; };
-		136B63D738B5592E81C0B320972BD6A4 /* SwiftyDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA72669224F212173BE2523501AE68 /* SwiftyDraw.swift */; };
-		190EE832664693D9573949B1AD8A3C40 /* SwiftyDraw-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E5800D171140F99918171E8F5F154 /* SwiftyDraw-dummy.m */; };
-		21C4309A5C2A90A052EC1950115745CD /* TTFortuneWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA54F750FB0600BB2B59B038DC7BF69 /* TTFortuneWheel-dummy.m */; };
-		23B563A3B5EA9B782BCF8388ED8BCBC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		3B66EF64A8E5FBCC1C673823EADEFE05 /* TTFortuneWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F3EB4A1837F4FF2BBED13A45F90E59 /* TTFortuneWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4550486916B25234052AC96DF915F802 /* FortuneWheelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912BDF6671C66B4CF24CA48FBFC267DE /* FortuneWheelLayer.swift */; };
-		47F88C1907884F23F0336FAEA7183ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		5ACCDCD63AD7D1A02D9A803BA6419137 /* TTFortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A6437E02D23B7DF2834A97B25F242 /* TTFortuneWheel.swift */; };
-		60533132211E74BCF6B865D68299D350 /* Pods-HamsterWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EABEAB1693FC2EB78EC768692C2D395 /* SpinningWheelSlice .swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F6BB556E0EDD825FCA954E5D82ABE5 /* SpinningWheelSlice .swift */; };
-		7B167C9AA6B053C35AA0CFA563089FD8 /* SpinningWheelSliceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AB03D6401B6B6ECC43FC58472F289 /* SpinningWheelSliceImpl.swift */; };
-		8AA43B2ECFDF169F13912AF5A1069BF1 /* Pods-HamsterWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */; };
-		929A54430EE5CEA27456A46EE6A6D70F /* SwiftyDraw-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0018277F8AD7FCB213C8D8EE2C7C81 /* SwiftyDraw-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C13B77D69040D12AEC0F69ECFB30E0C /* SpinningWheelAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5EECD0FC452D3343CE158E142C81BC /* SpinningWheelAnimator.swift */; };
-		B8345CEFAEE1685A3E41CD03FBDE9A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31904040985D1896652A3EC5A01654C8 /* Assets.xcassets */; };
-		E2A1429AC2CB4E04A858F377537E1A76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0A338847DAEB97A5122AB241A11B8114 /* SwiftyDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E0E3E3CAC889149BD8C145E45B1E1 /* SwiftyDraw.swift */; };
+		133924471BDA99BAA221A95A0D486A36 /* SwiftyDraw-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF4A7A1BB85B5FC6BE4857FEAE06BB /* SwiftyDraw-dummy.m */; };
+		1BA36703845A551D1E13E83E8CAB57E5 /* APESuperHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4475AEC188B12B55345CE1235C561217 /* APESuperHUD-dummy.m */; };
+		1C38243D8934DA7BA14F5AEFF45959DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		2F40EFC6F4E3420298E0D25FC19E2921 /* SpinningWheelAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911B03313020931C3DB91C573CF8D7DD /* SpinningWheelAnimator.swift */; };
+		386AAA035F82F4E57492715CFEE0CFD8 /* SpinningWheelSliceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4373440772EEB31D3826F1F07EF3781 /* SpinningWheelSliceImpl.swift */; };
+		392BC585B3FE06B6ED09E1FF223F696A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4BCAF00CF3255654F57FAD9420C76 /* Utils.swift */; };
+		3FEEB60BF80905F4514BFC89ADFC657E /* Pods-HamsterWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5312872C91E57650680ED478C377249F /* Pods-HamsterWheel-dummy.m */; };
+		460458E3241C7050B3436B3B7D84A7BB /* SpinningWheelSlice .swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB350EAB784026EAC7756BBE3509DF /* SpinningWheelSlice .swift */; };
+		4C8D130DC881FFEACFEA0810A5F85B2B /* TTFortuneWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BE38B5FC6F264DC413A30A1CFD9EA6 /* TTFortuneWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		523A7B7F77AF8BF47F59E114CAFB3FFF /* TTFortuneWheel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC80E23D5036C363D4EF61A15D3C7763 /* TTFortuneWheel.bundle */; };
+		5280ABCD20ADA2C7A56E5CC6ABC4257F /* SwiftyDraw-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B783ED3352399EEAC7851A2D8EF638 /* SwiftyDraw-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59DD61D30641E21C5C1D8DBE6F9A0F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		61E5E7F750C6E141DFC5D91FF52F8A52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		62510B41321E7F8BED6C75990EE3C68D /* TTFortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C5FEAEAF6A4827061227B9A5FA03CE /* TTFortuneWheel.swift */; };
+		68CD77A4CFF39E919688614AD1CBC81C /* APESuperHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EB3A54995AD4ADEF5977A2992FD6F17 /* APESuperHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA0DA07FA5D8A6A58184A2B0166E6FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D432AEB2A4984390EE94F3C360763033 /* Assets.xcassets */; };
+		84494F58594A843F780243AB2608311C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		903C74245470DA27E55A8173613AA276 /* LoadingMessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF83672586E5CD136A84902430F66 /* LoadingMessagesHandler.swift */; };
+		9F020BB19A6E101A00B09EA6660F3329 /* TTFortuneWheel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4484F5401BB2DFE294FF9006B90DE1F6 /* TTFortuneWheel-dummy.m */; };
+		AC9E7EE30880D8C4AC1DBBF7B9A30C05 /* Pods-HamsterWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC684320664091C1C035D9832CBEBD79 /* Pods-HamsterWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3D1A64B1F65BBA5BD0268CF4FAFD1CD /* FortuneWheelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F625AFDBBFE18F6D28537B168535A77 /* FortuneWheelLayer.swift */; };
+		BCC75F23B021275BBF7CF497689C62FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		C2C32628EC09466EDBC61A06514147A2 /* APESuperHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4627FC074ABE99E85F60E48490A3023E /* APESuperHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F86181EDE2F02D9FF1E457E7B1B39D /* FrameworkMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872E66D3B035DBECCB9FFEE1999A86A9 /* FrameworkMedia.xcassets */; };
+		DCC0755BE702B74680DC1F8A2E4BF3F5 /* HudAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CC7DD4680071210E3781F8751C9E6 /* HudAppearance.swift */; };
+		E918EDDAB55C2E9CCAD7431601318D0E /* APESuperHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE51289B92E20001BDCE7AC28AC1E6 /* APESuperHUD.swift */; };
+		FD1361645EFE9DFC4D6D38C5F9A49BCA /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CAADED831AD6315268E8FAA17C951 /* HudView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		30974A2E19D49414D9D541B17B09EBDA /* PBXContainerItemProxy */ = {
+		12ABFAAA5244F56BDB9C1B22A54A4222 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E9959EA0E6DF9495451CA5F11857E3D9;
+			remoteGlobalIDString = FE028311B3CC8C6900041FFFAA0386DF;
 			remoteInfo = SwiftyDraw;
 		};
-		E90C408E81BDE4BF141584D2DFBD0AE4 /* PBXContainerItemProxy */ = {
+		887161D39FFDF95BD47AC69E61AF6B0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1D1340767B49228DF783C4019622C49;
+			remoteGlobalIDString = 7C6A80D0A5B1F6A7AA058EDA8EC93AD7;
+			remoteInfo = TTFortuneWheel;
+		};
+		8D535BF3C5BF4894A351C3590CC88E75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D4C9CC114385B65F6BFC6AD34DD8377;
 			remoteInfo = "TTFortuneWheel-TTFortuneWheel";
 		};
-		ECDDD360942CAADB488FC31D45B96136 /* PBXContainerItemProxy */ = {
+		D2782A1E7AB9DDD599BE72F30E638567 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7AADF227695D756F729CDC53FC31E82E;
-			remoteInfo = TTFortuneWheel;
+			remoteGlobalIDString = 386FAAC55AA215BD66F84664AE47D0FD;
+			remoteInfo = APESuperHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06EA4A40A861C62DE3737C2A6136A5FB /* SwiftyDraw-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDraw-prefix.pch"; sourceTree = "<group>"; };
-		0BA54F750FB0600BB2B59B038DC7BF69 /* TTFortuneWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTFortuneWheel-dummy.m"; sourceTree = "<group>"; };
-		0F603B3FDE6C182A779D742D8AB5FD5B /* TTFortuneWheel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-prefix.pch"; sourceTree = "<group>"; };
-		13098A034151F359831404228C2F547B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		163495F0ACA2E72974B64F5E325FC98B /* SwiftyDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26223B9F95056708ED8B2067EE6E7C02 /* Pods-HamsterWheel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-frameworks.sh"; sourceTree = "<group>"; };
-		31904040985D1896652A3EC5A01654C8 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TTFortuneWheel/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		435A6437E02D23B7DF2834A97B25F242 /* TTFortuneWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TTFortuneWheel.swift; path = TTFortuneWheel/TTFortuneWheel.swift; sourceTree = "<group>"; };
-		4C8E5800D171140F99918171E8F5F154 /* SwiftyDraw-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDraw-dummy.m"; sourceTree = "<group>"; };
-		524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
-		56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HamsterWheel-dummy.m"; sourceTree = "<group>"; };
-		608DA2101165EA934795B98A6D8FC185 /* Pods-HamsterWheel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-resources.sh"; sourceTree = "<group>"; };
-		65A5614BDB7FC628C8F7596517392ABF /* Pods-HamsterWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HamsterWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7B5EECD0FC452D3343CE158E142C81BC /* SpinningWheelAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelAnimator.swift; path = TTFortuneWheel/SpinningWheelAnimator.swift; sourceTree = "<group>"; };
-		7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
-		7E4AB03D6401B6B6ECC43FC58472F289 /* SpinningWheelSliceImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelSliceImpl.swift; path = TTFortuneWheel/SpinningWheelSliceImpl.swift; sourceTree = "<group>"; };
-		86BE3E13D0C48D5773041E9CD6E2705C /* Pods-HamsterWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HamsterWheel-acknowledgements.plist"; sourceTree = "<group>"; };
-		86F023809872C61E67378200A62EABCE /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = TTFortuneWheel/Utils.swift; sourceTree = "<group>"; };
-		8756AFBD2C02CE2F508C4C772247CBAB /* ResourceBundle-TTFortuneWheel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TTFortuneWheel-Info.plist"; sourceTree = "<group>"; };
-		8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HamsterWheel.modulemap"; sourceTree = "<group>"; };
-		912BDF6671C66B4CF24CA48FBFC267DE /* FortuneWheelLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FortuneWheelLayer.swift; path = TTFortuneWheel/FortuneWheelLayer.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9C81C693E9039E3981DE3C6B3DF2A27D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1EA72669224F212173BE2523501AE68 /* SwiftyDraw.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyDraw.swift; path = Source/SwiftyDraw.swift; sourceTree = "<group>"; };
-		A3F6BB556E0EDD825FCA954E5D82ABE5 /* SpinningWheelSlice .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SpinningWheelSlice .swift"; path = "TTFortuneWheel/SpinningWheelSlice .swift"; sourceTree = "<group>"; };
-		A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HamsterWheel-umbrella.h"; sourceTree = "<group>"; };
-		A62438EC84E5427397BC42EA71DA97FE /* TTFortuneWheel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTFortuneWheel.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8DA3C1BACAC2E37DA60462F67501643 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A98E0D455C381E9E6B4FCEA3ACABEF39 /* SwiftyDraw.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDraw.xcconfig; sourceTree = "<group>"; };
-		ACEFD20F86125F5882FCBDA97B88F810 /* TTFortuneWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TTFortuneWheel.modulemap; sourceTree = "<group>"; };
-		B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTFortuneWheel.xcconfig; sourceTree = "<group>"; };
-		E4910C5814ACE97F380EB8B0D9B6DD50 /* TTFortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTFortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0F3EB4A1837F4FF2BBED13A45F90E59 /* TTFortuneWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-umbrella.h"; sourceTree = "<group>"; };
-		FA4E7AEDA5D22656BDF191ADA1A4F870 /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamsterWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB0018277F8AD7FCB213C8D8EE2C7C81 /* SwiftyDraw-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDraw-umbrella.h"; sourceTree = "<group>"; };
-		FF870E7FD0D6004332CAE64AE2D70F17 /* SwiftyDraw.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyDraw.modulemap; sourceTree = "<group>"; };
+		07471E2C775E9FE1D82BF5941CC51172 /* APESuperHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APESuperHUD.xcconfig; sourceTree = "<group>"; };
+		0D93AF0EB7FEE4C44CEFE4C2A034E21B /* SwiftyDraw-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDraw-prefix.pch"; sourceTree = "<group>"; };
+		0F625AFDBBFE18F6D28537B168535A77 /* FortuneWheelLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FortuneWheelLayer.swift; path = TTFortuneWheel/FortuneWheelLayer.swift; sourceTree = "<group>"; };
+		1249A4E1EAF6DB16DAB3CA4B232447C0 /* Pods-HamsterWheel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-resources.sh"; sourceTree = "<group>"; };
+		1CE4BCAF00CF3255654F57FAD9420C76 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = TTFortuneWheel/Utils.swift; sourceTree = "<group>"; };
+		2ACF4A7A1BB85B5FC6BE4857FEAE06BB /* SwiftyDraw-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDraw-dummy.m"; sourceTree = "<group>"; };
+		2B2DF83672586E5CD136A84902430F66 /* LoadingMessagesHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingMessagesHandler.swift; path = Source/LoadingMessagesHandler.swift; sourceTree = "<group>"; };
+		2E7CC7DD4680071210E3781F8751C9E6 /* HudAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HudAppearance.swift; path = Source/HudAppearance.swift; sourceTree = "<group>"; };
+		33356285CEAB4E9B4F84FB618959A467 /* SwiftyDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyDraw.framework; path = SwiftyDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AB350EAB784026EAC7756BBE3509DF /* SpinningWheelSlice .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SpinningWheelSlice .swift"; path = "TTFortuneWheel/SpinningWheelSlice .swift"; sourceTree = "<group>"; };
+		3AEDC355EBDAE1E66A4A31AE5807DD02 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D9D8FCC70F9E48FEFACCE3D76F4ABFA /* TTFortuneWheel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-prefix.pch"; sourceTree = "<group>"; };
+		4475AEC188B12B55345CE1235C561217 /* APESuperHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APESuperHUD-dummy.m"; sourceTree = "<group>"; };
+		4484F5401BB2DFE294FF9006B90DE1F6 /* TTFortuneWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTFortuneWheel-dummy.m"; sourceTree = "<group>"; };
+		4627FC074ABE99E85F60E48490A3023E /* APESuperHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APESuperHUD-umbrella.h"; sourceTree = "<group>"; };
+		5312872C91E57650680ED478C377249F /* Pods-HamsterWheel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HamsterWheel-dummy.m"; sourceTree = "<group>"; };
+		680D87504DBBD66ADC54F3BACBEE2D10 /* TTFortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTFortuneWheel.framework; path = TTFortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		828F8C9B7F9C2AB7D2E248D1D0297897 /* SwiftyDraw.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDraw.xcconfig; sourceTree = "<group>"; };
+		872E66D3B035DBECCB9FFEE1999A86A9 /* FrameworkMedia.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = FrameworkMedia.xcassets; path = Resources/FrameworkMedia.xcassets; sourceTree = "<group>"; };
+		87C5FEAEAF6A4827061227B9A5FA03CE /* TTFortuneWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TTFortuneWheel.swift; path = TTFortuneWheel/TTFortuneWheel.swift; sourceTree = "<group>"; };
+		88A688D56156D0FB48B3D2507F7F9F91 /* Pods-HamsterWheel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HamsterWheel-acknowledgements.plist"; sourceTree = "<group>"; };
+		8AD07C4AD914E847B6CDC8C6F6016D61 /* Pods-HamsterWheel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HamsterWheel-frameworks.sh"; sourceTree = "<group>"; };
+		8B1E0E3E3CAC889149BD8C145E45B1E1 /* SwiftyDraw.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyDraw.swift; path = Source/SwiftyDraw.swift; sourceTree = "<group>"; };
+		8C4755A68C2FFC10877B0E16F0C3B147 /* Pods-HamsterWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.release.xcconfig"; sourceTree = "<group>"; };
+		8C78923CEEA7625BA64AC59E9EFCB8B7 /* Pods-HamsterWheel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HamsterWheel.debug.xcconfig"; sourceTree = "<group>"; };
+		8C7E0E58EFFDB2CA056E4E59C123D180 /* ResourceBundle-TTFortuneWheel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TTFortuneWheel-Info.plist"; sourceTree = "<group>"; };
+		8EB3A54995AD4ADEF5977A2992FD6F17 /* APESuperHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APESuperHUD.h; path = Source/APESuperHUD.h; sourceTree = "<group>"; };
+		911B03313020931C3DB91C573CF8D7DD /* SpinningWheelAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelAnimator.swift; path = TTFortuneWheel/SpinningWheelAnimator.swift; sourceTree = "<group>"; };
+		939B9FFCF0E7A66A58FE9C40686C4F89 /* APESuperHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = APESuperHUD.framework; path = APESuperHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9C03CF56658E7B020FA797366DD0516E /* SwiftyDraw.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyDraw.modulemap; sourceTree = "<group>"; };
+		A567E8FCDF4CA74009A9650E292C478C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC684320664091C1C035D9832CBEBD79 /* Pods-HamsterWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HamsterWheel-umbrella.h"; sourceTree = "<group>"; };
+		AC80E23D5036C363D4EF61A15D3C7763 /* TTFortuneWheel.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TTFortuneWheel.bundle; path = "TTFortuneWheel-TTFortuneWheel.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2CFE3522EE815B289D2B2CE184012AB /* APESuperHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = APESuperHUD.modulemap; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B974B67EC30572EA4ED389C05E748396 /* APESuperHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "APESuperHUD-prefix.pch"; sourceTree = "<group>"; };
+		C1AF3E33DADC596A955A0C4F5F28B307 /* TTFortuneWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TTFortuneWheel.modulemap; sourceTree = "<group>"; };
+		C4373440772EEB31D3826F1F07EF3781 /* SpinningWheelSliceImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinningWheelSliceImpl.swift; path = TTFortuneWheel/SpinningWheelSliceImpl.swift; sourceTree = "<group>"; };
+		C49237362B9435E27F924659079CE1EE /* Pods_HamsterWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HamsterWheel.framework; path = "Pods-HamsterWheel.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BE38B5FC6F264DC413A30A1CFD9EA6 /* TTFortuneWheel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTFortuneWheel-umbrella.h"; sourceTree = "<group>"; };
+		CAD47336CFD4E5958B710256AC6B186D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D432AEB2A4984390EE94F3C360763033 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TTFortuneWheel/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		D4B783ED3352399EEAC7851A2D8EF638 /* SwiftyDraw-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDraw-umbrella.h"; sourceTree = "<group>"; };
+		D4EE51289B92E20001BDCE7AC28AC1E6 /* APESuperHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APESuperHUD.swift; path = Source/APESuperHUD.swift; sourceTree = "<group>"; };
+		D65821B039852E2A6FF1F19DA8B3C1A4 /* Pods-HamsterWheel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HamsterWheel.modulemap"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D90CAADED831AD6315268E8FAA17C951 /* HudView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HudView.swift; path = Source/HudView.swift; sourceTree = "<group>"; };
+		E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTFortuneWheel.xcconfig; sourceTree = "<group>"; };
+		E8B244DBB665A6D7535BEC9F3BDAA66B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F836ED5B034987520D764FDA4C1D2BD4 /* Pods-HamsterWheel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HamsterWheel-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7D40A9B0D1805D4135D128F31455FDEA /* Frameworks */ = {
+		3C366B7030960D496F2F721F59B9AD46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC75F23B021275BBF7CF497689C62FE /* Foundation.framework in Frameworks */,
+				84494F58594A843F780243AB2608311C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C450035813D773B7FE16D9736463C432 /* Frameworks */ = {
+		62884B6A5A90511604BB266572E0ED13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F88C1907884F23F0336FAEA7183ECA /* Foundation.framework in Frameworks */,
+				59DD61D30641E21C5C1D8DBE6F9A0F15 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E291372A674170A33A374E67646FEA2E /* Frameworks */ = {
+		7FE67178F1D349282D7F862E34E98D5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A1429AC2CB4E04A858F377537E1A76 /* Foundation.framework in Frameworks */,
+				1C38243D8934DA7BA14F5AEFF45959DA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2A814C49C4D41A08B998DC3048C77A7 /* Frameworks */ = {
+		9648DAA6A4B7467DB2244F80815E027B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B563A3B5EA9B782BCF8388ED8BCBC0 /* Foundation.framework in Frameworks */,
+				61E5E7F750C6E141DFC5D91FF52F8A52 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDD8F233261AC31BC7AB4D02880650A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E54C1300BA67301793E9D191E7D1CFD /* Products */ = {
+		1A6648FAC80218DA8EC3F932D71BE0E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA4E7AEDA5D22656BDF191ADA1A4F870 /* Pods_HamsterWheel.framework */,
-				163495F0ACA2E72974B64F5E325FC98B /* SwiftyDraw.framework */,
-				A62438EC84E5427397BC42EA71DA97FE /* TTFortuneWheel.bundle */,
-				E4910C5814ACE97F380EB8B0D9B6DD50 /* TTFortuneWheel.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		21428191EBFC3ECD2083450D1F61C9C7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				13098A034151F359831404228C2F547B /* Info.plist */,
-				8756AFBD2C02CE2F508C4C772247CBAB /* ResourceBundle-TTFortuneWheel-Info.plist */,
-				ACEFD20F86125F5882FCBDA97B88F810 /* TTFortuneWheel.modulemap */,
-				B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */,
-				0BA54F750FB0600BB2B59B038DC7BF69 /* TTFortuneWheel-dummy.m */,
-				0F603B3FDE6C182A779D742D8AB5FD5B /* TTFortuneWheel-prefix.pch */,
-				F0F3EB4A1837F4FF2BBED13A45F90E59 /* TTFortuneWheel-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TTFortuneWheel";
-			sourceTree = "<group>";
-		};
-		2E924EF855070D05467BEC6FE09B9CB6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				31904040985D1896652A3EC5A01654C8 /* Assets.xcassets */,
+				D432AEB2A4984390EE94F3C360763033 /* Assets.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		3EB29B1B25CFFD53B2972EDB10660BB3 /* Pods-HamsterWheel */ = {
+		243528AF683CBA9588BDC15B913FCFCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A8DA3C1BACAC2E37DA60462F67501643 /* Info.plist */,
-				8E9C5C817EA7D192DD006A89A3C90BFA /* Pods-HamsterWheel.modulemap */,
-				65A5614BDB7FC628C8F7596517392ABF /* Pods-HamsterWheel-acknowledgements.markdown */,
-				86BE3E13D0C48D5773041E9CD6E2705C /* Pods-HamsterWheel-acknowledgements.plist */,
-				56366501622756C7B10338E1D22FF85C /* Pods-HamsterWheel-dummy.m */,
-				26223B9F95056708ED8B2067EE6E7C02 /* Pods-HamsterWheel-frameworks.sh */,
-				608DA2101165EA934795B98A6D8FC185 /* Pods-HamsterWheel-resources.sh */,
-				A5FC5A2171D51FCFD67A6B34DD1092B8 /* Pods-HamsterWheel-umbrella.h */,
-				524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */,
-				7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */,
+				872E66D3B035DBECCB9FFEE1999A86A9 /* FrameworkMedia.xcassets */,
 			);
-			name = "Pods-HamsterWheel";
-			path = "Target Support Files/Pods-HamsterWheel";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		4123AC916C9317AB0E29A59A6EBD7312 /* Support Files */ = {
+		31C0F95DF4138FDEFC2E598766705591 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C81C693E9039E3981DE3C6B3DF2A27D /* Info.plist */,
-				FF870E7FD0D6004332CAE64AE2D70F17 /* SwiftyDraw.modulemap */,
-				A98E0D455C381E9E6B4FCEA3ACABEF39 /* SwiftyDraw.xcconfig */,
-				4C8E5800D171140F99918171E8F5F154 /* SwiftyDraw-dummy.m */,
-				06EA4A40A861C62DE3737C2A6136A5FB /* SwiftyDraw-prefix.pch */,
-				FB0018277F8AD7FCB213C8D8EE2C7C81 /* SwiftyDraw-umbrella.h */,
+				B2CFE3522EE815B289D2B2CE184012AB /* APESuperHUD.modulemap */,
+				07471E2C775E9FE1D82BF5941CC51172 /* APESuperHUD.xcconfig */,
+				4475AEC188B12B55345CE1235C561217 /* APESuperHUD-dummy.m */,
+				B974B67EC30572EA4ED389C05E748396 /* APESuperHUD-prefix.pch */,
+				4627FC074ABE99E85F60E48490A3023E /* APESuperHUD-umbrella.h */,
+				CAD47336CFD4E5958B710256AC6B186D /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SwiftyDraw";
+			path = "../Target Support Files/APESuperHUD";
 			sourceTree = "<group>";
 		};
-		5A8F4CE6EBD55F943CA14327B9FDF88E /* SwiftyDraw */ = {
+		32F0043A6A5220500B4D8BF77082D9D1 /* SwiftyDraw */ = {
 			isa = PBXGroup;
 			children = (
-				A1EA72669224F212173BE2523501AE68 /* SwiftyDraw.swift */,
-				4123AC916C9317AB0E29A59A6EBD7312 /* Support Files */,
+				8B1E0E3E3CAC889149BD8C145E45B1E1 /* SwiftyDraw.swift */,
+				966A2ECEAF98389305C625ED18C61293 /* Support Files */,
 			);
+			name = SwiftyDraw;
 			path = SwiftyDraw;
 			sourceTree = "<group>";
 		};
-		676505CF63EA8CEF49CD0E79107B0D8E /* TTFortuneWheel */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				912BDF6671C66B4CF24CA48FBFC267DE /* FortuneWheelLayer.swift */,
-				7B5EECD0FC452D3343CE158E142C81BC /* SpinningWheelAnimator.swift */,
-				A3F6BB556E0EDD825FCA954E5D82ABE5 /* SpinningWheelSlice .swift */,
-				7E4AB03D6401B6B6ECC43FC58472F289 /* SpinningWheelSliceImpl.swift */,
-				435A6437E02D23B7DF2834A97B25F242 /* TTFortuneWheel.swift */,
-				86F023809872C61E67378200A62EABCE /* Utils.swift */,
-				2E924EF855070D05467BEC6FE09B9CB6 /* Resources */,
-				21428191EBFC3ECD2083450D1F61C9C7 /* Support Files */,
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		43DB96859A774FD76AEFE6CD55BFEA7F /* TTFortuneWheel */ = {
+			isa = PBXGroup;
+			children = (
+				0F625AFDBBFE18F6D28537B168535A77 /* FortuneWheelLayer.swift */,
+				911B03313020931C3DB91C573CF8D7DD /* SpinningWheelAnimator.swift */,
+				36AB350EAB784026EAC7756BBE3509DF /* SpinningWheelSlice .swift */,
+				C4373440772EEB31D3826F1F07EF3781 /* SpinningWheelSliceImpl.swift */,
+				87C5FEAEAF6A4827061227B9A5FA03CE /* TTFortuneWheel.swift */,
+				1CE4BCAF00CF3255654F57FAD9420C76 /* Utils.swift */,
+				1A6648FAC80218DA8EC3F932D71BE0E2 /* Resources */,
+				F1B3E4A97BB6DADE4263C84F963F5342 /* Support Files */,
+			);
+			name = TTFortuneWheel;
 			path = TTFortuneWheel;
+			sourceTree = "<group>";
+		};
+		5683C49616231EDC18EC0292E135ACB1 /* APESuperHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8EB3A54995AD4ADEF5977A2992FD6F17 /* APESuperHUD.h */,
+				D4EE51289B92E20001BDCE7AC28AC1E6 /* APESuperHUD.swift */,
+				2E7CC7DD4680071210E3781F8751C9E6 /* HudAppearance.swift */,
+				D90CAADED831AD6315268E8FAA17C951 /* HudView.swift */,
+				2B2DF83672586E5CD136A84902430F66 /* LoadingMessagesHandler.swift */,
+				243528AF683CBA9588BDC15B913FCFCE /* Resources */,
+				31C0F95DF4138FDEFC2E598766705591 /* Support Files */,
+			);
+			name = APESuperHUD;
+			path = APESuperHUD;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C2BC5FD5FF2F984CAC192B6333BA8614 /* Pods */,
-				1E54C1300BA67301793E9D191E7D1CFD /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				D1338CC08EC049B74AA1CA25ABDD953D /* Pods */,
+				9A7FEE356BC7024AFE4650F3A2B6F2C0 /* Products */,
 				8CACC719E13DECCA8823DEA4EB8291B8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -230,92 +268,183 @@
 		8CACC719E13DECCA8823DEA4EB8291B8 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EB29B1B25CFFD53B2972EDB10660BB3 /* Pods-HamsterWheel */,
+				94A10B5278CC5CD110C8AA9DECB66B79 /* Pods-HamsterWheel */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		94A10B5278CC5CD110C8AA9DECB66B79 /* Pods-HamsterWheel */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				3AEDC355EBDAE1E66A4A31AE5807DD02 /* Info.plist */,
+				D65821B039852E2A6FF1F19DA8B3C1A4 /* Pods-HamsterWheel.modulemap */,
+				F836ED5B034987520D764FDA4C1D2BD4 /* Pods-HamsterWheel-acknowledgements.markdown */,
+				88A688D56156D0FB48B3D2507F7F9F91 /* Pods-HamsterWheel-acknowledgements.plist */,
+				5312872C91E57650680ED478C377249F /* Pods-HamsterWheel-dummy.m */,
+				8AD07C4AD914E847B6CDC8C6F6016D61 /* Pods-HamsterWheel-frameworks.sh */,
+				1249A4E1EAF6DB16DAB3CA4B232447C0 /* Pods-HamsterWheel-resources.sh */,
+				AC684320664091C1C035D9832CBEBD79 /* Pods-HamsterWheel-umbrella.h */,
+				8C78923CEEA7625BA64AC59E9EFCB8B7 /* Pods-HamsterWheel.debug.xcconfig */,
+				8C4755A68C2FFC10877B0E16F0C3B147 /* Pods-HamsterWheel.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Pods-HamsterWheel";
+			path = "Target Support Files/Pods-HamsterWheel";
 			sourceTree = "<group>";
 		};
-		C2BC5FD5FF2F984CAC192B6333BA8614 /* Pods */ = {
+		966A2ECEAF98389305C625ED18C61293 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5A8F4CE6EBD55F943CA14327B9FDF88E /* SwiftyDraw */,
-				676505CF63EA8CEF49CD0E79107B0D8E /* TTFortuneWheel */,
+				E8B244DBB665A6D7535BEC9F3BDAA66B /* Info.plist */,
+				9C03CF56658E7B020FA797366DD0516E /* SwiftyDraw.modulemap */,
+				828F8C9B7F9C2AB7D2E248D1D0297897 /* SwiftyDraw.xcconfig */,
+				2ACF4A7A1BB85B5FC6BE4857FEAE06BB /* SwiftyDraw-dummy.m */,
+				0D93AF0EB7FEE4C44CEFE4C2A034E21B /* SwiftyDraw-prefix.pch */,
+				D4B783ED3352399EEAC7851A2D8EF638 /* SwiftyDraw-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyDraw";
+			sourceTree = "<group>";
+		};
+		9A7FEE356BC7024AFE4650F3A2B6F2C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				939B9FFCF0E7A66A58FE9C40686C4F89 /* APESuperHUD.framework */,
+				C49237362B9435E27F924659079CE1EE /* Pods_HamsterWheel.framework */,
+				33356285CEAB4E9B4F84FB618959A467 /* SwiftyDraw.framework */,
+				AC80E23D5036C363D4EF61A15D3C7763 /* TTFortuneWheel.bundle */,
+				680D87504DBBD66ADC54F3BACBEE2D10 /* TTFortuneWheel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1338CC08EC049B74AA1CA25ABDD953D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5683C49616231EDC18EC0292E135ACB1 /* APESuperHUD */,
+				32F0043A6A5220500B4D8BF77082D9D1 /* SwiftyDraw */,
+				43DB96859A774FD76AEFE6CD55BFEA7F /* TTFortuneWheel */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		F1B3E4A97BB6DADE4263C84F963F5342 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				A567E8FCDF4CA74009A9650E292C478C /* Info.plist */,
+				8C7E0E58EFFDB2CA056E4E59C123D180 /* ResourceBundle-TTFortuneWheel-Info.plist */,
+				C1AF3E33DADC596A955A0C4F5F28B307 /* TTFortuneWheel.modulemap */,
+				E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */,
+				4484F5401BB2DFE294FF9006B90DE1F6 /* TTFortuneWheel-dummy.m */,
+				3D9D8FCC70F9E48FEFACCE3D76F4ABFA /* TTFortuneWheel-prefix.pch */,
+				C9BE38B5FC6F264DC413A30A1CFD9EA6 /* TTFortuneWheel-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/TTFortuneWheel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		00E35FF8BE824BDBE1064A300A205F2D /* Headers */ = {
+		3405D9D22B8648AB1BD04A6504A76ABD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60533132211E74BCF6B865D68299D350 /* Pods-HamsterWheel-umbrella.h in Headers */,
+				4C8D130DC881FFEACFEA0810A5F85B2B /* TTFortuneWheel-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22B4F5C07125F6A469209B1B58F50AF9 /* Headers */ = {
+		4D70FE42B5B62632DFADEEBEE444282A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B66EF64A8E5FBCC1C673823EADEFE05 /* TTFortuneWheel-umbrella.h in Headers */,
+				5280ABCD20ADA2C7A56E5CC6ABC4257F /* SwiftyDraw-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F375D76B4A900246F0B46283D2F33167 /* Headers */ = {
+		8CADC5989DA114F860BAA5C0B57E488E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929A54430EE5CEA27456A46EE6A6D70F /* SwiftyDraw-umbrella.h in Headers */,
+				AC9E7EE30880D8C4AC1DBBF7B9A30C05 /* Pods-HamsterWheel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E93453A46EEC84CEFB091B4D5EB0B846 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C32628EC09466EDBC61A06514147A2 /* APESuperHUD-umbrella.h in Headers */,
+				68CD77A4CFF39E919688614AD1CBC81C /* APESuperHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7AADF227695D756F729CDC53FC31E82E /* TTFortuneWheel */ = {
+		01CB07DF934D989136DBD1ED3F7AB9D8 /* Pods-HamsterWheel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEA6403BE534902BE85211678FA679C3 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */;
+			buildConfigurationList = 5F750A5FAFF934B5ADE6D103B45A238A /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */;
 			buildPhases = (
-				274832656D605E3E583FF6F603E8E0DF /* Sources */,
-				C450035813D773B7FE16D9736463C432 /* Frameworks */,
-				F87271CFDC31E1B88D69183A4BE3E151 /* Resources */,
-				22B4F5C07125F6A469209B1B58F50AF9 /* Headers */,
+				1D16BF4FF3B434A6E28564558B8BBF70 /* Sources */,
+				9648DAA6A4B7467DB2244F80815E027B /* Frameworks */,
+				8CADC5989DA114F860BAA5C0B57E488E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				051F80D1430D95BEB98A0767A902C23D /* PBXTargetDependency */,
+				C1A22BB604EDB4AFBD2A7AA04D8C67B7 /* PBXTargetDependency */,
+				761242BA86DC44C8F60EF5FD2125CF7A /* PBXTargetDependency */,
+				81D0F0E0E32967B64470E1620C2454EF /* PBXTargetDependency */,
+			);
+			name = "Pods-HamsterWheel";
+			productName = "Pods-HamsterWheel";
+			productReference = C49237362B9435E27F924659079CE1EE /* Pods_HamsterWheel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		386FAAC55AA215BD66F84664AE47D0FD /* APESuperHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EFD639B812A27F6DF82A25B476B2D01 /* Build configuration list for PBXNativeTarget "APESuperHUD" */;
+			buildPhases = (
+				A35C42E495EB190F1F9B752DF2480076 /* Sources */,
+				3C366B7030960D496F2F721F59B9AD46 /* Frameworks */,
+				E93453A46EEC84CEFB091B4D5EB0B846 /* Headers */,
+				522FC5C2956BFA25EEB8B6C754BE814D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = APESuperHUD;
+			productName = APESuperHUD;
+			productReference = 939B9FFCF0E7A66A58FE9C40686C4F89 /* APESuperHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C6A80D0A5B1F6A7AA058EDA8EC93AD7 /* TTFortuneWheel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 176EC53EE7CC7D34D0FE76432B1D9A60 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */;
+			buildPhases = (
+				006F5C02149E05A346C1B7CDB7A95219 /* Sources */,
+				62884B6A5A90511604BB266572E0ED13 /* Frameworks */,
+				025FD0B9FE2E6EF5B3EABE96F7016FAC /* Resources */,
+				3405D9D22B8648AB1BD04A6504A76ABD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81104BA57F82FE6BF2726D1A70279A93 /* PBXTargetDependency */,
 			);
 			name = TTFortuneWheel;
 			productName = TTFortuneWheel;
-			productReference = E4910C5814ACE97F380EB8B0D9B6DD50 /* TTFortuneWheel.framework */;
+			productReference = 680D87504DBBD66ADC54F3BACBEE2D10 /* TTFortuneWheel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A1D1340767B49228DF783C4019622C49 /* TTFortuneWheel-TTFortuneWheel */ = {
+		8D4C9CC114385B65F6BFC6AD34DD8377 /* TTFortuneWheel-TTFortuneWheel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64D2B6CBF830D62AC23E8562C6C815BB /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */;
+			buildConfigurationList = 4802C6334660A7EC618E7C2DB685B451 /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */;
 			buildPhases = (
-				59B85AA27F17EFD4D2C10A146F82A5A7 /* Sources */,
-				7D40A9B0D1805D4135D128F31455FDEA /* Frameworks */,
-				43799DA716B04119E7F2C61609173064 /* Resources */,
+				BB9AF169C178988F02E5E7F2DBA21674 /* Sources */,
+				FDD8F233261AC31BC7AB4D02880650A6 /* Frameworks */,
+				C0E4475223D94B4E6A8549E8944329AE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -323,35 +452,16 @@
 			);
 			name = "TTFortuneWheel-TTFortuneWheel";
 			productName = "TTFortuneWheel-TTFortuneWheel";
-			productReference = A62438EC84E5427397BC42EA71DA97FE /* TTFortuneWheel.bundle */;
+			productReference = AC80E23D5036C363D4EF61A15D3C7763 /* TTFortuneWheel.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		BDB885AC31EF0815DDD8BE338E796ED1 /* Pods-HamsterWheel */ = {
+		FE028311B3CC8C6900041FFFAA0386DF /* SwiftyDraw */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 249147579449AA1993E65E94C2A398B5 /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */;
+			buildConfigurationList = A17C2CF6EA120C6A479069AE6666EE76 /* Build configuration list for PBXNativeTarget "SwiftyDraw" */;
 			buildPhases = (
-				0927F67E92A47812B52289883BBC8A71 /* Sources */,
-				E291372A674170A33A374E67646FEA2E /* Frameworks */,
-				00E35FF8BE824BDBE1064A300A205F2D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5280DE5C0582A1BF82E6B12E66CC2BE2 /* PBXTargetDependency */,
-				61BCF77140BD5FC5991B2474595D0527 /* PBXTargetDependency */,
-			);
-			name = "Pods-HamsterWheel";
-			productName = "Pods-HamsterWheel";
-			productReference = FA4E7AEDA5D22656BDF191ADA1A4F870 /* Pods_HamsterWheel.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E9959EA0E6DF9495451CA5F11857E3D9 /* SwiftyDraw */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C52F03DB7DDEA61CE3F2BE3A6C5C057C /* Build configuration list for PBXNativeTarget "SwiftyDraw" */;
-			buildPhases = (
-				9C89AA615E22C44CE93E52C3CFC7DA9C /* Sources */,
-				F2A814C49C4D41A08B998DC3048C77A7 /* Frameworks */,
-				F375D76B4A900246F0B46283D2F33167 /* Headers */,
+				05576A129606F743FB87179497E59CC7 /* Sources */,
+				7FE67178F1D349282D7F862E34E98D5C /* Frameworks */,
+				4D70FE42B5B62632DFADEEBEE444282A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -359,7 +469,7 @@
 			);
 			name = SwiftyDraw;
 			productName = SwiftyDraw;
-			productReference = 163495F0ACA2E72974B64F5E325FC98B /* SwiftyDraw.framework */;
+			productReference = 33356285CEAB4E9B4F84FB618959A467 /* SwiftyDraw.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -368,7 +478,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -379,103 +489,162 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1E54C1300BA67301793E9D191E7D1CFD /* Products */;
+			productRefGroup = 9A7FEE356BC7024AFE4650F3A2B6F2C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDB885AC31EF0815DDD8BE338E796ED1 /* Pods-HamsterWheel */,
-				E9959EA0E6DF9495451CA5F11857E3D9 /* SwiftyDraw */,
-				7AADF227695D756F729CDC53FC31E82E /* TTFortuneWheel */,
-				A1D1340767B49228DF783C4019622C49 /* TTFortuneWheel-TTFortuneWheel */,
+				386FAAC55AA215BD66F84664AE47D0FD /* APESuperHUD */,
+				01CB07DF934D989136DBD1ED3F7AB9D8 /* Pods-HamsterWheel */,
+				FE028311B3CC8C6900041FFFAA0386DF /* SwiftyDraw */,
+				7C6A80D0A5B1F6A7AA058EDA8EC93AD7 /* TTFortuneWheel */,
+				8D4C9CC114385B65F6BFC6AD34DD8377 /* TTFortuneWheel-TTFortuneWheel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		43799DA716B04119E7F2C61609173064 /* Resources */ = {
+		025FD0B9FE2E6EF5B3EABE96F7016FAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8345CEFAEE1685A3E41CD03FBDE9A93 /* Assets.xcassets in Resources */,
+				523A7B7F77AF8BF47F59E114CAFB3FFF /* TTFortuneWheel.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F87271CFDC31E1B88D69183A4BE3E151 /* Resources */ = {
+		522FC5C2956BFA25EEB8B6C754BE814D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				109F201D6BB34981A6AD668BFF1BAF2B /* TTFortuneWheel.bundle in Resources */,
+				D3F86181EDE2F02D9FF1E457E7B1B39D /* FrameworkMedia.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0E4475223D94B4E6A8549E8944329AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA0DA07FA5D8A6A58184A2B0166E6FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0927F67E92A47812B52289883BBC8A71 /* Sources */ = {
+		006F5C02149E05A346C1B7CDB7A95219 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA43B2ECFDF169F13912AF5A1069BF1 /* Pods-HamsterWheel-dummy.m in Sources */,
+				B3D1A64B1F65BBA5BD0268CF4FAFD1CD /* FortuneWheelLayer.swift in Sources */,
+				2F40EFC6F4E3420298E0D25FC19E2921 /* SpinningWheelAnimator.swift in Sources */,
+				460458E3241C7050B3436B3B7D84A7BB /* SpinningWheelSlice .swift in Sources */,
+				386AAA035F82F4E57492715CFEE0CFD8 /* SpinningWheelSliceImpl.swift in Sources */,
+				9F020BB19A6E101A00B09EA6660F3329 /* TTFortuneWheel-dummy.m in Sources */,
+				62510B41321E7F8BED6C75990EE3C68D /* TTFortuneWheel.swift in Sources */,
+				392BC585B3FE06B6ED09E1FF223F696A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		274832656D605E3E583FF6F603E8E0DF /* Sources */ = {
+		05576A129606F743FB87179497E59CC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4550486916B25234052AC96DF915F802 /* FortuneWheelLayer.swift in Sources */,
-				9C13B77D69040D12AEC0F69ECFB30E0C /* SpinningWheelAnimator.swift in Sources */,
-				6EABEAB1693FC2EB78EC768692C2D395 /* SpinningWheelSlice .swift in Sources */,
-				7B167C9AA6B053C35AA0CFA563089FD8 /* SpinningWheelSliceImpl.swift in Sources */,
-				21C4309A5C2A90A052EC1950115745CD /* TTFortuneWheel-dummy.m in Sources */,
-				5ACCDCD63AD7D1A02D9A803BA6419137 /* TTFortuneWheel.swift in Sources */,
-				11454DA9401EE39154FAD7E279EF1AEA /* Utils.swift in Sources */,
+				133924471BDA99BAA221A95A0D486A36 /* SwiftyDraw-dummy.m in Sources */,
+				0A338847DAEB97A5122AB241A11B8114 /* SwiftyDraw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59B85AA27F17EFD4D2C10A146F82A5A7 /* Sources */ = {
+		1D16BF4FF3B434A6E28564558B8BBF70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEEB60BF80905F4514BFC89ADFC657E /* Pods-HamsterWheel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C89AA615E22C44CE93E52C3CFC7DA9C /* Sources */ = {
+		A35C42E495EB190F1F9B752DF2480076 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				190EE832664693D9573949B1AD8A3C40 /* SwiftyDraw-dummy.m in Sources */,
-				136B63D738B5592E81C0B320972BD6A4 /* SwiftyDraw.swift in Sources */,
+				1BA36703845A551D1E13E83E8CAB57E5 /* APESuperHUD-dummy.m in Sources */,
+				E918EDDAB55C2E9CCAD7431601318D0E /* APESuperHUD.swift in Sources */,
+				DCC0755BE702B74680DC1F8A2E4BF3F5 /* HudAppearance.swift in Sources */,
+				FD1361645EFE9DFC4D6D38C5F9A49BCA /* HudView.swift in Sources */,
+				903C74245470DA27E55A8173613AA276 /* LoadingMessagesHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB9AF169C178988F02E5E7F2DBA21674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		051F80D1430D95BEB98A0767A902C23D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "TTFortuneWheel-TTFortuneWheel";
-			target = A1D1340767B49228DF783C4019622C49 /* TTFortuneWheel-TTFortuneWheel */;
-			targetProxy = E90C408E81BDE4BF141584D2DFBD0AE4 /* PBXContainerItemProxy */;
-		};
-		5280DE5C0582A1BF82E6B12E66CC2BE2 /* PBXTargetDependency */ = {
+		761242BA86DC44C8F60EF5FD2125CF7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyDraw;
-			target = E9959EA0E6DF9495451CA5F11857E3D9 /* SwiftyDraw */;
-			targetProxy = 30974A2E19D49414D9D541B17B09EBDA /* PBXContainerItemProxy */;
+			target = FE028311B3CC8C6900041FFFAA0386DF /* SwiftyDraw */;
+			targetProxy = 12ABFAAA5244F56BDB9C1B22A54A4222 /* PBXContainerItemProxy */;
 		};
-		61BCF77140BD5FC5991B2474595D0527 /* PBXTargetDependency */ = {
+		81104BA57F82FE6BF2726D1A70279A93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TTFortuneWheel-TTFortuneWheel";
+			target = 8D4C9CC114385B65F6BFC6AD34DD8377 /* TTFortuneWheel-TTFortuneWheel */;
+			targetProxy = 8D535BF3C5BF4894A351C3590CC88E75 /* PBXContainerItemProxy */;
+		};
+		81D0F0E0E32967B64470E1620C2454EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TTFortuneWheel;
-			target = 7AADF227695D756F729CDC53FC31E82E /* TTFortuneWheel */;
-			targetProxy = ECDDD360942CAADB488FC31D45B96136 /* PBXContainerItemProxy */;
+			target = 7C6A80D0A5B1F6A7AA058EDA8EC93AD7 /* TTFortuneWheel */;
+			targetProxy = 887161D39FFDF95BD47AC69E61AF6B0D /* PBXContainerItemProxy */;
+		};
+		C1A22BB604EDB4AFBD2A7AA04D8C67B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = APESuperHUD;
+			target = 386FAAC55AA215BD66F84664AE47D0FD /* APESuperHUD */;
+			targetProxy = D2782A1E7AB9DDD599BE72F30E638567 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		19EC862F7F9DC97ABD1793EC4FF9C127 /* Release */ = {
+		04EBEE7C09C1CEC52FF14BA1B6F27AD7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D209E96DECF5C62C75D1C9FD0D66DA6 /* Pods-HamsterWheel.release.xcconfig */;
+			baseConfigurationReference = E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		097C12874A885BE9FD1F75ABC09672E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C4755A68C2FFC10877B0E16F0C3B147 /* Pods-HamsterWheel.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -507,119 +676,7 @@
 			};
 			name = Release;
 		};
-		298F9601992FEB88F78A0BBD0FF78860 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
-				PRODUCT_NAME = TTFortuneWheel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		39D8643976E1059D716908D3137E94F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TTFortuneWheel";
-				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/ResourceBundle-TTFortuneWheel-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = TTFortuneWheel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		40D04FC5CCB1E24343F6151BE97AA2B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 524766F8EAC57DF7159ADBD81DC721F7 /* Pods-HamsterWheel.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-HamsterWheel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_HamsterWheel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		66EBB35435EE7A1585A4A7BEF9B67D3A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A98E0D455C381E9E6B4FCEA3ACABEF39 /* SwiftyDraw.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDraw/SwiftyDraw-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyDraw/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyDraw/SwiftyDraw.modulemap";
-				PRODUCT_NAME = SwiftyDraw;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6F9224530522DD3C735EC96CF142642E /* Release */ = {
+		26F954BA177A9A46FFFD4E23ED11D67A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -629,6 +686,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -672,14 +730,44 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		9D2C0D2074DD9713A54DFDB7FC1DB9D6 /* Release */ = {
+		439D1BDB73A52C65862476A94A77BC00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A98E0D455C381E9E6B4FCEA3ACABEF39 /* SwiftyDraw.xcconfig */;
+			baseConfigurationReference = 828F8C9B7F9C2AB7D2E248D1D0297897 /* SwiftyDraw.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDraw/SwiftyDraw-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyDraw/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyDraw/SwiftyDraw.modulemap";
+				PRODUCT_NAME = SwiftyDraw;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5EE4BE00B9C24FCE499BF80CD28F5C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828F8C9B7F9C2AB7D2E248D1D0297897 /* SwiftyDraw.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -709,7 +797,151 @@
 			};
 			name = Release;
 		};
-		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+		85F95515D3531C9A6C76BEFBF2952C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07471E2C775E9FE1D82BF5941CC51172 /* APESuperHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/APESuperHUD/APESuperHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/APESuperHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/APESuperHUD/APESuperHUD.modulemap";
+				PRODUCT_NAME = APESuperHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8CF2EBB08743D1BC9E49854FADDA5E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TTFortuneWheel";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/ResourceBundle-TTFortuneWheel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9062ADF80FA60A1E7D4E410C440A0C28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07471E2C775E9FE1D82BF5941CC51172 /* APESuperHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/APESuperHUD/APESuperHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/APESuperHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/APESuperHUD/APESuperHUD.modulemap";
+				PRODUCT_NAME = APESuperHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A4F1E8CE258630C73454BCB44D4C53B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C78923CEEA7625BA64AC59E9EFCB8B7 /* Pods-HamsterWheel.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HamsterWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HamsterWheel/Pods-HamsterWheel.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HamsterWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC8FFE28EEC05DD698A17D68EBEBD0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
+				PRODUCT_NAME = TTFortuneWheel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -719,6 +951,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -771,9 +1004,9 @@
 			};
 			name = Debug;
 		};
-		EC8848485F11D5ECECC29A1058C2FBE7 /* Debug */ = {
+		EB4FE9310D9772DA5D109CDBB46DE484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */;
+			baseConfigurationReference = E030DDBF30055FFF97FC23DA0E0EA9F9 /* TTFortuneWheel.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TTFortuneWheel";
@@ -785,48 +1018,25 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
-		};
-		F36BA4D41D0C2C88AD6C6C6177069B91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B284A38E275FB0004E755D21B8427713 /* TTFortuneWheel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TTFortuneWheel/TTFortuneWheel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TTFortuneWheel/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TTFortuneWheel/TTFortuneWheel.modulemap";
-				PRODUCT_NAME = TTFortuneWheel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		249147579449AA1993E65E94C2A398B5 /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */ = {
+		176EC53EE7CC7D34D0FE76432B1D9A60 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40D04FC5CCB1E24343F6151BE97AA2B2 /* Debug */,
-				19EC862F7F9DC97ABD1793EC4FF9C127 /* Release */,
+				DC8FFE28EEC05DD698A17D68EBEBD0CA /* Debug */,
+				04EBEE7C09C1CEC52FF14BA1B6F27AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EFD639B812A27F6DF82A25B476B2D01 /* Build configuration list for PBXNativeTarget "APESuperHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F95515D3531C9A6C76BEFBF2952C64 /* Debug */,
+				9062ADF80FA60A1E7D4E410C440A0C28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -834,35 +1044,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
-				6F9224530522DD3C735EC96CF142642E /* Release */,
+				E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */,
+				26F954BA177A9A46FFFD4E23ED11D67A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64D2B6CBF830D62AC23E8562C6C815BB /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */ = {
+		4802C6334660A7EC618E7C2DB685B451 /* Build configuration list for PBXNativeTarget "TTFortuneWheel-TTFortuneWheel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC8848485F11D5ECECC29A1058C2FBE7 /* Debug */,
-				39D8643976E1059D716908D3137E94F0 /* Release */,
+				8CF2EBB08743D1BC9E49854FADDA5E87 /* Debug */,
+				EB4FE9310D9772DA5D109CDBB46DE484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEA6403BE534902BE85211678FA679C3 /* Build configuration list for PBXNativeTarget "TTFortuneWheel" */ = {
+		5F750A5FAFF934B5ADE6D103B45A238A /* Build configuration list for PBXNativeTarget "Pods-HamsterWheel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				298F9601992FEB88F78A0BBD0FF78860 /* Debug */,
-				F36BA4D41D0C2C88AD6C6C6177069B91 /* Release */,
+				A4F1E8CE258630C73454BCB44D4C53B1 /* Debug */,
+				097C12874A885BE9FD1F75ABC09672E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C52F03DB7DDEA61CE3F2BE3A6C5C057C /* Build configuration list for PBXNativeTarget "SwiftyDraw" */ = {
+		A17C2CF6EA120C6A479069AE6666EE76 /* Build configuration list for PBXNativeTarget "SwiftyDraw" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66EBB35435EE7A1585A4A7BEF9B67D3A /* Debug */,
-				9D2C0D2074DD9713A54DFDB7FC1DB9D6 /* Release */,
+				439D1BDB73A52C65862476A94A77BC00 /* Debug */,
+				5EE4BE00B9C24FCE499BF80CD28F5C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
