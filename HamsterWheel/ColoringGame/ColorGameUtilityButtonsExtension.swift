@@ -11,6 +11,9 @@ import UIKit
 
 extension ColoringGameViewController {
     func setupUtilityButtons() {
+        // Used to calculate the corner radius
+        let height: CGFloat = ((self.view.frame.width / 5) / 3)
+        
         // Clear the whole drawing
         deleteButton = UIButton()
         deleteButton.setImage(#imageLiteral(resourceName: "clearIcon"), for: .normal)
@@ -25,6 +28,7 @@ extension ColoringGameViewController {
         eraserButton.backgroundColor = .white
         eraserButton.setImage(#imageLiteral(resourceName: "eraserIcon"), for: .normal)
         eraserButton.addTarget(self, action: #selector(colorButtonPressed(button:)), for: .touchUpInside)
+        eraserButton.layer.cornerRadius = height / 2
         utilityButtons.append(eraserButton)
         
         // Add template
