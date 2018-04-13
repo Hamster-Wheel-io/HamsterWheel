@@ -8,6 +8,7 @@
 
 import SpriteKit
 import AVFoundation
+import APESuperHUD
 
 class DDLevel: SKScene, SKPhysicsContactDelegate {
 
@@ -46,6 +47,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
+    var maxLevel: Int = 8
 
     override func didMove(to view: SKView) {
 
@@ -165,6 +167,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let removeSequence1 = SKAction.sequence([shrinkAction, shape1RemoveAction])
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
+        let popupAction = SKAction.run {
+            
+            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "popupIcon")!, message: "Success", duration: 4.0, presentingView: self.view!, completion: {
+                // Completed
+                print("alert worked")
+                self.run(transitionAction)
+            })
+        }
+        
+        let gameCompleteSequence = SKAction.sequence([musicAction, popupAction, wait, slowFadeAction, musicStopAction])
         
         // Let the dragging shape go back to to the smallSize
         resetShapeSize()
@@ -213,7 +225,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
         
         if allMatched {
-            self.run(successSequence)
+            if (levelSelector?.currentLevel)! < maxLevel {
+                self.run(successSequence)
+            } else {
+                self.run(gameCompleteSequence)
+            }
+            
         }
         
         theDraggingShape = nil
