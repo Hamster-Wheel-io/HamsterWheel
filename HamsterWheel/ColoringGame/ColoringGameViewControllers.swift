@@ -20,7 +20,7 @@ class ColoringGameViewController: UIViewController {
                            UIColor.purple]
     
     // Available templates, nil being an emty view to draw on
-    let colorPages = [nil, #imageLiteral(resourceName: "fishPage"), #imageLiteral(resourceName: "babyAnimalsPage"), #imageLiteral(resourceName: "hamsterOnWheelPage")]
+    let colorPages = [#imageLiteral(resourceName: "fishPage"), #imageLiteral(resourceName: "babyAnimalsPage"), #imageLiteral(resourceName: "hamsterOnWheelPage")]
     
     // Drawing view
     var drawView: SwiftyDrawView!
@@ -42,6 +42,9 @@ class ColoringGameViewController: UIViewController {
     var eraserButton: UIButton!             // Use a thick white stroke as the eraser
     var templateButton: UIButton!           // Loops over available templates
     var templateView: UIImageView?          // Used to display the templates
+    
+    var colorView: UIView?
+    var scrollView: UIScrollView?
     
     // Used to determine next template
     var selectedTemplateIndex = 0
@@ -108,6 +111,21 @@ class ColoringGameViewController: UIViewController {
         setupButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let controller = APIController()
+        controller.getImages { (links) in
+            if let links = links {
+                DispatchQueue.main.async {
+                    self.addTemplateMenu(links: links, images: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.addTemplateMenu(links: nil, images: self.colorPages)
+                }
+            }
+        }
+    }
+    
     func setupButtons() {
         // Generates an array of color buttons
         // Add the array of buttons to the view using a stackview
@@ -153,14 +171,15 @@ class ColoringGameViewController: UIViewController {
         }
     }
     
-    @objc func undo() { drawView.removeLastLine() }
-    @objc func deleteDrawing() { drawView.clearCanvas() }
+    @objc func undo() { drawView.removeLastLine(); moveTemplateMenuOut() }
+    @objc func deleteDrawing() { drawView.clearCanvas(); moveTemplateMenuOut() }
 }
 
 
 extension ColoringGameViewController: SwiftyDrawViewDelegate {
     
     func SwiftyDrawDidBeginDrawing(view: SwiftyDrawView) {
+        moveTemplateMenuOut()
         UIView.animate(withDuration: 0.3, animations: {
             self.colorStackView?.alpha = 0.0
             self.utilityStackView?.alpha = 0.0
