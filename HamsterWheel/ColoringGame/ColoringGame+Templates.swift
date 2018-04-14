@@ -169,6 +169,7 @@ extension ColoringGameViewController: UIScrollViewDelegate {
         } else if let images = images {
             for image in images {
                 let button = ImageTemplateButton(image: image)
+                button.imageView?.contentMode = .scaleAspectFit
                 button.setImage(image, for: .normal)
                 button.backgroundColor = .white
                 button.addTarget(self, action: #selector(templateButtonPressed(sender:)), for: .touchUpInside)
