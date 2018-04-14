@@ -111,6 +111,21 @@ class ColoringGameViewController: UIViewController {
         setupButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let controller = APIController()
+        controller.getImages { (links) in
+            if let links = links {
+                DispatchQueue.main.async {
+                    self.addTemplateMenu(links: links, images: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.addTemplateMenu(links: nil, images: self.colorPages)
+                }
+            }
+        }
+    }
+    
     func setupButtons() {
         // Generates an array of color buttons
         // Add the array of buttons to the view using a stackview

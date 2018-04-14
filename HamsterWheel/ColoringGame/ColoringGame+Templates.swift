@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension ColoringGameViewController: UIScrollViewDelegate {
-    
     /*
      Checks if there already is a menu or not
         if there is one move it in
@@ -22,17 +21,8 @@ extension ColoringGameViewController: UIScrollViewDelegate {
         if scrollView != nil {
             moveTemplateMenuIn()
         } else {
-            let controller = APIController()
-            controller.getImages { (links) in
-                if let links = links {
-                    DispatchQueue.main.async {
-                        self.addTemplateMenu(links: links, images: nil)
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.addTemplateMenu(links: nil, images: self.colorPages)
-                    }
-                }
+            DispatchQueue.main.async {
+                self.addTemplateMenu(links: nil, images: self.colorPages)
                 self.moveTemplateMenuIn()
             }
         }
@@ -60,6 +50,7 @@ extension ColoringGameViewController: UIScrollViewDelegate {
     
     // Populates the templateView with either a url or a UIImage
     @objc func templateButtonPressed(sender: UIButton) {
+        deleteDrawing()
         if let sender = sender as? URLTemplateButton {
             addTemplate(link: sender.url)
         } else if let sender = sender as? ImageTemplateButton {
@@ -113,7 +104,9 @@ extension ColoringGameViewController: UIScrollViewDelegate {
     }
     
     // Removes the template from the view
-    func removeTemplate() {
+    @objc func removeTemplate() {
+        moveTemplateMenuOut()
+        deleteDrawing()
         if let templateView = templateView {
             templateView.removeFromSuperview()
         }
@@ -141,22 +134,35 @@ extension ColoringGameViewController: UIScrollViewDelegate {
         scrollView!.isScrollEnabled = true
         scrollView!.contentSize = CGSize(width: viewWidth, height: contentHeight + 20)
         scrollView!.showsVerticalScrollIndicator = false
+        scrollView!.dropShadow()
         
         // Images view
         colorView = UIView()
         colorView!.frame = CGRect(x: -(scrollView!.frame.width - 20), y: 5.0, width: scrollView!.frame.width - 10, height: contentHeight)
         colorView!.layer.cornerRadius = 8
-        colorView!.backgroundColor = .lightGray
+        colorView!.backgroundColor = .purple
         colorView!.clipsToBounds = true
         colorView!.isUserInteractionEnabled = true
         
         // Create Template Array
         var templateButtons: [UIButton] = []
         
+        // Create a clear template button in the list
+        let clearTemplateButton = UIButton()
+        clearTemplateButton.setImage(#imageLiteral(resourceName: "X"), for: .normal)
+        clearTemplateButton.imageView?.contentMode = .scaleAspectFit
+        clearTemplateButton.imageEdgeInsets = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+        clearTemplateButton.backgroundColor = .white
+        clearTemplateButton.addTarget(self, action: #selector(removeTemplate), for: .touchUpInside)
+        
+        // Add the clear template button at the top of the list
+        templateButtons.append(clearTemplateButton)
+        
         if let links = links {
             for link in links {
                 let button = URLTemplateButton(url: link)
                 button.withImageDownloadedFrom(link: link)
+                button.backgroundColor = .white
                 button.addTarget(self, action: #selector(templateButtonPressed(sender:)), for: .touchUpInside)
                 templateButtons.append(button)
             }
@@ -164,6 +170,7 @@ extension ColoringGameViewController: UIScrollViewDelegate {
             for image in images {
                 let button = ImageTemplateButton(image: image)
                 button.setImage(image, for: .normal)
+                button.backgroundColor = .white
                 button.addTarget(self, action: #selector(templateButtonPressed(sender:)), for: .touchUpInside)
                 templateButtons.append(button)
             }
@@ -197,7 +204,6 @@ extension ColoringGameViewController: UIScrollViewDelegate {
         // Add templateStackView to the scroll view
         scrollView!.addSubview(colorView!)
         // Add the scroll view to the view
-        // TODO: Transition
         view.addSubview(scrollView!)
     }
 }

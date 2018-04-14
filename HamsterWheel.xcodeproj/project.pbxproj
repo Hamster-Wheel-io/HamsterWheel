@@ -33,6 +33,7 @@
 		C44DD65C206B2BBD0049148D /* ColoringGame+UtilityButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DD65B206B2BBD0049148D /* ColoringGame+UtilityButtons.swift */; };
 		C459442820212C4300C3D18A /* SKButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459442720212C4300C3D18A /* SKButton2.swift */; };
 		C494004D20804285005595C6 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494004C20804285005595C6 /* APIController.swift */; };
+		C4A9CD7D2081CE20002F924F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9CD7C2081CE1F002F924F /* UIView+Extensions.swift */; };
 		C4B297B72016CDD1009FCA9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297B62016CDD1009FCA9F /* AppDelegate.swift */; };
 		C4B297BF2016CDD1009FCA9F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B297BE2016CDD1009FCA9F /* GameViewController.swift */; };
 		C4B297C22016CDD1009FCA9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B297C02016CDD1009FCA9F /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		C44DD65B206B2BBD0049148D /* ColoringGame+UtilityButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColoringGame+UtilityButtons.swift"; sourceTree = "<group>"; };
 		C459442720212C4300C3D18A /* SKButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton2.swift; sourceTree = "<group>"; };
 		C494004C20804285005595C6 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		C4A9CD7C2081CE1F002F924F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C4B297B32016CDD1009FCA9F /* HamsterWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamsterWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B297B62016CDD1009FCA9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B297BE2016CDD1009FCA9F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -269,9 +271,10 @@
 			children = (
 				C4B297D22016D123009FCA9F /* SKButton.swift */,
 				C459442720212C4300C3D18A /* SKButton2.swift */,
-				C4260B1A20376B200023B208 /* UIImage+Extentsion.swift */,
 				B9E0F2E32061E6C500C5F4B7 /* SKScenePositionExtension.swift */,
+				C4260B1A20376B200023B208 /* UIImage+Extentsion.swift */,
 				C4C5E41F206B15D700FE107B /* UIButton+Extensions.swift */,
+				C4A9CD7C2081CE1F002F924F /* UIView+Extensions.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				C4B297E02016D453009FCA9F /* MainMenuScene.swift in Sources */,
 				B9CDD29F2048E31D00AD3152 /* LevelSelectorDD.swift in Sources */,
 				B9FE4A362044E291004804C3 /* LevelDragDrop.swift in Sources */,
+				C4A9CD7D2081CE20002F924F /* UIView+Extensions.swift in Sources */,
 				B9B36402205E077B00B261AD /* ColoringGameViewControllers.swift in Sources */,
 				C4382E5920809B2D00E5EDFE /* TemplateButton.swift in Sources */,
 				B9CDD2B2204F714D00AD3152 /* Wall.swift in Sources */,
