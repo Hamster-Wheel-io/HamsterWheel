@@ -8,10 +8,11 @@
 
 import SpriteKit
 import AVFoundation
+import APESuperHUD
 
 class DDLevel: SKScene, SKPhysicsContactDelegate {
 
-    var audio: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     var soundEffect: AVAudioPlayer?
     var homeButton: SKButton!
     var backButton: SKButton!
@@ -39,12 +40,14 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
     // in different spots on the board in each level
     var shape1Position: CGPoint?
     var shape2Position: CGPoint?
+    
     var match1Position: CGPoint?
     var match2Position: CGPoint?
     var wallPosition: CGPoint?
     
     // Variable to fire off the correct level
     var levelSelector: DDLevelSelector?
+    var maxLevel: Int = 8
 
     override func didMove(to view: SKView) {
 
@@ -56,11 +59,16 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         loadHomeButton()
         loadBackButton()
         setupTextures()
+        setupAudio()
         
         // Avoids letter boxing on iPad
         sceneDidLayoutSubviews()
         // Avoids letter boxing on iPhoneX
         iPhoneXLetterBoxing()
+    }
+    
+    func setupAudio() {
+        try? AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -69,6 +77,7 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
  
     var dragLocation: CGPoint = CGPoint.zero
     var theDraggingShape: SKSpriteNode? = nil
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
@@ -118,8 +127,10 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         let dy = CGFloat(max(min(y, Shape.maxVelocity), -Shape.maxVelocity))
         let vector = CGVector(dx: dx, dy: dy)
         shape.physicsBody?.velocity = vector
-        
-//        (shape as! Shape).label.text = "x: \(round(dx)) \n y: \(round(dy))"
+    }
+    
+    func moveBackToOrigin(_ shape: SKSpriteNode, location: CGPoint) {
+        shape.position = location
     }
     
     func resetShapeSize() {
@@ -128,32 +139,55 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         theDraggingShape?.zPosition = 10
     }
     
+    func makeSuccessParticles() -> SKEmitterNode? {
+        guard let particles = SKEmitterNode(fileNamed: "Pizzaz") else {
+            print("No Pizzaz particles")
+            return nil
+        }
+        
+        particles.zPosition = 999
+        return particles
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         theDraggingShape?.physicsBody?.velocity = CGVector.zero
         
+        // MARK: SKActions
         let wait = SKAction.wait(forDuration: 3)
         let slowFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let fastFadeAction = SKAction.fadeOut(withDuration: 0.2)
         let transitionAction = SKAction.run { self.transitionToNextScene() }
         let spinAction = SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.5))
         let musicAction = SKAction.run { self.playSuccessMusic() }
-        let musicStopAction = SKAction.run { self.audio?.stop() }
+        let musicStopAction = SKAction.run { self.audioPlayer?.stop() }
         let shrinkAction = SKAction.resize(toWidth: 1, height: 1, duration: 1)
         let shape1RemoveAction = SKAction.run { self.shape1?.removeFromParent() }
         let shape2RemoveAction = SKAction.run { self.shape2?.removeFromParent() }
         let removeSequence1 = SKAction.sequence([shrinkAction, shape1RemoveAction])
         let removeSequence2 = SKAction.sequence([shrinkAction, shape2RemoveAction])
         let successSequence = SKAction.sequence([musicAction, wait, slowFadeAction, musicStopAction, transitionAction])
+        let popupAction = SKAction.run {
+            
+            APESuperHUD.showOrUpdateHUD(icon: UIImage(named: "pow")!, message: "Success", duration: 4.0, particleEffectFileName: "PizzazBig.sks", presentingView: self.view!, completion: {
+                // Completed
+                
+                print("alert worked")
+                self.run(transitionAction)
+            })
+        }
+        
+        let gameCompleteSequence = SKAction.sequence([musicAction, popupAction, wait, slowFadeAction, musicStopAction])
         
         // Let the dragging shape go back to to the smallSize
         resetShapeSize()
         
+        // Hold the different match shapes in an array
         let matches: [Match?] = [match1, match2]
         for match in matches {
             if let match = match {
-                
-                if match.isMatched == false || match.matchSprite == nil {
+                if match.isMatched == false || match.matchSprite == nil { // match is a target for theDraggingShape
+                                                                          // matchSprite is the assigned shape for the target
                     if let matchSprite = match.matchSprite {
                         if matchSprite.contains(match.position) {
                             match.isMatched = true
@@ -161,8 +195,20 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
                             matchSprite.run(fastFadeAction)
                             
                             if theDraggingShape == shape1 {
+                                if let particles = makeSuccessParticles() {
+                                    particles.position = match1.position
+                                    self.addChild(particles)
+                                } else {
+                                    print("No particles")
+                                }
                                 matchSprite.run(removeSequence1)
                             } else if theDraggingShape == shape2 {
+                                if let particles = makeSuccessParticles() {
+                                    particles.position = match2!.position
+                                    self.addChild(particles)
+                                } else {
+                                    print("No particles")
+                                }
                                 matchSprite.run(removeSequence2)
                             }
                         }
@@ -180,7 +226,12 @@ class DDLevel: SKScene, SKPhysicsContactDelegate {
         }
         
         if allMatched {
-            self.run(successSequence)
+            if (levelSelector?.currentLevel)! < maxLevel {
+                self.run(successSequence)
+            } else {
+                self.run(gameCompleteSequence)
+            }
+            
         }
         
         theDraggingShape = nil
@@ -196,7 +247,7 @@ extension DDLevel {
             
             if let view = self.view {
                 // Stop audio when navigate to home screen
-                self.audio?.stop()
+                self.audioPlayer?.stop()
                 
                 if let scene = SKScene(fileNamed: "MainMenuScene") {
                     // Set the scale mode to scale to fit the window

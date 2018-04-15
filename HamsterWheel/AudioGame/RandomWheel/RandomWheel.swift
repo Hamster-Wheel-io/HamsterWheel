@@ -11,8 +11,14 @@ import AVFoundation
 
 class RandomWheel: SKScene {
     
+    // MARK: Variables
+    // Handels navigation an keeping track on what level we are
     var levelSelector: AudioGameLevelSelector?
     
+    /*
+     All slices we want to include in the wheel.
+     Title is blank because we use images of the animals
+     */
     let slices = [ HWheelSlice(title: "", animal: "Cow"),
                    HWheelSlice(title: "", animal: "Dog"),
                    HWheelSlice(title: "", animal: "Cat"),
@@ -20,17 +26,22 @@ class RandomWheel: SKScene {
                    HWheelSlice(title: "", animal: "Sheep"),
                    HWheelSlice(title: "", animal: "Horse")]
     
+    // Actual rotating wheel
     var wheel: TTFortuneWheel?
+    // Gives the rotating wheel a frame
     var frameImage: UIImageView?
-    var spinButtonImage: UIImageView?
+    // Activates the spinning of the wheel
     var spinButton: UIButton?
     
+    // AV Audio Player to play the animal sounds
     var audio: AVAudioPlayer?
     
+    // Navigation buttons
     var menuButton: SKButton!
     var backButton: SKButton!
     var nextButton: SKButton!
     
+    // MARK: Did Move
     override func didMove(to view: SKView) {
         // Adds the TTWheel, the frame image and the spin button
         addWheel(view: view)
@@ -46,7 +57,6 @@ class RandomWheel: SKScene {
     }
     
     // MARK: UI setup
-    
     func setupHomeButton() {
         /* Set UI connections */
         menuButton = self.childNode(withName: "menuButton") as! SKButton
@@ -67,6 +77,7 @@ class RandomWheel: SKScene {
         }
     }
     
+    // Connect and reposition the next level button
     func setupNextLevelButton() {
         nextButton = self.childNode(withName: "nextButton") as! SKButton
 //        nextButton.position = positionFromTop(CGPoint(x: 75.0, y: 175.0))
@@ -89,20 +100,21 @@ class RandomWheel: SKScene {
         }
     }
     
-    // Play sound
+    // Plays a sound based on a given index relating to the slices array
     func playSoundForIndex(index: Int) {
         var sound = String()
         var extention = String()
         if let animal = self.slices[index].animal {
             switch animal {
-            case "Dog":     sound = "dogBark";          extention = ".wav"
+            case "Dog":     sound = "dogBark";          extention = ".mp3"
             case "Cow":     sound = "cowMoo";           extention = ".mp3"
-            case "Cat":     sound = "catMeow";          extention = ".wav"
-            case "Pig":     sound = "duckQuacking";     extention = ".wav"
+            case "Cat":     sound = "catMeow";          extention = ".mp3"
+            case "Pig":     sound = "pigOink";          extention = ".mp3"
             case "Sheep":   sound = "sheepBaa";         extention = ".wav"
-            case "Horse":   sound = "horseWhinnying";   extention = ".wav"
-            default:        sound  = "cartoon_voice_says_yahoo"; extention = ".mp3"
+            case "Horse":   sound = "horseWhinnying";   extention = ".mp3"
+            default:        sound = "dogBark"; extention = ".mp3"
             }
+            // Re-enable the spin button (is disabled when pressed)
             self.spinButton?.isEnabled = true
             self.playAudio(soundName: sound, soundExtention: extention)
         }
@@ -112,7 +124,7 @@ class RandomWheel: SKScene {
         // Fetch the sound data set.
         if let asset = NSDataAsset(name: soundName) {
             do {
-                // Use NSDataAssets's data property to access the audio file stored in cartoon voice says yahoo.
+                // Use NSDataAssets's data property to access the audio file
                 audio = try AVAudioPlayer(data: asset.data, fileTypeHint: soundExtention)
                 // Play the above sound file
                 audio?.play()
@@ -123,15 +135,19 @@ class RandomWheel: SKScene {
         }
     }
     
+    // Increments the current level and presents the next one if it is available.
     func transitionToNextScene() {
         if let view = view {
+            // Check if there is a levelSelector
             if let selector = levelSelector {
+                // Safety if there would be a problem with the level counter we return to level 1
                 if selector.currentLevel != nil {
                     selector.currentLevel! += 1
                 } else {
                     selector.currentLevel = 1
                 }
                 
+                // Remove the random wheel, because wheel is a subclass of UIView its not removed when changing scenes.
                 removeWheel()
                 view.presentScene(selector)
             }
